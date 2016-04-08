@@ -16,3 +16,10 @@ Refer to this [guide](https://guides.github.com/introduction/flow/) for more und
   
 
 ####Remember to manage your cards in trello
+
+###Extra tips for easy coding
+- Open Live reload for desktop
+- add project folder
+- minimize live reload to system tray
+- enable live reload extension in chrome 
+- _now everytime you save a file, the page will automatically reload! :D_

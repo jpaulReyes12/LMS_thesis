@@ -10,5 +10,9 @@ thesis capstone
   - Make a commit
   - Making a new branch if implementing new feature
 5.  For all members to see your code, make a pull request so Franchette can accept it.
-6. 
+6. Post hard to solve bugs in issue tracker. [here](https://github.com/nicoleMeow/LMS_thesis/issues)
+
+Refer to this [guide](https://guides.github.com/introduction/flow/) for more understanding in guthub
   
+
+####Remember to manage your cards in trello

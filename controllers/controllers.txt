@@ -1,0 +1,1 @@
+angular js code to control view behavior

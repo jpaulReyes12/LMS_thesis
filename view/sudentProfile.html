@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="..\lib\bootstrap\css\bootstrap.min.css">
     <link rel="stylesheet" href="..\lib\font-awesome-4.6.1\css\font-awesome.min.css" >
     <link rel="stylesheet" href="..\style\profile.css" >
+
+    <!-- cdn fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,500' rel='stylesheet' type='text/css'>
   </head>
   <body>
 
@@ -82,9 +86,55 @@
       </div><!-- container-fluid -->
     </nav>
 
+    <!-- student info -->
+    <header class="container-fluid jumbotron">
+      <img src="..\assets\default-user-avatar.png" alt="profPic" class="col-md-2 col-sm-2 col-xs-6" />
+      <div class="container col-md-4 col-sm-8 col-xs-6">
+        <h2 class="h2">Firstname Lastname</h2>
+        <h3 class="h3">grade</h3>
+        <h3 class="h3">section</h3>
+      </div>
+      <div class="container col-md-6 col-sm-8 col-xs-12 well">
+        <div class="col-md-6 col-sm-6 col-xs-6" >
+          <h2 class="word-fluid">Latest Achievement</h2>
+          <h3>stuff</h3>
+        </div>
+        <div style="border-left: 1px solid grey" class="col-md-6 col-sm-6 col-xs-6">
+          <h2 class="word-fluid">Achievement Points</h2>
+          <h3>200 xp</h3>
+        </div>
+      </div>
+
+    </header>
+
+    <section class="container">
+      <div class="col-md-6 col-lg-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title ">Achievements</h3>
+          </div>
+          <div class="panel-body">
+            <div class="col-md-6 pull-right">
+              <input type="text" name="searchBadge" placeholder="Search" class="form-control">
+            </div>
+
+          </div>
+        </div>
+      </div>
 
 
+      <div class="col-md-6 ">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Score timeline</h3>
+          </div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
 
+    </section>
 
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="..\lib\jquery-2.2.3.min.js"></script>

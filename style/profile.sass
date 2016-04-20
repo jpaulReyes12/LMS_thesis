@@ -1,13 +1,15 @@
-// header
-//   div
-//     border: 2px solid red
+$break-sm: 768px
+$break-md: 992px
+$break-lg: 1200px
+
+$input-border-radius: 10px
 
 body
   font-family: 'Roboto', sans-serif
 
 
 .h1, .h2, .h3, .h4, .h5, .h6,
-h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6, label
   font-family: 'Ubuntu', Helvetica
 
 
@@ -25,3 +27,33 @@ img[alt=profPic]
 
 .word-fluid
   word-wrap: break-word
+
+input
+.input-upper
+  border-top-left-radius: $input-border-radius
+  border-top-right-radius: $input-border-radius
+  border-bottom-left-radius: 0
+  border-bottom-right-radius: 0
+  width: 80%
+  @media screen and (max-width: $break-sm)
+    width: 100%
+
+
+.input-lower
+  border-bottom-left-radius: $input-border-radius
+  border-bottom-right-radius: $input-border-radius
+  border-top-left-radius: 0
+  border-top-right-radius: 0
+  width: 80%
+  @media screen and (max-width: $break-sm)
+    width: 100%
+
+// .vertical-divider::before
+//   content: ' '
+//   display: block
+//   height: 18px
+//   left: -1px
+//   position: absolute
+//   top: 12px
+//   width: 5px
+//   color: red

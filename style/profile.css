@@ -5,13 +5,15 @@ body { font-family: "Roboto", sans-serif; }
 #profile-brand { width: 6%; height: auto; display: inline; }
 
 img[alt=profPic] { width: 200px; height: auto; }
+@media screen and (max-width: 768px) { img[alt=profPic] { width: 100px; height: auto; } }
 
 .navbar { margin-bottom: 0; }
-
-.word-fluid { word-wrap: break-word; }
 
 .input-upper { border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 80%; }
 @media screen and (max-width: 768px) { .input-upper { width: 100%; } }
 
 .input-lower { border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 0; border-top-right-radius: 0; width: 80%; }
 @media screen and (max-width: 768px) { .input-lower { width: 100%; } }
+
+.vertical-divider-right { border-left: 1px solid grey; }
+@media screen and (max-width: 768px) { .vertical-divider-right { border-left: 0; } }

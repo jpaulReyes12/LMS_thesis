@@ -1,0 +1,32 @@
+{
+  "name": "lms_thesis",
+  "version": "1.0.0",
+  "description": "Thesis capstone",
+  "main": "index.html",
+  "dependencies": {
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma": "^0.13.22"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicoleMeow/LMS_thesis.git"
+  },
+  "keywords": [
+    "LMS"
+  ],
+  "author": "Franchette Camoro, Jan Paul Reyes, Antonio Amolo Jr., Rhea Anacaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicoleMeow/LMS_thesis/issues"
+  },
+  "homepage": "https://github.com/nicoleMeow/LMS_thesis#readme"
+}

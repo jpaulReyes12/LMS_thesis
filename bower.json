@@ -1,0 +1,27 @@
+{
+  "name": "lms_thesis",
+  "description": "Thesis capstone",
+  "main": "index.html",
+  "authors": [
+    "Franchette Camoro",
+    "Jan Paul Reyes",
+    "Antonio Amolo Jr.",
+    "Rhea Anacaya"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "LMS"
+  ],
+  "homepage": "https://github.com/nicoleMeow/LMS_thesis",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-mocks": "^1.5.5"
+  }
+}

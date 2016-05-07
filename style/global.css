@@ -1,3 +1,16 @@
 body { font-family: "Roboto", sans-serif; }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, label { font-family: "Ubuntu", Helvetica; }
+
+
+/* The starting CSS styles for the enter animation */
+main.ng-enter {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s ease-in-out all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+main.ng-enter.ng-enter-active {
+  opacity:1;
+}

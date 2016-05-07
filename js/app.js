@@ -1,3 +1,3 @@
-angular.module('lmsApp', ['ngRoute', 'angularCSS']);
+angular.module('lmsApp', ['ngRoute', 'ngAnimate', 'angularCSS']);
 
 // declare dependencies here

@@ -2,7 +2,7 @@
 
 body
 {
-  overflow: hidden;
+  /*overflow: hidden;*/
   background-image: url("../assets/defaults/logincover.jpg");
   background-size: cover;
 

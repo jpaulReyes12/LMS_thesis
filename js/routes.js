@@ -28,7 +28,6 @@ angular.module('lmsApp')
             preload: true
           }
 
-
         ]
       })
       .when('/signup', {

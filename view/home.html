@@ -1,3 +1,40 @@
-<div class="jumbotron">
-  <h1>Hello world!</h1>
-</div>
+
+<!-- <div id="container"> -->
+  <div id="logo">
+    <img src="assets/defaults/logo.png" id="lg"></img>
+  </div>
+  <div id="slogo">
+    <img src="assets/defaults/slogo.png" id="slg"></img>
+  </div>
+  <div id="lms">
+      <img src="assets/defaults/lms.png" id="lm"></img>
+  </div>
+
+
+  <form id="logform" class="form-group" action="login.php" method="post">
+    <h1 id="login"> LOGIN </h1>
+    <div class="form-group">
+         <label class="control-label col-lg-2"><span class="glyphicon glyphicon-user" id="span1"></span> </label>
+         <div class="col-lg-10  ">
+           <input type="text" name="txtUsername" class="form-control" placeholder="Username" id="user"/>
+         </div>
+       </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-2"><span class="glyphicon glyphicon-asterisk" id="span2"></span> </label>
+        <div class="col-lg-10">
+          <input type="Password" name="txtPassword" class="form-control" placeholder="Password" id="pass"/>
+        </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary col-lg-10" name="btnSubmit" type="submit" id="btn">Submit</button>
+        </div>
+
+        <div id="down">
+          <a href="#/about">ABOUT US</a>
+          <h1 id="separator">|</h1>
+          <a href="#/signup">SIGN UP</a>
+        </div>
+  </form>
+<!-- </div> -->

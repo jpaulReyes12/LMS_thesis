@@ -1,0 +1,120 @@
+
+<div id="line">
+
+</div>
+<div id="sign_con">
+    <div id="lms_logo">
+      <img src="assets\defaults\logo.png" id="lg" />
+    </div>
+    <div id="sign">
+      <h1>SIGN UP</h1>
+    </div>
+  </div>
+
+  <div class="container">
+
+<!-- start form -->
+  <form  class="form-horizontal" action="register.php"method="post" ng-controller="validationCtrl" name="reg_form">
+
+
+  <div class="form-group">
+    <label class="control-label col-lg-2">Firstname: </label>
+    <div class="col-lg-4">
+      <input type="text" name="Fname" class="form-control" placeholder="Firstname" ng-model="firstname">
+    </div>
+      <label class="control-label col-lg-2">Lastname: </label>
+    <div class="col-lg-4">
+      <input type="text" name="Lname" class="form-control" placeholder="Lastname" ng-model="lastname">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-lg-2">E-mail Address: </label>
+    <div class="col-lg-4">
+      <input type="text" name="Email" class="form-control" placeholder="Email" ng-model="email">
+    </div>
+    <label class="control-label col-lg-2">Gender: </label>
+    <div class="col-lg-4">
+      Male<input type="radio" name="Gend" value="male" checked="checked" id="rad1" ng-model="gender">
+      Female<input type="radio" name="Gend" value="female" id="rad2" ng-model="gender">
+    </div>
+  </div>
+
+
+  <div id="line2">
+
+  </div>
+
+<!-- question -->
+  <div class="form-group">
+    <label class="control-label col-lg-2">Secret question: </label>
+    <div class="col-lg-4">
+      <select  name="scrtQuestion1" class="form-control" ng-model="quest1">
+        <option value="none" selected>Select first question</option>
+        <option value="Mother's maiden name">Mother's maiden name</option>
+        <option value="Favorite color">Favorite color</option>
+        <option value="Favorite sport">Favorite sport</option>
+      </select>
+    </div>
+    <label class="control-label col-lg-2">Secret question: </label>
+    <div class="col-lg-4">
+      <select  name="scrtQuestion2" class="form-control" ng-model="quest2">
+        <option value="none" selected>Select second question</option>
+        <option value="Mother's maiden name">Mother's maiden name</option>
+        <option value="Favorite color">Favorite color</option>
+        <option value="Favorite sport">Favorite sport</option>
+      </select>
+    </div>
+  </div>
+
+<!-- answer -->
+  <div class="form-group">
+    <label class="control-label col-lg-2">Secret Answer: </label>
+    <div class="col-lg-4">
+      <input type="text" name="scrtAns1" class="form-control" placeholder="Secret answer" ng-model="ans1">
+    </div>
+    <label class="control-label col-lg-2">Secret Answer: </label>
+    <div class="col-lg-4">
+      <input type="text" name="scrtAns2" class="form-control" placeholder="Secret answer" ng-model="ans2">
+    </div>
+  </div>
+
+  <div id="line3">
+
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-lg-2">Username: </label>
+    <div class="col-lg-4">
+      <input type="text" name="Username" class="form-control" placeholder="Username" ng-model="username" required>
+      <span ng-show="reg_form.username.$error.required">Username is required</span>
+    </div>
+    <label class="control-label col-lg-2">Usertype: </label>
+    <div class="col-lg-4">
+      Teacher<input type="radio" name="type" value="teacher" checked="checked" id="rad3" ng-model="usertype">
+      Student<input type="radio" name="type" value="student" id="rad4">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-lg-2">Password: </label>
+    <div class="col-lg-4">
+      <input type="Password" name="Password" class="form-control" placeholder="Password" ng-model="password">
+    </div>
+    <label class="control-label col-lg-2">Confirm Password: </label>
+    <div class="col-lg-4">
+      <input type="Password" name="ConfPass" class="form-control" placeholder="Confirm the password" ng-model="confirm">
+    </div>
+  </div>
+
+
+  <div class="form-group col-lg-8" id="btn">
+    <label class="pull-right">
+      <a href="#/home">Already have an account</a>
+      <button class="btn btn-success" name="btnSubmit" type="submit" style="width: 100px;">Submit</button>
+      <button class="btn btn-warning" name="btnClear" type="reset" style="width: 100px;">Clear</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,106 @@
+/* styling */
+
+body
+{
+  overflow: hidden;
+  background-image: url("../assets/defaults/logincover.jpg");
+  background-size: cover;
+
+}
+#logo
+{
+  margin-top: 15px;
+  margin-left: 30px;
+}
+#lg
+{
+  width: 200px;
+  height: 200px;
+}
+#slogo
+{
+  margin-top: -135px;
+  margin-left: 280px;
+
+}
+#slg
+{
+  width: 900px;
+  height: 70px;
+}
+#lms
+{
+  margin-top: 30px;
+  margin-left: 625px;
+}
+#lm
+{
+  width: 100px;
+  height: 100px;
+}
+
+#logform
+{
+  width: 500px;
+  height: 300px;
+  margin-top: 20px;
+  margin-left: 420px;
+
+}
+#pass
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#span1
+{
+  margin-top: 10px;
+  margin-left: 25px;
+  color: white;
+}
+#span2
+{
+  margin-top: 20px;
+  margin-left: 25px;
+  color: white;
+
+}
+#login
+{
+  color: white;
+  margin-left: 195px;
+  margin-bottom: 20px;
+}
+#btn
+{
+  margin-left: 98px;
+  background-color: #f1d38c;
+  border-color: #f1d38c;
+  width: 387px;
+}
+#btn:hover
+{
+  background-color: #f2cb6c;
+}
+#down
+{
+  margin-top: 285px;
+  margin-left: 170px;
+
+}
+a, #separator
+{
+  color: white;
+  display: inline;
+  text-decoration: none;
+}
+a:hover
+{
+  color: #a09d9d;
+}
+#separator
+{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 70px;
+}

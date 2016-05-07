@@ -1,0 +1,56 @@
+
+#about_logo
+{
+  margin-left: 40px;
+  margin-top: 10px;
+}
+  #about_slogo
+  {
+    margin-top: -135px;
+    margin-left: 300px;
+
+  }
+  #slg1
+  {
+    width: 850px;
+    height: 70px;
+  }
+  p
+  {
+    color: white;
+    text-align: justify;
+    text-indent: 50px;
+    font-size: 18px;
+  }
+  h2
+  {
+    margin-top: -120px;
+    margin-left: 120px;
+    color: white;
+    margin-bottom: 30px;
+  }
+  h1,a
+  {
+    color: white;
+    display: inline;
+  }
+  a
+  {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  a:hover
+  {
+    color:#a09d9d;
+  }
+  #about_down
+  {
+    margin-top: 75px;
+    margin-left: 595px;
+  }
+  #about_details
+  {
+    width: 400px;
+    margin-top: 190px;
+    margin-left: 480px;
+  }

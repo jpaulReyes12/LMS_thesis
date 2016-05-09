@@ -6,7 +6,7 @@ angular.module('lmsApp')
         css: 'style/home.css'
       })
       .when('/home', {
-        title: 'STC Learning Management System',
+        title: 'Learning Management System',
         templateUrl: 'view/home.html',
         css: 'style/home.css'
       })
@@ -31,7 +31,7 @@ angular.module('lmsApp')
         ]
       })
       .when('/signup', {
-        title: 'Sign Up',
+        title: 'LMS -Sign Up',
         templateUrl: 'view/signup.html',
         css: 'style/signup.css'
       })
@@ -56,15 +56,3 @@ angular.module('lmsApp')
         redirectTo: '/'
       })
   });
-
-  angular.module('lmsApp')
-  .run(['$rootScope', function($rootScope) {
-    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-
-      if (current.hasOwnProperty('$$route')) {
-
-          $rootScope.title = current.$$route.title;
-      }
-
-    });
-  }]);

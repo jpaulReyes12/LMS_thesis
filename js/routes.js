@@ -35,6 +35,23 @@ angular.module('lmsApp')
         templateUrl: 'view/signup.html',
         css: 'style/signup.css'
       })
+      .when('/class_dashboard', {
+        title: 'Class Dashboard',
+        templateUrl: 'view/classDash.html',
+        css: [
+          {
+            href: 'style/classDash.css',
+            preload: true
+          },
+          {
+            href: 'style/classDash1.css',
+            preload: true
+          },
+          {
+            href: 'style/classDash2.css',
+            preload: true
+          }]
+      })
       .otherwise({
         redirectTo: '/'
       })

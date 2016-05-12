@@ -1,72 +1,89 @@
-
-
-<div>
-  <div class="class">
-	  	SAMPLE- CI602A-C- 10:30AM
-  </div>
-	<div class="panel-body">
-    <!-- MENU ICON -->
-		<ul class="nav nav-pills nav-stacked" role="tablist">
-			<li id="showLeft"><a href=""><center><span class="glyphicon glyphicon-menu-hamburger"></span></center></a></li>
-    </br><li><a href="Sample.html"><center><span class="glyphicon glyphicon-home"></span></center></a></li>
-			<li><a href=""><center><span class="glyphicon glyphicon-list-alt"></span></center></a></li>
-			<li><a href=""><center><span class="glyphicon glyphicon-wrench"></span></center></a></li>
-			<li><a href="Student.html"><center><span class="glyphicon glyphicon-user"></span></center></a></li>
-			<li><a href=""><center><span class="glyphicon glyphicon-briefcase"></span></center></a></li>
-			<li><a href=""><center><span class="glyphicon glyphicon-signal"></span></center></a></li>
-		</ul>
-    <!-- MENU -->
-		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-			<h3>Menu</h3>
-    </br></br><a href="Sample.html">Home</a>
-			<a id="post" href="">Post</a>
-		  <a id="create" href="">Create</a>
-			<a id="student" href="Student.html">Student</a>
-			<a id="resources" href="">Resources</a>
-			<a id="stat" href="">Statistics</a>
-		</nav>
-    <!-- SUBMENU FOR CREATE -->
-    <nav class="cbp-spmenu cbp-spmenu-vertical2 cbp-spmenu-left2" id="cbp-spmenu-s2">
-      <a href="">Quiz</a>
-      <a href="">Announcement</a>
-      <a href="">Assignment</a>
-    </nav>
+<html>
+  <head>
+    <title>Sample</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Sample.css" type="text/css">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Blueprint: Slide and Push Menus" />
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<script src="js/modernizr.custom.js"></script>
+  </head>
+  <body>
+    <div>
+      <div class="class">
+    	  	SAMPLE- CI602A-C- 10:30AM
+      </div>
+			<div class="panel-body">
+        <!-- MENU ICON -->
+				<ul class="nav nav-pills nav-stacked" role="tablist">
+					<li id="showLeft"><a href="#"><center><span class="glyphicon glyphicon-menu-hamburger"></span></center></a></li>
+        </br><li><a href="Sample.html"><center><span class="glyphicon glyphicon-home"></span></center></a></li>
+					<li><a href="#"><center><span class="glyphicon glyphicon-list-alt"></span></center></a></li>
+					<li><a href="#"><center><span class="glyphicon glyphicon-wrench"></span></center></a></li>
+					<li><a href="Student.html"><center><span class="glyphicon glyphicon-user"></span></center></a></li>
+					<li><a href="#"><center><span class="glyphicon glyphicon-briefcase"></span></center></a></li>
+					<li><a href="#"><center><span class="glyphicon glyphicon-signal"></span></center></a></li>
+				</ul>
+        <!-- MENU -->
+				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+					<h3>Menu</h3>
+        </br></br><a href="Sample.html">Home</a>
+					<a id="post" href="#">Post</a>
+				  <a id="create" href="#">Create</a>
+					<a id="student" href="Student.html">Student</a>
+					<a id="resources" href="#">Resources</a>
+					<a id="stat" href="#">Statistics</a>
+				</nav>
+        <!-- SUBMENU FOR CREATE -->
+        <nav class="cbp-spmenu cbp-spmenu-vertical2 cbp-spmenu-left2" id="cbp-spmenu-s2">
+          <a href="#">Quiz</a>
+          <a href="#">Announcement</a>
+          <a href="#">Assignment</a>
+        </nav>
+			</div>
 	</div>
-</div>
 
 <!-- JQUERY SCRIPT FOR THE ACTION OF THE MENU -->
-<script src="js/classie.js"></script>
-<script>
-	var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-		showLeft = document.getElementById( 'showLeft' ),
-		body = document.body;
+	<script src="js/classie.js"></script>
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeft = document.getElementById( 'showLeft' ),
+				body = document.body;
 
-	showLeft.onclick = function() {
-		classie.toggle( this, 'active' );
-		classie.toggle( menuLeft, 'cbp-spmenu-open' );
-		disableOther( 'showLeft' );
-	};
+			showLeft.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeft' );
+			};
 
-	function disableOther( button ) {
-		if( button !== 'showLeft' ) {
-			classie.toggle( showLeft, 'disabled' );
-		}
-		}
+			function disableOther( button ) {
+				if( button !== 'showLeft' ) {
+					classie.toggle( showLeft, 'disabled' );
+				}
+				}
 
-    var menuLeft2 = document.getElementById( 'cbp-spmenu-s2' ),
-			create = document.getElementById( 'create' ),
-			body = document.body;
+        var menuLeft2 = document.getElementById( 'cbp-spmenu-s2' ),
+  				create = document.getElementById( 'create' ),
+  				body = document.body;
 
-	    create.onclick = function() {
-			classie.toggle( this, 'active' );
-			classie.toggle( menuLeft2, 'cbp-spmenu-open' );
-			disableOther( 'create' );
-		};
+  		    create.onclick = function() {
+  				classie.toggle( this, 'active' );
+  				classie.toggle( menuLeft2, 'cbp-spmenu-open' );
+  				disableOther( 'create' );
+  			};
 
-		function disableOther( button ) {
-			if( button !== 'create' ) {
-				classie.toggle( create, 'disabled' );
-			}
-			}
+  			function disableOther( button ) {
+  				if( button !== 'create' ) {
+  					classie.toggle( create, 'disabled' );
+  				}
+  				}
 
-</script>
+		</script>
+
+
+
+  </body>
+</html>

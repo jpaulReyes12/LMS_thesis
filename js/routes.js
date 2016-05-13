@@ -41,15 +41,12 @@
                     return $ocLazyLoad.load({files: ['js/controllers/signupCtrl.js']});
                  }]
               }
-
-          // resolve: resolveController('js/controllers/signupCtrl.js')
-
-          // TODO: dynamic controllers
         })
         .when('/class_dashbord', {
           title: 'Manage your class',
           templateUrl: 'view/classDash.html',
-          css: ['style/classDash/classDash.css', 'style/classDash/classDash2.css', 'style/classDash/classDash3.css']
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css']
+          // TODO: finish this page
 
         })
         .otherwise({

@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Thu May 05 2016 19:42:44 GMT+0800 (Malay Peninsula Standard Time)
+// Generated on Fri May 13 2016 12:36:42 GMT+0800 (Malay Peninsula Standard Time)
 
 module.exports = function(config) {
   config.set({
@@ -15,10 +15,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      '../../lib/angular.min.js',
+      '../../bower_components/angular/angular.js',
       '../../bower_components/angular-mocks/angular-mocks.js',
-      '../app.js',
-      'units/*.js'
+      '../../bower_components/angular-route/angular-route.js',
+      '../../bower_components/angular-animate/angular-animate.js',
+      '../../bower_components/angular-css/angular-css.min.js',
+      '../../bower_components/oclazyload/dist/ocLazyLoad.min.js',
+      '../../components/*/*',
+      'units/*js',
+      '../*.js',
+      '../controllers/*.js'
     ],
 
 

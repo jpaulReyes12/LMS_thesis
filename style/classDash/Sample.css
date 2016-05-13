@@ -1,21 +1,21 @@
 div.panel-body
 {
 	width: 105px;
-	font-size: 48;
+	font-size: 36px;
 	margin:0;
 	background-color: #0d77b6;
-	height: 665;
+	height: 100vh;
 
 }
 
 
 div.panel
 {
-	width: 1240;
+	width: 1240px;
 	float:right;
- margin: 10 10 10 10;
+ 	margin: 10px 10px 10px 10px;
 
-	height:600;
+	height:600px;
 }
 
 body
@@ -26,32 +26,32 @@ body
 span.classname
 {
 	float:right;
-	font-size: 30;
+	font-size: 30px;
 	margin: 0;
 }
 
 nav
 {
-	font-size:20;
+	font-size:20px;
 
 }
 
 div.ul li
 {
-	margin-bottom: 50;
+	margin-bottom: 50px;
 }
 
-div.class
+p.schedule
 {
 	float:right;
-	font-size: 30;
+	font-size: 30px;
 	color: white;
-	margin-right: 480;
+	margin-right: 480px;
 }
 
 .nav>li>a {
     position: relative;
     display: block;
     padding: 10px 15px;
-		margin-bottom:5;
+		margin-bottom:5px;
 }

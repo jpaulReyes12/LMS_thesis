@@ -45,7 +45,12 @@
         .when('/class_dashbord', {
           title: 'Manage your class',
           templateUrl: 'view/classDash.html',
-          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css']
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
+          resolve: {
+                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
+                 }]
+              }
           // TODO: finish this page
 
         })

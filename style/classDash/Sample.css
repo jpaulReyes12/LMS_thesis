@@ -5,17 +5,16 @@ div.panel-body
 	margin:0;
 	background-color: #0d77b6;
 	height: 100vh;
+	position: fixed;
+	z-index: 5;
 
 }
 
 
 div.panel
 {
-	width: 1240px;
 	float:right;
- 	margin: 10px 10px 10px 10px;
-
-	height:600px;
+	height:100%;
 }
 
 body
@@ -43,10 +42,10 @@ div.ul li
 
 p.schedule
 {
-	float:right;
+	/*float:right;*/
 	font-size: 30px;
 	color: white;
-	margin-right: 480px;
+	/*margin-right: 480px;*/
 }
 
 .nav>li>a {

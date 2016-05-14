@@ -40,16 +40,16 @@
 
 .cbp-spmenu-vertical {
 	width: 240px;
-	height: 100%;
+	height: 100vh;
 	top: 0;
-	z-index: 1000;
+	z-index: 1;
 }
 
 .cbp-spmenu-vertical2 {
 	width: 240px;
 	height: 230px;
 	top: 0;
-	z-index: 1000;
+	z-index: 1;
 	margin-top: 213px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
@@ -57,12 +57,12 @@
 
 
 .cbp-spmenu-vertical a {
-	border-bottom: 1px solid #258ecd;
+	/*border-bottom: 1px solid #258ecd;*/
 	padding: 1em;
 }
 
 .cbp-spmenu-vertical2 a {
-	border-bottom: 1px solid #258ecd;
+	/*border-bottom: 1px solid #258ecd;*/
 	padding: 1em;
 }
 
@@ -87,4 +87,12 @@
 
 .cbp-spmenu-left2.cbp-spmenu-open {
 	left:340px;
+}
+
+/*transitions*/
+
+.cbp-spmenu{
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }

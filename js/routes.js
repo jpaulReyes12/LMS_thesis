@@ -21,14 +21,8 @@
           title: 'About Us',
           templateUrl: 'view/about.html',
           css: [
-            {
-              href: 'style/home.css',
-              preload: true
-            },
-            {
-              href: 'style/aboutus.css',
-              preload: true
-            }
+            {href: 'style/home.css', preload: true},
+            {href: 'style/aboutus.css', preload: true}
           ]
         })
         .when('/signup', {
@@ -44,15 +38,23 @@
         })
         .when('/class_dashbord', {
           title: 'Manage your class',
-          templateUrl: 'view/classDash.html',
+          templateUrl: 'view/classDash/classDash.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
                  }]
               }
-          // TODO: finish this page
-
+        })
+        .when('/class_dashbord/class_record', {
+          title: 'Manage your class',
+          templateUrl: 'view/classDash/classRecord.html',
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
+          resolve: {
+                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
+                 }]
+              }
         })
         .otherwise({
           redirectTo: '/'

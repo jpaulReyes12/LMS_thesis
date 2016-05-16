@@ -1,0 +1,21 @@
+div { /*border: 1px solid red */ }
+
+body { background-color: #fffefa; }
+
+.group-item { padding: 10px; margin: 10px; border: 1px solid grey; background-color: #f4fafe; }
+@media only screen and (min-width: 768px) { .group-item { height: 150px; } }
+
+.main-content { margin-top: 20px; }
+@media only screen and (min-width: 768px) { .main-content { margin-left: 100px; } }
+
+.inner-addon { position: relative; }
+.inner-addon .fa { position: absolute; padding: 10px; pointer-events: none; }
+
+@media only screen and (min-width: 992px) { .right-addon { right: 200px; } }
+.right-addon .fa { right: 20px; }
+.right-addon input { padding-right: 30px; }
+
+.right-distance { color: white; }
+@media only screen and (min-width: 992px) { .right-distance { position: absolute; right: 200px; } }
+
+#btnJoinGrp { margin: 50px; }

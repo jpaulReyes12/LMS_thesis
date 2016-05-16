@@ -1,0 +1,48 @@
+$background-color:rgb(255,254,250)
+$group-item:  rgb(244,250,254)
+
+div
+  /*border: 1px solid red*/
+
+body
+  background-color: $background-color
+
+.group-item
+  padding: 10px
+  margin: 10px
+  border: 1px solid grey
+  background-color: $group-item
+  @media only screen and (min-width : 768px)
+    height: 150px
+
+
+.main-content
+  margin-top: 20px
+
+  @media only screen and (min-width : 768px)
+    margin-left: 100px
+
+
+.inner-addon
+  position: relative
+  .fa
+    position: absolute
+    padding: 10px
+    pointer-events: none
+
+.right-addon
+  @media only screen and (min-width : 992px)
+    right: 200px
+  .fa
+    right: 20px
+  input
+    padding-right: 30px
+
+.right-distance
+  color: white
+  @media only screen and (min-width : 992px)
+    position: absolute
+    right: 200px
+
+#btnJoinGrp
+  margin: 50px

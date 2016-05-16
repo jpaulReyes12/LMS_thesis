@@ -56,6 +56,15 @@
                  }]
               }
         })
+        .when('/group', {
+          title: 'Your Groups',
+          templateUrl: 'view/group.html',
+          css: [
+            {href:'style/group.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ]
+          // TODO: finish groups page
+        })
         .otherwise({
           redirectTo: '/'
         })

@@ -3,6 +3,8 @@ $break-sm: 768px
 $break-md: 992px
 $break-lg: 1200px
 
+$navbar-background: rgb(25, 181, 254)
+
 $input-border-radius: 10px
 
 body
@@ -14,8 +16,31 @@ h1, h2, h3, h4, h5, h6, label
   font-family: 'Ubuntu', Helvetica
 
 
+.navbar-custom
+  background-color: $navbar-background
+  .navbar-brand
+    color: white
+    &:hover
+      color: rgb(255, 143, 13)
+      background-color: transparent
+    &:active, &:focus
+      background-color: rgb(1, 135, 200)
+  .navbar-text
+    @extend .navbar-brand
+  .navbar-nav
+    li
+      a
+        @extend .navbar-brand
+      .dropdown-menu
+        @extend .navbar-custom
+        li
+          &:active, &:focus
+            background-color: rgb(1, 135, 200)
+    .open>a
+      background-color: rgb(1, 135, 200)
+
 #profile-brand
-  width: 6%
+  width: 10%
   height: auto
   display: inline
 
@@ -31,24 +56,24 @@ img[alt=profPic]
 
 
 input
-.input-upper
-  border-top-left-radius: $input-border-radius
-  border-top-right-radius: $input-border-radius
-  border-bottom-left-radius: 0
-  border-bottom-right-radius: 0
-  width: 80%
-  @media screen and (max-width: $break-sm)
-    width: 100%
+  .input-upper
+    border-top-left-radius: $input-border-radius
+    border-top-right-radius: $input-border-radius
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+    width: 80%
+    @media screen and (max-width: $break-sm)
+      width: 100%
 
 
-.input-lower
-  border-bottom-left-radius: $input-border-radius
-  border-bottom-right-radius: $input-border-radius
-  border-top-left-radius: 0
-  border-top-right-radius: 0
-  width: 80%
-  @media screen and (max-width: $break-sm)
-    width: 100%
+  .input-lower
+    border-bottom-left-radius: $input-border-radius
+    border-bottom-right-radius: $input-border-radius
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    width: 80%
+    @media screen and (max-width: $break-sm)
+      width: 100%
 
 .vertical-divider-right
   border-left: 1px solid grey

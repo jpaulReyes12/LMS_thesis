@@ -1,8 +1,5 @@
-div { /*border: 1px solid red */ }
-
-body { background-color: #fffefa; }
-
-.group-item { padding: 10px; margin: 10px; border: 1px solid grey; background-color: #f4fafe; }
+.group-item { padding: 10px; margin: 10px; -webkit-box-shadow: 6px 10px 5px 4px #d6ced6; box-shadow: 6px 10px 5px 4px #d6ced6; background-color: #73cffc; -webkit-transition: -webkit-box-shadow 0.3s ease, -webkit-transform 0.3s ease; transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.group-item:hover { -webkit-box-shadow: 6px 10px 20px -1px #d6ced6; box-shadow: 6px 10px 20px -1px #d6ced6; -webkit-transform: translate(-3px, -10px); -ms-transform: translate(-3px, -10px); transform: translate(-3px, -10px); }
 @media only screen and (min-width: 768px) { .group-item { height: 150px; } }
 
 .main-content { margin-top: 20px; }
@@ -18,4 +15,5 @@ body { background-color: #fffefa; }
 .right-distance { color: white; }
 @media only screen and (min-width: 992px) { .right-distance { position: absolute; right: 200px; } }
 
-#btnJoinGrp { margin: 50px; }
+#btnJoinGrp { margin: 50px; -webkit-transition: -webkit-box-shadow 0.3s ease, -webkit-transform 0.3s ease; transition: box-shadow 0.3s ease, transform 0.3s ease; -webkit-box-shadow: 7px 9px 5px 0px #cccccc; box-shadow: 7px 9px 5px 0px #cccccc; }
+#btnJoinGrp:hover, #btnJoinGrp:active, #btnJoinGrp:focus { -webkit-box-shadow: 7px 9px 18px 2px #cccccc; box-shadow: 7px 9px 18px 2px #cccccc; -webkit-transform: translate(-2px, -2px); -ms-transform: translate(-2px, -2px); transform: translate(-2px, -2px); }

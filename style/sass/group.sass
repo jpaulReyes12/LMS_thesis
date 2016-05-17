@@ -1,17 +1,23 @@
 $background-color:rgb(255,254,250)
-$group-item:  rgb(244,250,254)
+$group-item:  rgb(115, 207, 252)
 
 div
-  /*border: 1px solid red*/
+  // border: 1px solid red
 
 body
-  background-color: $background-color
+  // background-color: $background-color
 
 .group-item
   padding: 10px
   margin: 10px
-  border: 1px solid grey
+  box-shadow: 6px 10px 5px 4px rgba(214,206,214,1)
   background-color: $group-item
+  transition: box-shadow 0.3s ease, transform 0.3s ease
+  &:hover
+    box-shadow: 6px 10px 20px -1px rgba(214,206,214,1)
+    transform: translate(-3px, -10px)
+  // .btn
+  //   box-shadow: 3px 5px 5px -3px rgba(0,0,0,0.75)
   @media only screen and (min-width : 768px)
     height: 150px
 
@@ -46,3 +52,8 @@ body
 
 #btnJoinGrp
   margin: 50px
+  transition: box-shadow 0.3s ease, transform 0.3s ease
+  box-shadow: 7px 9px 5px 0px rgba(204,204,204,1)
+  &:hover, &:active, &:focus
+    box-shadow: 7px 9px 18px 2px rgba(204,204,204,1)
+    transform: translate(-2px, -2px)

@@ -15,7 +15,12 @@
         .when('/student', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
-          css: 'style/profile.css'
+          css: 'style/profile.css',
+          resolve: {
+                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({files: ['js/controllers/studentProfileCtrl.js']});
+                 }]
+              }
         })
         .when('/about', {
           title: 'About Us',

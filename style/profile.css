@@ -21,5 +21,10 @@ input .input-upper { border-top-left-radius: 10px; border-top-right-radius: 10px
 input .input-lower { border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 0; border-top-right-radius: 0; width: 80%; }
 @media screen and (max-width: 768px) { input .input-lower { width: 100%; } }
 
-.vertical-divider-right { border-left: 1px solid gray; }
+.vertical-divider-right { border-left: 1px solid black; }
 @media screen and (max-width: 768px) { .vertical-divider-right { border-left: 0; } }
+
+.profile-banner { background-color: #0187c8; }
+.profile-banner .well { background-color: #19b3fe; border-color: #2484e8; }
+
+.panel-default > .panel-heading { background-color: #19b3fe; }

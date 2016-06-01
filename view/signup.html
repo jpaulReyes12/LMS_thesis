@@ -1,119 +1,141 @@
+<div class="container-fluid" >
+  <div class="row col-4" id="row">
+    <h1>SIGN UP <span class="glyphicon glyphicon-hand-down"></span></h1>
+  </div>
 
-<div id="line">
+  <div class="container " ng-app="lmsApp" ng-controller="signupCtrl">
+  	<div class="row">
 
+  		<div class="col-sm-12" >
+  			<!-- FORM ============ -->
+
+  			<form role="form" name="reg_form" ng-submit="submitForm()" novalidate>
+
+  				<!-- FIRSTNAME -->
+  				<div class="form-group col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.firstname.$invalid && !reg_form.firstname.$pristine }">
+            <i class="glyphicon glyphicon-user"></i>
+  					<input type="text" name="firstname" class="form-control" ng-model="firstname" placeholder="Firstname" required>
+            <p ng-show="reg_form.firstname.$invalid && !reg_form.firstname.$pristine" class="help-block">Firstname is required.</p>
+  				</div>
+
+  				<!-- LASTNAME -->
+  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.lastname.$invalid && !reg_form.lastname.$pristine }" >
+            <i class="glyphicon glyphicon-user"></i>
+  					<input type="text" name="lastname" class="form-control" ng-model="lastname" placeholder="Lastname" required>
+            <p ng-show="reg_form.lastname.$invalid && !reg_form.lastname.$pristine" class="help-block">Lastname is required.</p>
+  				</div>
+
+  				<!-- EMAIL -->
+  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.email.$invalid && !reg_form.email.$pristine }">
+            <i class="glyphicon glyphicon-envelope"></i>
+  					<input type="email" name="email" class="form-control" ng-model="email" placeholder="Email" required>
+            <p ng-show="reg_form.email.$invalid && !reg_form.email.$pristine" class="help-block">Email is invalid.</p>
+            <!-- <p ng-show="reg_form.email.$error.required && !reg_form.email.$pristine" class="help-block">Email is required.</p> -->
+  				</div>
+  				 <!-- GENDER -->
+  				<div class="form-group  col-lg-6" >
+            <label for="gender">Gender:&nbsp</label>
+            Male&nbsp<input type="radio" name="Gend" value="male" checked="checked" ng-model="Gend" required>
+            Female&nbsp<input type="radio" name="Gend" value="female" ng-model="Gend" required>
+
+  				</div>
+
+          <div class="col-lg-12 pull-left" id="sep">
+            <!-- separator -->
+  				</div>
+
+          <!-- SECRETQUEST1 -->
+  				<div class="form-group col-lg-6" >
+            <label for="scrtQuestion1">Secret Question:</label>
+            <select  name="scrtQuestion1" class="form-control" ng-model="scrtQuestion1" required>
+              <option value="none" selected>Select your option</option>
+              <option value="Mother's maiden name">Mother's maiden name</option>
+              <option value="Favorite color">Favorite color</option>
+              <option value="Favorite sport">Favorite sport</option>
+           </select>
+
+  				</div>
+
+  				<!-- SECRETQUEST2 -->
+  				<div class="form-group  col-lg-6" >
+            <label for="scrtQuestion1">Secret Question:</label>
+            <select  name="scrtQuestion2" class="form-control" ng-model="scrtQuestion2" required>
+              <option value="none" selected>Select your option</option>
+              <option value="Mother's maiden name">Mother's maiden name</option>
+              <option value="Favorite color">Favorite color</option>
+              <option value="Favorite sport">Favorite sport</option>
+           </select>
+
+  				</div>
+
+  				<!-- SECRETANS1 -->
+  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.scrtans1.$invalid && !reg_form.scrtans1.$pristine }" >
+            <i class="glyphicon glyphicon-file"></i>
+  					<input type="text" name="scrtans1" class="form-control" ng-model="scrtans1" placeholder="Secret Answer" required="">
+            <p ng-show="reg_form.scrtans1.$invalid && !reg_form.scrtans1.$pristine" class="help-block">Secret Answer is required.</p>
+  				</div>
+  				 <!-- SECRETANS2 -->
+  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.scrtans2.$invalid && !reg_form.scrtans2.$pristine }">
+            <i class="glyphicon glyphicon-file"></i>
+  					<input type="text" name="scrtans2" class="form-control" ng-model="scrtans2" placeholder="Secret Answer" required="">
+            <p ng-show="reg_form.scrtans2.$invalid && !reg_form.scrtans2.$pristine" class="help-block">Secret Answer is required.</p>
+
+  				</div>
+
+          <div class="col-lg-12" id="sep">
+            <!-- separator -->
+  				</div>
+
+          <!-- USERTYPE -->
+  				<div class="form-group  col-lg-6" >
+
+            <label for="gender">Usertype:&nbsp</label>
+            Teacher&nbsp<input type="radio" name="type" value="male" checked="checked" ng-model="type" required>
+            Student&nbsp<input type="radio" name="type" value="female" ng-model="type" required>
+
+  				</div>
+
+          <!-- USERNAME -->
+  				<div class="form-group col-lg-6 inner-addon left-addon " ng-class="{ 'has-error' : reg_form.username.$invalid && !reg_form.username.$pristine }">
+            <i class="glyphicon glyphicon-pencil"></i>
+  					<input type="text" name="username" class="form-control" ng-model="username" ng-minlength="5" ng-maxlength="10" placeholder="Username" required>
+            <p ng-show="reg_form.username.$error.minlength" class="help-block">Username too short.</p>
+            <p ng-show="reg_form.username.$error.maxlength" class="help-block">Username too long.</p>
+            <p ng-show="reg_form.username.$error.required && !reg_form.username.$pristine" class="help-block">Username is required.</p>
+  				</div>
+
+
+  				<!-- PASSWORD -->
+  				<div class="form-group  col-lg-6 inner-addon left-addon " ng-class="{ 'has-error' : reg_form.password.$invalid && !reg_form.password.$pristine }">
+            <i class="glyphicon glyphicon-lock"></i>
+  					<input type="password" name="password" class="form-control" ng-model="password" ng-minlength="8" ng-maxlength="15" placeholder="Password" required>
+            <p ng-show="reg_form.password.$error.minlength" class="help-block">Password too short.</p>
+            <p ng-show="reg_form.password.$error.maxlength" class="help-block">Password too long.</p>
+            <p ng-show="reg_form.password.$error.required && !reg_form.password.$pristine" class="help-block">Password is required.</p>
+  				</div>
+
+  				 <!-- CONFIRM PASSWORD -->
+  				<div class="form-group  col-lg-6 inner-addon left-addon " ng-class="{ 'has-error' : reg_form.ConfPass.$invalid && !reg_form.ConfPass.$pristine }">
+            <i class="glyphicon glyphicon-lock"></i>
+  					<input type="password" name="ConfPass" class="form-control" ng-model="ConfPass" placeholder="Confirm Password" required>
+            <p ng-show="reg_form.ConfPass.$error.required && !reg_form.ConfPass.$pristine" class="help-block">Confirmation of password is required.</p>
+  				</div>
+
+          <!-- BUTTON -->
+         <div class="form-group  col-lg-6 pull-right" id="btn2">
+
+           <a href="#/home"><b>Already have an account?</b></a>
+           <input type="submit" name="btnlogin" class="btn btn-primary" value="SUBMIT" ng-disabled="reg_form.$invalid">
+           <input type="reset" name="btnClear" class="btn btn-default" value="RESET">
+
+         </div>
+
+  			</form>
+      </div>
+      <!-- end form wrapper -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
 </div>
-<div id="sign_con">
-    <div id="lms_logo">
-      <img src="assets\defaults\logo.png" id="lg" />
-    </div>
-    <div id="sign">
-      <h1>SIGN UP</h1>
-    </div>
-  </div>
-
-  <div class="container">
-
-<!-- start form -->
-  <form  class="form-horizontal" action="register.php"method="post"  name="reg_form">
-
-  <div class="form-group">
-    <label class="control-label col-lg-2">Firstname: </label>
-    <div class="col-lg-4">
-      <input type="text" name="Fname" class="form-control" placeholder="Firstname" ng-model="firstname">
-    </div>
-      <label class="control-label col-lg-2">Lastname: </label>
-    <div class="col-lg-4">
-      <input type="text" name="Lname" class="form-control" placeholder="Lastname" ng-model="lastname">
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <label class="control-label col-lg-2">E-mail Address: </label>
-    <div class="col-lg-4">
-      <input type="text" name="Email" class="form-control" placeholder="Email" ng-model="email">
-    </div>
-    <label class="control-label col-lg-2">Gender: </label>
-    <div class="col-lg-4">
-      Male<input type="radio" name="Gend" value="male" checked="checked" id="rad1" ng-model="gender">
-      Female<input type="radio" name="Gend" value="female" id="rad2" ng-model="gender">
-    </div>
-  </div>
-
-
-  <div id="line2">
-
-  </div>
-
-<!-- question -->
-  <div class="form-group">
-    <label class="control-label col-lg-2">Secret question: </label>
-    <div class="col-lg-4">
-      <select  name="scrtQuestion1" class="form-control" ng-model="quest1">
-        <option value="none" selected>Select first question</option>
-        <option value="Mother's maiden name">Mother's maiden name</option>
-        <option value="Favorite color">Favorite color</option>
-        <option value="Favorite sport">Favorite sport</option>
-      </select>
-    </div>
-    <label class="control-label col-lg-2">Secret question: </label>
-    <div class="col-lg-4">
-      <select  name="scrtQuestion2" class="form-control" ng-model="quest2">
-        <option value="none" selected>Select second question</option>
-        <option value="Mother's maiden name">Mother's maiden name</option>
-        <option value="Favorite color">Favorite color</option>
-        <option value="Favorite sport">Favorite sport</option>
-      </select>
-    </div>
-  </div>
-
-<!-- answer -->
-  <div class="form-group">
-    <label class="control-label col-lg-2">Secret Answer: </label>
-    <div class="col-lg-4">
-      <input type="text" name="scrtAns1" class="form-control" placeholder="Secret answer" ng-model="ans1">
-    </div>
-    <label class="control-label col-lg-2">Secret Answer: </label>
-    <div class="col-lg-4">
-      <input type="text" name="scrtAns2" class="form-control" placeholder="Secret answer" ng-model="ans2">
-    </div>
-  </div>
-
-  <div id="line3">
-
-  </div>
-
-  <div class="form-group">
-    <label class="control-label col-lg-2">Username: </label>
-    <div class="col-lg-4">
-      <input type="text" name="Username" class="form-control" placeholder="Username" ng-model="username" required>
-      <span ng-show="reg_form.username.$error.required">Username is required</span>
-    </div>
-    <label class="control-label col-lg-2">Usertype: </label>
-    <div class="col-lg-4">
-      Teacher<input type="radio" name="type" value="teacher" checked="checked" id="rad3" ng-model="usertype">
-      Student<input type="radio" name="type" value="student" id="rad4">
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <label class="control-label col-lg-2">Password: </label>
-    <div class="col-lg-4">
-      <input type="Password" name="Password" class="form-control" placeholder="Password" ng-model="password">
-    </div>
-    <label class="control-label col-lg-2">Confirm Password: </label>
-    <div class="col-lg-4">
-      <input type="Password" name="ConfPass" class="form-control" placeholder="Confirm the password" ng-model="confirm">
-    </div>
-  </div>
-
-
-  <div class="form-group col-lg-8" id="btn">
-    <label class="pull-right">
-      <a href="#/home">Already have an account</a>
-      <button class="btn btn-success" name="btnSubmit" type="submit" style="width: 100px;">Submit</button>
-      <button class="btn btn-warning" name="btnClear" type="reset" style="width: 100px;">Clear</button>
-    </div>
-  </form>
-</div>
+<!-- end container-fluid -->

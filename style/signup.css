@@ -1,92 +1,63 @@
-#line
-{
-  overflow: hidden;
-  background-color: #eaeaea;
-}
-#sign
-{
-  width: 1375px;
-  height: 715px;
-  margin-top: -10px;
-  margin-left: -10px;
-}
+#row
+  {
+    background: -webkit-linear-gradient(to right, #267bb5, #f6f1d3);
+    background:         -webkit-linear-gradient(left, #267bb5, #f6f1d3);
+    background:         linear-gradient(to right, #267bb5, #f6f1d3);
+    width: auto;
+    height: 70px;
+    padding-left: 50px;
+  }
+  span
+  {
+    font-size: 20px;
+  }
+  h1
+  {
+    color: white;
+  }
+  .container
+  {
+    padding-top: 20px;
+    margin: auto;
+  }
 
-#form
-{
-  width: 600px;
-  margin-top:-500px;
+  .inner-addon
+  {
+    position: relative;
+  }
+  .inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+  }
+  .left-addon .glyphicon  { left:  15px;}
+  .right-addon .glyphicon { right: 0px;}
+  .left-addon input  { padding-left:  30px; }
+  .right-addon input { padding-right: 30px; }
+  #btn
+  {
+    margin-top: 20px;
+  }
 
-}
-#lg
-{
-  width: 130px;
-  height: 130px;
-  margin-top: -85px;
-  margin-left: 200px;
-}
-#sign
-{
-  margin-top: -110px;
-  margin-left: 350px;
-  color: white;
-}
-.container
-{
-  margin-top: -630px;
-  margin-left: 200px;
-  width: 1000px;
-  color: black;
-}
-#line
-{
-  width: 1000px;
-  height: 50px;
-  background-color: gray;
-  margin-left: 200px;
-  margin-top: 50px;
-}
-#line2
-{
-  width: 1000px;
-  height: 5px;
-  background-color: gray;
-  margin-left: -15px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-#line3
-{
-  width: 1000px;
-  height: 5px;
-  background-color: gray;
-  margin-left: -15px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-#btn
-{
-  margin-left: 338px;
-  margin-top: 30px;
-}
-#rad1
-{
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-#rad2
-{
-  margin-top: 10px;
-  margin-left: 10px;
-}
-#rad3
-{
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-#rad4
-{
-  margin-top: 10px;
-  margin-left: 10px;
-}
+  #btn2 a{
+    margin-top: 20px;
+    padding: 20px;
+  }
+  #sep
+  {
+    background: -webkit-linear-gradient(to right, #267bb5, #f6f1d3);
+    background:         -webkit-linear-gradient(left, #267bb5, #f6f1d3);
+    background:         linear-gradient(to right, #267bb5, #f6f1d3);
+    width: 175%;
+    padding-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  #row2
+  {
+    background: -webkit-linear-gradient(to right, #267bb5, #f6f1d3);
+    background:         -webkit-linear-gradient(left, #267bb5, #f6f1d3);
+    background:         linear-gradient(to right, #267bb5, #f6f1d3);
+    width: auto;
+    height: 70px;
+  }

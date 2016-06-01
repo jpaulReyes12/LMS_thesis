@@ -12,7 +12,7 @@
           templateUrl: 'view/home.html',
           css: 'style/home.css'
         })
-        .when('/student', {
+        .when('/profile', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
           css: 'style/profile.css',

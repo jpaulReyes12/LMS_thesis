@@ -1,106 +1,94 @@
-/* styling */
-
-body
+/*styling*/
+.row
 {
-  /*overflow: hidden;*/
-  background-image: url("../assets/defaults/logincover.jpg");
-  background-size: cover;
-
+  /*background-color: rgb(39, 38, 98);*/
+  background: -webkit-linear-gradient(to top, #5a77b6, #0d2352);
+  background:         -webkit-linear-gradient(to top, #5a77b6, #0d2352);
+  background:         linear-gradient(to top, #5a77b6, #0d2352);
+  width: auto;
+  height: 280px;
 }
-#logo
+h1
 {
-  margin-top: 15px;
-  margin-left: 30px;
-}
-#lg
-{
-  width: 200px;
-  height: 200px;
-}
-#slogo
-{
-  margin-top: -135px;
-  margin-left: 280px;
-
-}
-#slg
-{
-  width: 900px;
-  height: 70px;
-}
-#lms
-{
-  margin-top: 30px;
-  margin-left: 625px;
-}
-#lm
-{
-  width: 100px;
-  height: 100px;
-}
-
-#logform
-{
-  width: 500px;
-  height: 300px;
-  margin-top: 20px;
-  margin-left: 420px;
-
-}
-#pass
-{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-#span1
-{
-  margin-top: 10px;
-  margin-left: 25px;
   color: white;
-}
-#span2
-{
-  margin-top: 20px;
-  margin-left: 25px;
-  color: white;
-
+  font-family: "Times New Roman";
 }
 #login
 {
+  color:rgb(50, 54, 133);
+  font-family: Arial;
+
+}
+#title
+{
+    margin-top: 50px;
+}
+#row2
+{
+  /*background: #cbe2c1;*/
+  background: -webkit-linear-gradient(to right, #a1bed2, #f6f1d3);
+  background:         -webkit-linear-gradient(left, #a1bed2, #f6f1d3);
+  background:         linear-gradient(to right, #a1bed2, #f6f1d3);
+  width: auto;
+  height: 340px;
+}
+#footer
+{
+  background: -webkit-linear-gradient(to bottom, #5a77b6, #0d2352);
+  background:         -webkit-linear-gradient(to bottom, #5a77b6, #0d2352);
+  background:         linear-gradient(to bottom, #5a77b6, #0d2352);
+  width: auto;
+  height: 95px;
+}
+img
+{
+  width: 150px;
+  height: 150px;
+  margin-bottom: -20px;
+  margin-top: 5px;
+}
+a,h2
+{
   color: white;
-  margin-left: 195px;
-  margin-bottom: 20px;
+  text-decoration: none;
+  display: inline;
+  font-family: "Times New Roman";
+  font-size: 20px;
+  /*margin-top: 60px;*/
 }
-#btn
+h2
 {
-  margin-left: 98px;
-  background-color: #f1d38c;
-  border-color: #f1d38c;
-  width: 387px;
-}
-#btn:hover
-{
-  background-color: #f2cb6c;
+  padding-left: 20px;
+  padding-right: 20px;
+
 }
 #down
 {
-  margin-top: 285px;
-  margin-left: 170px;
-
+  margin-top: 30px;
 }
-a, #separator
+.container
 {
-  color: white;
-  display: inline;
-  text-decoration: none;
+  /*margin: auto;*/
+  /*width: 400px;*/
 }
-a:hover
+form
 {
-  color: #a09d9d;
+  padding-top: 10px;
 }
-#separator
+.btn
 {
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 70px;
+  width: 100%;
 }
+.inner-addon
+{
+  position: relative;
+}
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }

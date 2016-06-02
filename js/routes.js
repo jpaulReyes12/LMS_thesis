@@ -70,6 +70,15 @@
           ]
           // TODO: finish groups page
         })
+        .when('/forum_home', {
+          title: 'Latest Forum Topics',
+          templateUrl: 'view/forum_home.html',
+          css: [
+            {href: 'style/forum_home.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+
+        })
         .otherwise({
           redirectTo: '/'
         })

@@ -1,0 +1,45 @@
+p
+{
+  text-align: justify;
+  text-indent: 60px;
+}
+.panel-heading
+{
+  background: -webkit-linear-gradient(to right, #267bb5, #f6f1d3);
+  background: -webkit-linear-gradient(left, #267bb5, #f6f1d3);
+  background: linear-gradient(to right, #267bb5, #f6f1d3);
+}
+textarea
+{
+  padding: 10px;
+  resize: none;
+  height: 100px;
+  overflow-y: auto;
+}
+img
+{
+  /*width: 30px;
+  height: 30px;*/
+}
+.nest
+{
+  margin-left: 50px;
+}
+
+body{
+  /*background-color: rgba(159, 222, 253, 0.4);*/
+}
+
+hr{
+  height:1px;
+  background-color:rgb(249,249,249);
+}
+
+.forum_wrapper p{
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.comments p{
+  font-size: 14px;
+}

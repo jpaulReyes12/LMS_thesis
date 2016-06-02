@@ -5,7 +5,7 @@
 <div class="container-fluid main-content">
 
 
-  <div class="col-md-3 pull-right inner-addon right-addon">
+  <div class="col-md-3 col-xs-12 pull-right inner-addon right-addon">
     <i class="fa fa-search" aria-hidden="true"></i>
     <input type="text" name="search_groups" value="" class="form-control" placeholder="Search">
   </div>
@@ -62,13 +62,19 @@
       <h3>Group</h4>
       <small>Description</small>
     </div>
+    <div class="pull-left col-md-3 col-xs-12 group-item">
+      <button class="btn btn-danger btn-sm pull-right">Leave</button>
+      <h3>Group</h4>
+      <small>Description</small>
+    </div>
   <!-- </div> -->
+  <button class="btn btn-info right-distance" id="btnJoinGrp" onclick="location.href = '#/home';" >
+    Join more groups
+  </button>
 </div>
 
-<button class="btn btn-info right-distance" id="btnJoinGrp" onclick="location.href = '#/home';" >
-  Join more groups
-</button>
 
+<section ng-include src="'components/partials/footer_def.html'"></section>
 <!-- <nav>
   <ul class="pagination">
     <li>

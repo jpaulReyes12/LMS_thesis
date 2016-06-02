@@ -74,11 +74,19 @@
           title: 'Latest Forum Topics',
           templateUrl: 'view/forum_home.html',
           css: [
-            {href: 'style/forum_home.css', preload: true},
+            {href: 'style/forum/forum_home.css', preload: true},
             {href:'style/profile.css', preload: true}
-          ],
-
+          ]
         })
+        .when('/forum_post', {
+          title: 'Forum',
+          templateUrl: 'view/forum_post.html',
+          css: [
+            {href: 'style/forum/forum_post.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ]
+        })
+
         .otherwise({
           redirectTo: '/'
         })

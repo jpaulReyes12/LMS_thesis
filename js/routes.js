@@ -41,7 +41,7 @@
                  }]
               }
         })
-        .when('/class_dashbord', {
+        .when('/class_dashboard', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classDash.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
@@ -51,7 +51,7 @@
                  }]
               }
         })
-        .when('/class_dashbord/class_record', {
+        .when('/class_dashboard/class_record', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],

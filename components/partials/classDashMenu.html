@@ -1,7 +1,7 @@
 <div class="panel-body">
   <!-- MENU ICON -->
 	<ul class="nav nav-pills nav-stacked" role="tablist">
-		<li id="showLeft"><a href=""><center><span class="glyphicon glyphicon-menu-hamburger"></span></center></a></li>
+		<li id="showLeft"><a href="" onclick="toggleMenuDash()"><center><span class="glyphicon glyphicon-menu-hamburger"></span></center></a></li>
   </br><li><a href="#/teacher_dash"><center><span class="glyphicon glyphicon-home"></span></center></a></li>
 		<li><a href=""><center><span class="glyphicon glyphicon-list-alt"></span></center></a></li>
 		<li><a href=""><center><span class="glyphicon glyphicon-wrench"></span></center></a></li>
@@ -31,43 +31,48 @@
 
 
 <script>
-	var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-		showLeft = document.getElementById( 'showLeft' ),
-		body = document.body;
+		var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+		  showLeft = document.getElementById( 'showLeft' ),
+		  body = document.body;
 
-	showLeft.onclick = function() {
-		classie.toggle( this, 'active' );
-		classie.toggle( menuLeft, 'cbp-spmenu-open' );
-		disableOther( 'showLeft' );
-	};
-
-	function disableOther( button ) {
-		if( button !== 'showLeft' ) {
-			classie.toggle( showLeft, 'disabled' );
-		}
-		}
-
-    var menuLeft2 = document.getElementById( 'cbp-spmenu-s2' ),
-			create = document.getElementById( 'create' ),
-			body = document.body;
-
-	    create.onclick = function() {
-			classie.toggle( this, 'active' );
-			classie.toggle( menuLeft2, 'cbp-spmenu-open' );
-			disableOther( 'create' );
-		};
+			function toggleMenuDash(){
+				<!-- FIX: toggle -->
+				showLeft.onclick = function() {
+					classie.toggle( this, 'active' );
+					classie.toggle( menuLeft, 'cbp-spmenu-open' );
+					disableOther( 'showLeft' );
+					console.log('menu clicked');
+				};
+			}
 
 		function disableOther( button ) {
-			if( button !== 'create' ) {
-				classie.toggle( create, 'disabled' );
-			}
-			}
+		  if( button !== 'showLeft' ) {
+		    classie.toggle( showLeft, 'disabled' );
+		  }
+		  }
 
-      $('#showLeft').click(function(){
-        $('#cbp-spmenu-s2').hide();
-      })
+		  var menuLeft2 = document.getElementById( 'cbp-spmenu-s2' ),
+		    create = document.getElementById( 'create' ),
+		    body = document.body;
 
-      $('#create').click(function(){
-        $('#cbp-spmenu-s2').show();
-      })
+		    create.onclick = function() {
+		    classie.toggle( this, 'active' );
+		    classie.toggle( menuLeft2, 'cbp-spmenu-open' );
+		    disableOther( 'create' );
+		  };
+
+		  function disableOther( button ) {
+		    if( button !== 'create' ) {
+		      classie.toggle( create, 'disabled' );
+		    }
+		    }
+
+		    $('#showLeft').click(function(){
+		      $('#cbp-spmenu-s2').hide();
+		    })
+
+		    $('#create').click(function(){
+		      $('#cbp-spmenu-s2').show();
+		    })
+
 </script>

@@ -3,13 +3,13 @@
     <h1>SIGN UP <span class="glyphicon glyphicon-hand-down"></span></h1>
   </div>
 
-  <div class="container " ng-app="lmsApp" ng-controller="signupCtrl">
+  <div class="container " >
   	<div class="row">
 
   		<div class="col-sm-12" >
   			<!-- FORM ============ -->
 
-  			<form role="form" name="reg_form" ng-submit="submitForm()" novalidate>
+  			<form role="form" name="reg_form"  novalidate>
 
   				<!-- FIRSTNAME -->
   				<div class="form-group col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.firstname.$invalid && !reg_form.firstname.$pristine }">
@@ -26,12 +26,12 @@
   				</div>
 
   				<!-- EMAIL -->
-  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.email.$invalid && !reg_form.email.$pristine }">
+  				<!-- <div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.email.$invalid && !reg_form.email.$pristine }">
             <i class="glyphicon glyphicon-envelope"></i>
   					<input type="email" name="email" class="form-control" ng-model="email" placeholder="Email" required>
             <p ng-show="reg_form.email.$invalid && !reg_form.email.$pristine" class="help-block">Email is invalid.</p>
-            <!-- <p ng-show="reg_form.email.$error.required && !reg_form.email.$pristine" class="help-block">Email is required.</p> -->
-  				</div>
+            <p ng-show="reg_form.email.$error.required && !reg_form.email.$pristine" class="help-block">Email is required.</p>
+  				</div> -->
   				 <!-- GENDER -->
   				<div class="form-group  col-lg-6" >
             <label for="gender">Gender:&nbsp</label>
@@ -89,7 +89,7 @@
           <!-- USERTYPE -->
   				<div class="form-group  col-lg-6" >
 
-            <label for="gender">Usertype:&nbsp</label>
+            <label for="Usertype">Usertype:&nbsp</label>
             Teacher&nbsp<input type="radio" name="type" value="male" checked="checked" ng-model="type" required>
             Student&nbsp<input type="radio" name="type" value="female" ng-model="type" required>
 
@@ -98,7 +98,7 @@
           <!-- USERNAME -->
   				<div class="form-group col-lg-6 inner-addon left-addon " ng-class="{ 'has-error' : reg_form.username.$invalid && !reg_form.username.$pristine }">
             <i class="glyphicon glyphicon-pencil"></i>
-  					<input type="text" name="username" class="form-control" ng-model="username" ng-minlength="5" ng-maxlength="10" placeholder="Username" required>
+  					<input type="text" name="username" class="form-control" ng-model="username" ng-minlength="6" ng-maxlength="16" placeholder="Username" required>
             <p ng-show="reg_form.username.$error.minlength" class="help-block">Username too short.</p>
             <p ng-show="reg_form.username.$error.maxlength" class="help-block">Username too long.</p>
             <p ng-show="reg_form.username.$error.required && !reg_form.username.$pristine" class="help-block">Username is required.</p>
@@ -108,7 +108,7 @@
   				<!-- PASSWORD -->
   				<div class="form-group  col-lg-6 inner-addon left-addon " ng-class="{ 'has-error' : reg_form.password.$invalid && !reg_form.password.$pristine }">
             <i class="glyphicon glyphicon-lock"></i>
-  					<input type="password" name="password" class="form-control" ng-model="password" ng-minlength="8" ng-maxlength="15" placeholder="Password" required>
+  					<input type="password" name="password" class="form-control" ng-model="password" ng-minlength="8" ng-maxlength="16" placeholder="Password" required>
             <p ng-show="reg_form.password.$error.minlength" class="help-block">Password too short.</p>
             <p ng-show="reg_form.password.$error.maxlength" class="help-block">Password too long.</p>
             <p ng-show="reg_form.password.$error.required && !reg_form.password.$pristine" class="help-block">Password is required.</p>
@@ -125,7 +125,7 @@
          <div class="form-group  col-lg-6 pull-right" id="btn2">
 
            <a href="#/home"><b>Already have an account?</b></a>
-           <input type="submit" name="btnlogin" class="btn btn-primary" value="SUBMIT" ng-disabled="reg_form.$invalid">
+           <button type="submit" name="btnlogin" class="btn btn-success" ng-disabled="reg_form.$invalid" ng-click="submitForm(reg_form.$valid)">SUBMIT</button>
            <input type="reset" name="btnClear" class="btn btn-default" value="RESET">
 
          </div>

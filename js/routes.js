@@ -7,11 +7,13 @@
           templateUrl: 'view/home.html',
           css: 'style/home.css'
         })
+
         .when('/home', {
           title: 'STC Learning Management System',
           templateUrl: 'view/home.html',
           css: 'style/home.css'
         })
+
         .when('/profile', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
@@ -22,6 +24,7 @@
                  }]
               }
         })
+
         .when('/about', {
           title: 'About Us',
           templateUrl: 'view/about.html',
@@ -30,6 +33,7 @@
             {href: 'style/aboutus.css', preload: true}
           ]
         })
+
         .when('/signup', {
           title: 'Sign Up',
           templateUrl: 'view/signup.html',
@@ -41,6 +45,7 @@
                  }]
               }
         })
+
         .when('/class_dashboard', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classDash.html',
@@ -51,19 +56,33 @@
                  }]
               }
         })
+
         .when('/class_dashboard/class_recordList', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
+                    return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
                  }]
               }
         })
+
         .when('/class_dashboard/class_recordThumb', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord2.html',
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
+          // 'style/classDash/classThumb.css'
+          resolve: {
+                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
+                 }]
+              }
+        })
+
+        .when('/class_dashboard/resources', {
+          title: 'View your resources',
+          templateUrl: 'view/classDash/classResources.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
           // 'style/classDash/classThumb.css'
           resolve: {
@@ -72,6 +91,7 @@
                  }]
               }
         })
+
         .when('/group', {
           title: 'Your Groups',
           templateUrl: 'view/group.html',
@@ -79,8 +99,8 @@
             {href:'style/group.css', preload: true},
             {href:'style/profile.css', preload: true}
           ]
-          // TODO: finish groups page
         })
+
         .when('/forum_home', {
           title: 'Latest Forum Topics',
           templateUrl: 'view/forum_home.html',
@@ -89,6 +109,7 @@
             {href:'style/profile.css', preload: true}
           ]
         })
+
         .when('/forum_post', {
           title: 'Forum',
           templateUrl: 'view/forum_post.html',
@@ -101,6 +122,8 @@
         .otherwise({
           redirectTo: '/'
         })
+
+
     });
 
 

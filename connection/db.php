@@ -1,14 +1,20 @@
 <?php
+  $servername = "localhost";
+  $username = "root";
+  $password = "12345";
+  $db = "learning_mgt";
 
-require 'vendor/autoload.php';
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $db);
 
-$servername = "localhost";
-$username = "root";
-$password = "12345";
-$db_name = "learning_mgt";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $db_name);
-
+  // Check connection
+  if ($conn->connect_error) {
+    die('Connect Error (' . $mysqli->connect_errno . ') '
+            . $mysqli->connect_error);
+  }
+  else {
+    # code...
+    echo "Connected successfully";
+  }
 
 ?>

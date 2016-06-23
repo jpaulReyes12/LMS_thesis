@@ -48,7 +48,7 @@
     background: -webkit-linear-gradient(to right, #267bb5, #f6f1d3);
     background:         -webkit-linear-gradient(left, #267bb5, #f6f1d3);
     background:         linear-gradient(to right, #267bb5, #f6f1d3);
-    width: 175%;
+    /* width: 175%; */
     padding-top: 20px;
     margin-top: 10px;
     margin-bottom: 20px;

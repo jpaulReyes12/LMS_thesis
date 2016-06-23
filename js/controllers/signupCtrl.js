@@ -1,52 +1,59 @@
-// angular.module('lmsApp')
-//   .controller('signupCtrl', ['$scope', function($scope) {
-//     $scope.greeting = 'Hola!';
-//   }]);
+
+  var lmsApp=angular.module('lmsApp',[]);
+
+    // create angular controller
+
+    lmsApp.controller('signupCtrl', function($scope, $http){
 
 
-var lmsApp=angular.module('lmsApp',[]);
-
-  // create angular controller
-
-
-  lmsApp.controller('signupCtrl', function($scope, $http, $location){
-
-    //store models from form into info{} object
-    var info = {
-      firstname:  $scope.firstname,
-      lastname:   $scope.lastname,
-      gender:     $scope.Gend,
-      question1:  $scope.scrtQuestion1,
-      question2:  $scope.scrtQuestion2,
-      ans1:       $scope.scrtans1,
-      ans2:       $scope.scrtans2,
-      type:       $scope.type,
-      username:   $scope.username,
-      password:   $scope.password
-    };
+      $scope.firstname = "Franchette";
+      $scope.lastname = "Camoro";
+      $scope.Gend = "female";
+      $scope.scrtQuestion1 = "Mother's maiden name";
+      $scope.scrtans1 = "Geniza Sotto";
+      $scope.scrtQuestion2 = "Favorite color";
+      $scope.scrtans2 = "Blue";
+      $scope.utype = "student";
+      $scope.username = "xyronna";
+      $scope.password = "Franchette";
+      $scope.ConfPass = "Franchette";
 
 
-    // function to submit the form
-    $scope.submitForm=function(){
-
-      // check to make sure the form is completely valid
-      if($scope.reg_form.$valid){
-
-        $http.post('connection/signup.php', {params: info})
-       .then(
-           function(response){
-             // success callback
-             console.log(response);
-             alert("successfully registered");
-             $location.path('/home');
-           },
-           function(response){
-             alert("error");
-           }
-        );
-
+      var form_data = {
+        'firstname':$scope.firstname,
+        'lastname':$scope.lastname,
+        'Gend':$scope.Gend,
+        'scrtQuestion1':$scope.scrtQuestion1,
+        'scrtans1':$scope.scrtans1,
+        'scrtQuestion2':$scope.scrtQuestion2,
+        'scrtans2':$scope.scrtans2,
+        'utype':$scope.utype,
+        'username':$scope.username,
+        'password':$scope.password,
+        'ConfPass':$scope.ConfPass
       }
-    };
+
+      // function to submit the form
+      $scope.submitForm=function(){
+        // check to make sure the form is completely valid
+        if($scope.reg_form.$valid){
+
+          $http.post('connection/signup.php', form_data)
+          .then(
+            // Success callback
+            function(data, status, headers, config){
+            console.log("inserted successfully");
+            alert("successfully registered");
+
+            },
+            // error callback
+            function(response){
+              console.log("error\n" + response);
+            }
+          );
+
+        }
+      };
 
 
-  });
+    });

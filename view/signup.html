@@ -26,12 +26,12 @@
   				</div>
 
   				<!-- EMAIL -->
-  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.email.$invalid && !reg_form.email.$pristine }">
+  				<!-- <div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.email.$invalid && !reg_form.email.$pristine }">
             <i class="glyphicon glyphicon-envelope"></i>
   					<input type="email" name="email" class="form-control" ng-model="email" placeholder="Email" required>
             <p ng-show="reg_form.email.$invalid && !reg_form.email.$pristine" class="help-block">Email is invalid.</p>
-            <!-- <p ng-show="reg_form.email.$error.required && !reg_form.email.$pristine" class="help-block">Email is required.</p> -->
-  				</div>
+            <p ng-show="reg_form.email.$error.required && !reg_form.email.$pristine" class="help-block">Email is required.</p>
+  				</div> -->
   				 <!-- GENDER -->
   				<div class="form-group  col-lg-6" >
             <label for="gender">Gender:&nbsp</label>
@@ -40,7 +40,7 @@
 
   				</div>
 
-          <div class="col-lg-12 pull-left" id="sep">
+          <div class="col-lg-12" id="sep">
             <!-- separator -->
   				</div>
 
@@ -48,7 +48,7 @@
   				<div class="form-group col-lg-6" >
             <label for="scrtQuestion1">Secret Question:</label>
             <select  name="scrtQuestion1" class="form-control" ng-model="scrtQuestion1" required>
-              <option value="none" selected>Select your option</option>
+              <option disabled="disabled" selected="selected">Select your option</option>
               <option value="Mother's maiden name">Mother's maiden name</option>
               <option value="Favorite color">Favorite color</option>
               <option value="Favorite sport">Favorite sport</option>
@@ -60,7 +60,7 @@
   				<div class="form-group  col-lg-6" >
             <label for="scrtQuestion1">Secret Question:</label>
             <select  name="scrtQuestion2" class="form-control" ng-model="scrtQuestion2" required>
-              <option value="none" selected>Select your option</option>
+              <option disabled="disabled" selected="selected">Select your option</option>
               <option value="Mother's maiden name">Mother's maiden name</option>
               <option value="Favorite color">Favorite color</option>
               <option value="Favorite sport">Favorite sport</option>
@@ -89,9 +89,9 @@
           <!-- USERTYPE -->
   				<div class="form-group  col-lg-6" >
 
-            <label for="gender">Usertype:&nbsp</label>
-            Teacher&nbsp<input type="radio" name="type" value="male" checked="checked" ng-model="type" required>
-            Student&nbsp<input type="radio" name="type" value="female" ng-model="type" required>
+            <label >Usertype:&nbsp</label>
+            Teacher&nbsp<input type="radio" name="type" value="teacher" checked="checked" ng-model="utype" required>
+            Student&nbsp<input type="radio" name="type" value="student" ng-model="utype" required>
 
   				</div>
 

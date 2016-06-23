@@ -1,14 +1,19 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "12345";
+  $servername = "localhost";
+  $username = "root";
+  $password = "12345";
+  $db = "learning_mgt";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $db);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
+  // Check connection
+  if ($conn->connect_error) {
+    die('Connect Error (' . $mysqli->connect_errno . ') '
+            . $mysqli->connect_error);
+  }
+  else {
+    # code...
+    echo "Connected successfully";
+  }
 ?>

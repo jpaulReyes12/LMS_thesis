@@ -1,32 +1,35 @@
 <?php
 
+  // mysql_connect("localhost", "root", "12345");
+  // mysql_select_db("learning_mgt");
+
+  require 'db.php';
+
+
   $data = json_decode(file_get_contents("php://input"));
 
-  $firstname = $mysqli -> real_escape_string($data->firstname);
-  $lastname = $mysqli -> real_escape_string($data->lastname);
-  // $email = $mysqli -> real_escape_string($data->email);
-  $Gend = $mysqli -> real_escape_string($data->Gend);
-  $scrtQuestion1 = $mysqli -> real_escape_string($data->scrtQuestion1);
-  $scrtans1 = $mysqli -> real_escape_string($data->scrtans1);
-  $scrtQuestion2 = $mysqli -> real_escape_string($data->scrtQuestion2);
-  $scrtans2 = $mysqli -> real_escape_string($data->scrtans2);
-  $utype = $mysqli -> real_escape_string($data->utype);
-  $username = $mysqli -> real_escape_string($data->username);
-  $password = $mysqli -> real_escape_string($data->password);
-  // $ConfPas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         s = $mysqli -> real_escape_string($data->ConfPass);
+  $firstname = $data->firstname;
+  $lastname = $data->lastname;
+  $Gend = $data->Gend;
+  $scrtQuestion1 = $data->scrtQuestion1;
+  $scrtans1 = $data->scrtans1;
+  $scrtQuestion2 = $data->scrtQuestion2;
+  $scrtans2 = $data->scrtans2;
+  $utype = $data->utype;
+  $username = $data->username;
+  $password = $data->password;
 
-  include 'db.php';
+  //
+  //
+  // $query = 'INSERT INTO user_info("FirstName", "LastName", "User_type", "gender")VALUES("'.$firstname.'","'.$lastname .'","'.$utype.'","'.$Gend.'")';
+  //
+  // $mysql_query($query);
 
-  $query = "INSERT INTO students('FirstName', 'LastName', 'User_type', 'gender')
-    VALUES(?,?,?,?)";
-  $statement = $mysqli->prepare($query);
+  $statement = $db->prepare("INSERT INTO user_info('Firstname', 'LastName', 'User_type', gender)VALUES(?, ?, ?, ?)");
 
-  $statement->bind_param(
-    '$firstname',
-    '$lastname',
-    '$utype',
-    '$Gend'
-  );
+  $statement->bind_param($firstname, $lastname, $utype, $Gend);
 
-  return true;
+  $statement->execute();
+
+  
 ?>

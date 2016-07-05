@@ -5,16 +5,9 @@
   $db = "learning_mgt";
 
   // Create connection
-  $conn = new mysqli($servername, $username, $password, $db);
+  $db = new mysqli($servername, $username, $password, $db);
 
-  // Check connection
-  if ($conn->connect_error) {
-    die('Connect Error (' . $mysqli->connect_errno . ') '
-            . $mysqli->connect_error);
+  if ($db->connect_errno > 0) {
+    die('Unable to connect to database [' . $db->connect_error . ']');
   }
-  else {
-    # code...
-    echo "Connected successfully";
-  }
-
 ?>

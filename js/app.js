@@ -3,6 +3,7 @@
     'ngRoute',
     'ngAnimate',
     'angularCSS',
-    'oc.lazyLoad',
-    'firebase'
+    'oc.lazyLoad'
+    // 'ngMock'
+    // declare dependencies here
   ]);

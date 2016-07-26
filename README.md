@@ -7,10 +7,6 @@ This is a Learning Management System geared which includes test taking, student-
 _____________
 
 * Dependencies found in bower_components. 
-* Utilizes oclazyload and angular-css to lazyload css and javascript files to each route
+* karma and jasmine found in node_modules.
 
-##Main dependencies:
-* Firebase
-* AngularFire
-* angular-route
-* angular-animate
+* Utilizes oclazyload and angular-css to lazyload css and javascript files to each route

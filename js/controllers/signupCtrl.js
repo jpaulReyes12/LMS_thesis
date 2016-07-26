@@ -2,13 +2,12 @@
   var lmsApp=angular.module('lmsApp',[]);
 
     // create angular controller
-    // lmsApp.factory();
-    lmsApp.controller('signupCtrl', function($scope, $firebaseArray){
+
+    lmsApp.controller('signupCtrl', function($scope, $http){
 
 
       $scope.firstname = "Franchette";
       $scope.lastname = "Camoro";
-      $scope.email = "nicole@yahoo.com"
       $scope.Gend = "female";
       $scope.scrtQuestion1 = "Mother's maiden name";
       $scope.scrtans1 = "Geniza Sotto";
@@ -19,30 +18,41 @@
       $scope.password = "Franchette";
       $scope.ConfPass = "Franchette";
 
-      // var ref = firebase.database().ref();
-      // $scope.data = $firebaseArray(ref);
 
 
-      try {
-        var ref = firebase.database().ref("/users");
-        var syncObj = $firebaseObject(ref);
-        syncObj.$bindTo($scope, "data");
 
-        console.log('Everything\'s (I think) ok!');
-      } catch (e) {
-        console.log('Something\'s wrong! ');
+      var form_data = {
+        'firstname':$scope.firstname,
+        'lastname':$scope.lastname,
+        'Gend':$scope.Gend,
+        'scrtQuestion1':$scope.scrtQuestion1,
+        'scrtans1':$scope.scrtans1,
+        'scrtQuestion2':$scope.scrtQuestion2,
+        'scrtans2':$scope.scrtans2,
+        'utype':$scope.utype,
+        'username':$scope.username,
+        'password':$scope.password,
+        'ConfPass':$scope.ConfPass
       }
 
       // function to submit the form
-      $scope.submitForm = function(){
+      $scope.submitForm=function(){
         // check to make sure the form is completely valid
         if($scope.reg_form.$valid){
-          console.log("Submit clicked!");
 
-          // $scope..add({
-          //   firstname: $scope.firstname;
-          // });
+          $http.post('connection/signup.php', form_data)
+          .then(
+            // Success callback
+            function(data, status, headers, config){
+            console.log("inserted successfully");
+            alert("successfully registered");
 
+            },
+            // error callback
+            function(response){
+              console.log("error\n" + response);
+            }
+          );
 
         }
       };

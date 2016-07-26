@@ -1,6 +1,6 @@
 
   angular.module('lmsApp')
-    .config(function($routeProvider, $locationProvider){
+    .config(function($routeProvider){
       $routeProvider
         .when('/', {
           title: 'STC Learning Management System',
@@ -121,9 +121,9 @@
 
         .otherwise({
           redirectTo: '/'
-        });
+        })
 
-      // $locationProvider.html5Mode(true);
+
     });
 
 

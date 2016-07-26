@@ -2,12 +2,13 @@
   var lmsApp=angular.module('lmsApp',[]);
 
     // create angular controller
-
-    lmsApp.controller('signupCtrl', function($scope, $http){
+    // lmsApp.factory();
+    lmsApp.controller('signupCtrl', function($scope, $firebaseArray){
 
 
       $scope.firstname = "Franchette";
       $scope.lastname = "Camoro";
+      $scope.email = "nicole@yahoo.com"
       $scope.Gend = "female";
       $scope.scrtQuestion1 = "Mother's maiden name";
       $scope.scrtans1 = "Geniza Sotto";
@@ -18,51 +19,30 @@
       $scope.password = "Franchette";
       $scope.ConfPass = "Franchette";
 
+      // var ref = firebase.database().ref();
+      // $scope.data = $firebaseArray(ref);
 
-      // var form_data = {
-      //   'firstname':$scope.firstname,
-      //   'lastname':$scope.lastname,
-      //   'Gend':$scope.Gend,
-      //   'scrtQuestion1':$scope.scrtQuestion1,
-      //   'scrtans1':$scope.scrtans1,
-      //   'scrtQuestion2':$scope.scrtQuestion2,
-      //   'scrtans2':$scope.scrtans2,
-      //   'utype':$scope.utype,
-      //   'username':$scope.username,
-      //   'password':$scope.password,
-      //   'ConfPass':$scope.ConfPass
-      // }
+
+      try {
+        var ref = firebase.database().ref("/users");
+        var syncObj = $firebaseObject(ref);
+        syncObj.$bindTo($scope, "data");
+
+        console.log('Everything\'s (I think) ok!');
+      } catch (e) {
+        console.log('Something\'s wrong! ');
+      }
 
       // function to submit the form
-      $scope.submitForm=function(){
+      $scope.submitForm = function(){
         // check to make sure the form is completely valid
         if($scope.reg_form.$valid){
+          console.log("Submit clicked!");
 
-          $http.post('#/connection/signup.php', {
-            'firstname':$scope.firstname,
-            'lastname':$scope.lastname,
-            'Gend':$scope.Gend,
-            'scrtQuestion1':$scope.scrtQuestion1,
-            'scrtans1':$scope.scrtans1,
-            'scrtQuestion2':$scope.scrtQuestion2,
-            'scrtans2':$scope.scrtans2,
-            'utype':$scope.utype,
-            'username':$scope.username,
-            'password':$scope.password,
-            'ConfPass':$scope.ConfPass
-          })
-            .then(
-              //Success callback
-              function (response) {
-                console.log("data inserted.\n" + response);
-                alert("successfully registered" );
-              },
+          // $scope..add({
+          //   firstname: $scope.firstname;
+          // });
 
-              //error callback
-              function (response) {
-                console.log("error \n" + response);
-              }
-            ); //end then
 
         }
       };

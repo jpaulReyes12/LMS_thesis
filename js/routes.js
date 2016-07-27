@@ -1,6 +1,6 @@
 
   angular.module('lmsApp')
-    .config(function($routeProvider, $locationProvider){
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
       $routeProvider
         .when('/', {
           title: 'STC Learning Management System',
@@ -17,12 +17,7 @@
         .when('/profile', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
-          css: 'style/profile.css',
-          resolve: {
-                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({files: ['js/controllers/studentProfileCtrl.js']});
-                 }]
-              }
+          css: 'style/profile.css'
         })
 
         .when('/about', {
@@ -38,12 +33,7 @@
           title: 'Sign Up',
           templateUrl: 'view/signup.html',
           css: 'style/signup.css',
-          controller: 'signupCtrl',
-          resolve: {
-                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({files: ['js/controllers/signupCtrl.js']});
-                 }]
-              }
+          controller: 'signupCtrl'
         })
 
         .when('/class_dashboard', {
@@ -124,7 +114,7 @@
         });
 
       // $locationProvider.html5Mode(true);
-    });
+    }]);
 
 
   angular.module('lmsApp')

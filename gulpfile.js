@@ -28,6 +28,7 @@ gulp.task('styles', function() {
 //watches JS files
 gulp.task('watch', function() {
 	gulp.watch(['js/*.js', 'js/**/*.js'], ['scripts']);
+  gulp.watch('style/sass/*.sass', ['styles']);
 });
 
-gulp.task('default', ['scripts', 'watch']);
+gulp.task('default', ['scripts', 'styles', 'watch']);

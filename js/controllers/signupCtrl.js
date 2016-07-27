@@ -1,9 +1,7 @@
 
-  var lmsApp=angular.module('lmsApp',[]);
+  angular.module('lmsApp')
 
-    // create angular controller
-    // lmsApp.factory();
-    lmsApp.controller('signupCtrl', function($scope, $firebaseArray){
+    .controller('signupCtrl', ['$scope', '$firebaseArray', function($scope, $firebaseArray){
 
 
       $scope.firstname = "Franchette";
@@ -48,4 +46,4 @@
       };
 
 
-    });
+    }]);

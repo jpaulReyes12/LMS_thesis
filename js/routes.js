@@ -3,7 +3,7 @@
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
       $routeProvider
         .when('/', {
-          title: 'STC Learning Management System',
+          title: 'STC Learning Management System',  
           templateUrl: 'view/home.html',
           css: 'style/home.css'
         })

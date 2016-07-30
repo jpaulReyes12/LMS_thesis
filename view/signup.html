@@ -3,138 +3,54 @@
     <h1>SIGN UP <span class="glyphicon glyphicon-hand-down"></span></h1>
   </div>
 
-  <div class="container " >
-  	<div class="row">
-
-  		<div class="col-sm-12" >
-  			<!-- FORM ============ -->
-
-  			<form role="form" name="reg_form"  novalidate>
-
-  				<!-- FIRSTNAME -->
-  				<div class="form-group col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.firstname.$invalid && !reg_form.firstname.$pristine }">
-            <i class="glyphicon glyphicon-user"></i>
-  					<input type="text" name="firstname" class="form-control" ng-model="firstname" placeholder="Firstname" required>
-            <p ng-show="reg_form.firstname.$invalid && !reg_form.firstname.$pristine" class="help-block">Firstname is required.</p>
-  				</div>
-
-  				<!-- LASTNAME -->
-  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.lastname.$invalid && !reg_form.lastname.$pristine }" >
-            <i class="glyphicon glyphicon-user"></i>
-  					<input type="text" name="lastname" class="form-control" ng-model="lastname" placeholder="Lastname" required>
-            <p ng-show="reg_form.lastname.$invalid && !reg_form.lastname.$pristine" class="help-block">Lastname is required.</p>
-  				</div>
-
-  				<!-- EMAIL -->
-  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.email.$invalid && !reg_form.email.$pristine }">
-            <i class="glyphicon glyphicon-envelope"></i>
-  					<input type="email" name="email" class="form-control" ng-model="email" placeholder="Email" required>
-            <p ng-show="reg_form.email.$invalid && !reg_form.email.$pristine" class="help-block">Email is invalid.</p>
-            <p ng-show="reg_form.email.$error.required && !reg_form.email.$pristine" class="help-block">Email is required.</p>
-  				</div>
-
-  				 <!-- GENDER -->
-  				<div class="form-group  col-lg-6" >
-            <label for="gender">Gender:&nbsp</label>
-            Male&nbsp<input type="radio" name="Gend" value="male" checked="checked" ng-model="Gend" required>
-            Female&nbsp<input type="radio" name="Gend" value="female" ng-model="Gend" required>
-
-  				</div>
-
-          <div class="col-lg-12" id="sep">
-            <!-- separator -->
-  				</div>
-
-          <!-- SECRETQUEST1 -->
-  				<div class="form-group col-lg-6" >
-            <label for="scrtQuestion1">Secret Question:</label>
-            <select  name="scrtQuestion1" class="form-control" ng-model="scrtQuestion1" required>
-              <option disabled="disabled" selected="selected">Select your option</option>
-              <option value="Mother's maiden name">Mother's maiden name</option>
-              <option value="Favorite color">Favorite color</option>
-              <option value="Favorite sport">Favorite sport</option>
-           </select>
-
-  				</div>
-
-  				<!-- SECRETQUEST2 -->
-  				<div class="form-group  col-lg-6" >
-            <label for="scrtQuestion1">Secret Question:</label>
-            <select  name="scrtQuestion2" class="form-control" ng-model="scrtQuestion2" required>
-              <option disabled="disabled" selected="selected">Select your option</option>
-              <option value="Mother's maiden name">Mother's maiden name</option>
-              <option value="Favorite color">Favorite color</option>
-              <option value="Favorite sport">Favorite sport</option>
-           </select>
-
-  				</div>
-
-  				<!-- SECRETANS1 -->
-  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.scrtans1.$invalid && !reg_form.scrtans1.$pristine }" >
-            <i class="glyphicon glyphicon-file"></i>
-  					<input type="text" name="scrtans1" class="form-control" ng-model="scrtans1" placeholder="Secret Answer" required="">
-            <p ng-show="reg_form.scrtans1.$invalid && !reg_form.scrtans1.$pristine" class="help-block">Secret Answer is required.</p>
-  				</div>
-  				 <!-- SECRETANS2 -->
-  				<div class="form-group  col-lg-6 inner-addon left-addon" ng-class="{ 'has-error' : reg_form.scrtans2.$invalid && !reg_form.scrtans2.$pristine }">
-            <i class="glyphicon glyphicon-file"></i>
-  					<input type="text" name="scrtans2" class="form-control" ng-model="scrtans2" placeholder="Secret Answer" required="">
-            <p ng-show="reg_form.scrtans2.$invalid && !reg_form.scrtans2.$pristine" class="help-block">Secret Answer is required.</p>
-
-  				</div>
-
-          <div class="col-lg-12" id="sep">
-            <!-- separator -->
-  				</div>
-
-          <!-- USERTYPE -->
-  				<div class="form-group  col-lg-6" >
-            <label >Usertype:&nbsp</label>
-            Teacher&nbsp<input type="radio" name="type" value="teacher" checked="checked" ng-model="utype" required>
-            Student&nbsp<input type="radio" name="type" value="student" ng-model="utype" required>
-
-  				</div>
-
-          <!-- USERNAME -->
-  				<!-- <div class="form-group col-lg-6 inner-addon left-addon " ng-class="{ 'has-error' : reg_form.username.$invalid && !reg_form.username.$pristine }">
-            <i class="glyphicon glyphicon-pencil"></i>
-  					<input type="text" name="username" class="form-control" ng-model="username" ng-minlength="6" ng-maxlength="16" placeholder="Username" required>
-            <p ng-show="reg_form.username.$error.minlength" class="help-block">Username too short.</p>
-            <p ng-show="reg_form.username.$error.maxlength" class="help-block">Username too long.</p>
-            <p ng-show="reg_form.username.$error.required && !reg_form.username.$pristine" class="help-block">Username is required.</p>
-  				</div> -->
-
-
-  				<!-- PASSWORD -->
-  				<div class="form-group  col-lg-6 inner-addon left-addon " ng-class="{ 'has-error' : reg_form.password.$invalid && !reg_form.password.$pristine }">
-            <i class="glyphicon glyphicon-lock"></i>
-  					<input type="password" name="password" class="form-control" ng-model="password" ng-minlength="8" ng-maxlength="16" placeholder="Password" required>
-            <p ng-show="reg_form.password.$error.minlength" class="help-block">Password too short.</p>
-            <p ng-show="reg_form.password.$error.maxlength" class="help-block">Password too long.</p>
-            <p ng-show="reg_form.password.$error.required && !reg_form.password.$pristine" class="help-block">Password is required.</p>
-  				</div>
-
-  				 <!-- CONFIRM PASSWORD -->
-  				<div class="form-group  col-lg-6 inner-addon left-addon " ng-class="{ 'has-error' : reg_form.ConfPass.$invalid && !reg_form.ConfPass.$pristine }">
-            <i class="glyphicon glyphicon-lock"></i>
-  					<input type="password" name="ConfPass" class="form-control" ng-model="ConfPass" placeholder="Confirm Password" required>
-            <p ng-show="reg_form.ConfPass.$error.required && !reg_form.ConfPass.$pristine" class="help-block">Confirmation of password is required.</p>
-  				</div>
-
-          <!-- BUTTON -->
-         <div class="form-group  col-lg-6 pull-right" id="btn2">
-
-           <a href="#/home"><b>Already have an account?</b></a>
-           <button type="submit" name="btnlogin" class="btn btn-success" ng-disabled="reg_form.$invalid" ng-click="submitForm(reg_form.$valid)">SUBMIT</button>
-           <input type="reset" name="btnClear" class="btn btn-default" value="RESET">
-
-         </div>
-
-  			</form>
-      </div>
-      <!-- end form wrapper -->
+  <div class="container col-md-6 col-md-offset-3" >
+    <div class="col-md-12">
+      <button class="btn btn-facebook" type="button" name="fbLogin" ng-click="LoginFacebook()">Login with Facebook</button>
+      <button class="btn btn-google" type="button" name="fbLogin" ng-click="LoginGoogle()">Login with google</button>
     </div>
-    <!-- end row -->
+    <div class="col-md-12" id="sep"></div>
+
+    <form role="form" name="reg_form" class="col-md-12" novalidate>
+
+      <!-- EMAIL -->
+      <div class="form-group inner-addon left-addon"
+      ng-class="{ 'has-error' : reg_form.email.$invalid && !reg_form.email.$pristine }">
+        <i class="glyphicon glyphicon-envelope"></i>
+        <input type="email" name="email" class="form-control" ng-model="formInfo.email" placeholder="Email" required>
+        <p ng-show="reg_form.email.$invalid && !reg_form.email.$pristine" class="help-block">Email is invalid.</p>
+        <p ng-show="reg_form.email.$error.required && !reg_form.email.$pristine" class="help-block">Email is required.</p>
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="form-group inner-addon left-addon "
+      ng-class="{ 'has-error' : reg_form.password.$invalid && !reg_form.password.$pristine }">
+        <i class="glyphicon glyphicon-lock"></i>
+        <input type="password" name="password" class="form-control" ng-model="formInfo.password" ng-minlength="8" ng-maxlength="16" placeholder="Password" required>
+        <p ng-show="reg_form.password.$error.minlength" class="help-block">Password too short.</p>
+        <p ng-show="reg_form.password.$error.maxlength" class="help-block">Password too long.</p>
+        <p ng-show="reg_form.password.$error.required && !reg_form.password.$pristine" class="help-block">Password is required.</p>
+      </div>
+
+       <!-- CONFIRM PASSWORD -->
+      <div class="form-group inner-addon left-addon "
+      ng-class="{ 'has-error' : reg_form.ConfPass.$invalid && !reg_form.ConfPass.$pristine }">
+        <i class="glyphicon glyphicon-lock"></i>
+        <input type="password" name="ConfPass" class="form-control" ng-model="formInfo.ConfPass" ng-pattern="formInfo.password" placeholder="Confirm Password" required>
+        <p ng-show="reg_form.ConfPass.$error.required && !reg_form.ConfPass.$pristine" class="help-block">Confirmation of password is required.</p>
+        <p ng-show="reg_form.ConfPass.$invalid && !reg_form.ConfPass.$pristine" class="help-block">Passords do not match!</p>
+      </div>
+
+      <!-- BUTTON -->
+       <div id="btn2">
+         <a href="#/home" class="pull-left">
+           <b>Already have an account?</b>
+         </a>
+         <button type="submit" name="btnlogin" class="btn btn-success pull-right" ng-disabled="reg_form.$invalid" ng-click="submitForm(formInfo)">SUBMIT</button>
+       </div>
+
+
+    </form>
+
   </div>
   <!-- end container -->
 </div>

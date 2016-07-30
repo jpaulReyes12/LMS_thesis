@@ -1,64 +1,57 @@
 
   angular.module('lmsApp')
 
-    .controller('signupCtrl', ['$scope', '$firebaseArray', '$firebaseAuth', function($scope, $firebaseArray, $firebaseAuth){
+    .controller('signupCtrl', ['$scope', '$firebaseArray', '$firebaseAuth', '$location', function($scope, $firebaseArray, $firebaseAuth, $location){
 
-
-      $scope.firstname = "Franchette";
-      $scope.lastname = "Camoro";
-      $scope.email = "nicole@yahoo.com"
-      $scope.Gend = "female";
-      $scope.scrtQuestion1 = "Mother's maiden name";
-      $scope.scrtans1 = "Geniza Sotto";
-      $scope.scrtQuestion2 = "Favorite color";
-      $scope.scrtans2 = "Blue";
-      $scope.utype = "student";
-      $scope.username = "xyronna";
-      $scope.password = "Franchette";
-      $scope.ConfPass = "Franchette";
-
-
-      $scope.authObj = $firebaseAuth();
+      // console.log($scope.formInfo.email);
+      var authObj = $firebaseAuth();
       var ref = firebase.database().ref("/users");
-      var usersInfo = $firebaseArray(ref);
+      var userInfo = $firebaseArray(ref);
 
-      console.log($firebaseAuth());
+      $scope.LoginFacebook = function() {
+
+        authObj.$signInWithPopup("facebook").then(function(result) {
+          console.log("Signed in as:", result);
+          $location.path('/group');
+        }).catch(function(error) {
+          console.error("Authentication failed:", error.message);
+        });
+
+      };
+
+      $scope.LoginGoogle = function() {
+        authObj.$signInWithPopup("google").then(function(result) {
+          console.log("Signed in as:", result);
+          $location.path('/group');
+        }).catch(function(error) {
+          console.error("Authentication failed:", error.message);
+        });
+      }
+
       // function to submit the form
-      $scope.submitForm = function(){
-        // check to make sure the form is completely valid
-        console.log("Submit clicked!");
-
+      $scope.submitForm = function(info){
         if($scope.reg_form.$valid){
 
-          $scope.authObj.$signInWithPopup("facebook").then(function(result) {
-            console.log("Signed in as:", result);
-          }).catch(function(error) {
-            console.error("Authentication failed:", error.message);
-          });
+          authObj.$createUserWithEmailAndPassword(info.email, info.password)
+            .then(function(firebaseUser) {
+              console.log("Signed in as: " + firebaseUser.uid);
+              // $location.path('/group');
+              var user = angular.copy(info);
 
+              userInfo.$add({
+                email: user.email
+              }).then(function(newUser) {
+                console.log("User inserted to database! " + newUser.id + " and" + newUser.key);
+              });
 
+            }).catch(function(e) {
 
-          // $scope.authObj.$createUserWithEmailAndPassword($scope.email, $scope.password)
-          //   .then(function(firebaseUser) {
-          //     console.log("Signed in as: " + firebaseUser.uid);
-          //   }).catch(function(e) {
-          //     console.error("Auth failed: " + e);
-          //   })
-
-
-          // try {
-          //   usersInfo.push();
-          //
-          //   console.log('Everything\'s (I think) ok!');
-          // } catch (e) {
-          //   console.log('Something\'s wrong! ');
-          //   console.error(e);
-          // }
-
-
-          // $scope..add({
-          //   firstname: $scope.firstname;
-          // });
+                if (e.code == "auth/email-already-in-use") {
+                    alert(e.message);
+                }else {
+                    console.log("Auth failed: " + e);
+                }
+            })
 
 
         }

@@ -4,6 +4,7 @@
     .controller('signupCtrl', ['$scope', '$firebaseArray', '$firebaseAuth', '$location', function($scope, $firebaseArray, $firebaseAuth, $location){
 
       $scope.load = false;
+      $scope.formInfo ={ utype: 'student'};
       var authObj = $firebaseAuth();
       var ref = firebase.database().ref("/users");
       var userInfo = $firebaseArray(ref);
@@ -14,6 +15,7 @@
           console.log("Signed in as:", result);
           $location.path('/group');
         }).catch(function(error) {
+          $scope.load = false;
           console.error("Authentication failed:", error.message);
         });
 
@@ -25,6 +27,7 @@
           console.log("Signed in as:", result);
           $location.path('/group');
         }).catch(function(error) {
+          $scope.load = false;
           console.error("Authentication failed:", error.message);
         });
       }
@@ -41,13 +44,16 @@
               var user = angular.copy(info);
 
               userInfo.$add({
-                email: user.email
-              }).then(function(newUser) {
+                email: user.email,
+                utype: user.utype
+              }
+
+            ).then(function(newUser) {
                 console.log("User inserted to database! " + newUser.id + " and" + newUser.key);
               });
 
             }).catch(function(e) {
-
+                $scope.load = false;
                 if (e.code == "auth/email-already-in-use") {
                     alert(e.message);
                 }else {

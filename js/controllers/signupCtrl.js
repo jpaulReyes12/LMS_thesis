@@ -4,55 +4,101 @@
     .controller('signupCtrl', ['$scope', '$firebaseArray', '$firebaseAuth', '$location', function($scope, $firebaseArray, $firebaseAuth, $location){
 
       $scope.load = false;
-      $scope.formInfo ={ utype: 'student'};
+
       var authObj = $firebaseAuth();
+
       var ref = firebase.database().ref("/users");
       var userInfo = $firebaseArray(ref);
 
-      $scope.LoginFacebook = function() {
+
+
+      // FACEBOOK SIGNUP
+      $scope.LoginFacebook = function(){
         $scope.load = true;
-        authObj.$signInWithPopup("facebook").then(function(result) {
-          console.log("Signed in as:", result);
-          $location.path('/group');
-        }).catch(function(error) {
+
+
+        authObj.$signInWithPopup("facebook")
+        .then(function(result) {
+          console.log(result.user.email);
+
+          userInfo.$add({
+            email: result.user.email,
+            id: result.user.uid
+          })
+          .then(function(newUser) {
+            // console.log(newUser);
+            $location.path('/profile_info/' + newUser.key);
+          });
+
+        })
+        .catch(function(e) {
           $scope.load = false;
-          console.error("Authentication failed:", error.message);
+          alert("Authentication failed: ", e.message);
         });
+        // end authObj
+
 
       };
 
-      $scope.LoginGoogle = function() {
+
+
+
+
+
+      // GOOGLE SIGNUP
+      $scope.LoginGoogle = function(){
         $scope.load = true;
-        authObj.$signInWithPopup("google").then(function(result) {
-          console.log("Signed in as:", result);
-          $location.path('/group');
-        }).catch(function(error) {
+
+
+        authObj.$signInWithPopup("google")
+        .then(function(result) {
+          console.log(result);
+
+          userInfo.$add({
+            email: result.user.email,
+            id: result.user.uid
+          })
+          .then(function(newUser) {
+            // console.log(newUser);
+            $location.path('/profile_info/' + newUser.key);
+          });
+
+        })
+        .catch(function(e) {
           $scope.load = false;
-          console.error("Authentication failed:", error.message);
+          alert("Authentication failed: ", e.message);
         });
-      }
+        // end authObj
 
-      // function to submit the form
+
+      };
+
+
+
+
+      // EMAIL SIGNUP
       $scope.submitForm = function(info){
-        $scope.load = true;
-        if($scope.reg_form.$valid){
 
+        $scope.load = true;
+
+        if($scope.reg_form.$valid){
           authObj.$createUserWithEmailAndPassword(info.email, info.password)
-            .then(function(firebaseUser) {
-              console.log("Signed in as: " + firebaseUser.uid);
-              // $location.path('/group');
+            .then(function(result) {
+
+              //insert into database
               var user = angular.copy(info);
 
-              userInfo.$add({
+              userInfo.child(user).$add({
                 email: user.email,
-                utype: user.utype
-              }
-
-            ).then(function(newUser) {
-                console.log("User inserted to database! " + newUser.id + " and" + newUser.key);
+                id: result.id
+              })
+              .then(function(newUser) {
+                //pass user id into route
+                $location.path('/profile_info/' + newUser.key);
               });
 
-            }).catch(function(e) {
+            })
+            .catch(function(e) {
                 $scope.load = false;
                 if (e.code == "auth/email-already-in-use") {
                     alert(e.message);
@@ -60,6 +106,7 @@
                     console.log("Auth failed: " + e);
                 }
             })
+
         }
       };
 

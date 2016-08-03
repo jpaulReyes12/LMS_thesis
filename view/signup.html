@@ -1,33 +1,27 @@
 <div class="container-fluid" >
-  <div class="row col-4" id="row">
-    <h1>SIGN UP <span class="glyphicon glyphicon-hand-down"></span></h1>
+  <div class="row" id="row">
+    <h1>SIGN UP <span class="glyphicon glyphicon-hand-down"><span></h1>
   </div>
 
-  <div class="container col-md-6 col-md-offset-3" >
-    <div class="row">
-      <button class="btn btn-facebook col-md-4" type="button" name="fbLogin" ng-click="LoginFacebook()">Login with Facebook</button>
-      <button class="btn btn-google col-md-4 " type="button"  name="googleLogin" ng-click="LoginGoogle()">Login with google</button>
-    </div>
+  <div class="container center-block" >
 
-    <div class="col-sm-12" id="sep"></div>
-
-    <form role="form" name="reg_form" class="col-md-12" novalidate>
-
-      <!-- USER TYPE -->
-      <div class="row">
-        <div class="form-group">
-          <label class="col-sm-3">User Type: </label>
-          <div class="col-sm-3">
-            Techer
-            <input type="radio" name="utype" value="teacher" ng-model="formInfo.utype">
-          </div>
-          <div class="col-sm-3">
-            Student
-            <input type="radio" name="utype" value="student" ng-model="formInfo.utype" >
-          </div>
-        </div><!-- /input-group -->
+    <div class="col-md-5 col-sm-12">
+      <div class="col-md-12">
+        <h2>Social Login</h2>
       </div>
 
+
+      <div class="social-container col-md-12 ">
+        <button class="btn btn-facebook col-md-12 col-sm-6 col-xs-12" type="button" name="fbLogin" ng-click="LoginFacebook()">Facebook</button>
+        <button class="btn btn-google  col-md-12 col-sm-6 col-xs-12" type="button"  name="googleLogin" ng-click="LoginGoogle()">Google</button>
+      </div>
+    </div>
+
+    <div class="visible-md-block visible-lg-block" id="sep"></div>
+
+    <form role="form" name="reg_form" class="col-md-6" novalidate>
+
+      <h2>Sign up with E-mail</h2>
       <!-- EMAIL -->
       <div class="form-group inner-addon left-addon"
       ng-class="{ 'has-error' : reg_form.email.$invalid && !reg_form.email.$pristine }">

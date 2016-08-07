@@ -3,13 +3,13 @@ $break-sm: 768px
 $break-md: 992px
 $break-lg: 1200px
 
-$navbar-background: #19b5fe
+$navbar-background: #2196F3
 
 $input-border-radius: 10px
 
-$color-varation1: #19B3FE
-$color-varation2: #0187C8
-$color-compliment: #ff8f0d
+$color-varation1: #64B5F6
+$color-varation2: #1976D2
+$color-compliment: #FFE57F
 
 
 body
@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6, label
 
 .navbar-custom
   background-color: $navbar-background
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23)
   .navbar-brand
     color: white
     &:hover
@@ -92,8 +93,13 @@ input
     background-color: $color-varation1
     border-color: #2484e8
 
-.panel-default > .panel-heading
-  background-color: $color-varation1
+
+.panel-default
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23)
+  .panel-heading
+    background-color: $color-varation1
+    box-shadow: 0 1px 2px rgba(0,0,0,0.24)
+    border: none
 
 .dropdown
   .dropdown-menu

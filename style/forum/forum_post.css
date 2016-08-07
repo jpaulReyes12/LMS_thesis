@@ -1,3 +1,9 @@
+.ng-scope{
+  background: #FAFAFA;
+}
+/**{
+  border: 1px solid red
+}*/
 p
 {
   text-align: justify;
@@ -5,9 +11,7 @@ p
 }
 .panel-heading
 {
-  background: -webkit-linear-gradient(to right, #267bb5, #f6f1d3);
-  background: -webkit-linear-gradient(left, #267bb5, #f6f1d3);
-  background: linear-gradient(to right, #267bb5, #f6f1d3);
+  background: #1976D2;
 }
 textarea
 {
@@ -16,18 +20,9 @@ textarea
   height: 100px;
   overflow-y: auto;
 }
-img
-{
-  /*width: 30px;
-  height: 30px;*/
-}
 .nest
 {
   margin-left: 50px;
-}
-
-body{
-  /*background-color: rgba(159, 222, 253, 0.4);*/
 }
 
 hr{
@@ -42,4 +37,16 @@ hr{
 
 .comments p{
   font-size: 14px;
+}
+
+.post-content{
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  margin: 20px;
+}
+
+.comment-content{
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.32);
+  margin-top: 20px;
 }

@@ -1,3 +1,7 @@
+.ng-scope{
+  background: #FAFAFA;
+}
+
 .inner-addon
 {
   position: relative;
@@ -22,12 +26,6 @@ p
   text-align: justify;
   text-indent: 60px;
 }
-.panel-heading
-{
-  background: -webkit-linear-gradient(to right, #267bb5, #f6f1d3);
-  background:         -webkit-linear-gradient(left, #267bb5, #f6f1d3);
-  background:         linear-gradient(to right, #267bb5, #f6f1d3);
-}
 
 hr{
   height:1px;
@@ -35,11 +33,14 @@ hr{
 }
 
 .form-wrapper{
-  -webkit-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.1);
-  -moz-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.1);
-  box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.1);
-
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  background: white;
   margin-top: 25px;
   margin-bottom: 25px;
   padding: 10px;
+}
+
+.post-content{
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }

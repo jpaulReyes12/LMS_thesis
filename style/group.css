@@ -1,11 +1,11 @@
 .group-item {
   padding: 10px;
   margin: 10px;
-  box-shadow: 6px 10px 5px 4px #d6ced6;
-  background-color: #73cffc;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  background-color: #64B5F6;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
   .group-item:hover {
-    box-shadow: 6px 10px 20px -1px #d6ced6;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     transform: translate(-3px, -10px); }
   @media only screen and (min-width: 768px) {
     .group-item {
@@ -42,9 +42,11 @@
       right: 200px; } }
 
 #btnJoinGrp {
+  background-color: #FFE57F;
   margin: 50px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  box-shadow: 7px 9px 5px 0px #cccccc; }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: black; }
   #btnJoinGrp:hover, #btnJoinGrp:active, #btnJoinGrp:focus {
-    box-shadow: 7px 9px 18px 2px #cccccc;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     transform: translate(-2px, -2px); }

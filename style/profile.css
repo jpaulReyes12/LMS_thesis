@@ -6,18 +6,19 @@ h1, h2, h3, h4, h5, h6, label {
   font-family: 'Ubuntu', Helvetica; }
 
 .navbar-custom, .navbar-custom .navbar-nav li .dropdown-menu {
-  background-color: #19b5fe; }
+  background-color: #2196F3;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23); }
   .navbar-custom .navbar-brand, .navbar-custom .navbar-nav li .dropdown-menu .navbar-brand, .navbar-custom .navbar-text, .navbar-custom .navbar-nav li .dropdown-menu .navbar-text, .navbar-custom .navbar-nav li a, .navbar-custom .navbar-nav li .dropdown-menu a {
     color: white; }
     .navbar-custom .navbar-brand:hover, .navbar-custom .navbar-nav li .dropdown-menu .navbar-brand:hover, .navbar-custom .navbar-text:hover, .navbar-custom .navbar-nav li .dropdown-menu .navbar-text:hover, .navbar-custom .navbar-nav li a:hover {
-      color: #ff8f0d;
+      color: #FFE57F;
       background-color: transparent; }
     .navbar-custom .navbar-brand:active, .navbar-custom .navbar-nav li .dropdown-menu .navbar-brand:active, .navbar-custom .navbar-text:active, .navbar-custom .navbar-nav li .dropdown-menu .navbar-text:active, .navbar-custom .navbar-nav li a:active, .navbar-custom .navbar-brand:focus, .navbar-custom .navbar-nav li .dropdown-menu .navbar-brand:focus, .navbar-custom .navbar-text:focus, .navbar-custom .navbar-nav li .dropdown-menu .navbar-text:focus, .navbar-custom .navbar-nav li a:focus {
-      background-color: #0187C8; }
+      background-color: #1976D2; }
   .navbar-custom .navbar-nav li .dropdown-menu li:active, .navbar-custom .navbar-nav li .dropdown-menu li:focus {
-    background-color: #0187C8; }
+    background-color: #1976D2; }
   .navbar-custom .navbar-nav .open > a, .navbar-custom .navbar-nav li .dropdown-menu .navbar-nav .open > a {
-    background-color: #0187C8; }
+    background-color: #1976D2; }
 
 #profile-brand {
   width: 10%;
@@ -62,13 +63,17 @@ input .input-lower {
       border-left: 0; } }
 
 .profile-banner {
-  background-color: #0187C8; }
+  background-color: #1976D2; }
   .profile-banner .well {
-    background-color: #19B3FE;
+    background-color: #64B5F6;
     border-color: #2484e8; }
 
-.panel-default > .panel-heading {
-  background-color: #19B3FE; }
+.panel-default {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23); }
+  .panel-default .panel-heading {
+    background-color: #64B5F6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+    border: none; }
 
 .dropdown .dropdown-menu {
   -webkit-transition: all 0.3s;

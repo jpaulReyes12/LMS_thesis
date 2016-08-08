@@ -1,35 +1,47 @@
 
 
 <div class="container-fluid">
-    <div class="row">
-      <div class="text-center">
-        <img src="..\assets\defaults\logo.png" alt="" />
-        <h1 class="word-fluid">SAINT THERESA'S COLLEGE</h1>
-        <h4 class="word-fluid">Learning Management System</h4>
-      </div>
+  <div class="row">
+    <div class="text-center">
+      <img src="..\assets\defaults\logo.png" alt="" />
+      <h1 class="word-fluid">SAINT THERESA'S COLLEGE</h1>
+      <h4 class="word-fluid">Learning Management System</h4>
     </div>
-    <div class="row" id="row2">
-      <!-- login form -->
-      <div class="container col-xs-12 col-lg-4 pull-left col-lg-offset-4">
-        <div class="text-center" id="title">
-          <h1 class="word-fluid" id="login">LOGIN</h1>
-        </div>
-        <form class="form-group" role="form"action="sudentProfile.html" method="post">
-          <!-- username -->
-          <div class="form-group col-6 inner-addon left-addon">
-            <i class="glyphicon glyphicon-user"></i>
-            <input type="text" name="name" value="" class="form-control" placeholder="Username">
-          </div>
-          <!-- password -->
-          <div class="form-group col-6 inner-addon left-addon">
-            <i class="glyphicon glyphicon-lock"></i>
-            <input type="password" name="name" value="" class="form-control" placeholder="Password">
+  </div>
 
-          </div>
-            <input type="submit" name="name" value="Login" class="btn btn-primary">
-          </div>
-        </form>
+  <div class="row" id="row2">
+    <!-- login form -->
+    <div class="container col-xs-12 col-lg-4 pull-left col-lg-offset-4">
+      <div class="text-center" id="title">
+        <h1 class="word-fluid" id="login">LOGIN</h1>
       </div>
+      <form class="form-group" role="form">
+
+        <!-- username -->
+        <div class="form-group col-6 inner-addon left-addon">
+          <i class="glyphicon glyphicon-user"></i>
+          <input type="text" value="" class="form-control" placeholder="Username" ng-model="loginInfo.email">
+        </div>
+
+        <!-- password -->
+        <div class="form-group col-6 inner-addon left-addon">
+          <i class="glyphicon glyphicon-lock"></i>
+          <input type="password" value="" class="form-control" placeholder="Password" ng-model="loginInfo.password">
+        </div>
+
+        <!-- submit -->
+        <input type="submit" name="name" value="Login" class="btn btn-primary" ng-submit="LoginEmail(loginInfo)">
+
+        <hr>
+        <div class="form-group social-links text-center">
+            <h4>
+              Log in with <a ng-click="LoginFacebook()"> Facebook</a> or <a ng-click="LoginGoogle()">Google</a>
+            </h4>
+        </div>
+      </form>
+    </div>
+
+    </div>
       <!-- footer -->
       <div class="row" id="footer">
         <div class="text-center" id="down">

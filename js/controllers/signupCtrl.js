@@ -8,7 +8,7 @@
       var authObj = $firebaseAuth();
 
       var ref = firebase.database().ref("/users");
-      var userInfo = $firebaseArray(ref);
+      var userInfo = $firebaseArray(ref); 
 
 
 
@@ -19,7 +19,8 @@
 
         authObj.$signInWithPopup("facebook")
         .then(function(result) {
-          console.log(result.user.email);
+          // TODO: better data structure
+          console.log(result.user.uid);
 
           userInfo.$add({
             email: result.user.email,
@@ -79,23 +80,22 @@
       // EMAIL SIGNUP
       $scope.submitForm = function(info){
 
-        $scope.load = true;
-
         if($scope.reg_form.$valid){
+          $scope.load = true;
+
           authObj.$createUserWithEmailAndPassword(info.email, info.password)
             .then(function(result) {
 
-              //insert into database
-              var user = angular.copy(info);
 
-              userInfo.child(user).$add({
-                email: user.email,
-                id: result.id
+              ref.push({
+                email: result.email,
+                id: result.uid
               })
               .then(function(newUser) {
-                //pass user id into route
+                console.log(newUser);
                 $location.path('/profile_info/' + newUser.key);
               });
+
 
             })
             .catch(function(e) {

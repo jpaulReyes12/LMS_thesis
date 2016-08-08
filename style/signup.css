@@ -91,3 +91,10 @@
 textarea {
   resize: none;
 }
+
+div#btn2 > a {
+    color: #1976D2;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+}

@@ -5,13 +5,15 @@
         .when('/', {
           title: 'STC Learning Management System',
           templateUrl: 'view/home.html',
-          css: 'style/home.css'
+          css: 'style/home.css',
+          controller: 'loginCtrl'
         })
 
         .when('/home', {
           title: 'STC Learning Management System',
           templateUrl: 'view/home.html',
-          css: 'style/home.css'
+          css: 'style/home.css',
+          controller: 'loginCtrl'
         })
 
         .when('/profile_info/:user', {
@@ -24,7 +26,7 @@
         .when('/profile', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
-          css: 'style/profile.css'
+            css: 'style/profile.css'
         })
 
         .when('/about', {

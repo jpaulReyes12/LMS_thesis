@@ -15,7 +15,7 @@
           css: 'style/home.css',
           controller: 'loginCtrl'
         })
-
+        
         .when('/profile_info/:user', {
           title: 'STC Learning Management System',
           templateUrl: 'view/profileInfo.html',

@@ -8,7 +8,7 @@
       var authObj = $firebaseAuth();
 
       var ref = firebase.database().ref("/users");
-      var userInfo = $firebaseArray(ref); 
+      var userInfo = $firebaseArray(ref);
 
 
 
@@ -19,17 +19,16 @@
 
         authObj.$signInWithPopup("facebook")
         .then(function(result) {
-          // TODO: better data structure
-          console.log(result.user.uid);
 
-          userInfo.$add({
+
+          ref.child(result.user.uid).update({
             email: result.user.email,
             id: result.user.uid
-          })
-          .then(function(newUser) {
-            // console.log(newUser);
-            $location.path('/profile_info/' + newUser.key);
           });
+
+          // REVIEW: add alert + to all other functions
+
+          $location.path('/profile_info/' + result.uid);
 
         })
         .catch(function(e) {
@@ -55,14 +54,13 @@
         .then(function(result) {
           console.log(result);
 
-          userInfo.$add({
+
+          ref.child(result.user.uid).update({
             email: result.user.email,
             id: result.user.uid
-          })
-          .then(function(newUser) {
-            // console.log(newUser);
-            $location.path('/profile_info/' + newUser.key);
           });
+
+          $location.path('/profile_info/' + result.user.uid);
 
         })
         .catch(function(e) {
@@ -81,20 +79,20 @@
       $scope.submitForm = function(info){
 
         if($scope.reg_form.$valid){
-          $scope.load = true;
+
 
           authObj.$createUserWithEmailAndPassword(info.email, info.password)
             .then(function(result) {
 
+              // console.log(result);
 
-              ref.push({
+              $scope.load = true;
+              ref.child(result.uid).update({
                 email: result.email,
                 id: result.uid
-              })
-              .then(function(newUser) {
-                console.log(newUser);
-                $location.path('/profile_info/' + newUser.key);
               });
+
+              $location.path('/profile_info/' + result.uid);
 
 
             })

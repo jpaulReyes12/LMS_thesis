@@ -15,7 +15,7 @@
       <div class="text-center" id="title">
         <h1 class="word-fluid" id="login">LOGIN</h1>
       </div>
-      <form class="form-group" role="form">
+      <form class="form-group">
 
         <!-- username -->
         <div class="form-group col-6 inner-addon left-addon">
@@ -30,7 +30,7 @@
         </div>
 
         <!-- submit -->
-        <input type="submit" name="name" value="Login" class="btn btn-primary" ng-submit="LoginEmail(loginInfo)">
+        <input type="submit" name="name" value="Login" class="btn btn-primary" ng-click="LoginEmail(loginInfo)">
 
         <hr>
         <div class="form-group social-links text-center">
@@ -40,6 +40,10 @@
         </div>
       </form>
     </div>
+
+    <pre>
+      {{loginInfo | json}}
+    </pre>
 
     </div>
       <!-- footer -->

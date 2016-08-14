@@ -36,7 +36,7 @@
           console.log("Signed in as:", result);
           $location.path('/profile');
         }).catch(function(error) {
-          console.error("Authentication failed:", error.message);
+          alert("Authentication failed:" + error.message);
         });
 
       }

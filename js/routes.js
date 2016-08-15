@@ -15,7 +15,7 @@
           css: 'style/home.css',
           controller: 'loginCtrl'
         })
-        
+
         .when('/profile_info/:user', {
           title: 'STC Learning Management System',
           templateUrl: 'view/profileInfo.html',
@@ -118,9 +118,47 @@
           ]
         })
 
+        .when('/admin', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/home.html',
+          css: 'style/admin.css'
+        })
+
+        .when('/admin/schedule', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/schedule.html',
+          css: 'style/admin.css'
+        })
+
+        .when('/admin/groups', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/groups.html',
+          css: 'style/admin.css'
+        })
+
+        .when('/admin/events', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/events.html',
+          css: 'style/admin.css'
+        })
+
+        .when('/admin/forum', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/forum.html',
+          css: 'style/admin.css'
+        })
+
+        .when('/admin/forum_topics', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/forum_topics.html',
+          css: 'style/admin.css'
+        })
+
         .otherwise({
           redirectTo: '/'
         });
+
+
 
       // $locationProvider.html5Mode(true);
     }]);

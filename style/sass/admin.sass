@@ -1,4 +1,4 @@
-  $navbar-background: #2196F3
+$navbar-background: #2196F3
 
 $input-border-radius: 10px
 
@@ -40,6 +40,43 @@ $grey-backgroud: #FAFAFA
 .main
   background-color: $grey-backgroud
 
-.container
+.table-outline
   border: 1px solid darken($grey-backgroud, 10%)
   box-shadow: 0 1px 3px rgba(0,0,0,0.12)
+
+.admin-controls
+  margin: 20px
+
+.others
+  margin: 10px
+
+
+.image-preview-input
+  position: relative
+  overflow: hidden
+  margin: 0px
+  color: #333
+  background-color: #fff
+  border-color: #ccc
+  input[type=file]
+    position: absolute
+    top: 0
+    right: 0
+    margin: 0
+    padding: 0
+    font-size: 20px
+    cursor: pointer
+    opacity: 0
+    filter: alpha(opacity = 0)
+
+.image-preview-input-title
+  margin-left: 2px
+
+.table-hover
+  thead
+    background-color: $color-varation1
+    color: white
+  tbody>tr
+    &:hover
+      background-color: $color-compliment
+      color: $color-varation2

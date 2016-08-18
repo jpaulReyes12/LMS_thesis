@@ -139,7 +139,8 @@
         .when('/admin/events', {
           title: 'Admin Page',
           templateUrl: 'view/admin/events.html',
-          css: 'style/admin.css'
+          css: { href: 'style/admin.css', preload: true},
+          controller: 'eventsCtrl'
         })
 
         .when('/admin/forum', {

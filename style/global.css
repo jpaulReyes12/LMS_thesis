@@ -35,6 +35,8 @@ main.ng-enter.ng-enter-active {
 	background-color: #555;
 }
 
+
+/*loading animation*/
 .loader,
 .loader:before,
 .loader:after {

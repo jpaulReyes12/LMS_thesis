@@ -26,19 +26,27 @@
 
         <div class="row others">
           <div class="row others">
-            <div class="col-md-4">
+
+            <!-- EVENT NAME -->
+            <div class="col-md-4 form-group"
+             ng-class="{ 'has-error' : eventFrm.event.$invalid && eventFrm.event.$dirty }">
               <label>Event Name:</label>
-              <input type="text" placeholder="Event" class="form-control">
+              <input type="text" placeholder="Event" class="form-control" name="event" ng-model="event.name" required>
+              <p ng-show="eventFrm.event.$error.required && eventFrm.event.$dirty" class="help-block">Event name is required.</p>
             </div>
+
+            <!-- VENUE -->
             <div class="col-md-4">
               <label>Venue:</label>
-              <input type="text" placeholder="Venu" class="form-control" >
+              <input type="text" placeholder="Venue" class="form-control" name="venue" ng-model="event.venue" >
             </div>
           </div>
+
+          <!-- DESCRIPTION -->
           <div class="row others">
             <div class="col-md-8">
               <label>Description:</label>
-              <textarea rows="3" class="form-control" ></textarea>
+              <textarea rows="3" class="form-control" name="description" ng-model="event.description"></textarea>
             </div>
 
           </div>
@@ -70,14 +78,35 @@
           <!-- SCHEDULE -->
           <div class="row others">
             <h3>Schedule</h4>
-            <div class="col-md-4">
+
+              <!-- START -->
+            <div class="col-md-4 form-group"
+             ng-class="{ 'has-error' : eventFrm.start.$invalid && eventFrm.start.$dirty }">
               <label>Event start:</label>
-              <input type="datetime-local" placeholder="Teacher" class="form-control" >
+              <input type="datetime-local" class="form-control" name="start" min='{{ dateNow | date: "yyyy-MM-ddTHH:mm:ss"}}'
+              max='{{ futureDate | date: "yyyy-MM-ddTHH:mm:ss"}}'
+              ng-model="event.start" required>
+
+              <p ng-show="eventFrm.start.$invalid && eventFrm.start.$dirty"
+             class="help-block">Oops! Event start is invalid.</p>
+              <p ng-show="eventFrm.start.$error.max && eventFrm.start.$dirty"
+              class="help-block">Don't you think setting this 30+ years into the future is too much?</p>
             </div>
 
-            <div class="col-md-4">
+            <!-- END -->
+            <div class="col-md-4 form-group"
+             ng-class="{ 'has-error' : eventFrm.end.$invalid && eventFrm.end.$dirty }">
               <label>Event end:</label>
-              <input type="datetime-local" placeholder="Teacher" class="form-control" >
+              <input type="datetime-local" class="form-control" name="end" min="{{event.start}}"
+              max='{{ futureDate | date: "yyyy-MM-ddTHH:mm:ss"}}'
+              ng-model="event.end" required>
+
+              <p ng-show="eventFrm.end.$invalid && eventFrm.end.$dirty"
+              class="help-block">Oops! Event end is invalid.</p>
+              <p ng-show="eventFrm.end.$error.max && eventFrm.end.$dirty"
+              class="help-block">Don't you think setting this 30+ years into the future is too much?</p>
+              <p ng-show="eventFrm.end.$error.min && eventFrm.end.$dirty"
+              class="help-block">Event end must be greater than event start maximum date.</p>
             </div>
           </div>
         </div>
@@ -117,18 +146,10 @@
         <td>Info</td>
         <td>Info</td>
         <td>Info</td>
-        <td><button type="button" class="btn btn-danger">Disable</button></td>
-      </tr>
-      <tr>
-        <td><input type="checkbox"></td>
-        <td>Info</td>
-        <td>Info</td>
-        <td>Info</td>
-        <td>Info</td>
-        <td>Info</td>
-        <td>Info</td>
-        <td>Info</td>
-        <td><button type="button" class="btn btn-danger">Deactivate</button></td>
+        <td>
+          <button type="button" class="btn btn-danger">Deactivate</button>
+          <button type="button" class="btn btn-info">Edit</button>
+        </td>
       </tr>
   </table>
 </div>
@@ -177,8 +198,7 @@
       $(".image-preview-input input:file").change(function (){
           var img = $('<img/>', {
               id: 'dynamic',
-              width:250,
-              height:200
+              width:250
           });
           var file = this.files[0];
           var reader = new FileReader();

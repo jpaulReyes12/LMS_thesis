@@ -18,18 +18,33 @@
   <div class="row col-md-10">
     <div class="well container">
       <form action="" class="form-group">
-        <div class="col-md-4">
-          <label>Subject:</label>
-          <input type="text" placeholder="Subject" class="form-control">
-        </div>
-        <div class="col-md-4">
+
+        <!-- TEACHER -->
+        <div class="col-md-3">
           <label>Teacher:</label>
-          <input type="text" placeholder="Teacher" class="form-control" >
+          <input type="text" placeholder="Teacher" class="form-control" required >
         </div>
 
-        <div class="col-md-4">
+        <!-- year & section -->
+        <div class="col-md-3">
+          <label>Year & Section:</label>
+          <select class="form-control" required>
+            <option value="option" disabled selected>Select one</option>
+            <option value="option">Gr. 7 - A</option>
+          </select>
+        </div>
+
+        <!-- SUBJECT -->
+        <div class="col-md-3">
+          <label>Subject:</label>
+          <input type="text" placeholder="Subject" class="form-control" required>
+        </div>
+
+
+        <!-- TIME -->
+        <div class="col-md-3">
           <label>Time:</label>
-          <input type="time" placeholder="Teacher" class="form-control" >
+          <input type="time" placeholder="Teacher" class="form-control" required>
         </div>
 
 

@@ -6,14 +6,16 @@
           title: 'STC Learning Management System',
           templateUrl: 'view/home.html',
           css: 'style/home.css',
-          controller: 'loginCtrl'
+          controller: 'loginCtrl',
+          requireAuth: false
         })
 
         .when('/home', {
           title: 'STC Learning Management System',
           templateUrl: 'view/home.html',
           css: 'style/home.css',
-          controller: 'loginCtrl'
+          controller: 'loginCtrl',
+          requireAuth: false
         })
 
         .when('/profile_info/:user', {
@@ -26,7 +28,7 @@
         .when('/profile', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
-            css: 'style/profile.css'
+          css: 'style/profile.css'
         })
 
         .when('/about', {
@@ -121,38 +123,44 @@
         .when('/admin', {
           title: 'Admin Page',
           templateUrl: 'view/admin/home.html',
-          css: 'style/admin.css'
+          css: 'style/admin.css',
+          requireAuth: true
         })
 
         .when('/admin/schedule', {
           title: 'Admin Page',
           templateUrl: 'view/admin/schedule.html',
-          css: 'style/admin.css'
+          css: 'style/admin.css',
+          requireAuth: true
         })
 
         .when('/admin/groups', {
           title: 'Admin Page',
           templateUrl: 'view/admin/groups.html',
-          css: 'style/admin.css'
+          css: 'style/admin.css',
+          requireAuth: true
         })
 
         .when('/admin/events', {
           title: 'Admin Page',
           templateUrl: 'view/admin/events.html',
           css: { href: 'style/admin.css', preload: true},
-          controller: 'eventsCtrl'
+          controller: 'eventsCtrl',
+          requireAuth: true
         })
 
         .when('/admin/forum', {
           title: 'Admin Page',
           templateUrl: 'view/admin/forum.html',
-          css: 'style/admin.css'
+          css: 'style/admin.css',
+          requireAuth: true
         })
 
         .when('/admin/forum_topics', {
           title: 'Admin Page',
           templateUrl: 'view/admin/forum_topics.html',
-          css: 'style/admin.css'
+          css: 'style/admin.css',
+          requireAuth: true
         })
 
         .otherwise({

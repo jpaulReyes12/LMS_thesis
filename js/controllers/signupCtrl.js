@@ -28,7 +28,7 @@
 
           // REVIEW: add alert + to all other functions
 
-          $location.path('/profile_info/' + result.uid);
+          $location.path('/profile_info/' + result.user.uid);
 
         })
         .catch(function(e) {
@@ -71,6 +71,7 @@
 
 
       };
+
 
 
 

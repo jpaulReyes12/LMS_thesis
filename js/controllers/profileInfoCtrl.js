@@ -1,10 +1,15 @@
 
   angular.module('lmsApp')
 
-    .controller('profileInfoCtrl', ['$scope', '$firebaseObject', '$location', '$routeParams', '$firebaseAuth', function($scope, $firebaseObject, $location, $routeParams, $firebaseAuth){
+    .controller('profileInfoCtrl', ['$scope', '$firebaseObject', '$location', '$routeParams', '$firebaseAuth', 'pageAuth', function($scope, $firebaseObject, $location, $routeParams, $firebaseAuth, pageAuth){
 
       // INITIALIZE
       $scope.profileInfo = {utype: "student"};
+
+      // $scope.$on('$routeChangeStart', function(event, next) {
+      //
+      //   pageAuth.canAccess(event, next);
+      // });
 
 
       var authObj = $firebaseAuth();

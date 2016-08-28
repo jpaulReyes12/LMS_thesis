@@ -52,7 +52,6 @@
 
         authObj.$signInWithPopup("google")
         .then(function(result) {
-          console.log(result);
 
 
           ref.child(result.user.uid).update({
@@ -84,8 +83,6 @@
 
           authObj.$createUserWithEmailAndPassword(info.email, info.password)
             .then(function(result) {
-
-              // console.log(result);
 
               $scope.load = true;
               ref.child(result.uid).update({

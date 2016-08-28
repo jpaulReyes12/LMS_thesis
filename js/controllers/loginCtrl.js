@@ -39,7 +39,7 @@
       }
 
 
-      
+
 
       var getUtype = function(id) {
 

@@ -30,22 +30,19 @@
         userInfo.description = data.Description;
 
 
-        console.log(data);
 
         userInfo.$save()
         .then(function(response) {
-          console.log(response + " Yey");
 
           if (firebaseUser) {
             console.log("Signed in as:", firebaseUser.uid);
             $location.path('/profile');
           } else {
-            console.log("Signed out");
             $location.path('/');
           }
         })
         .catch(function(e) {
-          console.log( e + " BOO");
+          console.log(e);
         });
 
       }

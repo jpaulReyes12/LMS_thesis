@@ -1,0 +1,120 @@
+/*styling*/
+.row
+{
+  background: #1976D2;
+  width: auto;
+  height: 280px;
+}
+h1
+{
+  color: white;
+  font-family: "Times New Roman";
+}
+#login
+{
+  color:rgb(50, 54, 133);
+  font-family: "Ubuntu", sans-serif;
+}
+#title
+{
+    margin-top: 50px;
+}
+#row2
+{
+
+  background: #E3F2FD;
+  width: auto;
+  height: 380px;
+}
+
+#row2 > .container{
+  background: white;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#footer
+{
+  background: #1976D2;
+  width: auto;
+  height: 95px;
+}
+img
+{
+  width: 150px;
+  height: 150px;
+  margin-bottom: -20px;
+  margin-top: 5px;
+}
+a,h2
+{
+  color: white;
+  text-decoration: none;
+  display: inline;
+  font-size: 20px;
+  /*margin-top: 60px;*/
+}
+h2
+{
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+#down
+{
+  margin-top: 30px;
+}
+.container
+{
+  /*margin: auto;*/
+  /*width: 400px;*/
+}
+form
+{
+  padding-top: 10px;
+}
+.btn
+{
+  width: 100%;
+}
+.inner-addon
+{
+  position: relative;
+}
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.social-links{
+  color: #1976D2;
+  text-decoration: none;
+}
+
+.social-links > a{
+  color: #1976D2;
+  text-decoration: none;
+}
+
+.social-links > h4 > a:focus
+{
+  font-weight: bolder;
+}
+
+.social-links > h4 > a
+{
+  color: #64B5F6;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+.social-links > h4 > a:hover
+{
+  color: #FFE57F;
+  cursor: pointer;
+}

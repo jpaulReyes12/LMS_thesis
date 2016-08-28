@@ -1,0 +1,168 @@
+$break-xs: 360px
+$break-sm: 768px
+$break-md: 992px
+$break-lg: 1200px
+
+$navbar-background: #2196F3
+
+$input-border-radius: 10px
+
+$color-varation1: #64B5F6
+$color-varation2: #1976D2
+$color-compliment: #FFE57F
+
+
+body
+  font-family: 'Roboto', sans-serif
+
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6, label
+  font-family: 'Ubuntu', Helvetica
+
+
+.navbar-custom
+  background-color: $navbar-background
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23)
+  .navbar-brand
+    color: white
+    &:hover
+      color: $color-compliment
+      background-color: transparent
+    &:active, &:focus
+      background-color: $color-varation2
+  .navbar-text
+    @extend .navbar-brand
+  .navbar-nav
+    li
+      a
+        @extend .navbar-brand
+      .dropdown-menu
+        @extend .navbar-custom
+        li
+          &:active, &:focus
+            background-color: $color-varation2
+    .open>a
+      background-color: $color-varation2
+
+#profile-brand
+  width: 10%
+  height: auto
+  display: inline
+
+img[alt=profPic]
+  width: 200px
+  height: auto
+  @media screen and (max-width: $break-sm)
+    width: 100px
+    height: auto
+
+.navbar
+  margin-bottom: 0
+
+
+input
+  .input-upper
+    border-top-left-radius: $input-border-radius
+    border-top-right-radius: $input-border-radius
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+    width: 80%
+    @media screen and (max-width: $break-sm)
+      width: 100%
+
+
+  .input-lower
+    border-bottom-left-radius: $input-border-radius
+    border-bottom-right-radius: $input-border-radius
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    width: 80%
+    @media screen and (max-width: $break-sm)
+      width: 100%
+
+.vertical-divider-right
+  border-left: 1px solid black
+  @media screen and (max-width: $break-sm)
+    border-left: 0
+
+
+.profile-banner
+  background-color: $color-varation2
+  .well
+    background-color: $color-varation1
+    border-color: #2484e8
+
+
+.panel-default
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23)
+  .panel-heading
+    background-color: $color-varation1
+    box-shadow: 0 1px 2px rgba(0,0,0,0.24)
+    border: none
+
+.dropdown
+  .dropdown-menu
+    -webkit-transition: all 0.3s
+    -moz-transition: all 0.3s
+    -ms-transition: all 0.3s
+    -o-transition: all 0.3s
+    transition: all 0.3s
+    max-height: 0
+    display: block
+    overflow: hidden
+    opacity: 0
+  &.open .dropdown-menu
+    max-height: 300px
+    opacity: 1
+
+
+//footer
+.footer-strip
+  width: 100%
+  background-color: #e7e7e7
+  margin-top: 30px
+  text-transform: uppercase
+  font-size: 8px
+  padding-top: 10px
+  text-align: center
+  @media only screen and (min-width : 320px)
+    height: 70px
+  @media (min-width: 768px)
+    height: 50px
+
+
+  .footer-strip__nav
+    float: left
+    padding-top: 0
+    text-align: center
+    margin-bottom: 10px
+    font-weight: bolder
+    @media only screen and (min-width : 320px)
+      float: none
+
+
+    li
+      padding-top: 15px
+      margin-bottom: 0
+      display: inline-block
+      margin-right: 16px
+      line-height: 0
+
+      a
+        font-size: 8px
+        font-weight: 700
+        color: rgb(37,37,37)
+        line-height: 1
+        &:hover
+          text-decoration: none
+          color: lighten(rgb(37,37,37), 40)
+
+  .footer-strip__copy
+    line-height: 11px
+    text-align: center
+    @media only screen and (min-width : 320px)
+      float: none
+    @media (min-width: 768px)
+      padding-top: 14px
+      float: right

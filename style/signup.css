@@ -1,0 +1,100 @@
+#row
+  {
+    background: #2196F3;
+    width: auto;
+    height: 70px;
+    padding-left: 50px;
+  }
+  span
+  {
+    font-size: 20px;
+  }
+  h1
+  {
+    color: white;
+  }
+  .container
+  {
+    padding-top: 100px;
+  }
+
+  /* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+
+  #sep
+  {
+    float: left;
+    width:1px;
+    height: 50vh;
+    overflow: hidden;
+    border-left:1px solid #dadada;
+  }
+  #row2
+  {
+    background: -webkit-linear-gradient(to right, #267bb5, #f6f1d3);
+    background:         -webkit-linear-gradient(left, #267bb5, #f6f1d3);
+    background:         linear-gradient(to right, #267bb5, #f6f1d3);
+    width: auto;
+    height: 70px;
+  }
+
+.btn-facebook{
+  background-color: #3b5998;
+  color: white;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  margin: 10px 0;
+}
+.btn-facebook:hover{
+  -webkit-transform: translate(-5px, -5px);
+          transform: translate(-5px, -5px);
+  color: white
+}
+
+
+.btn-google{
+  background-color: #d34836;
+  color: white;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  margin: 10px 0;
+}
+.btn-google:hover{
+  -webkit-transform: translate(-5px, -5px);
+          transform: translate(-5px, -5px);
+  color: white;
+}
+
+.social-container{
+  padding: 15px;
+}
+
+textarea {
+  resize: none;
+}
+
+div#btn2 > a {
+    color: #1976D2;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+}

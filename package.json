@@ -1,0 +1,37 @@
+{
+  "name": "lms_thesis",
+  "version": "1.0.0",
+  "description": "Capstone project. Learning Management System for St. Theresa's College",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicoleCamoro/LMS_thesis.git"
+  },
+  "keywords": [
+    "LMS",
+    "Angular",
+    "AngularJs",
+    "Learning",
+    "Management",
+    "System",
+    "Education"
+  ],
+  "author": "Franchette Camoro, Jan Paul Reyes, Rhea Jean Anacaya, Amolo Antonio Jr.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicoleCamoro/LMS_thesis/issues"
+  },
+  "homepage": "https://github.com/nicoleCamoro/LMS_thesis#readme"
+}

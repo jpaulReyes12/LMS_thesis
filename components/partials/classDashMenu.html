@@ -1,0 +1,99 @@
+<div class="panel-body">
+
+
+	<div class="navbar-header">
+
+		<!-- collapse button -->
+
+		<button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#navCollapse" aria-expanded="false" onclick="toggleMenuDash()" >
+			<span class="glyphicon glyphicon-menu-hamburger"></span>
+		</button>
+	</div>
+
+
+	<!-- MENU ICON -->
+	<ul class="nav nav-stacked" role="tablist">
+		<li id="showLeft" ><a onclick="toggleMenuDash()" ><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+  	<li><a href="#/teacher_dash"><span class="glyphicon glyphicon-home"></span></a></li>
+		<li><a href=""><span class="glyphicon glyphicon-list-alt"></span></a></li>
+		<li><a href=""><span class="glyphicon glyphicon-wrench"></span></a></li>
+		<li><a href="#/class_dashboard/class_recordList"><span class="glyphicon glyphicon-user"></span></a></li>
+		<li><a href="#/class_dashboard/resources"><span class="glyphicon glyphicon-briefcase"></span></a></li>
+		<li><a href=""><span class="glyphicon glyphicon-signal"></span></a></li>
+	</ul>
+
+	<div class="collapse navbar-collapse navbar-right" id="navCollapse">
+	  <!-- MENU -->
+		<ul class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+			<h3 class="menuHeader">Menu</h3>
+	  	<li class="nav-item"><a  href="#/home">Home</a></li>
+			<li class="nav-item"><a  id="post" href="">Post</a></li>
+		  <li class="nav-item"><a  id="create" >Create</a></li>
+			<li class="nav-item"><a  id="student" href="#/class_dashboard/class_recordList">Student</a></li>
+			<li class="nav-item"><a  id="resources" href="#/class_dashboard/resources">Resources</a></li>
+			<li class="nav-item"><a  id="stat" href="">Statistics</a></li>
+		</ul>
+
+	  <!-- SUBMENU FOR CREATE -->
+	  <ul class="cbp-spmenu cbp-spmenu-vertical2 cbp-spmenu-left2" id="cbp-spmenu-s2">
+	    <a href="">Quiz</a>
+	    <a href="Announcement.html">Announcement</a>
+	    <a href="">Assignment</a>
+	  </ul>
+	</div>
+</div>
+
+
+<script>
+		var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+		  showLeft = document.getElementById( 'showLeft' ),
+		  body = document.body;
+
+			function toggleMenuDash(){
+				<!-- FIX: toggle -->
+				<!-- showLeft.onclick = function() { -->
+					classie.toggle( this, 'active' );
+					classie.toggle( menuLeft, 'cbp-spmenu-open' );
+					disableOther( 'showLeft' );
+					console.log('menu clicked');
+				<!-- }; -->
+			}
+
+		showLeft.onclick = function() {
+			classie.toggle( this, 'active' );
+			classie.toggle( menuLeft, 'cbp-spmenu-open' );
+			disableOther( 'showLeft' );
+			console.log('menu clicked');
+		};
+
+		function disableOther( button ) {
+		  if( button !== 'showLeft' ) {
+		    classie.toggle( showLeft, 'disabled' );
+		  }
+		  }
+
+		  var menuLeft2 = document.getElementById( 'cbp-spmenu-s2' ),
+		    create = document.getElementById( 'create' ),
+		    body = document.body;
+
+		    create.onclick = function() {
+		    classie.toggle( this, 'active' );
+		    classie.toggle( menuLeft2, 'cbp-spmenu-open' );
+		    disableOther( 'create' );
+		  };
+
+		  function disableOther( button ) {
+		    if( button !== 'create' ) {
+		      classie.toggle( create, 'disabled' );
+		    }
+		    }
+
+		    $('#showLeft').click(function(){
+		      $('#cbp-spmenu-s2').hide();
+		    })
+
+		    $('#create').click(function(){
+		      $('#cbp-spmenu-s2').show();
+		    })
+
+</script>

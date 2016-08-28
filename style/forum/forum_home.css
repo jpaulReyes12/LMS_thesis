@@ -1,0 +1,46 @@
+.ng-scope{
+  background: #FAFAFA;
+}
+
+.inner-addon
+{
+  position: relative;
+}
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+.search
+{
+  margin-top: 30px;
+  margin-bottom: 50px;
+  /*margin-left: 60px;*/
+}
+p
+{
+  text-align: justify;
+  text-indent: 60px;
+}
+
+hr{
+  height:1px;
+  background-color:rgb(217, 217, 217);
+}
+
+.form-wrapper{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  background: white;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
+}
+
+.post-content{
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}

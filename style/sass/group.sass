@@ -1,0 +1,53 @@
+$background-color: rgb(255,254,250)
+$group-item:  #64B5F6
+
+.group-item
+  padding: 10px
+  margin: 10px
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12)
+  background-color: $group-item
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+  &:hover
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25)
+    transform: translate(-3px, -10px)
+  @media only screen and (min-width : 768px)
+    height: 150px
+
+
+.main-content
+  margin-top: 20px
+
+  @media only screen and (min-width : 768px)
+    margin-left: 100px
+
+
+.inner-addon
+  position: relative
+  .fa
+    position: absolute
+    padding: 10px
+    pointer-events: none
+
+.right-addon
+  @media only screen and (min-width : 992px)
+    right: 200px
+  .fa
+    right: 20px
+  input
+    padding-right: 30px
+
+.right-distance
+  color: white
+  @media only screen and (min-width : 992px)
+    position: absolute
+    right: 200px
+
+#btnJoinGrp
+  background-color: #FFE57F
+  margin: 50px
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12)
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+  color: black
+  &:hover, &:active, &:focus
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25)
+    transform: translate(-2px, -2px)

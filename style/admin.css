@@ -1,0 +1,75 @@
+.navbar-custom, .navbar-custom .navbar-nav li .dropdown-menu {
+  background-color: #2196F3;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-size: 16px; }
+  .navbar-custom .navbar-brand, .navbar-custom .navbar-nav li .dropdown-menu .navbar-brand, .navbar-custom .navbar-text, .navbar-custom .navbar-nav li .dropdown-menu .navbar-text, .navbar-custom .navbar-nav li a, .navbar-custom .navbar-nav li .dropdown-menu a {
+    color: white; }
+    .navbar-custom .navbar-brand:hover, .navbar-custom .navbar-nav li .dropdown-menu .navbar-brand:hover, .navbar-custom .navbar-text:hover, .navbar-custom .navbar-nav li .dropdown-menu .navbar-text:hover, .navbar-custom .navbar-nav li a:hover {
+      color: #FFE57F;
+      background-color: #0d8aee; }
+    .navbar-custom .navbar-brand:active, .navbar-custom .navbar-nav li .dropdown-menu .navbar-brand:active, .navbar-custom .navbar-text:active, .navbar-custom .navbar-nav li .dropdown-menu .navbar-text:active, .navbar-custom .navbar-nav li a:active, .navbar-custom .navbar-brand:focus, .navbar-custom .navbar-nav li .dropdown-menu .navbar-brand:focus, .navbar-custom .navbar-text:focus, .navbar-custom .navbar-nav li .dropdown-menu .navbar-text:focus, .navbar-custom .navbar-nav li a:focus {
+      background-color: #1976D2; }
+  .navbar-custom .navbar-nav li .dropdown-menu li:active, .navbar-custom .navbar-nav li .dropdown-menu li:focus {
+    background-color: #1976D2; }
+  .navbar-custom .navbar-nav li .dropdown-menu li:hover {
+    background-color: #378fe7; }
+  .navbar-custom .navbar-nav .open > a, .navbar-custom .navbar-nav li .dropdown-menu .navbar-nav .open > a {
+    background-color: #1976D2; }
+
+.nav-active {
+  background-color: #1976D2; }
+
+.main {
+  background-color: #FAFAFA; }
+
+.table-outline {
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+.admin-controls {
+  margin: 20px; }
+
+.others {
+  margin: 10px; }
+
+.image-preview-input {
+  position: relative;
+  overflow: hidden;
+  margin: 0px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc; }
+  .image-preview-input input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+
+.image-preview-input-title {
+  margin-left: 2px; }
+
+.table-hover thead {
+  background-color: #64B5F6;
+  color: white; }
+
+.table-hover tbody > tr:hover {
+  background-color: #FFE57F;
+  color: #1976D2; }
+
+.big-header {
+  font-size: 4.5em; }
+
+.animate-fade {
+  transition: 0.5s ease-in-out all;
+  opacity: 1; }
+
+.animate-fade.ng-hide {
+  opacity: 0; }
+
+.animate-fade.ng-hide-remove-active {
+  opacity: 1; }

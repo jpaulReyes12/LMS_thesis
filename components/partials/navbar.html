@@ -1,0 +1,99 @@
+<!-- navbar -->
+<nav class="navbar navbar-custom">
+  <div class="container-fluid">
+
+    <div class="navbar-header col-sm-4">
+
+      <!-- username and profpic -->
+      <a class="navbar-brand col-xs-10 " href="#/student_dashboard">
+        <img id="profile-brand" src="assets/default-user-avatar.png" alt="user pic" />
+        <!-- todo src pic -->
+        <span>Firstname</span>
+      </a>
+
+      <!-- collapse button -->
+      <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#navCollapse" aria-expanded="false">
+        &#9776;
+      </button>
+
+    </div>
+
+
+
+    <div class="collapse navbar-collapse navbar-right" id="navCollapse">
+      <ul class="nav navbar-nav">
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#/home">
+              <i class="fa fa-home fa-lg" aria-hidden="true"></i>
+              <span>Home</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#/forum_home">
+              <i class="fa fa-file-text fa-lg" aria-hidden="true"></i>
+              <span>Forum</span>
+            </a>
+          </li>
+
+          <!-- message dropdown -->
+          <li class=" dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <label for="messages">
+                <i class="fa fa-comments fa-lg" aria-hidden="true"></i>
+                <span class="label label-pill label-danger">3</span>
+              </label>
+            </a>
+             <ul class="dropdown-menu" >
+              <li><a href="#/group">My groups</a></li>
+              <li><a href="#/group">My groups</a></li>
+              <li><a href="#/group">My groups</a></li>
+              <li><a href="#/group">My groups</a></li>
+              <li><a href="#/group">Last item</a></li>
+            </ul>
+
+          </li>
+
+          <!-- notif dropdown -->
+          <li class=" dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <label for="notifs">
+                <i class="fa fa-exclamation fa-lg" aria-hidden="true"></i>
+                <span class="label label-pill label-danger">3</span>
+              </label>
+            </a>
+             <ul class="dropdown-menu" >
+              <li><a href="#/group">My groups</a></li>
+            </ul>
+
+          </li>
+
+
+          <!-- settings dropdown -->
+          <li class=" dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <label for="options">
+                <i class="fa fa-cog fa-lg" aria-hidden="true"></i> Options
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+              </label>
+            </a>
+             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#/group">My groups</a></li>
+              <li><a href="">Account</a></li>
+              <li><a data-toggle="modal" data-target="#changePass">Change Password</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a data-toggle="modal" ng-click="signOut()">Sign Out</a></li>
+            </ul>
+
+          </li>
+
+
+
+      </ul>
+    </div>
+    <!-- .collapse end -->
+
+
+  </div><!-- container-fluid -->
+</nav>

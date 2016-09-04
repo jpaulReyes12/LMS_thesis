@@ -58,8 +58,7 @@
           <th><span class="glyphicon glyphicon-unchecked"></span>Icon</th>
           <th>Filename</th>
           <th>Date Uploaded</th>
-          <th> </th>
-          <th> </th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -67,56 +66,76 @@
           <td><span class="glyphicon glyphicon-folder-open"></td>
           <td>Sample.html</td>
           <td>5/8/2016</td>
-          <td><button type="button" class="btn btn-success">Download</button></td>
-          <td><button type="button" class="btn btn-info">Rename</button></td>
+          <td><button data-toggle="tooltip" title="Download" type="button" class="btn btn-success">Download</button>
+          <button data-toggle="tooltip" title="Rename" type="button" class="btn btn-info">Rename</button>
+          <button data-toggle="tooltip" title="Delete" type="button" class="btn btn-danger">Delete</button></td>
+
         </tr>
         <tr>
           <td><span class="glyphicon glyphicon-folder-open"></td>
           <td>Donkey.html</td>
           <td>5/8/2016</td>
-          <td><button type="button" class="btn btn-success">Download</button></td>
-          <td><button type="button" class="btn btn-info">Rename</button></td>
+          <td><button data-toggle="tooltip" title="Download" type="button" class="btn btn-success">Download</button>
+          <button data-toggle="tooltip" title="Rename" type="button" class="btn btn-info">Rename</button>
+          <button data-toggle="tooltip" title="Delete" type="button" class="btn btn-danger">Delete</button></td>
+
         </tr>
         <tr>
           <td><span class="glyphicon glyphicon-folder-open"></td>
           <td>Maaa.html</td>
           <td>5/8/2016</td>
-          <td><button type="button" class="btn btn-success">Download</button></td>
-          <td><button type="button" class="btn btn-info">Rename</button></td>
+          <td><button data-toggle="tooltip" title="Download" type="button" class="btn btn-success">Download</button>
+          <button data-toggle="tooltip" title="Rename" type="button" class="btn btn-info">Rename</button>
+          <button data-toggle="tooltip" title="Delete" type="button" class="btn btn-danger">Delete</button></td>
+
         </tr>
         <tr>
           <td><span class="glyphicon glyphicon-folder-open"></td>
           <td>Fart.html</td>
           <td>5/8/2016</td>
-          <td><button type="button" class="btn btn-success">Download</button></td>
-          <td><button type="button" class="btn btn-info">Rename</button></td>
+          <td><button data-toggle="tooltip" title="Download" type="button" class="btn btn-success">Download</button>
+          <button data-toggle="tooltip" title="Rename" type="button" class="btn btn-info">Rename</button>
+          <button data-toggle="tooltip" title="Delete" type="button" class="btn btn-danger">Delete</button></td>
+
         </tr>
         <tr>
           <td><span class="glyphicon glyphicon-folder-open"></td>
           <td>Opaw.html</td>
           <td>5/8/2016</td>
-          <td><button type="button" class="btn btn-success">Download</button></td>
-          <td><button type="button" class="btn btn-info">Rename</button></td>
+          <td><button data-toggle="tooltip" title="Download" type="button" class="btn btn-success">Download</button>
+          <button data-toggle="tooltip" title="Rename" type="button" class="btn btn-info">Rename</button>
+          <button data-toggle="tooltip" title="Delete" type="button" class="btn btn-danger">Delete</button></td>
+
         </tr>
         <tr>
           <td><span class="glyphicon glyphicon-folder-open"></td>
           <td>Bayot.html</td>
           <td>5/8/2016</td>
-          <td><button type="button" class="btn btn-success">Download</button></td>
-          <td><button type="button" class="btn btn-info">Rename</button></td>
+          <td><button data-toggle="tooltip" title="Download" type="button" class="btn btn-success">Download</button>
+          <button data-toggle="tooltip" title="Rename" type="button" class="btn btn-info">Rename</button>
+          <button data-toggle="tooltip" title="Delete" type="button" class="btn btn-danger">Delete</button></td>
+
         </tr>
         <tr>
           <td><span class="glyphicon glyphicon-folder-open"></td>
           <td>Edmer.html</td>
           <td>5/8/2016</td>
-          <td><button type="button" class="btn btn-success">Download</button></td>
-          <td><button type="button" class="btn btn-info">Rename</button></td>
+          <td><button data-toggle="tooltip" title="Download" type="button" class="btn btn-success">Download</button>
+          <button data-toggle="tooltip" title="Rename" type="button" class="btn btn-info">Rename</button>
+          <button data-toggle="tooltip" title="Delete" type="button" class="btn btn-danger">Delete</button></td>
+
         </tr>
       </tbody>
     </table>
 
   </div>
 
-  <div ng-include src="'components/partials/classDashMenu.html'">  </div>
+  <div ng-include src="'components/partials/classnavbar.html'">  </div>
 
 </div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>

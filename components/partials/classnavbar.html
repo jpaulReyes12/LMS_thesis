@@ -1,0 +1,31 @@
+<div class="icon-bar">
+  <a class="active" href="#"onclick="openNav()"><i class="fa fa-navicon"></i></a>
+  <a href="#"><i class="fa fa-home"></i></a>
+  <a href="#"><i class="fa fa-clipboard"></i></a>
+  <a href="#"><i class="fa fa-user"></i></a>
+  <a href="#"><i class="fa fa-wrench"></i></a>
+  <a href="#"><i class="fa fa-briefcase"></i></a>
+  <a href="#"><i class="fa fa-bar-chart"></i></a>
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></br></br></br>
+  <a href="#" style="margin-bottom:40px;">Home</a>
+  <a href="#" style="margin-bottom:40px;">Post</a>
+  <a href="#" style="margin-bottom:40px;">Student</a>
+  <a href="#" style="margin-bottom:40px;">Create</a>
+  <a href="#" style="margin-bottom:38px;">Resources</a>
+  <a href="#">Statistics</a>
+</div>
+
+<script>
+  function openNav() {
+      document.getElementById("mySidenav").style.width = "180px";
+      document.getElementById("main").style.marginLeft = "200px";
+  }
+
+  function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+  }
+</script>

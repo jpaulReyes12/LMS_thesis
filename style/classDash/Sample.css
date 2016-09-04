@@ -6,7 +6,7 @@ body
 
 div.panel-body
 {
-	width: 105px;
+	width: 100%;
 	font-size: 37px;
 	margin:0;
 	background-color: #0d77b6;
@@ -15,14 +15,8 @@ div.panel-body
 	/* margin-right: 50px; */
 }
 
-div.panel-body>ul{
-		font-size: 37px;
-}
 
 
-li#showLeft, h3.menuHeader {
-    margin-bottom: 50px;
-}
 
 
 div.panel
@@ -32,6 +26,8 @@ div.panel
 /* 	margin: 10 10 10 10; */
 /* 	height:600; */
 /* 	padding: 10; */
+		width:100%;
+		margin-top: 20px;
 }
 
 div.panel2
@@ -49,57 +45,6 @@ span.classname
 	float:right;
 	font-size: 30px;
 	margin: 0;
-}
-
-ul
-{
-	font-size:20px;
-	list-style: none;
-	padding: 0px;
-}
-
-div.ul li
-{
-	margin-bottom: 50px;
-}
-
-div.class
-{
-	 float:right;
-	 font-size: 2.5vw;
-	 color: white;
-	 margin: 20px 440px 30px 0;
-	/* TODO: responvie */
-	 text-shadow: 4px 3px 4px rgba(150, 150, 150, 1);
-}
-
-.nav>ul>li>a {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-		margin-bottom:5px;
-}
-
-input.form-control
-{
-	width: 300px;
-}
-
-label.title
-{
-	color: black;
-}
-
-div.bg-1
-{
-	float:right;
-	width: 1245px;
-}
-
-div.bg-2, div.bg-3,footer.bg-4
-{
-	float:right;
-	width: 1245px;
 }
 
 div.thumbnail

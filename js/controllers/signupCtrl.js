@@ -28,7 +28,7 @@
 
           // REVIEW: add alert + to all other functions
 
-          $location.path('/profile_info/' + result.uid);
+          $location.path('/profile_info/' + result.user.uid);
 
         })
         .catch(function(e) {
@@ -52,7 +52,6 @@
 
         authObj.$signInWithPopup("google")
         .then(function(result) {
-          console.log(result);
 
 
           ref.child(result.user.uid).update({
@@ -75,6 +74,7 @@
 
 
 
+
       // EMAIL SIGNUP
       $scope.submitForm = function(info){
 
@@ -83,8 +83,6 @@
 
           authObj.$createUserWithEmailAndPassword(info.email, info.password)
             .then(function(result) {
-
-              // console.log(result);
 
               $scope.load = true;
               ref.child(result.uid).update({

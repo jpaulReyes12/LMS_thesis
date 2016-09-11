@@ -3,7 +3,17 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     sassy = require('gulp-sass'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    server = require('gulp-server-livereload');
+
+gulp.task('webserver', function() {
+  gulp.src('.')
+    .pipe(server({
+      livereload: true,
+      directoryListing: true,
+      open: true
+    }));
+});
 
 
 //Compiles all scripts as one and minifies it

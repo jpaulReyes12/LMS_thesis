@@ -57,11 +57,11 @@ span.name
 
 a.list:hover
 {
-	color: #CC6D00;
+	color: #336699;
 }
 
 a.list:focus{
-	color: #CC6D00;
+	color: #336699;
 
 }
 
@@ -73,7 +73,8 @@ a.list:focus{
 
 
 .change-view .btn{
-	background-color: #09B654;
+	background-color: #6699FF;
+	color: white;
 }
 
 .change-view .btn-active{
@@ -117,6 +118,8 @@ thead{
 		width: 90px;
 		text-align: center;
 		background-color: #336699;
+		margin: 0px;
+		padding: 0px;
 }
 
 .icon-bar a {
@@ -129,11 +132,11 @@ thead{
 }
 
 .icon-bar a:hover {
-		background-color: white;
+		background-color: #6699FF;
 }
 
 .active {
-		background-color: #4CAF50 !important;
+		background-color: #6699FF !important;
 }
 
 /*NAVBAR*/
@@ -145,10 +148,11 @@ thead{
 		z-index: 1;
 		top: 0;
 		left: 0;
-		background-color: #4CAF50;
+		background-color: #6699FF;
 		overflow: hidden;
 		transition: 0.5s;
 		padding-top: 78px;
+
 }
 
 .sidenav a {
@@ -159,10 +163,11 @@ thead{
     color: white;
     display: block;
     transition: 0.3s;
+		font-family: "Ubuntu", Helvetica;
 }
 
 .sidenav a:hover, .offcanvas a:focus{
-    color: black;
+    color: #336699;
 }
 
 .sidenav .closebtn {
@@ -180,6 +185,83 @@ thead{
 .class {
 	position: absolute;
 	top: 20px;
-	left: 36%;
+	left: 40%;
 	font-size: x-large;
+}
+
+/*QUIZ TAB*/
+.quizform
+{
+	margin-left: 20%;
+}
+.quizno
+{
+	width: 20%;
+}
+.quiztopic
+{
+	width: 30%;
+}
+.quiztype
+{
+	width: 30%;
+}
+.advset
+{
+	margin-left: 30%;
+	color: blue;
+	cursor: pointer;
+}
+.submitquiz
+{
+	margin-left: 17%;
+}
+.testtype
+{
+	width: 30%;
+	color: #969696;
+}
+
+/*ACCORDION*/
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796";
+}
+
+div.panel1 {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel1.show {
+    opacity: 1;
+    max-height: 500px;
 }

@@ -50,7 +50,7 @@
         .when('/class_dashboard/class_recordList', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord.html',
-          css: [ 'style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
+          css: [ 'style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
@@ -61,7 +61,7 @@
         .when('/class_dashboard/class_recordThumb', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord2.html',
-          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
           // 'style/classDash/classThumb.css'
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -71,10 +71,46 @@
         })
 
         .when('/class_dashboard/resources', {
-          title: 'View your resources',
+          title: 'Manage your class',
           templateUrl: 'view/classDash/classResources.html',
-          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
           // 'style/classDash/classThumb.css'
+          resolve: {
+                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
+                 }]
+              }
+        })
+
+        .when('/class_dashboard/createannouncement', {
+          title: 'Manage your class',
+          templateUrl: 'view/classDash/announcementtab.html',
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+          // 'style/classDash/classThumb.css'
+          resolve: {
+                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
+                 }]
+              }
+        })
+
+        .when('/class_dashboard/createassignment', {
+          title: 'View your resources',
+          templateUrl: 'view/classDash/assignmenttab.html',
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+          // 'style/classDash/classThumb.css'
+          resolve: {
+                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
+                 }]
+              }
+        })
+
+        .when('/class_dashboard/createquiz', {
+          title: 'Manage your class',
+          templateUrl: 'view/classDash/quiztab.html',
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+          controller: 'createQuizCtrl',
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});

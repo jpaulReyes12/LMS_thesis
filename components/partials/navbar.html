@@ -8,7 +8,7 @@
       <a class="navbar-brand col-xs-10 " href="#/student_dashboard">
         <img id="profile-brand" src="assets/default-user-avatar.png" alt="user pic" />
         <!-- todo src pic -->
-        <span>Firstname</span>
+        <span>{{ name }}</span>
       </a>
 
       <!-- collapse button -->
@@ -37,20 +37,26 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="#/group">
+              <i class="fa fa-file-text fa-lg" aria-hidden="true"></i>
+              <span>Groups</span>
+            </a>
+          </li>
+
           <!-- message dropdown -->
           <li class=" dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <label for="messages">
                 <i class="fa fa-comments fa-lg" aria-hidden="true"></i>
-                <span class="label label-pill label-danger">3</span>
+                <span class="label label-pill label-danger">{{  MessageNum }}</span>
               </label>
             </a>
              <ul class="dropdown-menu" >
-              <li><a href="#/group">My groups</a></li>
-              <li><a href="#/group">My groups</a></li>
-              <li><a href="#/group">My groups</a></li>
-              <li><a href="#/group">My groups</a></li>
-              <li><a href="#/group">Last item</a></li>
+              <li><a href="#/group">Message</a></li>
+              <li><a href="#/group">Message</a></li>
+              <li><a href="#/group">Message</a></li>
+              <li><a href="#/group">Message</a></li>
             </ul>
 
           </li>
@@ -60,7 +66,7 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <label for="notifs">
                 <i class="fa fa-exclamation fa-lg" aria-hidden="true"></i>
-                <span class="label label-pill label-danger">3</span>
+                <span class="label label-pill label-danger"> {{ NotifNum }} </span>
               </label>
             </a>
              <ul class="dropdown-menu" >
@@ -79,11 +85,10 @@
               </label>
             </a>
              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#/group">My groups</a></li>
               <li><a href="">Account</a></li>
               <li><a data-toggle="modal" data-target="#changePass">Change Password</a></li>
               <li role="separator" class="divider"></li>
-              <li><a data-toggle="modal" ng-click="signOut()">Sign Out</a></li>
+              <li><a ng-click='logOutUser()'>Sign Out</a></li>
             </ul>
 
           </li>

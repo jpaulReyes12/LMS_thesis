@@ -13,8 +13,6 @@
 
         $scope.authObj.$signInWithPopup("facebook").then(function(result) {
           getUtype(result.user.uid);
-        }).catch(function(error) {
-          console.error("Authentication failed:", error.message);
         });
 
       };
@@ -22,8 +20,6 @@
       $scope.LoginGoogle = function() {
         $scope.authObj.$signInWithPopup("google").then(function(result) {
           getUtype(result.user.uid);
-        }).catch(function(error) {
-          console.error("Authentication failed:", error.message);
         });
       }
 
@@ -33,7 +29,7 @@
         .then(function(result) {
             getUtype(result.user.uid);
         }).catch(function(error) {
-          alert("Authentication failed:" + error.message);
+          console.log(error);
         });
 
       }
@@ -43,38 +39,39 @@
 
       var getUtype = function(id) {
 
-        function hasID() {
-          ref.on('value', function(snapshot) {
-            return snapshot
-          })
-        }
 
-        var user = firebase.auth().currentUser;
-        if (hasID()) {
-          ref.child(id).on('value', function(snapshot) {
-            var type = snapshot.val().utype;
+        ref.child(id).on('value', function(snapshot) {
 
-            switch (type) {
-              case "student":
-                $location.path('/profile');
-                break;
-              case "teacher":
-                $location.path('/profile');
-                break;
-              case "admin":
-                $location.path('/profile');
-                break;
-              default:
-                $location.path('/profile_info/' + user.uid   );
-                // FIXME: where to redirect if no info
-            }
 
-          })
-        }
-        else {
-          $location.path('/profile_info/' + user.uid   );
+          var user = firebase.auth().currentUser;
+          if (snapshot.val() !== null) {
+            ref.child(id).on('value', function(snapshot) {
+              var type = snapshot.val().utype;
 
-        }
+              switch (type) {
+                case "student":
+                  $location.path('/profile');
+                  break;
+                case "teacher":
+                  $location.path('/profile');
+                  break;
+                case "admin":
+                  $location.path('/admin');
+                  break;
+                default:
+                  $location.path('/profile_info/' + user.uid   );
+                  // FIXME: where to redirect if no info
+              }
+
+            })
+          }
+          else {
+            $location.path('/profile_info/' + user.uid   );
+
+          }
+
+
+        })
 
       }
 

@@ -22,13 +22,26 @@
           title: 'STC Learning Management System',
           templateUrl: 'view/profileInfo.html',
           css: 'style/signup.css',
-          controller: 'profileInfoCtrl'
+          controller: 'profileInfoCtrl',
+          requireAuth: false
         })
 
         .when('/profile', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
-          css: 'style/profile.css'
+          css: 'style/profile.css',
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
+            }]
+
+
+          }
         })
 
         .when('/about', {
@@ -37,25 +50,16 @@
           css: [
             {href: 'style/home.css', preload: true},
             {href: 'style/aboutus.css', preload: true}
-          ]
+          ],
+          requireAuth: false
         })
 
         .when('/signup', {
           title: 'Sign Up',
           templateUrl: 'view/signup.html',
           css: 'style/signup.css',
-          controller: 'signupCtrl'
-        })
-
-        .when('/class_dashboard', {
-          title: 'Manage your class',
-          templateUrl: 'view/classDash/classDash.html',
-          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/Sample.css'],
-          resolve: {
-                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
-                 }]
-              }
+          controller: 'signupCtrl',
+          requireAuth: false
         })
 
         .when('/class_dashboard/class_recordList', {
@@ -66,7 +70,13 @@
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
                  }]
-              }
+              },
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/class_dashboard/class_recordThumb', {
@@ -77,8 +87,17 @@
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
+                 }],
+                 "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+                   return $firebaseAuth().$requireSignIn();
                  }]
-              }
+              },
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/class_dashboard/resources', {
@@ -90,7 +109,13 @@
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
                  }]
-              }
+              },
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/group', {
@@ -99,7 +124,13 @@
           css: [
             {href:'style/group.css', preload: true},
             {href:'style/profile.css', preload: true}
-          ]
+          ],
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/forum_home', {
@@ -108,7 +139,13 @@
           css: [
             {href: 'style/forum/forum_home.css', preload: true},
             {href:'style/profile.css', preload: true}
-          ]
+          ],
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/forum_post', {
@@ -117,28 +154,49 @@
           css: [
             {href: 'style/forum/forum_post.css', preload: true},
             {href:'style/profile.css', preload: true}
-          ]
+          ],
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/admin', {
           title: 'Admin Page',
           templateUrl: 'view/admin/home.html',
           css: 'style/admin.css',
-          requireAuth: true
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/admin/schedule', {
           title: 'Admin Page',
           templateUrl: 'view/admin/schedule.html',
           css: 'style/admin.css',
-          requireAuth: true
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/admin/groups', {
           title: 'Admin Page',
           templateUrl: 'view/admin/groups.html',
           css: 'style/admin.css',
-          requireAuth: true
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/admin/events', {
@@ -146,21 +204,36 @@
           templateUrl: 'view/admin/events.html',
           css: { href: 'style/admin.css', preload: true},
           controller: 'eventsCtrl',
-          requireAuth: true
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/admin/forum', {
           title: 'Admin Page',
           templateUrl: 'view/admin/forum.html',
           css: 'style/admin.css',
-          requireAuth: true
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .when('/admin/forum_topics', {
           title: 'Admin Page',
           templateUrl: 'view/admin/forum_topics.html',
           css: 'style/admin.css',
-          requireAuth: true
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
         })
 
         .otherwise({

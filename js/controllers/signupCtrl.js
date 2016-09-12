@@ -46,11 +46,6 @@
         .then(function(result) {
 
 
-          // ref.child(result.user.uid).update({
-          //   email: result.user.email,
-          //   id: result.user.uid
-          // });
-
           $location.path('/profile_info/' + result.user.uid);
 
         })
@@ -75,13 +70,6 @@
 
           authObj.$createUserWithEmailAndPassword(info.email, info.password)
             .then(function(result) {
-
-              // $scope.load = true;
-              // ref.child(result.uid).update({
-              //   email: result.email,
-              //   id: result.uid
-              // });
-
               $location.path('/profile_info/' + result.uid);
 
 

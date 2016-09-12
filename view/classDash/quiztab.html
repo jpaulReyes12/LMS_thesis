@@ -1,0 +1,107 @@
+<div>
+  <div class="class">
+  SAMPLE- CI602A-C- 10:30AM
+  </div>
+
+  <div class="panel pull-right col-sm-11" style="margin-top: 100px;   ">
+    <ul class="nav nav-tabs">
+      <li><a href="#/class_dashboard/createannouncement" style="color:#555;" onclick="window.location.reload();">Announcement</a></li>
+      <li><a href="#/class_dashboard/createassignment" style="color:#555;" onclick="window.location.reload();">Assignment</a></li>
+      <li class="active"><a href="#/class_dashboard/createquiz" style="color:#555;">Quiz</a></li>
+    </ul>
+      <h1>Create Quiz</h1>
+      <form id="qset" class="form-horizontal quizform">
+        <div class="form-group">
+          <label class="control-label col-sm-2">Quiz No:</label>
+          <div class="col-sm-10">
+            <input type="number" ng-min="0" class="form-control quizno" ng-Model="quiz.qnum" placeholder="Enter quiz number">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2">Title:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control quiztopic" ng-Model="quiz.qtitle"  placeholder="Enter title">
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Test type:</label>
+            <div class="col-sm-10">
+              <select class="form-control testtype" ng-Model="quiz.qtype">
+                <option disabled="true">Select test type</option>
+                <option>Multiple Choice</option>
+                <option>True or False</option>
+              </select>
+            </div>
+        </div>
+        <a  data-toggle="modal" data-target="#myModal" class="advset">Advanced settings</a></br>
+        <button id="cre8" type="submit" class="btn btn-success submitquiz" ng-click="setQuiz(quiz)">Create Quiz</button>
+      </form></br>
+
+      <!-- modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Advanced settings</h4>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- accordion -->
+      <button id="accord" class="accordion">Question 1: What is your name?</button>
+        <div class="panel1"></br>
+          <form class="form-horizontal quizform">
+            <div class="form-group">
+              <label class="control-label col-sm-2">Question:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control quizno" placeholder="Enter question">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2">Choices:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control quiztopic" placeholder="Enter choices">
+                <input type="text" class="form-control quiztopic" placeholder="Enter choices">
+                <input type="text" class="form-control quiztopic" placeholder="Enter choices">
+                <input type="text" class="form-control quiztopic" placeholder="Enter choices">
+              </div>
+            </div>
+            <button type="button" class="btn btn-success submitquiz">Submit</button>
+            <button type="button" class="btn btn-warning">Add Question</button>
+          </form>
+        </div>
+  </div>
+
+  <div ng-include src="'components/partials/classnavbar.html'">  </div>
+
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+
+$(document).ready(function(){
+    $("#accord").hide();
+    $("#cre8").click(function(){
+        $("#accord").show();
+        $("#qset").hide();
+    });
+});
+
+</script>

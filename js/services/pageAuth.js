@@ -1,29 +1,33 @@
 angular.module('lmsApp')
 
-.service('pageAuth', ['$location', '$rootScope',function ($location, $rootScope) {
+.service('pageAuth', ['$location', '$rootScope', function ($location, $rootScope) {
 
-  var canAccess = function(event, next, current) {
+  var canAccess = function(event, next, prev, error) {
 
-    var user = firebase.auth().currentUser;
+      // if (next.$$route.requireAuth && theUser === null) {
+      //   console.log(theUser);
+      //   event.preventDefault();
+      //   alert("You must be logged in to access page!" + theUser);
+      //
+      // }
+      // else if (next.$$route.requireAuth == false && theUser !== null) {
+      //   event.preventDefault();
+      //
+      // }
 
-    if (next.$$route.requireAuth && user == null ) {
+      console.log(next);
+      if (error === "AUTH_REQUIRED") {
+        $location.path("/");
 
-      event.preventDefault();
-      alert("You must be logged in to access page!");
-
-    }
-    else if (next.$$route.requireAuth == false && user !== null) {
-      $location.path('/profile'); //dashboard
-    }
-
+      }
 
   }
 
-$rootScope.$on('$routeChangeStart',canAccess);
+  $rootScope.$on('$routeChangeError',canAccess);
+  // $rootScope.$on('$routeChangeSuccess',canAccess);
 }]);
 
 
 angular.module('lmsApp')
-    .run(function runApp(pageAuth){
- //rest of your stuff
-});
+  .run(function runApp(pageAuth){
+  });

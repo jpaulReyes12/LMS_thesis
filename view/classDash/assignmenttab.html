@@ -1,0 +1,31 @@
+<div>
+  <div class="class">
+  SAMPLE- CI602A-C- 10:30AM
+  </div>
+
+  <script>tinymce.init({ selector: '#mytextarea', height: '350px',
+  plugins: [
+     'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+     'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+     'save table contextmenu directionality emoticons template paste textcolor'
+   ],
+   content_css: 'css/content.css',
+    toolbar: 'fontsizeselect | insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons '
+  });</script>
+
+  <div class="panel pull-right col-sm-11" style="margin-top: 100px;   ">
+    <ul class="nav nav-tabs">
+      <li><a href="#/class_dashboard/createannouncement" style="color:#555;" onclick="window.location.reload();">Announcement</a></li>
+      <li class="active"><a href="#/class_dashboard/createassignment" style="color:#555;" onclick="window.location.reload();">Assignment</a></li>
+      <li><a href="#/class_dashboard/createquiz" style="color:#555;">Quiz</a></li>
+    </ul>
+      <h1>Create Assignment</h1>
+      <form method="post">
+        <textarea id="mytextarea">Input text here!</textarea>
+      </form>
+      <button type="button" class="btn btn-success pull-right">Post</button>
+  </div>
+
+  <div ng-include src="'components/partials/classnavbar.html'">  </div>
+
+</div>

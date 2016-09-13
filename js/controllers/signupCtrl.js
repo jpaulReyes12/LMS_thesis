@@ -20,14 +20,6 @@
         authObj.$signInWithPopup("facebook")
         .then(function(result) {
 
-
-          ref.child(result.user.uid).update({
-            email: result.user.email,
-            id: result.user.uid
-          });
-
-          // REVIEW: add alert + to all other functions
-
           $location.path('/profile_info/' + result.user.uid);
 
         })
@@ -54,11 +46,6 @@
         .then(function(result) {
 
 
-          ref.child(result.user.uid).update({
-            email: result.user.email,
-            id: result.user.uid
-          });
-
           $location.path('/profile_info/' + result.user.uid);
 
         })
@@ -83,20 +70,13 @@
 
           authObj.$createUserWithEmailAndPassword(info.email, info.password)
             .then(function(result) {
-
-              $scope.load = true;
-              ref.child(result.uid).update({
-                email: result.email,
-                id: result.uid
-              });
-
               $location.path('/profile_info/' + result.uid);
 
 
             })
             .catch(function(e) {
                 $scope.load = false;
-                if (e.code == "auth/email-already-in-use") {
+                if (e.code === "auth/email-already-in-use") {
                     alert(e.message);
                 }else {
                     console.log("Auth failed: " + e);

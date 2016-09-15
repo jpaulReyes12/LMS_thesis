@@ -66,13 +66,10 @@
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord.html',
           css: [ 'style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
-          requireAuth: true,
+          requireAuth: false,
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
-                 }],
-                 "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-                   return $firebaseAuth().$requireSignIn();
                  }]
               }
         })
@@ -81,17 +78,13 @@
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord2.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+          requireAuth: false,
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
 
-                 }],
-                 "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-                   return $firebaseAuth().$requireSignIn();
                  }]
-              },
-          requireAuth: true,
-
+              }
         })
 
         .when('/class_dashboard/resources', {

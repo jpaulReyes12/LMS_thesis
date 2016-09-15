@@ -221,6 +221,27 @@ thead{
 	width: 30%;
 	color: #969696;
 }
+.questform
+{
+	margin-left: 18%;
+}
+.quest
+{
+	width: 50%;
+}
+.questchoice
+{
+	width: 50%;
+	margin-bottom: 15px;
+}
+.addquest
+{
+	margin-left: 17.5%;
+}
+.answer
+{
+	width: 50%;
+}
 
 /*ACCORDION*/
 button.accordion {

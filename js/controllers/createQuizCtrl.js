@@ -1,43 +1,37 @@
 angular.module('lmsApp')
-  .controller('createQuizCtrl', ['$scope', function($scope){
+  .controller('createQuizCtrl', ['$scope', 'Questions', function($scope, Questions){
 
     var ref = firebase.database().ref("/quiz");
-    console.log(ref);
-    $scope.setQuiz = function(settings) {
 
+    $scope.setQuiz = function(settings) {
 
       ref.push({
         q_num: settings.qnum,
         q_title: settings.qtitle,
         q_type: settings.qtype
       });
-
       console.log("pushing");
 
     }
+    
+    $scope.QuestionData = [];
+    $scope.addQuiz = function(q) {
+      $scope.QuestionData.push({
+        q_question: q.quest,
+        q_answer: q.answer,
+        q_dummy1: q.dummy1,
+        q_dummy2: q.dummy2,
+        q_dummy3: q.dummy3
+      });
 
-    // $scope.QuestionData = [];
-
-    // $scope.addQuestion = function(){
-    //   // $scope.QuestionData.push({
-    //   //   q_question: q.quest,
-    //   //   q_answer: q.answer,
-    //   //   q_dummy1: q.dummy1,
-    //   //   q_dummy2: q.dummy2,
-    //   //   q_dummy3: q.dummy3
-    //   // });
-    //   console.log('q');
-    // }
+      console.log("add quiz");
+    }
 
 
-    //
-    // $scope.submitQuest = function(){
-    //   // Questions.addQuiz($scope.QuestionData);
-    //   console.log('submitQuest');
-    // }
 
     $scope.saveQuiz = function() {
 
+      Questions.addQuiz($scope.QuestionData);
       console.log("save");
 
     }

@@ -9,6 +9,7 @@
       <li><a href="#/class_dashboard/createassignment" style="color:#555;" onclick="window.location.reload();">Assignment</a></li>
       <li class="active"><a href="#/class_dashboard/createquiz" style="color:#555;">Quiz</a></li>
     </ul>
+
       <h1>Create Quiz</h1>
       <form id="qset" class="form-horizontal quizform">
         <div class="form-group">
@@ -56,9 +57,11 @@
           </div>
         </div>
       </div>
+
+
       <!-- accordion -->
       <!-- <div ng-repeat="question in QuestionData"> -->
-      <button id="accord" class="accordion"><span>Question 1</span>: <span>{{q.quest}}</span></button>
+        <button id="accord" class="accordion"><span>Question 1</span>: <span>{{q.quest}}</span></button>
         <div class="panel1"></br>
           <form class="form-horizontal questform">
             <div class="form-group">
@@ -81,16 +84,20 @@
                 <input type="text" class="form-control questchoice" ng-model="q.dummy3" placeholder="Enter a dummy answer">
               </div>
             </div>
-            <button type="submit" class="btn btn-warning addquest" ng-click="addQuestion(q)">Add Question</button>
           </form>
-          </div>
-          <!-- <button type="submit" class="btn btn-success submitquest" ng-click="submitQuest()">Submit</button> -->
-          <button type="submit" class="btn btn-success submitquest" ng-click="saveQuiz()">Submit</button>
-          <pre>{{QuestionData}}</pre>
-          <pre>
-            {{q}}
-          </pre>
-        <!-- </div> -->
+
+          <button type="submit" class="btn btn-warning addquest" ng-click="addQuiz(q)">Add Quiz</button>
+
+        </div>
+
+        <button type="submit" class="btn btn-success submitquest" ng-click="saveQuiz()">Submit</button>
+        <pre>
+          {{q}}
+        </pre>
+        <pre>
+          {{QuestionData}}
+        </pre>
+      <!-- </div> -->
   </div>
 
   <div ng-include src="'components/partials/classnavbar.html'">  </div>
@@ -109,7 +116,7 @@ for (i = 0; i < acc.length; i++) {
 }
 
 $(document).ready(function(){
-    $("#accord").hide();
+    <!-- $("#accord").hide(); -->
     $("#cre8").click(function(){
         $("#accord").show();
         $("#qset").hide();

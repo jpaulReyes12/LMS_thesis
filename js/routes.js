@@ -127,6 +127,7 @@
           templateUrl: 'view/classDash/quiztab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
           controller: 'createQuizCtrl',
+          requireAuth: true,
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
@@ -183,6 +184,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/home.html',
           css: 'style/admin.css',
+          controller: 'adminUsersCtrl',
           requireAuth: true,
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
@@ -195,6 +197,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/schedule.html',
           css: 'style/admin.css',
+          controller: 'adminScheduleCtrl',
           requireAuth: true,
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {

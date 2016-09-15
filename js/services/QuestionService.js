@@ -6,7 +6,7 @@ angular.module('lmsApp')
   var questionList = $firebaseArray(ref);
 
   function addQuiz(q){
-    questionList.$save(q);
+    questionList.$add(q);
   }
 
   return{

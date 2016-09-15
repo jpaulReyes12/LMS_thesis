@@ -1,3 +1,4 @@
+
 angular.module('lmsApp')
 
 .service('pageAuth', ['$location', '$rootScope', function ($location, $rootScope) {

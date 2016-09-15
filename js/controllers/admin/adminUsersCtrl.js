@@ -17,9 +17,9 @@
         } else {
             $scope.selectedAll = false;
         }
-        angular.forEach($scope.theUsers, function (user) {
-            user.Selected = $scope.selectedAll;
-        });
+      angular.forEach($scope.theUsers, function (user) {
+          user.Selected = $scope.selectedAll;
+      });
 
     };
 

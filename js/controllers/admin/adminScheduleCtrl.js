@@ -3,31 +3,29 @@
 
     .controller('adminScheduleCtrl', ['$scope', 'Schedule' , function($scope, Schedule){
 
-      $scope.toggleAdd = true;
-      //
-      //   //sort and filters
-      //   $scope.searchUsers = '';
-      //   $scope.sortType = 'Email';
-      //   $scope.sortReverse = 'false';
-      //
-      //   //checkbox function
-      //   $scope.checkAll = function () {
-      //     if ($scope.selectedAll) {
-      //         $scope.selectedAll = true;
-      //     } else {
-      //         $scope.selectedAll = false;
-      //     }
-      //     angular.forEach($scope.theUsers, function (user) {
-      //         user.Selected = $scope.selectedAll;
-      //     });
-      //
-      // };
-
-
-      
-
       $scope.theSchedule = Schedule.getSched();
+      $scope.toggleAdd = true;
 
+      //sort and filters
+      $scope.searchSchedule = '';
+      $scope.sortType = 'section';
+      $scope.sortReverse = 'false';
+
+        //checkbox function
+        $scope.checkAll = function () {
+          if ($scope.selectedAll) {
+              $scope.selectedAll = true;
+          } else {
+              $scope.selectedAll = false;
+          }
+          angular.forEach($scope.theSchedule, function (sched) {
+              sched.Selected = $scope.selectedAll;
+          });
+
+      };
+
+      // TODO: dynamic teacher dropdown
+      $scope.sched = {Section: null};
       $scope.insertSched = function(data) {
 
         //set times to millisecond format

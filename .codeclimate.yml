@@ -11,7 +11,10 @@ engines:
       - javascript
 ratings:
   paths:
-  - lib/main.min.js
+  -components/*
+  -view/*
+  - lib/main.js
+  -style/*
 exclude_paths:
   -bower_components
   -node_modules
@@ -19,3 +22,4 @@ exclude_paths:
   -lib/modernizr.custom.js
   -js/*
   -lib/main.min.js
+  -style/sass/*

@@ -25,6 +25,22 @@
           controller: 'profileInfoCtrl'
         })
 
+        .when('/student_page', {
+          title: 'Student dashboard',
+          templateUrl: 'view/student_page.html',
+          // controller: 'TabController',
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/student-page.css', preload: true}
+          ]
+        })
+
+        .when('/achievements',{
+          title : 'Achievements',
+          templateUrl: 'view/achievements.html',
+          css: 'style/student-page.css',
+        })
+
         .when('/profile', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
@@ -118,6 +134,16 @@
             {href: 'style/forum/forum_post.css', preload: true},
             {href:'style/profile.css', preload: true}
           ]
+        })
+
+        .when('/create_forum_form', {
+          title: 'Create Forum',
+          templateUrl: 'view/create_forum_form.html',
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/forum/forum_home.css', preload: true}
+          ]
+          // requireAuth: false
         })
 
         .when('/admin', {

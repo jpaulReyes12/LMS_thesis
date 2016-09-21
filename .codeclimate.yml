@@ -1,0 +1,25 @@
+engines:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        #mass_threshold: 30
+      - javascript
+ratings:
+  paths:
+  - components/
+  - view/
+  - lib/main.js
+  - style/
+exclude_paths:
+  - bower_components
+  - node_modules
+  - lib/classie.js
+  - lib/modernizr.custom.js
+  - js/*
+  - lib/main.min.js
+  - style/sass/*

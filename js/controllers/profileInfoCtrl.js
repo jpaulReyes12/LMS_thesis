@@ -1,15 +1,11 @@
 
   angular.module('lmsApp')
 
-    .controller('profileInfoCtrl', ['$scope', '$firebaseObject', '$location', '$routeParams', '$firebaseAuth', 'pageAuth', function($scope, $firebaseObject, $location, $routeParams, $firebaseAuth, pageAuth){
+    .controller('profileInfoCtrl', ['$scope', '$firebaseObject', '$location', '$routeParams', '$firebaseAuth', function($scope, $firebaseObject, $location, $routeParams, $firebaseAuth){
 
       // INITIALIZE
       $scope.profileInfo = {utype: "student"};
 
-      // $scope.$on('$routeChangeStart', function(event, next) {
-      //
-      //   pageAuth.canAccess(event, next);
-      // });
 
 
       var authObj = $firebaseAuth();
@@ -20,6 +16,7 @@
 
       var ref = firebase.database().ref("/users/" + newUser);
       var userInfo = $firebaseObject(ref);
+      var dateToday = new Date(Date.now()).toLocaleString();
 
 
       $scope.submitInfo = function(data) {
@@ -28,14 +25,18 @@
         userInfo.firstname = data.firstname;
         userInfo.lastname = data.lastname;
         userInfo.description = data.Description;
-
-
+        userInfo.email = firebaseUser.email;
+        userInfo.dateCreated = dateToday;
+        userInfo.dateSignedIn = dateToday;
+        userInfo.isActive = true;
 
         userInfo.$save()
         .then(function(response) {
+          ref.update({
+            uid: response.key
+          })
 
           if (firebaseUser) {
-            console.log("Signed in as:", firebaseUser.uid);
             $location.path('/profile');
           } else {
             $location.path('/');

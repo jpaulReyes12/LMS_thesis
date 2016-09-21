@@ -8,42 +8,56 @@
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
 
-      <li class="nav-item nav-active">
+      <li class="nav-item" ng-class="{'navActive': location('#/admin')}">
         <a class="nav-link" href="#/admin">
           <span>Home</span>
         </a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item" ng-class="{'navActive': location('#/admin/schedule')}">
         <a class="nav-link" href="#/admin/schedule">
           <span>Schedule</span>
         </a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="#/admin/groups">
-          <span>Groups</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
+      <li class="nav-item" ng-class="{'navActive': location('#/admin/events')}">
         <a class="nav-link" href="#/admin/events">
           <span>Events</span>
         </a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item" ng-class="{'navActive': location('#/admin/sections')}">
+        <a class="nav-link" href="#/admin/sections">
+          <span>Sections</span>
+        </a>
+      </li>
+
+      <li class="nav-item" ng-class="{'navActive': location('#/admin/subjects')}">
+        <a class="nav-link" href="#/admin/subjects">
+          <span>Subjects</span>
+        </a>
+      </li>
+
+      <li class="nav-item" ng-class="{'navActive': location('#/admin/groups')}">
+        <a class="nav-link" href="#/admin/groups">
+          <span>Groups</span>
+        </a>
+      </li>
+
+      <li class="nav-item" ng-class="{'navActive': location('#/admin/forum')}">
         <a class="nav-link" href="#/admin/forum">
           <span>Forum</span>
         </a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item" ng-class="{'navActive': location('#/admin/forum_topics')}">
         <a class="nav-link" href="#/admin/forum_topics">
           <span>Topics</span>
         </a>
       </li>
+
     </ul>
+    
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item"><a>Change Password</a></li>
       <li class="nav-item"><a ng-click="signOut()">Sign Out</a></li>

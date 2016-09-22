@@ -4,5 +4,6 @@
     'ngAnimate',
     'angularCSS',
     'oc.lazyLoad',
-    'firebase'
+    'firebase',
+    'ui.bootstrap'
   ]);

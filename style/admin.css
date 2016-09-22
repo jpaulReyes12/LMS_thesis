@@ -16,8 +16,12 @@
   .navbar-custom .navbar-nav .open > a, .navbar-custom .navbar-nav li .dropdown-menu .navbar-nav .open > a {
     background-color: #1976D2; }
 
-.nav-active {
+.navActive {
   background-color: #1976D2; }
+
+button.navbar-toggle {
+  color: white;
+  font-weight: bolder; }
 
 .main {
   background-color: #FAFAFA; }

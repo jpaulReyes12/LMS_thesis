@@ -10,7 +10,7 @@
 
       //sort and filters
       $scope.searchSchedule = '';
-      $scope.sortType = 'section';
+      $scope.sortType = 'Section';
       $scope.sortReverse = 'false';
 
       //checkbox function

@@ -1,7 +1,7 @@
 <dir-admin-nav></dir-admin-nav>
 
 <div class="container">
-    <h1 class="big-header">Events</h1>
+    <h1 class="big-header">Events <small>{{filteredEvents.length}}</small></h1>
 </div>
 
 
@@ -9,7 +9,7 @@
   <div class="admin-controls">
 
     <div class="col-md-3 col-xs-12">
-      <input type="search" class="form-control" placeholder="Search">
+      <input type="search" class="form-control" placeholder="Search" ng-model="searchEvents">
     </div>
     <button type="button" class="btn btn-success" ng-click="toggleAdd = !toggleAdd"><span class="fa fa-plus"></span> Add </button>
   </div>
@@ -67,7 +67,7 @@
                 <div class="btn btn-default image-preview-input">
                   <span class="glyphicon glyphicon-folder-open"></span>
                   <span class="image-preview-input-title">Browse</span>
-                  <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                  <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview" dir-file-input="fileGetter"/>
                   <!-- rename it -->
                 </div>
               </span>
@@ -88,7 +88,7 @@
               ng-model="event.start" required>
 
               <p ng-show="eventFrm.start.$invalid && eventFrm.start.$dirty"
-             class="help-block">Oops! Event start is invalid.</p>
+              class="help-block">Oops! Event start is invalid.</p>
               <p ng-show="eventFrm.start.$error.max && eventFrm.start.$dirty"
               class="help-block">Don't you think setting this 30+ years into the future is too much?</p>
             </div>
@@ -106,12 +106,12 @@
               <p ng-show="eventFrm.end.$error.max && eventFrm.end.$dirty"
               class="help-block">Don't you think setting this 30+ years into the future is too much?</p>
               <p ng-show="eventFrm.end.$error.min && eventFrm.end.$dirty"
-              class="help-block">Event end must be greater than event start maximum date.</p>
+              class="help-block">Event end must be greater than event start.</p>
             </div>
           </div>
         </div>
 
-        <button type="button" class=" others btn btn-success pull-right ">
+        <button type="button" class="others btn btn-success pull-right " ng-click="insertEvent(event)">
           Submit
         </button>
 
@@ -125,7 +125,7 @@
   <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <th><input type="checkbox"></th>
+        <th><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()"></th>
         <th>EventID</th>
         <th>createdOn</th>
         <th>event_start</th>
@@ -137,8 +137,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><input type="checkbox"></td>
+      <tr ng-repeat="event in theEvents | orderBy:sortType:sortReverse | filter: searchEvents as filteredEvents">
+        <td><input type="checkbox" ng-model="event.Selected"></td>
         <td>Info</td>
         <td>Info</td>
         <td>Info</td>

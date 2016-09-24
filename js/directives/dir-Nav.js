@@ -9,6 +9,10 @@ angular.module('lmsApp')
       $location.path('/');
     }
 
+    scope.location = function(href) {
+      return href.substr(1) === $location.url();
+    };
+
     scope.name = "";
 
     scope.NotifNum = 3;

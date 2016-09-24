@@ -16,7 +16,7 @@ angular.module('lmsApp')
       //
       // }
 
-      console.log(next);
+      
       if (error === "AUTH_REQUIRED") {
         $location.path("/");
 

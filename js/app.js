@@ -1,4 +1,4 @@
-  angular.module('lmsApp', [
+    angular.module('lmsApp', [
 
     'ngRoute',
     'ngAnimate',

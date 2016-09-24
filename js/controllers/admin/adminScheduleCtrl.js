@@ -10,7 +10,7 @@
 
       //sort and filters
       $scope.searchSchedule = '';
-      $scope.sortType = 'section';
+      $scope.sortType = 'Section';
       $scope.sortReverse = 'false';
 
       //checkbox function
@@ -45,9 +45,6 @@
         data.timeEnd = data.timeEnd.getTime();
         data.isActive = true;
         data.SY = String(yearNow) + " - " + String(yearNext) ;
-
-        console.log(data.SY);
-
 
         Schedule.addSched(data);
       }

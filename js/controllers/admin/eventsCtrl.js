@@ -43,20 +43,10 @@ angular.module('lmsApp')
     // form validation. Events can be edited, add button different color when toggled. topics can be edited. can add topics
 
     $scope.insertEvent = function(data) {
-      data.startEvent = data.start.toString();
-      data.endEvent = data.end.toString();
-      console.log(data);
-      Events.addEvent(data);
-    }
+      data.startEvent = data.start.getTime();
+      data.endEvent = data.end.getTime();
+      data.isActive = true;
 
-
-
-    $scope.fileGetter = function() {
-      var file = event.target.files[0];
-      File.getFile(file);
-      File.setStorage("events/", file.name);
-
-      //call these afer click submit
       File.upload().on('state_changed',
         function progress(snapshot) {
           File.progress(snapshot);
@@ -66,10 +56,23 @@ angular.module('lmsApp')
         },
         function success() {
           File.getURL().then(function(snapshot) {
-            console.log(snapshot);
+            data.url = snapshot;
+            Events.addEvent(data);
+            $scope.event = null;
+            $scope.toggleAdd = true;
           })
         }
       )
+
+    }
+
+
+
+    $scope.fileGetter = function() {
+      var file = event.target.files[0];
+      File.getFile(file);
+      File.setStorage("events/", file.name);
+
     };
 
 

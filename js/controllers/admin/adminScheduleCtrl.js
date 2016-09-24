@@ -46,9 +46,6 @@
         data.isActive = true;
         data.SY = String(yearNow) + " - " + String(yearNext) ;
 
-        console.log(data.SY);
-
-
         Schedule.addSched(data);
       }
 

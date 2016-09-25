@@ -162,6 +162,13 @@
           <span ng-show="sortType == 'venue' && sortReverse" class="fa fa-caret-up"></span>
         </th>
         <th>
+          <a ng-click="sortType = 'description'; sortReverse = !sortReverse">
+            information
+          </a>
+          <span ng-show="sortType == 'description' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'description' && sortReverse" class="fa fa-caret-up"></span>
+        </th>
+        <th>
           <a ng-click="sortType = 'url'; sortReverse = !sortReverse">
             photo_url
           </a>
@@ -175,13 +182,6 @@
           <span ng-show="sortType == 'isActive' && !sortReverse" class="fa fa-caret-down"></span>
           <span ng-show="sortType == 'isActive' && sortReverse" class="fa fa-caret-up"></span>
         </th>
-        <!-- <th>
-          <a ng-click="sortType = 'description'; sortReverse = !sortReverse">
-            information
-          </a>
-          <span ng-show="sortType == 'description' && !sortReverse" class="fa fa-caret-down"></span>
-          <span ng-show="sortType == 'description' && sortReverse" class="fa fa-caret-up"></span>
-        </th> -->
         <th>Action</th>
       </tr>
     </thead>
@@ -194,16 +194,19 @@
         <td>{{event.startEvent | date: 'MMM d, y h:mm a'}}</td>
         <td>{{event.endEvent | date: 'MMM d, y h:mm a'}}</td>
         <td>{{event.venue}}</td>
-        <td>{{event.url}}</td>
+        <td>{{event.description}}</td>
+        <td><a href="{{event.url}}">link</a></td>
         <td>{{event.isActive}}</td>
         <td>
-          <button type="button" class="btn btn-success">Activate</button>
-          <button type="button" class="btn btn-danger">Deactivate</button>
-          <button type="button" class="btn btn-info">Edit</button>
+          <button type="button" class="btn btn-success" ng-show="event.isActive == false">Activate</button>
+          <button type="button" class="btn btn-danger" ng-show="event.isActive == true">Deactivate</button>
+          <button type="button" class="btn btn-info" ng-show="event.isActive == true">Edit</button>
         </td>
       </tr>
   </table>
 </div>
+
+<dir-loader ng-show="load"></dirLoader>
 
 
 <script type="text/javascript">

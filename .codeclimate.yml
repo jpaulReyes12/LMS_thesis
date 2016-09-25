@@ -13,7 +13,7 @@ ratings:
   paths:
   - components/
   - view/
-  - js/
+  - js/**/*
   - style/
 exclude_paths:
   - bower_components

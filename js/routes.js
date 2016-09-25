@@ -231,6 +231,32 @@
           }
         })
 
+        .when('/admin/sections', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/sections.html',
+          css: { href: 'style/admin.css', preload: true},
+          controller: 'eventsCtrl',
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
+        .when('/admin/subjects', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/subjects.html',
+          css: { href: 'style/admin.css', preload: true},
+          controller: 'eventsCtrl',
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
         .when('/admin/forum', {
           title: 'Admin Page',
           templateUrl: 'view/admin/forum.html',

@@ -10,57 +10,92 @@
 
       <li class="nav-item" ng-class="{'navActive': location('#/admin')}">
         <a class="nav-link" href="#/admin">
+          <span class="glyphicon glyphicon-user"></span>
           <span>Home</span>
-        </a>
-      </li>
-
-      <li class="nav-item" ng-class="{'navActive': location('#/admin/schedule')}">
-        <a class="nav-link" href="#/admin/schedule">
-          <span>Schedule</span>
         </a>
       </li>
 
       <li class="nav-item" ng-class="{'navActive': location('#/admin/events')}">
         <a class="nav-link" href="#/admin/events">
+          <span class="glyphicon glyphicon-calendar"></span>
           <span>Events</span>
         </a>
       </li>
 
-      <li class="nav-item" ng-class="{'navActive': location('#/admin/sections')}">
-        <a class="nav-link" href="#/admin/sections">
-          <span>Sections</span>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <span class="fa fa-book"></span>
+          <span>Class</span>
+          <span class="caret"></span>
         </a>
-      </li>
+        <ul class="dropdown-menu">
+          <li class="nav-item" ng-class="{'navActive': location('#/admin/subjects')}">
+            <a class="nav-link" href="#/admin/subjects">
+              <span class="glyphicon glyphicon-apple"></span>
+              <span>Subjects</span>
+            </a>
+          </li>
 
-      <li class="nav-item" ng-class="{'navActive': location('#/admin/subjects')}">
-        <a class="nav-link" href="#/admin/subjects">
-          <span>Subjects</span>
-        </a>
+          <li class="nav-item" ng-class="{'navActive': location('#/admin/schedule')}">
+            <a class="nav-link" href="#/admin/schedule">
+              <span class="fa fa-clock-o"></span>
+              <span>Schedule</span>
+            </a>
+          </li>
+
+          <li class="nav-item" ng-class="{'navActive': location('#/admin/sections')}">
+            <a class="nav-link" href="#/admin/sections">
+              <span class="fa fa-child"></span>
+              <span>Sections</span>
+            </a>
+          </li>
+
+        </ul>
       </li>
 
       <li class="nav-item" ng-class="{'navActive': location('#/admin/groups')}">
         <a class="nav-link" href="#/admin/groups">
+          <span class="fa fa-users"></span>
           <span>Groups</span>
         </a>
       </li>
 
-      <li class="nav-item" ng-class="{'navActive': location('#/admin/forum')}">
-        <a class="nav-link" href="#/admin/forum">
-          <span>Forum</span>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <span class="fa fa-commenting"></span>
+          Forum<span class="caret"></span>
         </a>
+        <ul class="dropdown-menu">
+          <li class="nav-item" ng-class="{'navActive': location('#/admin/forum')}">
+            <a class="nav-link" href="#/admin/forum">
+              <span class="fa fa-sticky-note"></span>
+              <span>Forum posts</span>
+            </a>
+          </li>
+
+          <li class="nav-item" ng-class="{'navActive': location('#/admin/forum_topics')}">
+            <a class="nav-link" href="#/admin/forum_topics">
+              <span class="fa fa-tasks"></span>
+              <span>Topics</span>
+            </a>
+          </li>
+        </ul>
       </li>
 
-      <li class="nav-item" ng-class="{'navActive': location('#/admin/forum_topics')}">
-        <a class="nav-link" href="#/admin/forum_topics">
-          <span>Topics</span>
-        </a>
-      </li>
+
 
     </ul>
-    
+
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item"><a>Change Password</a></li>
-      <li class="nav-item"><a ng-click="signOut()">Sign Out</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <span class="glyphicon glyphicon-cog"></span><span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="nav-item"><a>Change Password</a></li>
+          <li class="nav-item"><a ng-click="signOut()">Sign Out</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>

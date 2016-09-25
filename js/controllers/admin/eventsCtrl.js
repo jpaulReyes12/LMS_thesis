@@ -5,7 +5,7 @@ angular.module('lmsApp')
 
     $scope.toggleAdd = true;
     $scope.theEvents = Events.getEvents();
-
+    $scope.load = false;
 
     // DATE MANIPULATION
     //current
@@ -22,8 +22,8 @@ angular.module('lmsApp')
 
     //sort and filters
     $scope.searchEvents = '';
-    $scope.sortType = 'email';
-    $scope.sortReverse = 'false';
+    $scope.sortType = 'name';
+    $scope.sortReverse = true;
 
     //checkbox function
     $scope.checkAll = function () {
@@ -39,17 +39,17 @@ angular.module('lmsApp')
     };
 
 
-    // TODO: add filter and sort functions. Schedule: can be edited, add subject field with dropdown.
-    // form validation. Events can be edited, add button different color when toggled. topics can be edited. can add topics
 
     $scope.insertEvent = function(data) {
       data.startEvent = data.start.getTime();
       data.endEvent = data.end.getTime();
       data.isActive = true;
+      $scope.load = true;
 
       File.upload().on('state_changed',
         function progress(snapshot) {
-          File.progress(snapshot);
+          console.log(snapshot)
+          $scope.percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         },
         function error(error) {
           console.log(error);
@@ -58,8 +58,11 @@ angular.module('lmsApp')
           File.getURL().then(function(snapshot) {
             data.url = snapshot;
             Events.addEvent(data);
+
+            $scope.load = false;
             $scope.event = null;
             $scope.toggleAdd = true;
+
           })
         }
       )

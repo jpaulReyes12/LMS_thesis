@@ -9,19 +9,9 @@
       var userInfo = $firebaseArray(ref);
 
       //facebook
-      $scope.LoginFacebook = function() {
+      $scope.LoginFacebook = popup("facebook");
 
-        $scope.authObj.$signInWithPopup("facebook").then(function(result) {
-          getUtype(result.user.uid);
-        });
-
-      };
-
-      $scope.LoginGoogle = function() {
-        $scope.authObj.$signInWithPopup("google").then(function(result) {
-          getUtype(result.user.uid);
-        });
-      }
+      $scope.LoginGoogle = popup("google");
 
       $scope.LoginEmail = function(info) {
 
@@ -35,7 +25,11 @@
       }
 
 
-
+      var popup = function(provider) {
+        $scope.authObj.$signInWithPopup(provider).then(function(result) {
+          getUtype(result.user.uid);
+        });
+      }
 
       var getUtype = function(id) {
 

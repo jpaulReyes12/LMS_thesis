@@ -248,7 +248,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/subjects.html',
           css: { href: 'style/admin.css', preload: true},
-          controller: 'eventsCtrl',
+          controller: 'aSubjectsCtrl',
           requireAuth: true,
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {

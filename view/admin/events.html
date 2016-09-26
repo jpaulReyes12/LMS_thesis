@@ -111,7 +111,7 @@
           </div>
         </div>
 
-        <button type="button" class="others btn btn-success pull-right " ng-click="insertEvent(event)">
+        <button type="button" class="others btn btn-success pull-right " ng-disabled="eventFrm.$invalid" ng-click="insertEvent(event)">
           Submit
         </button>
 

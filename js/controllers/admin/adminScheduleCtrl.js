@@ -1,10 +1,11 @@
 
   angular.module('lmsApp')
 
-    .controller('adminScheduleCtrl', ['$scope', 'Schedule', 'Users' , 'uibButtonConfig', function($scope, Schedule, Users, uibButtonConfig){
+    .controller('adminScheduleCtrl', ['$scope', 'Schedule', 'Users' , 'Subjects', 'uibButtonConfig', function($scope, Schedule, Users, Subjects, uibButtonConfig){
 
       $scope.theSchedule = Schedule.getSched();
       $scope.theTeachers = Users.getUsers();
+      $scope.theSubjects = Subjects.getSubjects();
       $scope.toggleAdd = true;
       uibButtonConfig.activeClass = 'btn-primary';
 

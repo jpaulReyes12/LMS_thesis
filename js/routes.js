@@ -30,6 +30,7 @@
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
           css: 'style/profile.css',
+          controller: 'studentProfile',
           requireAuth: true,
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {

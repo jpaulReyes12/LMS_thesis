@@ -22,7 +22,7 @@ Maintain the following;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]1.1.  Users;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.2.  Subjects;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]1.2.  Subjects;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.3.  Sections;
 
@@ -74,7 +74,7 @@ Process the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]2.2.  User
 Registration;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.3.  Creation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]2.3.  Creation
 of courses;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]2.4.  Uploading
@@ -86,7 +86,7 @@ of scores;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]2.6.  Creation
 of assessments;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.7.Student Rankings;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.7.Student Rankings;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.7.1.  
 Per Section;
@@ -103,7 +103,7 @@ Per Total Assessment Score; and
 3.   
 Monitor the following:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.1.Student  Record;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]3.1.Student  Record;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.2.Notifications;
 

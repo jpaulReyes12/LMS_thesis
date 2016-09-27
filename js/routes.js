@@ -259,6 +259,34 @@
           }
         })
 
+        .when('/teacher/uploads', {
+          title: 'Uploads Page',
+          templateUrl: 'view/teacher/uploads.html',
+          // css: 'style/admin.css',
+          requireAuth: false
+        })
+        .when('/teacher/classes', {
+          title: 'Classes Page',
+          templateUrl: 'view/teacher/classes.html',
+          // css: 'style/admin.css',
+          requireAuth: false
+        })
+
+        .when('/teacher/home', {
+          title: 'Home Page',
+          templateUrl: 'view/teacher/homeMenubars.html',
+          // css: 'style/admin.css',
+          requireAuth: false
+        })
+
+
+        .when('/teacher/assignment', {
+          title: 'Assignment Page',
+          templateUrl: 'view/teacher/assignment.html',
+          // css: 'style/admin.css',
+          requireAuth: false
+        })
+
         .otherwise({
           redirectTo: '/'
         });

@@ -22,9 +22,9 @@
 
         <div class="row">
           <!-- TEACHER -->
-          <div class="col-md-3">
+          <div class="col-md-3" ng-class="{ 'has-error' : schedForm.teacher.$invalid && schedForm.teacher.$touched }">
             <label>Teacher:</label>
-            <select class="form-control"  placeholder="Teacher" required ng-model="sched.Teacher">
+            <select class="form-control" name="teacher" placeholder="Teacher" required ng-model="sched.Teacher">
               <option disabled selected value="">Select one</option>
               <option ng-repeat="teacher in theTeachers | filter:{'utype':  'teacher'}:true"
               value="{{teacher.firstname}} {{teacher.lastname}}">{{teacher.firstname}} {{teacher.lastname}}</option>
@@ -32,18 +32,24 @@
           </div>
 
           <!-- year & section -->
-          <div class="col-md-3">
-            <label>Year & Section:</label>
-            <select class="form-control" required ng-model="sched.Section">
+          <div class="col-md-3" ng-class="{ 'has-error' : schedForm.YS.$invalid && schedForm.YS.$touched }">
+            <label>
+              Year & Section:
+              <a class="btn-link">+</a>
+            </label>
+            <select class="form-control" name="YS" required ng-model="sched.Section">
               <option disabled selected value="">Select one</option>
               <option value="Gr. 7 - A">Gr. 7 - A</option>
             </select>
           </div>
 
           <!-- SUBJECT -->
-          <div class="col-md-3">
+          <div class="col-md-3" ng-class="{ 'has-error' : schedForm.subject.$invalid && schedForm.subject.$touched }">
             <label>Subject:</label>
-            <input type="text" placeholder="Subject" class="form-control" required ng-model="sched.Subject">
+            <select class="form-control" name="subject" required ng-model="sched.Subject">
+              <option disabled selected value="">Select one</option>
+              <option ng-repeat="subject in theSubjects" value="{{subject.name}}">{{subject.name}}</option>
+            </select>
           </div>
         </div>
 
@@ -52,14 +58,14 @@
         <!-- TIME -->
         <div class="row">
 
-          <div class="col-md-3">
+          <div class="col-md-3" ng-class="{ 'has-error' : schedForm.start.$invalid && schedForm.start.$touched }">
             <label>Time Start:</label>
-            <input type="time" placeholder="Teacher" class="form-control" required ng-model="sched.timeStart">
+            <input type="time" placeholder="Teacher" name="start" class="form-control" required ng-model="sched.timeStart">
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-3" ng-class="{ 'has-error' : schedForm.end.$invalid && schedForm.end.$touched }">
             <label>Time End:</label>
-            <input type="time" placeholder="Teacher" class="form-control" required ng-model="sched.timeEnd">
+            <input type="time" placeholder="Teacher" name="end" class="form-control" required ng-model="sched.timeEnd">
           </div>
 
           <div class="col-md-3">
@@ -75,7 +81,8 @@
         </div>
 
 
-        <button type="button" class=" others btn btn-success btn-lg pull-right " ng-click="insertSched(sched)">
+        <button type="button" class=" others btn btn-success btn-lg pull-right "
+         ng-disabled="schedForm.$invalid || sched.Days == null" ng-click="insertSched(sched)">
           Submit
         </button>
 

@@ -137,3 +137,6 @@ input .input-lower {
       .footer-strip .footer-strip__copy {
         padding-top: 14px;
         float: right; } }
+
+section.container.ng-scope {
+  min-height: 38vh; }

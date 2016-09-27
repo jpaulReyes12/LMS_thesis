@@ -13,7 +13,8 @@ angular.module('lmsApp')
       return href.substr(1) === $location.url();
     };
 
-    scope.name = "";
+    // FIXME: dynamic user from database
+    scope.name = firebase.auth().currentUser.displayName;
 
     scope.NotifNum = 3;
     scope.MessageNum = 2;

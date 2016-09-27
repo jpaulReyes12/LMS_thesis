@@ -5,15 +5,17 @@ angular.module('lmsApp')
 
     $scope.setQuiz = function(settings) {
 
-      ref.push({
+      var quizKey = ref.push({
         q_num: settings.qnum,
         q_title: settings.qtitle,
         q_type: settings.qtype
-      });
-      console.log("pushing");
+      }).key;
+
+      console.log(quizKey);
+      Questions.setKey(quizKey);
 
     }
-    
+
     $scope.QuestionData = [];
     $scope.addQuiz = function(q) {
       $scope.QuestionData.push({
@@ -30,8 +32,8 @@ angular.module('lmsApp')
 
 
     $scope.saveQuiz = function() {
-
-      Questions.addQuiz($scope.QuestionData);
+        console.log(Questions.getKey());
+      Questions.addQuiz($scope.QuestionData, Questions.getKey());
       console.log("save");
 
     }

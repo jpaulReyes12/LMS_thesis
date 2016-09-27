@@ -30,6 +30,7 @@
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
           css: 'style/profile.css',
+          controller: 'studentProfile',
           requireAuth: true,
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
@@ -223,6 +224,32 @@
           templateUrl: 'view/admin/events.html',
           css: { href: 'style/admin.css', preload: true},
           controller: 'eventsCtrl',
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
+        .when('/admin/sections', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/sections.html',
+          css: { href: 'style/admin.css', preload: true},
+          controller: 'eventsCtrl',
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
+        .when('/admin/subjects', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/subjects.html',
+          css: { href: 'style/admin.css', preload: true},
+          controller: 'aSubjectsCtrl',
           requireAuth: true,
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {

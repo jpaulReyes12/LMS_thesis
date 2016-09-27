@@ -1,3 +1,4 @@
+
 angular.module('lmsApp')
 
 .service('pageAuth', ['$location', '$rootScope', function ($location, $rootScope) {
@@ -15,7 +16,7 @@ angular.module('lmsApp')
       //
       // }
 
-      console.log(next);
+      
       if (error === "AUTH_REQUIRED") {
         $location.path("/");
 

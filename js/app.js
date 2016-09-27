@@ -1,8 +1,9 @@
-  angular.module('lmsApp', [
+    angular.module('lmsApp', [
 
     'ngRoute',
     'ngAnimate',
     'angularCSS',
     'oc.lazyLoad',
-    'firebase'
+    'firebase',
+    'ui.bootstrap'
   ]);

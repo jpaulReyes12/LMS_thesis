@@ -1,13 +1,4 @@
 engines:
-  rubocop:
-    enabled: true
-    #checks:
-    # Rubocop/Metrics/ClassLength:
-    #   enabled: false
-  brakeman:
-    enabled: true
-    #exclude_fingerprints:
-    #- 08c185b3f764f262539a1f76997d3a89
   eslint:
     enabled: true
   csslint:
@@ -20,11 +11,14 @@ engines:
       - javascript
 ratings:
   paths:
-  - lib/main.min.js
+  - components/
+  - view/
+  - js/**/*
+  - style/
 exclude_paths:
-  -bower_components
-  -node_modules
-  -lib/classie.js
-  -lib/modernizr.custom.js
-  -js/*
-  -lib/main.min.js
+  - bower_components
+  - node_modules
+  - lib/classie.js
+  - lib/modernizr.custom.js
+  - lib/main.min.js
+  - style/sass/*

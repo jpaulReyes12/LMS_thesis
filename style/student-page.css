@@ -1,6 +1,6 @@
 th
 {
-  background-color: #579ad7;
+  background-color: #2196F3;
   border-color: #579ad7;
   color: #ffffff;
 }
@@ -8,10 +8,6 @@ th
 .carousel-inner > .item > a > img {
   width: 100%;
   margin: auto;
-}
-.page-header
-{
-  color: #43ade8;
 }
 h5
 {
@@ -31,10 +27,6 @@ h5
 ul
 {
   list-style: none;
-}
-#menu2
-{
-
 }
 .badges
 {
@@ -59,24 +51,35 @@ img
 {
   padding-right: 30px;
 }
-.head
+
+.status
 {
-  background-color: #579ad7;
+  height: 20px;
+  width: 20px;
+  background-color: #59e237;
+  border-radius: 100px;
+  border-color: #59e237;
+  float: right;
+  margin-top: -20px;
 }
-.panels
+.panel-default
 {
-  box-shadow: 5px 10px 15px #999696;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
   border-color: #999696;
+}
+.panel-body
+{
+  height: 100px;
 }
 .panel-title, h6
 {
   color: #ffffff;
 }
-.legend > ul >li
-{
-  display: inline-flex;
-}
 .image-circle
 {
   box-shadow: 5px 10px 15px #999696;
+}
+.panel-title>a
+{
+  text-decoration: none;
 }

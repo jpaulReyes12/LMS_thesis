@@ -1,12 +1,15 @@
 angular.module('lmsApp')
-  .controller('TabController', ['$scope', function($scope) {
-    $scope.tab = 1;
+.controller('TabsDemoCtrl', ['$scope', function ($scope) {
+  $scope.tabs = [
+    { title:'Dynamic Title 1', content:'Dynamic content 1' },
+    { title:'Dynamic Title 2', content:'Dynamic content 2' }
+  ];
 
-    $scope.setTab = function(newTab){
-      $scope.tab = newTab;
-    };
+  $scope.model = {
+    name: 'Tabs'
+  };
 
-    $scope.isSet = function(tabNum){
-      return $scope.tab === tabNum;
-    };
+
+
+
 }]);

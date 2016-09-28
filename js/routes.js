@@ -27,19 +27,14 @@
         })
 
         .when('/student_page', {
-          title: 'Student dashboard',
-          templateUrl: 'view/student_page.html',
-          // controller: 'TabController',
+          title: 'Student page',
+          templateUrl: 'view/student/student_page.html',
+          controller: 'TabsDemoCtrl',
           css: [
             {href: 'style/profile.css', preload: true},
             {href: 'style/student-page.css', preload: true}
-          ]
-        })
-
-        .when('/achievements',{
-          title : 'Achievements',
-          templateUrl: 'view/achievements.html',
-          css: 'style/student-page.css',
+          ],
+          requireAuth: false
         })
 
         .when('/profile', {
@@ -173,12 +168,20 @@
             {href: 'style/forum/forum_home.css', preload: true},
             {href:'style/profile.css', preload: true}
           ],
-          requireAuth: true,
-          resolve: {
-            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-              return $firebaseAuth().$requireSignIn();
-            }]
-          }
+          requireAuth: false
+          // // resolve: {
+          // //   "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+          // //     return $firebaseAuth().$requireSignIn();
+          // //   }]
+          // }
+        })
+
+        .when('/quiz', {
+          title: 'take quiz',
+          templateUrl: 'view/student/student_quiz.html',
+          css: 'style/student_quiz.css',
+          requireAuth: false,
+          controller: 'PaginationDemoCtrl'
         })
 
         .when('/forum_post', {
@@ -188,12 +191,7 @@
             {href: 'style/forum/forum_post.css', preload: true},
             {href:'style/profile.css', preload: true}
           ],
-          requireAuth: true,
-          resolve: {
-            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-              return $firebaseAuth().$requireSignIn();
-            }]
-          }
+
         })
 
         .when('/create_forum_form', {

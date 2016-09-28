@@ -198,8 +198,16 @@
         <td><a href="{{event.url}}">link</a></td>
         <td>{{event.isActive}}</td>
         <td>
-          <button type="button" class="btn btn-success" ng-show="event.isActive == false">Activate</button>
-          <button type="button" class="btn btn-danger" ng-show="event.isActive == true">Deactivate</button>
+          <button type="button" class="btn btn-success"
+            ng-click="activate(event.$id)"
+            ng-show="event.isActive == false">
+            Activate
+          </button>
+          <button type="button" class="btn btn-danger"
+            ng-click="deactvate(event.$id)"
+            ng-show="event.isActive == true">
+            Deactivate
+          </button>
           <button type="button" class="btn btn-info" ng-show="event.isActive == true">Edit</button>
         </td>
       </tr>

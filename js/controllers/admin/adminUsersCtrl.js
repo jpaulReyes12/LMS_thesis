@@ -4,7 +4,7 @@
     .controller('adminUsersCtrl', ['$scope', 'Users' , function($scope, Users){
 
       $scope.theUsers = Users.getUsers();
-      console.log($scope.theUsers);
+    
       //sort and filters
       $scope.searchUsers = '';
       $scope.sortType = 'email';

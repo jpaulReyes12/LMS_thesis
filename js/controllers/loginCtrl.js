@@ -63,7 +63,6 @@
           }
           else {
             $location.path('/profile_info/' + user.uid   );
-
           }
 
 

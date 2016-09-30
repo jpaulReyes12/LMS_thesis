@@ -25,7 +25,6 @@ angular.module('lmsApp')
 
   return {
     restrict: 'A',
-    // transclude: true,
     templateUrl: 'components/partials/navbar.html',
     link: linker
   };

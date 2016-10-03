@@ -162,7 +162,25 @@
 
         .when('/group', {
           title: 'Your Groups',
-          templateUrl: 'view/group.html',
+          templateUrl: 'view/group/group.html',
+          controller: 'groupCtrl',
+          css: [
+            {href:'style/group.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
+        .when('/group/page', {
+          title: 'Your Groups',
+          templateUrl: 'view/group/group_page.html',
           css: [
             {href:'style/group.css', preload: true},
             {href:'style/profile.css', preload: true}

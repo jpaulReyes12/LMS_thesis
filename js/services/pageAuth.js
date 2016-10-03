@@ -1,7 +1,7 @@
 
 angular.module('lmsApp')
 
-.factory('loggedInUser', [function() {
+.factory('LoggedInUser', [function() {
 
   var userLoggedin = "noUser";
   var id = "";
@@ -35,7 +35,7 @@ angular.module('lmsApp')
   };
 }])
 
-.service('pageAuth', ['$location', '$rootScope', 'loggedInUser', function ($location, $rootScope, loggedInUser) {
+.service('pageAuth', ['$location', '$rootScope', 'LoggedInUser', function ($location, $rootScope, LoggedInUser) {
 
   var canAccess = function(event, next, prev, error)
   {
@@ -52,12 +52,12 @@ angular.module('lmsApp')
   }
 
   var checkUser = function (event, next, prev, err) {
-    if ( $location.path() === "/" && loggedInUser.getUsertype() !== "noUser"
-      || $location.path() === "/home" && loggedInUser.getUsertype() !== "noUser") {
+    if ( $location.path() === "/" && LoggedInUser.getUsertype() !== "noUser"
+      || $location.path() === "/home" && LoggedInUser.getUsertype() !== "noUser") {
       $location.path(prev.$$route.originalPath);
     }
 
-    var utype = loggedInUser.getUsertype();
+    var utype = LoggedInUser.getUsertype();
     if (utype !== "noUser") {
       switch (utype) {
         case "teacher":

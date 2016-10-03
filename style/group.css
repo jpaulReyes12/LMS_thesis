@@ -17,36 +17,20 @@
     .main-content {
       margin-left: 100px; } }
 
-.inner-addon {
-  position: relative; }
-  .inner-addon .fa {
-    position: absolute;
-    padding: 10px;
-    pointer-events: none; }
-
-@media only screen and (min-width: 992px) {
-  .right-addon {
-    right: 200px; } }
-
-.right-addon .fa {
-  right: 20px; }
-
-.right-addon input {
-  padding-right: 30px; }
-
-.right-distance {
-  color: white; }
-  @media only screen and (min-width: 992px) {
-    .right-distance {
-      position: absolute;
-      right: 200px; } }
-
 #btnJoinGrp {
   background-color: #FFE57F;
-  margin: 50px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   color: black; }
   #btnJoinGrp:hover, #btnJoinGrp:active, #btnJoinGrp:focus {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    transform: translate(-2px, -2px); }
+
+#btnCreateGrp {
+  background-color: #80ff98;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: black; }
+  #btnCreateGrp:hover, #btnCreateGrp:active, #btnCreateGrp:focus {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     transform: translate(-2px, -2px); }

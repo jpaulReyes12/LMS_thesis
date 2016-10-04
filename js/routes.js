@@ -33,6 +33,19 @@
           }
         })
 
+        .when('/student_page', {
+          title: 'Student page',
+          templateUrl: 'view/student/student_page.html',
+          controller: 'TabsDemoCtrl',
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/student-page.css', preload: true}
+          ],
+          data: {
+            requireAuth: 'none'
+          }
+        })
+
         .when('/profile', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
@@ -195,11 +208,11 @@
           }
         })
 
-        .when('/forum_home', {
-          title: 'Latest Forum Topics',
-          templateUrl: 'view/forum_home.html',
+        .when('/group/page', {
+          title: 'Your Groups',
+          templateUrl: 'view/group/group_page.html',
           css: [
-            {href: 'style/forum/forum_home.css', preload: true},
+            {href:'style/group.css', preload: true},
             {href:'style/profile.css', preload: true}
           ],
           data:{
@@ -212,12 +225,67 @@
           }
         })
 
+        .when('/forum_home', {
+          title: 'Latest Forum Topics',
+          templateUrl: 'view/forum_home.html',
+          css: [
+            {href: 'style/forum/forum_home.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+          data: {
+            requireAuth: 'none'
+          }
+        })
+
+        .when('/start_quiz', {
+          title: 'start quiz',
+          templateUrl: 'view/student/start_quiz.html',
+          requireAuth: false,
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/student_quiz.css', preload: true}
+          ],
+          data: {
+            requireAuth: 'none'
+          }
+
+          // controller: 'PaginationDemoCtrl'
+        })
+
+        .when('/take_quiz', {
+          title: 'take quiz',
+          templateUrl: 'view/student/student_quiz.html',
+          controller: 'PaginationDemoCtrl',
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/student_quiz.css', preload: true}
+          ],
+          data: {
+            requireAuth: 'none'
+          }
+
+        })
+
         .when('/forum_post', {
           title: 'Forum',
           templateUrl: 'view/forum_post.html',
           css: [
             {href: 'style/forum/forum_post.css', preload: true},
             {href:'style/profile.css', preload: true}
+          ],
+          data: {
+            requireAuth: 'none'
+          }
+
+        })
+
+        .when('/create_forum_form', {
+          title: 'Create Forum',
+          templateUrl: 'view/create_forum_form.html',
+          controller: 'addForumCtrl',
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/forum/forum_home.css', preload: true}
           ],
           data: {
             requireAuth: ['teacher', 'student']

@@ -16,9 +16,9 @@ angular.module('lmsApp')
   }
 
   function addQuiz(q, parentKey){
-    var ref = firebase.database().ref('/quiz/' + parentKey + "/questions");
+    var ref = firebase.database().ref('/quiz/' + parentKey);
     var questionList = $firebaseArray(ref);
-    return questionList.$save(q).key;
+    questionList.$add(q);
   }
 
   return{

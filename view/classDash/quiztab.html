@@ -135,7 +135,7 @@
         <uib-accordion ng-show="openAccordsTOF">
           <div uib-accordion-group is-open="$first" class="panel2 panel-default" ng-repeat="i in getNumber() track by $index">
             <uib-accordion-heading>
-              Question {{$index + 1}}: {{q[$index].quest}}
+              Question {{$index + 1}}: {{tof.q[$index].quest}}
             </uib-accordion-heading>
             <uib-accordion-body>
 
@@ -143,15 +143,15 @@
                 <div class="form-group">
                 <label class="control-label col-sm-2">Question:</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control quest" ng-model="q[$index].quest" placeholder="Enter question"></textarea>
+                  <textarea class="form-control quest" ng-model="tof.q[$index].quest" placeholder="Enter question"></textarea>
                 </div>
                 </div>
                 <div class="col-md-offset-3">
                   <div class="form-group col-md-3">
-                      <input type="radio" name="name" value="TRUE"> TRUE
+                      <input type="radio" name="name" value="true" ng-model="tof.q[$index].answer"> TRUE
                   </div>
                   <div>
-                      <input type="radio" name="name" value="FALSE"> FALSE
+                      <input type="radio" name="name" value="FALSE" ng-model="tof.q[$index].answer"> FALSE
                   </div>
                 </div>
               </form>
@@ -159,7 +159,7 @@
             </uib-accordion-body>
           </div>
 
-          <button type="submit" class="btn btn-success submitquest" ng-click="saveQuizTOF()">Submit</button>
+          <button type="submit" class="btn btn-success submitquest" ng-click="saveQuizTOF(q)">Submit</button>
         </uib-accordion>
 
   </div>

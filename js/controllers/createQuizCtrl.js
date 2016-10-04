@@ -35,41 +35,16 @@ angular.module('lmsApp')
 
     }
 
-    $scope.QuestionData = [];
-    $scope.addQuiz = function(q) {
-      $scope.QuestionData.push({
-        q_question: q.quest,
-        q_answer: q.answer,
-        q_dummy1: q.dummy1,
-        q_dummy2: q.dummy2,
-        q_dummy3: q.dummy3
-      });
-
-      console.log("add quiz");
-    }
-
     $scope.mc={};
-
     $scope.saveQuizMC = function() {
       console.log($scope.mc);
-      Questions.addQuiz($scope.mc, Questions.getKey())
+      Questions.addQuiz($scope.mc, Questions.getKey());
     }
 
+    $scope.tof={};
     $scope.saveQuizTOF = function() {
-
+      Questions.addQuiz($scope.tof, Questions.getKey());
     }
-
-
-    //
-    // $scope.saveQuiz = function() {
-    //     console.log(Questions.getKey());
-    //   Questions.addQuiz($scope.QuestionData, Questions.getKey());
-    //   console.log("save");
-    //
-    // }
-
-
-
 
 
 

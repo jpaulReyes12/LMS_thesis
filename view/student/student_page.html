@@ -14,7 +14,7 @@
           <div class="panel panel-default">
             <div class="panel-heading">
              <h4 class="panel-title">
-               <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()"></a>
+               <a href class="accordion-toggle" ng-click="toggleOpen()"></a>
              </h4>
             </div>
             <div class="panel-collapse collapse" uib-collapse="!isOpen">
@@ -24,13 +24,13 @@
         </script>
 
   <uib-accordion>
-    <div uib-accordion-group class="panel-default" is-open="status.isFirstOpen">
+    <div uib-accordion-group class="panel-default" >
       <uib-accordion-heading>
         <h4>CRYPTOZOOLOGY</h4><section class="status"></section>
         <h6><span class="glyphicon glyphicon-user" style="color:#d7b058;"></span> Teacher: Doofinsmirtz &nbsp&nbsp&nbsp<span class="glyphicon glyphicon-calendar" style="color:#d7b058;"></span> M W F 9:00 AM</h6>
       </uib-accordion-heading>
       <uib-accordion-body>
-        <a href="#/quiz">take this</a>
+        <a href="#/start_quiz">take this</a>
       </uib-accordion-body>
     </div>
   </uib-accordion>

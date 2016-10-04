@@ -12,7 +12,14 @@
    {
      display: inline;
      margin-right: 20px;
-
+   }
+   #desc
+   {
+     text-align: justify;
+   }
+   div>h2
+   {
+     display: inline;
    }
    .choice1
    {

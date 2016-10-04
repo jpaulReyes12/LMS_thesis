@@ -1,6 +1,6 @@
 angular.module('lmsApp')
 .controller('PaginationDemoCtrl', ['$scope', function ($scope) {
-  $scope.totalItems = 64;
+  $scope.totalItems = 100;
   // $scope.currentPage = 4;
 
 

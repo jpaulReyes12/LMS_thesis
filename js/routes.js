@@ -176,12 +176,27 @@
           // }
         })
 
-        .when('/quiz', {
+        .when('/start_quiz', {
+          title: 'start quiz',
+          templateUrl: 'view/student/start_quiz.html',
+          requireAuth: false,
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/student_quiz.css', preload: true}
+          ]
+          // controller: 'PaginationDemoCtrl'
+        })
+
+        .when('/take_quiz', {
           title: 'take quiz',
           templateUrl: 'view/student/student_quiz.html',
-          css: 'style/student_quiz.css',
-          requireAuth: false,
-          controller: 'PaginationDemoCtrl'
+          // requireAuth: false,
+          controller: 'PaginationDemoCtrl',
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/student_quiz.css', preload: true}
+          ]
+
         })
 
         .when('/forum_post', {
@@ -197,11 +212,12 @@
         .when('/create_forum_form', {
           title: 'Create Forum',
           templateUrl: 'view/create_forum_form.html',
+          controller: 'addForumCtrl',
           css: [
             {href: 'style/profile.css', preload: true},
             {href: 'style/forum/forum_home.css', preload: true}
-          ]
-          // requireAuth: false
+          ],
+          requireAuth: false
         })
 
         .when('/admin', {

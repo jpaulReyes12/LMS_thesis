@@ -21,8 +21,7 @@ h1, h2, h3, h4, h5, h6, label {
     background-color: #1976D2; }
 
 #profile-brand {
-  width: 10%;
-  height: auto;
+  max-height: 30px;
   display: inline; }
 
 img[alt=profPic] {
@@ -137,3 +136,6 @@ input .input-lower {
       .footer-strip .footer-strip__copy {
         padding-top: 14px;
         float: right; } }
+
+section.container.ng-scope {
+  min-height: 38vh; }

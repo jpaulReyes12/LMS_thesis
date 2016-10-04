@@ -1,6 +1,6 @@
 angular.module('lmsApp')
 
-.directive('dirNav', ['$location' , function($location) {
+.directive('dirAdminNav', ['$location' , function($location) {
 
 
   var linker = function(scope) {
@@ -13,19 +13,15 @@ angular.module('lmsApp')
       return href.substr(1) === $location.url();
     };
 
-    // FIXME: dynamic user from database
-    scope.name = firebase.auth().currentUser.displayName;
-
-    scope.NotifNum = 3;
-    scope.MessageNum = 2;
+    scope.name = "";
   }
 
 
 
 
   return {
-    restrict: 'A',
-    templateUrl: 'components/partials/navbar.html',
+    restrict: 'E',
+    templateUrl: 'components/partials/adminNav.html',
     link: linker
   };
 

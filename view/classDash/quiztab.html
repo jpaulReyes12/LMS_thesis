@@ -91,12 +91,6 @@
         </div>
 
         <button type="submit" class="btn btn-success submitquest" ng-click="saveQuiz()">Submit</button>
-        <pre>
-          {{q}}
-        </pre>
-        <pre>
-          {{QuestionData}}
-        </pre>
       <!-- </div> -->
   </div>
 
@@ -116,7 +110,7 @@ for (i = 0; i < acc.length; i++) {
 }
 
 $(document).ready(function(){
-    <!-- $("#accord").hide(); -->
+    $("#accord").hide();
     $("#cre8").click(function(){
         $("#accord").show();
         $("#qset").hide();

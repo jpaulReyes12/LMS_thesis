@@ -1,16 +1,17 @@
 
   angular.module('lmsApp')
 
-    .controller('adminScheduleCtrl', ['$scope', 'Schedule', 'Users' , 'uibButtonConfig', function($scope, Schedule, Users, uibButtonConfig){
+    .controller('adminScheduleCtrl', ['$scope', 'Schedule', 'Users' , 'Subjects', 'uibButtonConfig', function($scope, Schedule, Users, Subjects, uibButtonConfig){
 
       $scope.theSchedule = Schedule.getSched();
       $scope.theTeachers = Users.getUsers();
+      $scope.theSubjects = Subjects.getSubjects();
       $scope.toggleAdd = true;
       uibButtonConfig.activeClass = 'btn-primary';
 
       //sort and filters
       $scope.searchSchedule = '';
-      $scope.sortType = 'section';
+      $scope.sortType = 'Section';
       $scope.sortReverse = 'false';
 
       //checkbox function
@@ -26,6 +27,15 @@
 
       };
 
+      $scope.deactivate = function(id) {
+        console.log(id);
+        Schedule.deactivate(id);
+      }
+
+      $scope.activate = function(id) {
+        console.log(id);
+        Schedule.activate(id);
+      }
 
       $scope.Days ={
         mon: false,
@@ -45,9 +55,6 @@
         data.timeEnd = data.timeEnd.getTime();
         data.isActive = true;
         data.SY = String(yearNow) + " - " + String(yearNext) ;
-
-        console.log(data.SY);
-
 
         Schedule.addSched(data);
       }

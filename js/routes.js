@@ -262,28 +262,28 @@
         .when('/teacher/uploads', {
           title: 'Uploads Page',
           templateUrl: 'view/teacher/uploads.html',
-          // css: 'style/admin.css',
+           css: 'style/uploads.css',
           requireAuth: false
         })
         .when('/teacher/classes', {
           title: 'Classes Page',
           templateUrl: 'view/teacher/classes.html',
-          // css: 'style/admin.css',
+           css: 'style/teacher/classes.css',
           requireAuth: false
         })
 
         .when('/teacher/home', {
           title: 'Home Page',
           templateUrl: 'view/teacher/homeMenubars.html',
-          // css: 'style/admin.css',
+           css: 'style/teacher/home.css',
           requireAuth: false
         })
 
 
         .when('/teacher/assignment', {
           title: 'Assignment Page',
-          templateUrl: 'view/teacher/assignment.html',
-          // css: 'style/admin.css',
+          templateUrl: 'view/teacher/assignments.html',
+           css: 'style/teacher/assignments.css',
           requireAuth: false
         })
 

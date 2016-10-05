@@ -41,8 +41,15 @@
             {href: 'style/profile.css', preload: true},
             {href: 'style/student-page.css', preload: true}
           ],
-          data: {
-            requireAuth: 'none'
+          data: {requireAuth: ['teacher', 'student']},
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
+            }]
           }
         })
 
@@ -302,7 +309,7 @@
           templateUrl: 'view/admin/home.html',
           css: 'style/admin.css',
           controller: 'adminUsersCtrl',
-          data: {requireAuth: ['admin', 'student']},
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -399,7 +406,8 @@
         })
 
         .otherwise({
-          redirectTo: '/'
+          redirectTo: '/',
+          data:{requireAuth: 'none'}
         });
 
 

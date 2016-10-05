@@ -3,24 +3,32 @@ angular.module('lmsApp')
 
 .factory('LoggedInUser', [function() {
 
-  var userLoggedin = "noUser";
+  var userLoggedin;
   var id = "";
 
    firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+
+      //CHECK AUTH
       id = user.uid;
 
+      //CHECK DATABASE
       firebase.database().ref('/users/' + id).on("value", function(snapshot) {
-        userLoggedin = snapshot.val().utype;
+        setUserLoggedin(snapshot.val().utype);
       })
     }
     else {
-      userLoggedin = "noUser";
+      setUserLoggedin("noUser");
     }
   });
 
-  function getUsertype() {
+  function setUserLoggedin(user_type) {
+    userLoggedin = user_type;
+  }
 
+
+
+  function getUsertype() {
     return userLoggedin;
   }
 

@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5, h6, label {
     background-color: #1976D2; }
 
 #profile-brand {
+  width: auto;
   max-height: 30px;
   display: inline; }
 

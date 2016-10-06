@@ -60,9 +60,15 @@ angular.module('lmsApp')
   }
 
   var checkUser = function (event, next, prev, err) {
+
+
     if ( $location.path() === "/" && LoggedInUser.getUsertype() !== "noUser"
       || $location.path() === "/home" && LoggedInUser.getUsertype() !== "noUser") {
-      $location.path(prev.$$route.originalPath);
+
+        if (prev) {
+          $location.path(prev.$$route.originalPath);
+
+        }
     }
 
     var utype = LoggedInUser.getUsertype();

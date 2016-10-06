@@ -15,8 +15,24 @@ angular.module('lmsApp')
     eventList.$add(data);
   }
 
+  function deactivate(id) {
+    ref.child(id).update({
+      isActive: false
+    });
+
+  }
+
+  function activate(id) {
+    ref.child(id).update({
+      isActive: true
+    });
+
+  }
+
   return {
     getEvents: getEvents,
-    addEvent: addEvent
+    addEvent: addEvent,
+    deactivate: deactivate,
+    activate: activate
   }
 }]);

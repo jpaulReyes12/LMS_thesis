@@ -21,33 +21,38 @@ $group-item:  #64B5F6
     margin-left: 100px
 
 
-.inner-addon
-  position: relative
-  .fa
-    position: absolute
-    padding: 10px
-    pointer-events: none
-
-.right-addon
-  @media only screen and (min-width : 992px)
-    right: 200px
-  .fa
-    right: 20px
-  input
-    padding-right: 30px
-
-.right-distance
-  color: white
-  @media only screen and (min-width : 992px)
-    position: absolute
-    right: 200px
-
 #btnJoinGrp
   background-color: #FFE57F
-  margin: 50px
   box-shadow: 0 1px 3px rgba(0,0,0,0.12)
   transition: all 0.3s cubic-bezier(.25,.8,.25,1)
   color: black
   &:hover, &:active, &:focus
     box-shadow: 0 14px 28px rgba(0,0,0,0.25)
     transform: translate(-2px, -2px)
+
+#btnCreateGrp
+  background-color: #80ff98
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12)
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+  color: black
+  &:hover, &:active, &:focus
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25)
+    transform: translate(-2px, -2px)
+
+
+.group-jumbo
+  margin: 0
+.post-panel
+  background: #f8f8f8
+  padding: 70px 0
+.post-collection
+  background: white
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15)
+  .post-container
+    padding: 10px 0
+    margin: 50px 0
+  .post-header
+    padding: 0 30px
+    .date-right
+      float: right
+  .post-content

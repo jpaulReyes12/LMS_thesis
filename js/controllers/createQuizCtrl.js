@@ -14,7 +14,7 @@ angular.module('lmsApp')
       console.log(quizKey);
       Questions.setKey(quizKey);
 
-    };
+    }
 
     $scope.QuestionData = [];
     $scope.addQuiz = function(q) {
@@ -27,7 +27,7 @@ angular.module('lmsApp')
       });
 
       console.log("add quiz");
-    };
+    }
 
 
 
@@ -36,7 +36,7 @@ angular.module('lmsApp')
       Questions.addQuiz($scope.QuestionData, Questions.getKey());
       console.log("save");
 
-    };
+    }
 
 
 

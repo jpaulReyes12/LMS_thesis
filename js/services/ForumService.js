@@ -1,7 +1,7 @@
 angular.module('lmsApp')
 .factory('Forum', ['$firebaseArray', function($firebaseArray){
 
-  var ref = firebase.database().ref('forum/');
+  var ref = firebase.database().ref('/forum');
   var details = $firebaseArray(ref);
   var toPost = [];
 
@@ -9,8 +9,13 @@ angular.module('lmsApp')
     details.$add(forum)
   }
 
+  function getForum() {
+    return details;
+  }
+
   return{
-    addForum: addForum
+    addForum: addForum,
+    getForum: getForum
   }
 
 

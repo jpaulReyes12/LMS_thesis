@@ -39,6 +39,10 @@ hr{
   margin-bottom: 25px;
   padding: 10px;
 }
+.form-wrapper>h5{
+  display: inline;
+  margin-right: 20px;
+}
 
 .post-content{
   background: white;

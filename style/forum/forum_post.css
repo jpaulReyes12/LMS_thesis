@@ -44,6 +44,10 @@ hr{
   box-shadow: 0 1px 3px rgba(0,0,0,0.12);
   margin: 20px;
 }
+.post-content>h5{
+  display: inline;
+  margin-right: 20px;
+}
 
 .comment-content{
   background-color: white;

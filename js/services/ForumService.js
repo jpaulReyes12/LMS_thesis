@@ -9,8 +9,14 @@ angular.module('lmsApp')
     details.$add(forum)
   }
 
+
+  function getForum() {
+    return details;
+  }
+
   return{
-    addForum: addForum
+    addForum: addForum,
+    getForum: getForum
   }
 
 

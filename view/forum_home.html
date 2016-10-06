@@ -30,75 +30,29 @@
 
         </div>
       </div>
-
-
     </div>
-
 
 
   <div class="col-xs-12 col-md-8 col-sm-pull-4">
-    <br>
-    <div class="create">
-      <a href="#/create_forum_form" class="w3-btn-floating-large w3-ripple w3-teal">+</a>
-    </div>
     <br><br>
-    <div class="form-wrapper">
-      <h1><a href="#/forum_home">Forum Title</a></h1>
+    <div class="form-wrapper" ng-repeat="forum in theForum" ng-model="forum.details">
+      <h1><a href="#/forum_home">{{forum.titles}}</a></h1>
       <hr >
       <h5><span class="glyphicon glyphicon-pencil"></span>Created by <a href="#/profile">Annie Leondhart</a></h5>
-      <hr >
-      <h5><span class="glyphicon glyphicon-time"></span>&nbsp&nbsp&nbsp&nbspJune 5 2016&nbsp&nbsp&nbsp&nbsp10:00 AM</h5>
+      <h5><span class="glyphicon glyphicon-time"></span> {{ forum.timePosted * 1000 | date : format:'M/d/yy h:mm a'}}</h5>
       <hr >
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<a href="#/forum_post"><br><br><b>Read more...</b></a>
+        {{forum.contents}}<a href="#/forum_post"><br><br><b>Read more...</b></a>
       </p>
 
       <hr>
     </div>
-
-    <div class="form-wrapper">
-
-      <h1><a href="#/forum_home">Forum Title</a></h1>
-      <hr >
-      <h5><span class="glyphicon glyphicon-pencil"></span>Created by <a href="#/profile">Annie Leondhart</a></h5>
-      <hr >
-      <h5><span class="glyphicon glyphicon-time"></span>&nbsp&nbsp&nbsp&nbspJune 5 2016&nbsp&nbsp&nbsp&nbsp10:00 AM</h5>
-      <hr >
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<a href="#/forum_post"><br><br><b>Read more...</b></a>
-      </p>
-
-      <hr>
-    </div>
-
-    <div class="form-wrapper">
-
-      <h1><a href="#/forum_home">Forum Title</a></h1>
-      <hr >
-      <h5><span class="glyphicon glyphicon-pencil"></span>Created by <a href="#/profile">Annie Leondhart</a></h5>
-      <hr >
-      <h5><span class="glyphicon glyphicon-time"></span>&nbsp&nbsp&nbsp&nbspJune 5 2016&nbsp&nbsp&nbsp&nbsp10:00 AM</h5>
-      <hr >
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<a href="#/forum_post"><br><br><b>Read more...</b></a>
-      </p>
-
-      <hr>
-    </div>
-
 
   </div>
-
-
-
-
 </div>
 <!-- end container forum_wrap -->
-
+<div class="create">
+  <a href="#/create_forum_form" class="create-button">+</a>
+</div>
 <section ng-include src="'components/partials/footer_def.html'"></section>

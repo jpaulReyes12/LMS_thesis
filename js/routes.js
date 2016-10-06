@@ -405,6 +405,34 @@
           }
         })
 
+        .when('/teacher/uploads', {
+          title: 'Uploads Page',
+          templateUrl: 'view/teacher/uploads.html',
+          css: 'style/uploads.css',
+          data:{requireAuth: 'none'}
+        })
+        .when('/teacher/classes', {
+          title: 'Classes Page',
+          templateUrl: 'view/teacher/classes.html',
+          css: 'style/teacher/classes.css',
+          data:{requireAuth: 'none'}
+        })
+
+        .when('/teacher/home', {
+          title: 'Home Page',
+          templateUrl: 'view/teacher/homeMenubars.html',
+          css: 'style/teacher/home.css',
+          data:{requireAuth: 'none'}
+        })
+
+
+        .when('/teacher/assignment', {
+          title: 'Assignment Page',
+          templateUrl: 'view/teacher/assignments.html',
+          css: 'style/teacher/assignments.css',
+          data:{requireAuth: 'none'}
+        })
+
         .otherwise({
           redirectTo: '/',
           data:{requireAuth: 'none'}

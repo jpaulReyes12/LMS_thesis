@@ -9,13 +9,10 @@
  width:800px;*/
  background-color: rgb(138,205,254);
  margin-left:40px;
- margin-top:10px;
+ margin-top:20px;
  overflow: hidden;
 }
-.row.container-fluid
-{
-   margin-top:10px;
-}
+
 .try
 {
   margin-left: 25px;
@@ -29,6 +26,9 @@ display: inline-block;
 /*text-align: center;*/
 /*padding-bottom: 25px;*/
 }
+#margintop{
+  margin-top: 20px;
+}
 #todo {
 margin: 0 auto;
 width: 500px;
@@ -37,3 +37,16 @@ width: 500px;
 a.close {
 float: right;
 }
+
+
+body { font-family: "Roboto", sans-serif; }
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-family: "Ubuntu", Helvetica; }
+
+#profile-brand { width: 6%; height: auto; display: inline; }
+
+img[alt=profPic] { width: 200px; height: auto; }
+
+.navbar { margin-bottom: 0; }
+
+.word-fluid { word-wrap: break-word; }

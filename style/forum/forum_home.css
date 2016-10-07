@@ -1,5 +1,5 @@
 .ng-scope{
-  background: #FAFAFA;
+  /* background: #FAFAFA; */
 }
 
 .inner-addon
@@ -11,8 +11,8 @@
   padding: 10px;
   pointer-events: none;
 }
-.left-addon .glyphicon  { left:  0px;}
-.right-addon .glyphicon { right: 0px;}
+.left-addon .glyphicon  { left:  0;}
+.right-addon .glyphicon { right: 0p}
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
 .search
@@ -43,4 +43,19 @@ hr{
 .post-content{
   background: white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+.w3-teal, .w3-hover-teal:hover
+{
+    color: #fff!important;
+    background-color: #2196F3!important;
+    position: absolute;
+}
+.create>a
+{
+  text-decoration: none;
+}
+
+.forum
+{
+  margin-bottom: 40px;
 }

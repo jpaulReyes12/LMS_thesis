@@ -70,6 +70,14 @@ angular.module('lmsApp')
     }
 
 
+    $scope.deactvate = function(id) {
+      Events.deactivate(id);
+    }
+
+    $scope.activate = function(id) {
+      Events.activate(id);
+    }
+
 
     $scope.fileGetter = function() {
       var file = event.target.files[0];

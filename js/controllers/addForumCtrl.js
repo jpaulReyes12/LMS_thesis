@@ -1,12 +1,12 @@
 angular.module('lmsApp')
-.controller( 'addForumCtrl', ['$scope', 'Forum', 'Comment', function($scope, Forum) {
+.controller( 'addForumCtrl', ['$scope', 'Forum', function($scope, Forum) {
 
   $scope.theForum = Forum.getForum();
 
   $scope.addForum = function(forum){
     console.log(forum);
 
-    forum.timePosted = Math.floor(Date.now() / 1000)
+    forum.timePosted = Math.floor(Date.now() / 1000);
     Forum.addForum(forum);
 
 

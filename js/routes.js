@@ -248,7 +248,7 @@
 
         })
 
-        .when('/forum_post', {
+        .when('/forum_post/:forum_id', {
           title: 'Forum',
           templateUrl: 'view/forum_post.html',
           controller: 'addCommentCtrl',

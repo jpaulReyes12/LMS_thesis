@@ -60,17 +60,3 @@ width: 100%;
 background-color: #FAFAFA;
 
 }
-
-
-/*profile*/
-body { font-family: "Roboto", sans-serif; }
-
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-family: "Ubuntu", Helvetica; }
-
-#profile-brand { width: 6%; height: auto; display: inline; }
-
-img[alt=profPic] { width: 200px; height: auto; }
-
-.navbar { margin-bottom: 0; }
-
-.word-fluid { word-wrap: break-word; }

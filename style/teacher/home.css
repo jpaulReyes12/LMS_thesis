@@ -5,13 +5,14 @@
 
  }
 #slider{
-/*position:right;
+ /*position:right;
  width:800px;*/
  background-color: rgb(138,205,254);
  margin-left:40px;
  margin-top:20px;
  overflow: hidden;
-}
+ margin-bottom: 20px;
+ }
 
 .try
 {
@@ -37,16 +38,3 @@ width: 500px;
 a.close {
 float: right;
 }
-
-
-body { font-family: "Roboto", sans-serif; }
-
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-family: "Ubuntu", Helvetica; }
-
-#profile-brand { width: 6%; height: auto; display: inline; }
-
-img[alt=profPic] { width: 200px; height: auto; }
-
-.navbar { margin-bottom: 0; }
-
-.word-fluid { word-wrap: break-word; }

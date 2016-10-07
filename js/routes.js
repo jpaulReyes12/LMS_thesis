@@ -421,6 +421,7 @@
         .when('/teacher/home', {
           title: 'Home Page',
           templateUrl: 'view/teacher/homeMenubars.html',
+          contoller: 'oververiewCtrl',
           css: [
             {href:'style/teacher/home.css', preload: true},
             {href:'style/profile.css', preload:true}

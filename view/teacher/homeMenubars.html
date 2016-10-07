@@ -79,15 +79,22 @@
     <div class="panel panel-primary">
       <div class="panel-heading">
       <!-- todolist -->
-        <h5>To-Do List</h5>
+        <span>Todo list</span>
       </div>
 
       <div class="panel-body" >
         <div class="col-md-10">
-          <input type="text" class="form-control" placeholder="Your Task" name="task">
+          <input type="text" class="form-control" placeholder="Your Task" name="task" ng-model="task.desc">
         </div>
-        <button type="button" class="btn btn btn-primary">Add</button>
-        <p>Todo item </p>
+        <!-- <button type="button" class="btn btn btn-primary" ng-click="addTodos()">Add</button> -->
+        <input type="button" class="btn btn-primary" ng-click="addTodos()" value="Add">
+        <pre>
+          {{task}}
+        </pre>
+
+        <div class="container-fluid">
+          <p ng-repeat="todo in theTodos">{{todo.task}} </p>
+        </div>
       </div>
     <!-- end of todolist -->
     </div>

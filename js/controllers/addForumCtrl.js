@@ -9,11 +9,11 @@ angular.module('lmsApp')
 
     $scope.forum = {titles:'', contents:''};
 
-    $scope.form_group.$setPristine;
+    // $scope.form_group.$setPristine;
 
     console.log("added");
-  }
+  };
 
-}])
+}]);
 
 // FIXME: magbutang paka ug forum service okieeee???????

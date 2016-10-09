@@ -198,7 +198,7 @@
           }
         })
 
-        .when('/group/page', {
+        .when('/group/page/:id', {
           title: 'Your Groups',
           templateUrl: 'view/group/group_page.html',
           css: [

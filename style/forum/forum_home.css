@@ -50,8 +50,8 @@ hr{
 }
 .create-button
 {
-  color: rgb(99,96,96) !important;
-  background-color: #FFE57F!important;
+  color: rgb(255, 255, 255) !important;
+  /* background-color: #FFE57F!important; */
   position: fixed;
   transition: background-color .3s,color .15s,box-shadow .3s,opacity 0.3s, transform 0.3s;
   overflow: hidden;

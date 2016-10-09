@@ -12,13 +12,10 @@ angular.module('lmsApp')
     info.created = Math.floor(Date.now() / 1000);
     info.owner = LoggedInUser.getUID();
     Groups.addGroup(info, info.owner);
-
-
-
-    // var usergrpRef = firebase.database.ref('users/' + info.owner + '/groups');
-    //
-    // usergrpRef.push(grpKey);
+    info = {};
   }
+
+  $scope.theUsersGroups = Groups.getOwnGroups(LoggedInUser.getUID());
 
 
 }])

@@ -33,14 +33,5 @@ angular.module('lmsApp')
     }
 
 
-    $scope.deactivate = function(id) {
-      Subjects.deactivate(id);
-    }
-
-    $scope.activate = function(id) {
-      Subjects.activate(id);
-    }
-
-
 
 }]);

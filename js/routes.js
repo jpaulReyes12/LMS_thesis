@@ -128,6 +128,19 @@
           }
         })
 
+        .when('/class_dashboard/post', {
+          title: 'Manage your class',
+          templateUrl: 'view/classDash/postTab.html',
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+          // 'style/classDash/classThumb.css'
+          controller: 'AnnouncementCtrl',
+          resolve: {
+                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
+                 }]
+          }
+        })
+
         .when('/class_dashboard/createannouncement', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/announcementtab.html',
@@ -135,6 +148,7 @@
           data: {
             requireAuth: ['teacher', 'student']
           },
+          controller: 'AnnouncementCtrl',
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
@@ -149,6 +163,7 @@
           data:{
             requireAuth: 'teacher'
           },
+          controller: 'AssignmentCtrl',
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
@@ -350,6 +365,32 @@
           css: { href: 'style/admin.css', preload: true},
           controller: 'aSubjectsCtrl',
           data: {requireAuth: 'admin'},
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
+        .when('/admin/sections', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/sections.html',
+          css: { href: 'style/admin.css', preload: true},
+          controller: 'eventsCtrl',
+          requireAuth: true,
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
+        .when('/admin/subjects', {
+          title: 'Admin Page',
+          templateUrl: 'view/admin/subjects.html',
+          css: { href: 'style/admin.css', preload: true},
+          controller: 'aSubjectsCtrl',
+          requireAuth: true,
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();

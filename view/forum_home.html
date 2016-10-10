@@ -17,6 +17,9 @@
         <h3 class="panel-title " style="color:white;">Announcements</h3>
       </div>
       <div class="panel-body" style="height:200px;">
+        <ul ng-reapeat="announce in theAnnounce" ng-model="announce.details">
+          <li><h4>{{announce.titles}}</h4></li>
+        </ul>
       </div>
     </div>
 
@@ -43,10 +46,10 @@
     <br><br>
     <div class="form-wrapper" ng-repeat="forum in theForum" ng-model="forum.details">
       <h1><a href="#/forum_post/:{{forum.$id}}">{{forum.titles}}</a></h1>
-      <hr >
+      <hr>
       <h5><span class="glyphicon glyphicon-pencil"></span>Created by <a href="#/profile">Annie Leondhart</a></h5>
       <h5><span class="glyphicon glyphicon-time"></span> {{ forum.timePosted * 1000 | date : format:'MM/d/yy hh:mm a'}}</h5>
-      <hr >
+      <hr>
 
       <p>
         {{forum.contents}}<a href="#/forum_post/:{{forum.$id}}"><br><br><b>Read more...</b></a>

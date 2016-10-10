@@ -13,10 +13,34 @@
 
 
       // FACEBOOK SIGNUP
-      $scope.LoginFacebook = signInWithPopup("facebook");
+      $scope.LoginFacebook = function() {
+        authObj.$signInWithPopup("facebook")
+        .then(function(result) {
+
+
+          $location.path('/profile_info/' + result.user.uid);
+
+        })
+        .catch(function(e) {
+          $scope.load = false;
+          alert("Authentication failed: ", e.message);
+        });
+      }
 
       // GOOGLE SIGNUP
-      $scope.LoginGoogle = signInWithPopup("google");
+      $scope.LoginGoogle = function() {
+        authObj.$signInWithPopup("google")
+        .then(function(result) {
+
+
+          $location.path('/profile_info/' + result.user.uid);
+
+        })
+        .catch(function(e) {
+          $scope.load = false;
+          alert("Authentication failed: ", e.message);
+        });
+      };
 
       // EMAIL SIGNUP
       $scope.submitForm = function(info){
@@ -59,6 +83,7 @@
         });
         // end authObj
       }
+
 
 
     }]);

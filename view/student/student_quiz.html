@@ -1,0 +1,42 @@
+<section ng-include src="'components/partials/navbar.html'"></section>
+
+<br><br><br>
+<div class="container heading">
+  <h6>Question 1 of 10</h6>
+  <h6>/</h6>
+  <h6>HISTORY</h6>
+  <h6>/</h6>
+  <h6>Quiz 2.4</h6>
+
+</div>
+
+    <div class="container  wrap">
+
+      <div class="quiz_content container col-md-12">
+        <h3>1. What is the name of the mortal woman that is behind the Trojan war?</h3>
+         <br>
+          <h4 class="choice1 col-md-4 col-xs-6"><input type="radio" name="choice" value="choice1"> Cleopatra</h4>
+          <h4 class="choice2 col-md-4 col-xs-6 col-md-offset-4"><input type="radio" name="choice" value="choice2"> Helen</h4>
+          <h4 class="choice1 col-md-4 col-xs-6"><input type="radio" name="choice" value="choice3"> Aphrodite</h4>
+          <h4 class="choice2 col-md-4 col-xs-6 col-md-offset-4"><input type="radio" name="choice" value="choice4"> Queen Elizabeth</h4>
+      </div>
+    </div>
+    <hr class="col-md-10 " style="float:none;">
+    <div class=" buttons col-md-2 col-md-offset-5 col-xs-6 col-xs-offset-2">
+      <input type="submit" name="btnprevious" value="PREVIOUS" class="btn btn-default">
+      <input type="submit" name="btnnext" value="NEXT" class="btn btn-default col-md-offset-2">
+    </div>
+    <div class="container page text-center ">
+      <div>
+        <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-lg" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+      </div>
+      <hr style="margin-top:-5px;">
+
+      <div class="pull-right" style="margin-bottom:5px;">
+        <input type="submit" name="btnsubmit" value="SUBMIT QUIZ" class="btn btn-primary">
+        <input type="submit" name="btncancel" value="CANCEL" class="btn btn-primary">
+      </div>
+    </div>
+
+  </body>
+</html>

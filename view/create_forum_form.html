@@ -1,0 +1,28 @@
+<section ng-include src="'components/partials/navbar.html'"></section>
+
+<div class="container">
+  <br>
+  <h2>Write Forum</h2>
+  <hr>
+  <form class="form_group">
+    <div class="col-md-4 col-md-offset-2">
+      <input type="text" name="name" value="" placeholder="forum title here" class="form-control" ng-model="forum.titles">
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+      <br>
+      <textarea name="content" rows="10" cols="number" class="form-control" ng-model="forum.contents"></textarea>
+    </div>
+
+    <div class="col-md-6 col-md-offset-8">
+      <br>
+      <input type="submit" name="btnpost" style="width:90px; "class="btn btn-primary" value="POST" ng-click="addForum(forum)">
+      <input type="submit" name="btncancel"  class="btn btn-primary" value="CANCEL">
+    </div>
+
+
+  </form>
+
+
+
+</div>

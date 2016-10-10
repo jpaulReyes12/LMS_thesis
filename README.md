@@ -20,206 +20,159 @@ Saint Theresa’s College. Specifically the system is capable of:
 1.   
 Maintain the following;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]1.1.  Users;
+ - [x]  1.1.  Users;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]1.2.  Subjects;
+  - [x]  1.2.  Subjects;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.3.  Sections;
+  - []  1.3.  Sections;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.4.  Uploaded resources;
+  - [] 1.4.  Uploaded resources;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.4.1.  
- PDF;
+    - [] 1.4.1.  PDF;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.4.2.  
- Word Document;
+    - [] 1.4.2.  Word Document;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.4.3.  
-PowerPoint;
+    - [] 1.4.3.  PowerPoint;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.4.4.  
- Zip;
+    - [] 1.4.4.  Zip;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.4.5.  
- Spreadsheet;
+    - [] 1.4.5. Spreadsheet;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.5.  
-Forum;
+  - [] 1.5.  Forum;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.5.1.  
-Comments;
+    - [] 1.5.1. Comments;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.5.2.  
-Announcements;
+    - [] 1.5.2. Announcements;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.5.3.  
-Topics;
+    - [] 1.5.3. Topics;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]1.5.4.  
-Events;
+    - [x] 1.5.4. Events;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.6.Assessment
-schedules; 
+  - [] 1.6. Assessment schedules; 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.7.Assessment
-scores;
+  - [] 1.7. Assessment scores;
 
  
 
-2.   
-Process the following:
+2.  Process the following:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]2.1.  User  Verification;
+  - [x] 2.1.  User  Verification;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]2.2.  User
-Registration;
+  - [x] 2.2.  User Registration;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]2.3.  Creation
-of courses;
+  - [x] 2.3.  Creation of courses;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]2.4.  Uploading
-and downloading files;
+  - [x] 2.4.  Uploading and downloading files;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.5.  Computation
-of scores;
+  - [] 2.5.  Computation of scores;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]2.6.  Creation
-of assessments;
+  - [x] 2.6.  Creation of assessments;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.7.Student Rankings;
+  - [] 2.7. Student Rankings;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.7.1.  
-Per Section;
+    - [] 2.7.1. Per Section;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.7.2.  
-Per Total Assessment Score; and
+    - [] 2.7.2.  Per Total Assessment Score; and
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.8.  Score Statistics;
+  - [] 2.8.  Score Statistics;
 
  
 
  
 
-3.   
-Monitor the following:
+3.  Monitor the following:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]3.1.Student  Record;
+  - [] 3.1. Student  Record;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.2.Notifications;
+  - [] 3.2. Notifications;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.2.1.  
-Announcements;
+    - [] 3.2.1.  Announcements;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.2.2.  
-Due Dates;
+    - [] 3.2.2.  Due Dates;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.2.3.  
-Assessment;
+    - [] 3.2.3.  Assessment;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.2.4.  
-Comments;
+    - [] 3.2.4.  Comments;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.2.5.  
-To do list;
+    - [] 3.2.5.  To do list;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.3. Graphical score statistics;  and
+  - [] 3.3. Graphical score statistics;  and
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.4.Achievements.
+  - [] 3.4.Achievements.
 
 **Client Side**
 
-1.   
-Maintain the following;
+1. Maintain the following;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.1.  Student  profile;
+  - [] 1.1.  Student  profile;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.2.  Teacher
-profile;
+  - [] 1.2.  Teacher profile;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.3.  Course;
+  - [x] 1.3.  Course;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.4.  Groups;
+  - [] 1.4.  Groups;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.5.  Assessments;
+  - [x] 1.5.  Assessments;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.5.1.    
-True or False;
+      - [] 1.5.1. True or False;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.5.2.    
-Multiple Choice;
+      - [] 1.5.2. Multiple Choice;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.6.  Uploaded and download
-resources;
+    - [] 1.6.  Uploaded and download resources;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.6.1.  
- PDF;
+      - [] 1.6.1.  PDF;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.6.2.  
- Word Document;
+      - [] 1.6.2.  Word Document;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.6.3.  
-PowerPoint;
+      - [] 1.6.3.  PowerPoint;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.6.4.  
- Zip;
+      - [] 1.6.4.  Zip;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.6.5.  
- Spreadsheet;
+      - [] 1.6.5.  Spreadsheet;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.7.  
-Forum;
+  - [] 1.7.  Forum;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.7.1.  
-Comments;
+    - [] 1.7.1. Comments;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.7.2.  
-Announcement;
+    - [] 1.7.2.  Announcement;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]1.7.3.  
-Topics; and
+    - [] 1.7.3.  Topics; and
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x]1.7.4.  
-Events;
+    - [x] 1.7.4.  Events;
 
- 
+   
 
 2.   
 Monitor the following:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.1.Student  Record;
+  - [x] 2.1.Student  Record;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.2.Assessment
-schedules; 
+  - [] 2.2.Assessment  schedules; 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.3.Notifications;
+  - [] 2.3.Notifications;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.3.1.  
-Announcements;
+    - [] 2.3.1.  Announcements;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.3.2.  
-Due Dates;
+    - [] 2.3.2.  Due Dates;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.3.3.  
-Assessment;
+    - [] 2.3.3.  Assessment;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.3.4.  
-Comments;
+    - [] 2.3.4.  Comments;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.3.5.  
-To do list;  and
+    - [] 2.3.5.  To do list;  and
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]2.4.Achievements.
+  - [] 2.4.Achievements.
 
  
 
 3.   
 Generate the following;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.1.Student Scores;
+  - [] 3.1.Student Scores;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.2.Achievements;   and
+  - [] 3.2.Achievements;   and
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]3.3.Assessment;
+  - [] 3.3.Assessment;
 
 However,
 the system is incapable of the following:                                              

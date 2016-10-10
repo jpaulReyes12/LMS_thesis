@@ -11,7 +11,23 @@ angular.module('lmsApp')
     return userList;
   }
 
+  function deactivate(id) {
+    ref.child(id).update({
+      isActive: false
+    });
+
+  }
+
+  function activate(id) {
+    ref.child(id).update({
+      isActive: true
+    });
+
+  }
+
   return {
-    getUsers: getUsers
+    getUsers: getUsers,
+    deactivate: deactivate,
+    activate: activate
   }
 }]);

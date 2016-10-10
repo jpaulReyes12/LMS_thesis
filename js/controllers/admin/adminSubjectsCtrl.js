@@ -34,6 +34,4 @@ angular.module('lmsApp')
 
 
 
-
-
 }]);

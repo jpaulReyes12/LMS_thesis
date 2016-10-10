@@ -1,5 +1,5 @@
 angular.module('lmsApp')
-.controller( 'addForumCtrl', ['$scope', 'Forum', 'Announcement', function($scope, Forum) {
+.controller( 'addForumCtrl', ['$scope', 'Forum', 'Announcement', function($scope, Forum, Announcement) {
 
   $scope.theForum = Forum.getForum();
 
@@ -17,7 +17,7 @@ angular.module('lmsApp')
     console.log("added");
   }
 
-  $scope.theAnnounce = Announcement.getAnnounce();
+  $scope.theAnnounce = Announcement.getAncmnt();
 
 
 

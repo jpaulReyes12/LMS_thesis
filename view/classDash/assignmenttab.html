@@ -1,31 +1,49 @@
 <div>
-  <div class="class">
+  <!-- <div class="class">
   SAMPLE- CI602A-C- 10:30AM
+  </div> -->
+  <div class="classx">
+    <h5>CI701A-C</h5>
+    <h5>/</h5>
+    <h5>10:30 AM<h5>
   </div>
 
-  <script>tinymce.init({ selector: '#mytextarea', height: '350px',
-  plugins: [
-     'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
-     'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-     'save table contextmenu directionality emoticons template paste textcolor'
-   ],
-   content_css: 'css/content.css',
-    toolbar: 'fontsizeselect | insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons '
-  });</script>
-
-  <div class="panel pull-right col-sm-11" style="margin-top: 100px;   ">
+  <div class="panel pull-right col-sm-11" style="margin-top: 50px;   ">
     <ul class="nav nav-tabs">
-      <li><a href="#/class_dashboard/createannouncement" style="color:#555;" onclick="window.location.reload();">Announcement</a></li>
-      <li class="active"><a href="#/class_dashboard/createassignment" style="color:#555;" onclick="window.location.reload();">Assignment</a></li>
+      <li><a href="#/class_dashboard/createannouncement" style="color:#555;">Announcement</a></li>
+      <li class="active"><a href="#/class_dashboard/createassignment" style="color:#555;">Assignment</a></li>
       <li><a href="#/class_dashboard/createquiz" style="color:#555;">Quiz</a></li>
     </ul>
-      <h1>Create Assignment</h1>
-      <form method="post">
-        <textarea id="mytextarea">Input text here!</textarea>
+      <h1>Create Assignment</h1><br>
+      <form>
+        <div class="form-group">
+          <input ng-model="ass.title" type="text" class="form-control asstitle" placeholder="Enter title here">
+        </div>
+        <div class="form-group">
+          <textarea ng-model="ass.cont" rows="15" class="form-control" placeholder="Enter content here"></textarea>
+        </div>
+        <button ng-click="saveAss(ass)" type="submit" class="btn btn-success">Submit</button>
       </form>
-      <button type="button" class="btn btn-success pull-right">Post</button>
+      <!-- <form id="get-data-form" method="post">
+        <textarea class="tinymce" id="mytextarea">Input text here!</textarea>
+        <input type="submit" value="POST">
+      </form>
+      <div id="data-container">
+      </div> -->
+      <!-- <button type="button" class="btn btn-success pull-right">Post</button> -->
   </div>
 
   <div ng-include src="'components/partials/classnavbar.html'">  </div>
 
 </div>
+
+<script>
+$(document).ready(function(){
+  $("#get-data-form").submit(function(e){
+    var content = tinymce.get("mytextarea").getContent();
+    $("#data-container").html(content);
+    return false;
+  });
+});
+
+</script>

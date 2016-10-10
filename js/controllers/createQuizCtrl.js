@@ -1,4 +1,3 @@
-
 angular.module('lmsApp')
   .controller('createQuizCtrl', ['$scope', 'Questions', function($scope, Questions){
 

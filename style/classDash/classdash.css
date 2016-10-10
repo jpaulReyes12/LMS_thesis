@@ -1,6 +1,7 @@
-*{
-	 /*border: 1px solid red; */
-}
+/*body
+{
+background-color: #f8f8f8;
+}*/
 
 
 
@@ -166,11 +167,14 @@ thead{
     transition: margin-left .5s;
     padding-left: 16px;
 }
-.class {
-	position: absolute;
-	top: 20px;
-	left: 40%;
-	font-size: x-large;
+.classx>h5 {
+	position: relative;
+	top: 30px;
+	left: 10%;
+	display: inline;
+	color: #555;
+	margin-right: 20px;
+	float: left;
 }
 
 /*QUIZ TAB*/
@@ -226,4 +230,48 @@ thead{
 .submitquest
 {
 	margin-top: 10px;
+}
+
+/*POST TAB*/
+.postarea
+{
+	border: 1px solid #C0C0C0;
+	height: 100vh;
+	width: 800px;
+	float:right;
+	margin-right:425px;
+	background-color: #fff;
+}
+
+.notifarea
+{
+	border: 1px solid #C0C0C0;
+	height: 250px;
+	width: 400px;
+	float:right;
+	margin-top: -700px;
+	background-color: #fff;
+}
+
+.notifarea2
+{
+	border: 1px solid #C0C0C0;
+	height: 250px;
+	width: 400px;
+	float:right;
+	margin-top: -425px;
+	background-color: #fff;
+}
+
+.postwrapper
+{
+	padding: 15px;
+	float:right;
+	background-color: #f8f8f8;
+}
+
+/*ANCMNT TAB*/
+.ancmnttitle,.asstitle
+{
+	width: 50%;
 }

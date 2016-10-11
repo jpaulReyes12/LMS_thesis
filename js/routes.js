@@ -411,6 +411,7 @@
           css: [{href: 'style/teacher/uploads.css ', preload: true},{href:'style/profile.css', preload: true}],
           data:{requireAuth: 'none'}
         })
+
         .when('/teacher/classes', {
           title: 'Classes Page',
           templateUrl: 'view/teacher/classes.html',
@@ -421,12 +422,21 @@
         .when('/teacher/home', {
           title: 'Home Page',
           templateUrl: 'view/teacher/homeMenubars.html',
-          contoller: 'oververiewCtrl',
+          controller: 'overviewCtrl',
           css: [
             {href:'style/teacher/home.css', preload: true},
             {href:'style/profile.css', preload:true}
           ],
-          data:{requireAuth: 'none'}
+          data:{requireAuth: 'none'},
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
+            }]
+          }
         })
 
 

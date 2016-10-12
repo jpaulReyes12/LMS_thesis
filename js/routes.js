@@ -137,6 +137,19 @@
           }
         })
 
+        .when('/class_dashboard/post', {
+          title: 'Manage your class',
+          templateUrl: 'view/classDash/postTab.html',
+          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+          // 'style/classDash/classThumb.css'
+          controller: 'AnnouncementCtrl',
+          resolve: {
+                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
+                 }]
+          }
+        })
+
         .when('/class_dashboard/createannouncement', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/announcementtab.html',
@@ -144,6 +157,7 @@
           data: {
             requireAuth: ['teacher', 'student']
           },
+          controller: 'AnnouncementCtrl',
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
@@ -158,6 +172,7 @@
           data:{
             requireAuth: 'teacher'
           },
+          controller: 'AssignmentCtrl',
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
@@ -292,7 +307,7 @@
 
         })
 
-        .when('/forum_post', {
+        .when('/forum_post/:forum_id', {
           title: 'Forum',
           templateUrl: 'view/forum_post.html',
           controller: 'addCommentCtrl',

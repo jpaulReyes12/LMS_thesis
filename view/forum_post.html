@@ -30,33 +30,21 @@
     </div>
   </div>
 
+  <!-- <pre>
+    {{theComment | json}}
+  </pre> -->
 
-  <div class="comments container-fluid " ng-repeat="comment in theComment" ng-model="comment.details">
+
+  <div class="comments container-fluid " ng-repeat="comment in theComment" ng-model="comment.commentList">
     <div class="row col-xs-12 col-lg-8 comment-content">
       <img src="assets\defaults\avatar.png" alt="" class="col-xs-2 col-sm-1"/>
       <h5><b><a href="#/profile">Annie Leondhart</a></b></h5>
       <p  class="col-xs-12 col-lg-12">
         {{comment.contents}}
-        <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -->
-      </p>
-    </div>
-
- 
-    <div class="row col-xs-12 col-lg-8 col-lg-8 nest comment-content">
-      <img src="assets\defaults\avatar.png" alt="" class="col-xs-2 col-sm-1"/>
-      <h5><b><a href="#/profile">Eren Jaeger</a></b></h5>
-      <p  class="col-xs-10 col-lg-11">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-    </div>
-
-    <div class="row col-xs-12 col-lg-8 comment-content">
-      <img src="assets\defaults\avatar.png" alt="" class="col-xs-2 col-sm-1"/>
-      <h5><b><a href="#/profile">Annie Leondhart</a></b></h5>
-      <p class="col-xs-12 col-lg-12">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
     </div>
   </div>
+
 </div>
+
 <section ng-include src="'components/partials/footer_def.html'"></section>

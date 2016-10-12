@@ -278,7 +278,7 @@
           }
         })
 
-        .when('/start_quiz', {
+        .when('/start_quiz/:id', {
           title: 'start quiz',
           templateUrl: 'view/student/start_quiz.html',
           requireAuth: false,
@@ -288,15 +288,14 @@
           ],
           data: {
             requireAuth: 'none'
-          }
-
-          // controller: 'PaginationDemoCtrl'
+          },
+          controller: 'start_quizCtrl'
         })
 
-        .when('/take_quiz', {
+        .when('/take_quiz/:id', {
           title: 'take quiz',
           templateUrl: 'view/student/student_quiz.html',
-          controller: 'PaginationDemoCtrl',
+          controller: 'take_quizCtrl',
           css: [
             {href: 'style/profile.css', preload: true},
             {href: 'style/student_quiz.css', preload: true}

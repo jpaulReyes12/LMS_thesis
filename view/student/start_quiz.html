@@ -2,14 +2,12 @@
 <br><br>
 <div class="container text-center">
   <h1><b>HISTORY</b></h1>
-  <h2>The Trojan War</h2>&nbsp&nbsp<h2>/</h2> <h2>Quiz no.: 2</h2>
+  <h2>{{qdetails.q_title}}</h2>&nbsp&nbsp<h2>/</h2> <h2>Quiz no.: {{qdetails.q_num}}</h2>
   <hr>
-  <h3 id="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+  <h3 id="desc">{{qdetails.q_desc}}</h3>
   <br><br>
-  <h3><b>Start Time: </b>6:00 am</h3>
-  <h3><b>End Time: </b>7:00 pm</h3>
+  <h3><b>Duration Time: </b>{{qdetails.q_dura}} minutes</h3>
+  <h3><b>Dead Line: </b>7:00 pm</h3>
   <br><br>
-  <a href="#/take_quiz" class="btn btn-success btn-lg">START</a>
+  <a href="#/take_quiz/{{qdetails.$id}}" class="btn btn-success btn-lg">START</a>
 </div>

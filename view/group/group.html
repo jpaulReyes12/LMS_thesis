@@ -27,55 +27,10 @@
 
   <div class="container">
 
-    <div class="col-md-3 col-xs-12 group-item">
+    <div class="col-md-3 col-xs-12 group-item" ng-repeat="group in theUsersGroups">
       <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
-    </div>
-    <div class="col-md-3 col-xs-12 group-item">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
-    </div>
-    <div class="col-md-3 col-xs-12 group-item">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
-    </div>
-    <div class="col-md-3 col-xs-12 group-item">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
-    </div>
-    <div class="col-md-3 col-xs-12 group-item">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
-    </div>
-    <div class="col-md-3 col-xs-12 group-item">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
-    </div>
-    <div class="col-md-3 col-xs-12 group-item">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
-    </div>
-    <div class="col-md-3 col-xs-12 group-item">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
-    </div>
-    <div class="col-md-3 col-xs-12 group-item">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
-    </div>
-    <div class="col-md-3 col-xs-12 group-item">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
-      <h4>Group</h4>
-      <small>Description</small>
+      <a href="group/page/{{group.id}}"><h4>{{group.name}}</h4></a>
+      <small>{{group.desc | limitTo: 100}} ...</small>
     </div>
   </div>
 

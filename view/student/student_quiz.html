@@ -10,10 +10,9 @@
 
 </div>
 
-    <div class="container  wrap">
-
+    <div class="container  wrap" ng-repeat="quest in questions.q">
       <div class="quiz_content container col-md-12">
-        <h3>1. What is the name of the mortal woman that is behind the Trojan war?</h3>
+        <h3>1. {{quest}}</h3>
          <br>
           <h4 class="choice1 col-md-4 col-xs-6"><input type="radio" name="choice" value="choice1"> Cleopatra</h4>
           <h4 class="choice2 col-md-4 col-xs-6 col-md-offset-4"><input type="radio" name="choice" value="choice2"> Helen</h4>
@@ -21,6 +20,9 @@
           <h4 class="choice2 col-md-4 col-xs-6 col-md-offset-4"><input type="radio" name="choice" value="choice4"> Queen Elizabeth</h4>
       </div>
     </div>
+
+
+    <!-- PAGINATION -->
     <hr class="col-md-10 " style="float:none;">
     <div class=" buttons col-md-2 col-md-offset-5 col-xs-6 col-xs-offset-2">
       <input type="submit" name="btnprevious" value="PREVIOUS" class="btn btn-default">

@@ -232,6 +232,24 @@
           }
         })
 
+        .when('/group/page', {
+          title: 'Your Groups',
+          templateUrl: 'view/group/group_page.html',
+          css: [
+            {href:'style/group.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
+
         .when('/forum_home', {
           title: 'Latest Forum Topics',
           templateUrl: 'view/forum_home.html',
@@ -411,28 +429,44 @@
         .when('/teacher/uploads', {
           title: 'Uploads Page',
           templateUrl: 'view/teacher/uploads.html',
-          css: 'style/uploads.css',
+          css: [{href: 'style/teacher/uploads.css ', preload: true},{href:'style/profile.css', preload: true}],
           data:{requireAuth: 'none'}
         })
+
         .when('/teacher/classes', {
           title: 'Classes Page',
           templateUrl: 'view/teacher/classes.html',
-          css: 'style/teacher/classes.css',
+           css: [{href: 'style/teacher/classes.css', preload: true}, {href:'style/profile.css', preload: true}],
           data:{requireAuth: 'none'}
         })
 
         .when('/teacher/home', {
           title: 'Home Page',
           templateUrl: 'view/teacher/homeMenubars.html',
-          css: 'style/teacher/home.css',
-          data:{requireAuth: 'none'}
+          controller: 'overviewCtrl',
+          css: [
+            {href:'style/teacher/home.css', preload: true},
+            {href:'style/profile.css', preload:true}
+          ],
+          data:{requireAuth: 'none'},
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
+            }]
+          }
         })
 
 
         .when('/teacher/assignment', {
           title: 'Assignment Page',
           templateUrl: 'view/teacher/assignments.html',
-          css: 'style/teacher/assignments.css',
+           css: [
+             {href:'style/teacher/assignments.css', preload: true}, {href:'style/profile.css', preload:true}
+           ],
           data:{requireAuth: 'none'}
         })
 

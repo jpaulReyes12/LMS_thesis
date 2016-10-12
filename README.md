@@ -38,11 +38,11 @@ Maintain the following;
 
     - [ ] 1.4.5. Spreadsheet;
 
-  - [ ] 1.5.  Forum;
+  - [x] 1.5.  Forum;
 
-    - [ ] 1.5.1. Comments;
+    - [x] 1.5.1. Comments;
 
-    - [ ] 1.5.2. Announcements;
+    - [x] 1.5.2. Announcements;
 
     - [x] 1.5.3. Topics;
 
@@ -110,7 +110,7 @@ Maintain the following;
 
   - [x] 1.3.  Course;
 
-  - [ ] 1.4.  Groups;
+  - [x] 1.4.  Groups;
 
   - [x] 1.5.  Assessments;
 
@@ -130,13 +130,13 @@ Maintain the following;
 
       - [ ] 1.6.5.  Spreadsheet;
 
-  - [ ] 1.7.  Forum;
+  - [x] 1.7.  Forum;
 
-    - [ ] 1.7.1. Comments;
+    - [x] 1.7.1. Comments;
 
-    - [ ] 1.7.2.  Announcement;
+    - [x] 1.7.2.  Announcement;
 
-    - [ ] 1.7.3.  Topics; and
+    - [x] 1.7.3.  Topics; and
 
     - [x] 1.7.4.  Events;
 

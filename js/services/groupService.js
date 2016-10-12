@@ -10,9 +10,8 @@ angular.module('lmsApp')
 
   function addGroup(data, uid) {
     groupList.$add(data).then(function(result) {
-      var id = result.key;
-      console.log(result);
-      firebase.database().ref('users/' + uid + '/groups').push(id);
+      data.id = result.key;
+      firebase.database().ref('users/' + uid + '/groups').push(data);
 
     });
   }
@@ -25,9 +24,15 @@ angular.module('lmsApp')
 
   }
 
+  function getOwnGroups(id) {
+    this.ref = $firebaseArray(firebase.database().ref('users/'+ id + '/groups'));
+    return this.ref;
+  }
+
   return{
     addGroup: addGroup,
-    getGrpID: getGrpID
+    getGrpID: getGrpID,
+    getOwnGroups: getOwnGroups
   }
 
 }]);

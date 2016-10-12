@@ -198,6 +198,23 @@
           }
         })
 
+        .when('/group/page/:id', {
+          title: 'Your Groups',
+          templateUrl: 'view/group/group_page.html',
+          css: [
+            {href:'style/group.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
         .when('/group/page', {
           title: 'Your Groups',
           templateUrl: 'view/group/group_page.html',
@@ -231,10 +248,12 @@
             }]
           }
         })
+
 
         .when('/forum_home', {
           title: 'Latest Forum Topics',
           templateUrl: 'view/forum_home.html',
+          controller: 'addForumCtrl',
           css: [
             {href: 'style/forum/forum_home.css', preload: true},
             {href:'style/profile.css', preload: true}
@@ -276,6 +295,7 @@
         .when('/forum_post', {
           title: 'Forum',
           templateUrl: 'view/forum_post.html',
+          controller: 'addCommentCtrl',
           css: [
             {href: 'style/forum/forum_post.css', preload: true},
             {href:'style/profile.css', preload: true}
@@ -302,6 +322,7 @@
               return $firebaseAuth().$requireSignIn();
             }]
           }
+
         })
 
         .when('/admin', {

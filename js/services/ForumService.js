@@ -6,12 +6,17 @@ angular.module('lmsApp')
   var toPost = [];
 
   function addForum(forum){
-    details.$add(forum)
+    details.$add(forum);
+  }
+
+  function getForum() {
+    return details;
   }
 
   return{
-    addForum: addForum
-  }
+    addForum: addForum,
+    getForum: getForum
+  };
 
 
-}])
+}]);

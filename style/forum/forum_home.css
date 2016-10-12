@@ -44,6 +44,10 @@ hr{
   display: inline;
   margin-right: 20px;
 }
+.form-wrapper>span{
+  float: right;
+  margin-top: -40px;
+}
 
 
 .post-content{

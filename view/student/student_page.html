@@ -30,7 +30,11 @@
         <h6><span class="glyphicon glyphicon-user" style="color:#d7b058;"></span> Teacher: Doofinsmirtz &nbsp&nbsp&nbsp<span class="glyphicon glyphicon-calendar" style="color:#d7b058;"></span> M W F 9:00 AM</h6>
       </uib-accordion-heading>
       <uib-accordion-body>
-        <a href="#/start_quiz">take this</a>
+        <ul>
+          <li ng-repeat="test in theQizzes">
+            <a href="#/start_quiz/{{test.$id}}">{{test.q_title}}</a>
+          </li>
+        </ul>
       </uib-accordion-body>
     </div>
   </uib-accordion>

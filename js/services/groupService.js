@@ -1,7 +1,7 @@
 
 angular.module('lmsApp')
 
-.factory('Groups', [ '$firebaseArray', function ($firebaseArray) {
+.factory('Groups', [ '$firebaseArray', '$firebaseObject', function ($firebaseArray, $firebaseObject) {
 
 
   var ref = firebase.database().ref('/groups');
@@ -20,8 +20,19 @@ angular.module('lmsApp')
     return grpID
   }
 
-  function addMember() {
 
+  function addGroupPost(id, post) {
+    var group = ref.child(id + "/posts/");
+    var groupContents = $firebaseArray(group);
+
+    groupContents.$add(post);
+  }
+
+  function getPosts(id) {
+    var group = ref.child(id + "/posts/");
+    var groupContents = $firebaseArray(group);
+
+    return groupContents;
   }
 
   function getOwnGroups(id) {
@@ -29,10 +40,20 @@ angular.module('lmsApp')
     return this.ref;
   }
 
+  function getOneGroup(id) {
+    var ref = firebase.database().ref('/groups/' + id);
+    var groupList = $firebaseObject(ref);
+
+    return groupList;
+
+  }
+
   return{
     addGroup: addGroup,
-    getGrpID: getGrpID,
-    getOwnGroups: getOwnGroups
+    getOwnGroups: getOwnGroups,
+    getOneGroup: getOneGroup,
+    addGroupPost: addGroupPost,
+    getPosts: getPosts
   }
 
 }]);

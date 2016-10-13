@@ -7,12 +7,18 @@
   .group-item:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     transform: translate(-3px, -10px); }
+  .group-item a {
+    color: black;
+    text-decoration: none; }
+    .group-item a:hover {
+      color: white; }
   @media only screen and (min-width: 768px) {
     .group-item {
       height: 150px; } }
 
 .main-content {
-  margin-top: 20px; }
+  margin-top: 20px;
+  min-height: 75vh; }
   @media only screen and (min-width: 768px) {
     .main-content {
       margin-left: 100px; } }
@@ -34,3 +40,24 @@
   #btnCreateGrp:hover, #btnCreateGrp:active, #btnCreateGrp:focus {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     transform: translate(-2px, -2px); }
+
+.group-jumbo {
+  margin: 0;
+  background-color: #FFE57F; }
+
+.post-panel {
+  background: #f8f8f8;
+  padding: 70px 0; }
+
+.post-collection {
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
+  .post-collection .post-input {
+    margin: 50px; }
+  .post-collection .post-container {
+    padding: 10px 0;
+    margin: 50px 0; }
+  .post-collection .post-header {
+    padding: 0 30px; }
+    .post-collection .post-header .date-right {
+      float: right; }

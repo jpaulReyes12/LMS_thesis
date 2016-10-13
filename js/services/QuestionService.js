@@ -1,6 +1,6 @@
 angular.module('lmsApp')
 
-.factory('Questions',['$firebaseArray', "$firebaseObject", function($firebaseArray){
+.factory('Questions',['$firebaseArray', "$firebaseObject", function($firebaseArray, $firebaseObject){
 
   var ref = firebase.database().ref('/quiz/');
   var key = "";
@@ -17,12 +17,25 @@ angular.module('lmsApp')
 
   function addQuiz(q, parentKey){
     var ref = firebase.database().ref('/quiz/' + parentKey);
-    var questionList = $firebaseArray(ref);
-    questionList.$add(q);
+    ref.update(q);
+
   }
+
+  function getQuestions(id) {
+
+    var questions = ref.child(id);
+    return $firebaseObject(questions);
+  }
+
+  function getQuizzes() {
+    return $firebaseArray(ref);
+  }
+
 
   return{
     addQuiz: addQuiz,
+    getQuizzes: getQuizzes,
+    getQuestions: getQuestions,
     setKey: setKey,
     getKey: getKey
   }

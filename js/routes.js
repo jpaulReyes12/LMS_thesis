@@ -216,6 +216,7 @@
         .when('/group/page/:id', {
           title: 'Your Groups',
           templateUrl: 'view/group/group_page.html',
+          controller: 'groupPageCtrl',
           css: [
             {href:'style/group.css', preload: true},
             {href:'style/profile.css', preload: true}
@@ -226,6 +227,10 @@
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
             }]
           }
         })

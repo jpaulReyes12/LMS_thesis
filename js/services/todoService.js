@@ -4,7 +4,7 @@ angular.module('lmsApp')
 .factory('Todo', [ '$firebaseArray', function ($firebaseArray) {
 
   var uid;
-  var ref = firebase.database().ref('users/' + uid + '/todos');
+  var ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/todos');
 
   function getTodos(IDuser) {
     var ref = firebase.database().ref('users/' + IDuser + '/todos');

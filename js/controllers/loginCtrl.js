@@ -46,7 +46,7 @@
 
               switch (type) {
                 case "student":
-                  $location.path('/profile');
+                  $location.path('/student_page');
                   break;
                 case "teacher":
                   $location.path('/profile');
@@ -63,7 +63,6 @@
           }
           else {
             $location.path('/profile_info/' + user.uid   );
-
           }
 
 

@@ -1,0 +1,47 @@
+<div class="modal fade" id="newGroup" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h4 class="modal-title"> Create group</h4>
+      </div>
+      <div class="modal-body">
+
+        <!-- FORM -->
+        <form name="createGrpFrm">
+
+          <div class="form-group" ng-class="{ 'has-error' : createGrpFrm.grpName.$invalid && createGrpFrm.grpName.$dirty }">
+            <label class="control-label">Group name</label>
+            <input type="text" class="form-control" name="grpName" required ng-model="group.name">
+            <p ng-show="createGrpFrm.grpName.$error.required && createGrpFrm.grpName.$dirty" class="help-block">Group name is required.</p>
+          </div>
+
+          <div class="form-group">
+             <!-- ng-class="{ 'has-error' : createGrpFrm.members.$invalid && createGrpFrm.members.$dirty }" -->
+            <label class="control-label">Desciption:</label>
+            <textarea class="form-control" name="description" rows="5" ng-model="group.desc" ng-maxlength="350" required></textarea>
+          </div>
+
+          <!-- <div class="form-group" ng-class="{ 'has-error' : createGrpFrm.members.$invalid && createGrpFrm.members.$dirty }">
+            <label class="control-label">Members:</label>
+            <textarea class="form-control" name="members" ng-model="group.members" required></textarea>
+          </div> -->
+
+          <div class="form-group">
+            <label class="control-label">Privacy:</label>
+            <select class="form-control" name="privacy" ng-model="group.privacy" required
+            ng-options="i.code as i.privacy for i in setPrivacy">
+              <option value="" selected disabled>-- Select privacy --</option>
+            </select>
+          </div>
+
+        </form>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-disabled="createGrpFrm.$invalid" ng-click="newGroup(group)">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>

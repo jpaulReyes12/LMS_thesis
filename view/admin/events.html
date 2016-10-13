@@ -77,14 +77,14 @@
 
           <!-- SCHEDULE -->
           <div class="row others">
-            <h3>Schedule</h4>
+            <h3>Schedule</h3>
 
               <!-- START -->
             <div class="col-md-4 form-group"
              ng-class="{ 'has-error' : eventFrm.start.$invalid && eventFrm.start.$dirty }">
               <label>Event start:</label>
-              <input type="datetime-local" class="form-control" name="start" min='{{ dateNow | date: "yyyy-MM-ddTHH:mm:ss"}}'
-              max='{{ futureDate | date: "yyyy-MM-ddTHH:mm:ss"}}'
+              <input type="datetime-local" class="form-control" name="start" min="{{ dateNow | date: 'yyyy-MM-ddTHH:mm:ss'}}"
+              max="{{ futureDate | date: 'yyyy-MM-ddTHH:mm:ss'}}"
               ng-model="event.start" required>
 
               <p ng-show="eventFrm.start.$invalid && eventFrm.start.$dirty"
@@ -98,8 +98,8 @@
              ng-class="{ 'has-error' : eventFrm.end.$invalid && eventFrm.end.$dirty }">
               <label>Event end:</label>
               <input type="datetime-local" class="form-control" name="end" min="{{event.start}}"
-              max='{{ futureDate | date: "yyyy-MM-ddTHH:mm:ss"}}'
-              ng-model="event.end" required>
+              max="{{ futureDate | date: 'yyyy-MM-ddTHH:mm:ss'}}"
+              ng-model="event.end" required >
 
               <p ng-show="eventFrm.end.$invalid && eventFrm.end.$dirty"
               class="help-block">Oops! Event end is invalid.</p>
@@ -198,15 +198,24 @@
         <td><a href="{{event.url}}">link</a></td>
         <td>{{event.isActive}}</td>
         <td>
-          <button type="button" class="btn btn-success" ng-show="event.isActive == false">Activate</button>
-          <button type="button" class="btn btn-danger" ng-show="event.isActive == true">Deactivate</button>
+          <button type="button" class="btn btn-success"
+            ng-click="activate(event.$id)"
+            ng-show="event.isActive == false">
+            Activate
+          </button>
+          <button type="button" class="btn btn-danger"
+            ng-click="deactvate(event.$id)"
+            ng-show="event.isActive == true">
+            Deactivate
+          </button>
           <button type="button" class="btn btn-info" ng-show="event.isActive == true">Edit</button>
         </td>
       </tr>
+    </tbody>
   </table>
 </div>
 
-<dir-loader ng-show="load"></dirLoader>
+<dir-loader ng-show="load"></dir-loader>
 
 
 <script type="text/javascript">

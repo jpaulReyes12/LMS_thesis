@@ -88,9 +88,10 @@
         <td>{{ user.dateSignedIn}}</td>
         <td>{{ user.isActive}}</td>
         <td>
-          <button type="button" class="btn btn-danger" ng-show="user.isActive == true">Deactivate</button>
-          <button type="button" class="btn btn-success" ng-show="user.isActive == false">Activate</button>
+          <button type="button" class="btn btn-danger" ng-click="deactvate(user.$id)" ng-show="user.isActive == true">Deactivate</button>
+          <button type="button" class="btn btn-success" ng-click="activate(user.$id)" ng-show="user.isActive == false">Activate</button>
         </td>
       </tr>
+    </tbody>
   </table>
 </div>

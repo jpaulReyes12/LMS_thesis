@@ -1,0 +1,65 @@
+
+   .wrap
+   {
+     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+     padding: 20px;
+   }
+   .page
+   {
+     text-align: center;
+   }
+   .heading>h6
+   {
+     display: inline;
+     margin-right: 20px;
+   }
+   #desc
+   {
+     text-align: center;
+   }
+   div>h2
+   {
+     display: inline;
+   }
+   .choice1
+   {
+     background-color: #8aaadf;
+     padding: 10px;
+     float: left;
+     border-radius: 5px;
+     /* margin-bottom: 9px; */
+   }
+   .choice2
+   {
+     background-color: #8aaadf;
+     padding: 10px;
+     float: right;
+     border-radius: 5px;
+   }
+   .buttons
+   {
+     display: inline-flex;
+     margin-top: -2px;
+   }
+   .quiz_content
+   {
+     background-color: rgb(235, 235, 235);
+     padding-left: 40px;
+     padding-right: 40px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     border-radius: 6px;
+     /* height: 409px; */
+   }
+   .collapse>a
+   {
+     color: black;
+   }
+   hr
+   {
+     border-top: 1px solid #c5c5c5;
+   }
+   .page>nav>ul>li>a:hover
+   {
+     background-color: #337ab7;
+   }

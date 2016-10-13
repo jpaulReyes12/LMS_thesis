@@ -13,7 +13,6 @@ angular.module('lmsApp')
       return href.substr(1) === $location.url();
     };
 
-    scope.name = "";
   }
 
 

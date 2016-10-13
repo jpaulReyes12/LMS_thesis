@@ -15,8 +15,24 @@ angular.module('lmsApp')
     subjectList.$add(data);
   }
 
+  function deactivate(id) {
+    ref.child(id).update({
+      isActive: false
+    });
+
+  }
+
+  function activate(id) {
+    ref.child(id).update({
+      isActive: true
+    });
+
+  }
+
   return {
     getSubjects: getSubjects,
-    addSubject: addSubject
+    addSubject: addSubject,
+    deactivate: deactivate,
+    activate: activate
   }
 }]);

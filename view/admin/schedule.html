@@ -159,10 +159,17 @@
         <td>{{sched.SY}}</td>
         <td>{{sched.isActive}}</td>
         <td>
-          <button type="button" class="btn btn-info">Edit</button>
-          <button type="button" class="btn btn-danger" ng-show="sched.isActive == true">Deactivate</button>
-          <button type="button" class="btn btn-success" ng-show="sched.isActive == false">Activate</button>
+          <button type="button" class="btn btn-info" ng-show="sched.isActive == true">Edit</button>
+          <button type="button" class="btn btn-danger"
+            ng-click="deactivate(sched.$id)" ng-show="sched.isActive == true">
+            Deactivate
+          </button>
+          <button type="button" class="btn btn-success"
+            ng-click="activate(sched.$id)" ng-show="sched.isActive == false">
+            Activate
+          </button>
         </td>
       </tr>
+    </tbody>
   </table>
 </div>

@@ -7,7 +7,10 @@
           templateUrl: 'view/home.html',
           css: 'style/home.css',
           controller: 'loginCtrl',
-          requireAuth: false
+          data: {
+            requireAuth: 'none'
+          }
+
         })
 
         .when('/home', {
@@ -15,7 +18,9 @@
           templateUrl: 'view/home.html',
           css: 'style/home.css',
           controller: 'loginCtrl',
-          requireAuth: false
+          data: {
+            requireAuth: 'none'
+          }
         })
 
         .when('/profile_info/:user', {
@@ -23,15 +28,20 @@
           templateUrl: 'view/profileInfo.html',
           css: 'style/signup.css',
           controller: 'profileInfoCtrl',
-          requireAuth: false
+          data: {
+            requireAuth: 'none'
+          }
         })
 
-        .when('/profile', {
-          title: 'Profile',
-          templateUrl: 'view/studentProfile.html',
-          css: 'style/profile.css',
-          controller: 'studentProfile',
-          requireAuth: true,
+        .when('/student_page', {
+          title: 'Student page',
+          templateUrl: 'view/student/student_page.html',
+          controller: 'TabsDemoCtrl',
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/student-page.css', preload: true}
+          ],
+          data: {requireAuth: ['teacher', 'student']},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -40,8 +50,25 @@
               return firebase.auth().currentUser;
 
             }]
+          }
+        })
 
+        .when('/profile', {
+          title: 'Profile',
+          templateUrl: 'view/studentProfile.html',
+          css: 'style/profile.css',
+          controller: 'studentProfile',
+          data: {
+            requireAuth: 'none'
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
 
+            }]
           }
         })
 
@@ -52,7 +79,9 @@
             {href: 'style/home.css', preload: true},
             {href: 'style/aboutus.css', preload: true}
           ],
-          requireAuth: false
+          data: {
+            requireAuth: 'none'
+          }
         })
 
         .when('/signup', {
@@ -60,14 +89,18 @@
           templateUrl: 'view/signup.html',
           css: 'style/signup.css',
           controller: 'signupCtrl',
-          requireAuth: false
+          data: {
+            requireAuth: 'none'
+          }
         })
 
         .when('/class_dashboard/class_recordList', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord.html',
           css: [ 'style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
-          requireAuth: false,
+          data: {
+            requireAuth: 'none'
+          },
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
@@ -79,7 +112,9 @@
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord2.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
-          requireAuth: false,
+          data : {
+            requireAuth: ['teacher', 'student']
+          },
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
@@ -92,7 +127,9 @@
           title: 'Manage your class',
           templateUrl: 'view/classDash/classResources.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
-          // 'style/classDash/classThumb.css'
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
@@ -117,6 +154,9 @@
           title: 'Manage your class',
           templateUrl: 'view/classDash/announcementtab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+          data: {
+            requireAuth: ['teacher', 'student']
+          },
           controller: 'AnnouncementCtrl',
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -129,6 +169,9 @@
           title: 'View your resources',
           templateUrl: 'view/classDash/assignmenttab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+          data:{
+            requireAuth: 'teacher'
+          },
           controller: 'AssignmentCtrl',
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -142,7 +185,9 @@
           templateUrl: 'view/classDash/quiztab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
           controller: 'createQuizCtrl',
-          requireAuth: true,
+          data: {
+            requireAuth: 'teacher'
+          },
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
@@ -152,47 +197,151 @@
 
         .when('/group', {
           title: 'Your Groups',
-          templateUrl: 'view/group.html',
+          templateUrl: 'view/group/group.html',
+          controller: 'groupCtrl',
           css: [
             {href:'style/group.css', preload: true},
             {href:'style/profile.css', preload: true}
           ],
-          requireAuth: true,
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
             }]
           }
         })
+
+        .when('/group/page/:id', {
+          title: 'Your Groups',
+          templateUrl: 'view/group/group_page.html',
+          controller: 'groupPageCtrl',
+          css: [
+            {href:'style/group.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
+            }]
+          }
+        })
+
+        .when('/group/page', {
+          title: 'Your Groups',
+          templateUrl: 'view/group/group_page.html',
+          css: [
+            {href:'style/group.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
+        .when('/group/page', {
+          title: 'Your Groups',
+          templateUrl: 'view/group/group_page.html',
+          css: [
+            {href:'style/group.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
 
         .when('/forum_home', {
           title: 'Latest Forum Topics',
           templateUrl: 'view/forum_home.html',
+          controller: 'addForumCtrl',
           css: [
             {href: 'style/forum/forum_home.css', preload: true},
             {href:'style/profile.css', preload: true}
           ],
-          requireAuth: true,
-          resolve: {
-            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-              return $firebaseAuth().$requireSignIn();
-            }]
+          data: {
+            requireAuth: 'none'
           }
         })
 
-        .when('/forum_post', {
+        .when('/start_quiz/:id', {
+          title: 'start quiz',
+          templateUrl: 'view/student/start_quiz.html',
+          requireAuth: false,
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/student_quiz.css', preload: true}
+          ],
+          data: {
+            requireAuth: 'none'
+          },
+          controller: 'start_quizCtrl'
+        })
+
+        .when('/take_quiz/:id', {
+          title: 'take quiz',
+          templateUrl: 'view/student/student_quiz.html',
+          controller: 'take_quizCtrl',
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/student_quiz.css', preload: true}
+          ],
+          data: {
+            requireAuth: 'none'
+          }
+
+        })
+
+        .when('/forum_post/:forum_id', {
           title: 'Forum',
           templateUrl: 'view/forum_post.html',
+          controller: 'addCommentCtrl',
           css: [
             {href: 'style/forum/forum_post.css', preload: true},
             {href:'style/profile.css', preload: true}
           ],
-          requireAuth: true,
+          data: {
+            requireAuth: 'none'
+          }
+
+        })
+
+        .when('/create_forum_form', {
+          title: 'Create Forum',
+          templateUrl: 'view/create_forum_form.html',
+          controller: 'addForumCtrl',
+          css: [
+            {href: 'style/profile.css', preload: true},
+            {href: 'style/forum/forum_home.css', preload: true}
+          ],
+          data: {
+            requireAuth: ['teacher', 'student']
+          },
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
             }]
           }
+
         })
 
         .when('/admin', {
@@ -200,7 +349,7 @@
           templateUrl: 'view/admin/home.html',
           css: 'style/admin.css',
           controller: 'adminUsersCtrl',
-          requireAuth: true,
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -213,7 +362,7 @@
           templateUrl: 'view/admin/schedule.html',
           css: 'style/admin.css',
           controller: 'adminScheduleCtrl',
-          requireAuth: true,
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -225,7 +374,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/groups.html',
           css: 'style/admin.css',
-          requireAuth: true,
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -238,7 +387,7 @@
           templateUrl: 'view/admin/events.html',
           css: { href: 'style/admin.css', preload: true},
           controller: 'eventsCtrl',
-          requireAuth: true,
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -251,7 +400,7 @@
           templateUrl: 'view/admin/sections.html',
           css: { href: 'style/admin.css', preload: true},
           controller: 'eventsCtrl',
-          requireAuth: true,
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -264,7 +413,7 @@
           templateUrl: 'view/admin/subjects.html',
           css: { href: 'style/admin.css', preload: true},
           controller: 'aSubjectsCtrl',
-          requireAuth: true,
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -276,7 +425,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/forum.html',
           css: 'style/admin.css',
-          requireAuth: true,
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -288,7 +437,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/forum_topics.html',
           css: 'style/admin.css',
-          requireAuth: true,
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -296,13 +445,56 @@
           }
         })
 
+        .when('/teacher/uploads', {
+          title: 'Uploads Page',
+          templateUrl: 'view/teacher/uploads.html',
+          css: [{href: 'style/teacher/uploads.css ', preload: true},{href:'style/profile.css', preload: true}],
+          data:{requireAuth: 'none'}
+        })
+
+        .when('/teacher/classes', {
+          title: 'Classes Page',
+          templateUrl: 'view/teacher/classes.html',
+           css: [{href: 'style/teacher/classes.css', preload: true}, {href:'style/profile.css', preload: true}],
+          data:{requireAuth: 'none'}
+        })
+
+        .when('/teacher/home', {
+          title: 'Home Page',
+          templateUrl: 'view/teacher/homeMenubars.html',
+          controller: 'overviewCtrl',
+          css: [
+            {href:'style/teacher/home.css', preload: true},
+            {href:'style/profile.css', preload:true}
+          ],
+          data:{requireAuth: 'none'},
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
+            }]
+          }
+        })
+
+
+        .when('/teacher/assignment', {
+          title: 'Assignment Page',
+          templateUrl: 'view/teacher/assignments.html',
+           css: [
+             {href:'style/teacher/assignments.css', preload: true}, {href:'style/profile.css', preload:true}
+           ],
+          data:{requireAuth: 'none'}
+        })
+
         .otherwise({
-          redirectTo: '/'
+          redirectTo: '/',
+          data:{requireAuth: 'none'}
         });
 
 
-
-      // $locationProvider.html5Mode(true);
     }]);
 
 

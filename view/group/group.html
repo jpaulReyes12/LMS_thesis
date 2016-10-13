@@ -1,0 +1,41 @@
+<section ng-include src="'components/modals/changePass.html'"></section>
+<section dir-nav></section>
+<section ng-include src="'components/modals/group_modal.html'"></section>
+
+
+<div class="container-fluid main-content">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-3 col-xs-12 pull-right">
+        <input type="text" name="search_groups" class="form-control" placeholder="Search">
+      </div>
+
+      <button class="btn" id="btnJoinGrp">
+        Join
+      </button>
+      <button class="btn" id="btnCreateGrp" data-toggle="modal" data-target="#newGroup">
+        Create
+      </button>
+    </div>
+
+
+  </div>
+
+  <h1 class="row col-xs-12"><big>My groups</big></h1>
+
+  <div class="container">
+
+    <div class="col-md-3 col-xs-12 group-item" ng-repeat="group in theUsersGroups">
+      <button class="btn btn-danger btn-sm pull-right">Leave</button>
+      <a href="#/group/page/{{group.id}}"><h4>{{group.name}}</h4></a>
+      <small>{{group.desc | limitTo: 100}} ...</small>
+    </div>
+  </div>
+
+</div>
+
+
+
+<section ng-include src="'components/partials/footer_def.html'"></section>

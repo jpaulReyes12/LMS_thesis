@@ -1,0 +1,91 @@
+th
+{
+  background-color: #2196F3;
+  border-color: #579ad7;
+  color: #ffffff;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+  margin: auto;
+}
+h5
+{
+  color: #ffffff;
+}
+.achievement
+{
+  background-color: #43ade8;
+  color: #000000;
+  box-shadow: 5px 10px 15px #999696;
+}
+.pending
+{
+  background-color: #dd9e4c;
+}
+
+ul
+{
+  /* list-style: none; */
+}
+.badges
+{
+  border: hidden;
+}
+
+.achievement>img
+{
+  width: 70px;
+  height: 70px;
+}
+.inner-addon .glyphicon
+{
+  position: absolute;
+  padding: 10px;
+}
+.right-addon .glyphicon
+{
+  right: 15px;
+  top: 0px;
+}
+.right-addon input
+{
+  padding-right: 30px;
+}
+
+.status
+{
+  height: 20px;
+  width: 20px;
+  background-color: #59e237;
+  border-radius: 100px;
+  border-color: #59e237;
+  float: right;
+  margin-top: -20px;
+}
+.panel-default
+{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  border-color: #999696;
+}
+
+.panel-default>.panel-heading
+{
+  background-color: #2196F3;
+}
+.panel-body
+{
+  /*height: 100px;*/
+}
+.panel-title, h6
+{
+  color: #ffffff;
+}
+.image-circle
+{
+  box-shadow: 5px 10px 15px #999696;
+}
+.panel-title>a
+{
+  text-decoration: none;
+}

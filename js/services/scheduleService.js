@@ -15,8 +15,24 @@ angular.module('lmsApp')
     scheduleList.$add(data);
   }
 
+  function deactivate(id) {
+    ref.child(id).update({
+      isActive: false
+    });
+
+  }
+
+  function activate(id) {
+    ref.child(id).update({
+      isActive: true
+    });
+
+  }
+
   return {
     getSched: getSched,
-    addSched: addSched
+    addSched: addSched,
+    deactivate: deactivate,
+    activate: activate
   }
 }]);

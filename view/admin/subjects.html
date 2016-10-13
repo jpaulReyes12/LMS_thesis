@@ -107,10 +107,18 @@
         <td>{{subject.description}}</td>
         <td>{{subject.isActive}}</td>
         <td>
-          <button type="button" class="btn btn-success" ng-show="subject.isActive == false">Activate</button>
-          <button type="button" class="btn btn-danger" ng-show="subject.isActive == true">Deactivate</button>
+          <button type="button" class="btn btn-success"
+            ng-click="activate(subject.$id)" ng-show="subject.isActive == false">
+            Activate
+          </button>
+          <button type="button" class="btn btn-danger"
+            ng-click="deactivate(subject.$id)"
+            ng-show="subject.isActive == true">
+            Deactivate
+          </button>
           <button type="button" class="btn btn-info" ng-show="subject.isActive == true">Edit</button>
         </td>
       </tr>
+    </tbody>
   </table>
 </div>

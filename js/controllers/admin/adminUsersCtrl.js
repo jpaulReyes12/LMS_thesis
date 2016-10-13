@@ -23,4 +23,12 @@
 
       };
 
+      $scope.deactvate = function(id) {
+        Users.deactivate(id);
+      }
+
+      $scope.activate = function(id) {
+        Users.activate(id);
+      }
+
     }]);

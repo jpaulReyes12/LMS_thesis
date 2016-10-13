@@ -41,7 +41,16 @@
             {href: 'style/profile.css', preload: true},
             {href: 'style/student-page.css', preload: true}
           ],
-          requireAuth: false
+          data: {requireAuth: ['teacher', 'student']},
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
+            }]
+          }
         })
 
         .when('/profile', {
@@ -204,6 +213,28 @@
           }
         })
 
+        .when('/group/page/:id', {
+          title: 'Your Groups',
+          templateUrl: 'view/group/group_page.html',
+          controller: 'groupPageCtrl',
+          css: [
+            {href:'style/group.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
+            }]
+          }
+        })
+
         .when('/group/page', {
           title: 'Your Groups',
           templateUrl: 'view/group/group_page.html',
@@ -220,6 +251,24 @@
             }]
           }
         })
+
+        .when('/group/page', {
+          title: 'Your Groups',
+          templateUrl: 'view/group/group_page.html',
+          css: [
+            {href:'style/group.css', preload: true},
+            {href:'style/profile.css', preload: true}
+          ],
+          data:{
+            requireAuth: ['teacher', 'student']
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+        })
+
 
         .when('/forum_home', {
           title: 'Latest Forum Topics',
@@ -283,15 +332,16 @@
           css: [
             {href: 'style/profile.css', preload: true},
             {href: 'style/forum/forum_home.css', preload: true}
-          ]
-          // data: {
-          //   requireAuth: ['teacher', 'student']
-          // },
-          // resolve: {
-          //   "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-          //     return $firebaseAuth().$requireSignIn();
-          //   }]
-          // }
+          ],
+          data: {
+            requireAuth: ['teacher', 'student']
+          },
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }]
+          }
+
         })
 
         .when('/admin', {
@@ -299,7 +349,7 @@
           templateUrl: 'view/admin/home.html',
           css: 'style/admin.css',
           controller: 'adminUsersCtrl',
-          data: {requireAuth: ['admin', 'student']},
+          data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
               return $firebaseAuth().$requireSignIn();
@@ -371,32 +421,6 @@
           }
         })
 
-        .when('/admin/sections', {
-          title: 'Admin Page',
-          templateUrl: 'view/admin/sections.html',
-          css: { href: 'style/admin.css', preload: true},
-          controller: 'eventsCtrl',
-          requireAuth: true,
-          resolve: {
-            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-              return $firebaseAuth().$requireSignIn();
-            }]
-          }
-        })
-
-        .when('/admin/subjects', {
-          title: 'Admin Page',
-          templateUrl: 'view/admin/subjects.html',
-          css: { href: 'style/admin.css', preload: true},
-          controller: 'aSubjectsCtrl',
-          requireAuth: true,
-          resolve: {
-            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-              return $firebaseAuth().$requireSignIn();
-            }]
-          }
-        })
-
         .when('/admin/forum', {
           title: 'Admin Page',
           templateUrl: 'view/admin/forum.html',
@@ -421,8 +445,53 @@
           }
         })
 
+        .when('/teacher/uploads', {
+          title: 'Uploads Page',
+          templateUrl: 'view/teacher/uploads.html',
+          css: [{href: 'style/teacher/uploads.css ', preload: true},{href:'style/profile.css', preload: true}],
+          data:{requireAuth: 'none'}
+        })
+
+        .when('/teacher/classes', {
+          title: 'Classes Page',
+          templateUrl: 'view/teacher/classes.html',
+           css: [{href: 'style/teacher/classes.css', preload: true}, {href:'style/profile.css', preload: true}],
+          data:{requireAuth: 'none'}
+        })
+
+        .when('/teacher/home', {
+          title: 'Home Page',
+          templateUrl: 'view/teacher/homeMenubars.html',
+          controller: 'overviewCtrl',
+          css: [
+            {href:'style/teacher/home.css', preload: true},
+            {href:'style/profile.css', preload:true}
+          ],
+          data:{requireAuth: 'none'},
+          resolve: {
+            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+              return $firebaseAuth().$requireSignIn();
+            }],
+            "currentUser": [function() {
+              return firebase.auth().currentUser;
+
+            }]
+          }
+        })
+
+
+        .when('/teacher/assignment', {
+          title: 'Assignment Page',
+          templateUrl: 'view/teacher/assignments.html',
+           css: [
+             {href:'style/teacher/assignments.css', preload: true}, {href:'style/profile.css', preload:true}
+           ],
+          data:{requireAuth: 'none'}
+        })
+
         .otherwise({
-          redirectTo: '/'
+          redirectTo: '/',
+          data:{requireAuth: 'none'}
         });
 
 

@@ -11,8 +11,8 @@
   padding: 10px;
   pointer-events: none;
 }
-.left-addon .glyphicon  { left:  0px;}
-.right-addon .glyphicon { right: 0px;}
+.left-addon .glyphicon  { left:  0;}
+.right-addon .glyphicon { right: 0p}
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
 .search
@@ -50,19 +50,58 @@ hr{
 }
 
 
+
 .post-content{
   background: white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
-.w3-teal, .w3-hover-teal:hover
+.create-button
 {
-    color: #fff!important;
-    background-color: #2196F3!important;
-    position: absolute;
+  color: rgb(255, 255, 255) !important;
+  /* background-color: #FFE57F!important; */
+  position: fixed;
+  transition: background-color .3s,color .15s,box-shadow .3s,opacity 0.3s, transform 0.3s;
+  overflow: hidden;
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  display: inline-block;
+  text-align: center;
+  z-index: 1;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  bottom: 50px;
+  right: 50px;
+}
+
+.create-button:hover{
+  color: #f8f8f8!important;
+  background-color: #1c85d9!important;
+  opacity: 0.8;
+  box-shadow: 0 15px 20px 3px rgba(61,61,61,1);
+  transform: translateY(-10px);
+}
+
+.create-button:after {
+  content: "";
+  background: #ccc;
+  position: absolute;
+  padding: 300%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.8s;
 }
 .create>a
 {
   text-decoration: none;
+}
+
+.create>a:active, .create>a:hover {
+  outline-width: 0;
 }
 
 .forum

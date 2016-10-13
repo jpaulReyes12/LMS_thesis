@@ -27,22 +27,16 @@
 
       <div class="panel panel-default panels">
         <div class="panel-heading">
-          <h3 class="panel-title "style="color:white">Events</h3>
+          <h3 class="panel-title" style="color:white">Events</h3>
         </div>
         <div class="panel-body" style="height:200px;">
 
         </div>
       </div>
-
-
     </div>
 
 
   <div class="col-xs-12 col-md-8 col-sm-pull-4">
-    <br>
-    <div class="create">
-      <a href="#/create_forum_form" class="w3-btn-floating-large w3-ripple w3-teal">+</a>
-    </div>
     <br><br>
     <div class="form-wrapper" ng-repeat="forum in theForum" ng-model="forum.details">
       <h1><a href="#/forum_post/:{{forum.$id}}">{{forum.titles}}</a></h1>
@@ -58,8 +52,11 @@
 
       <hr>
     </div>
-</div>
+
+  </div>
 </div>
 <!-- end container forum_wrap -->
-
+<div class="create">
+  <a href="#/create_forum_form" class="create-button btn-success">+</a>
+</div>
 <section ng-include src="'components/partials/footer_def.html'"></section>

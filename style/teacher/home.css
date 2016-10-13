@@ -1,0 +1,40 @@
+.slider{
+   height:400px;
+   margin:auto;
+   object-fit: contain;
+
+ }
+#slider{
+ /*position:right;
+ width:800px;*/
+ background-color: rgb(138,205,254);
+ margin-left:40px;
+ margin-top:20px;
+ overflow: hidden;
+ margin-bottom: 20px;
+ }
+
+.try
+{
+  margin-left: 25px;
+}
+
+/*todolist*/
+form {
+display: inline-block;
+}
+.form-group {
+/*text-align: center;*/
+/*padding-bottom: 25px;*/
+}
+#margintop{
+  margin-top: 20px;
+}
+#todo {
+margin: 0 auto;
+width: 500px;
+}
+
+a.close {
+float: right;
+}

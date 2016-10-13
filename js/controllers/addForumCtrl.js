@@ -18,6 +18,8 @@ angular.module('lmsApp')
     console.log("added");
   }
 
+  $scope.theAnnounce = Announcement.getAncmnt();
+
 
 
 

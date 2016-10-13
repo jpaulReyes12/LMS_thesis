@@ -25,13 +25,11 @@ angular.module('lmsApp')
 
     var questions = ref.child(id);
     return $firebaseObject(questions);
-
   }
 
   function getQuizzes() {
     return $firebaseArray(ref);
   }
-
 
 
   return{

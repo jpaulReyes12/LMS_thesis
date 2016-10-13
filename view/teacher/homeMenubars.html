@@ -1,0 +1,93 @@
+<!-- navbar -->
+<section ng-include src="'components/modals/changePass.html'"></section>
+<section dir-nav></section>
+ <br>
+
+<div class="container-fluid">
+
+    <ul class="nav nav-tabs">
+      <!-- <div class="col-lg-3"> -->
+      <li role="presentation" class="active"><a href="#/teacher/home">Overview</a></li>
+      <li role="presentation"><a href="#/teacher/classes">Classes</a></li>
+      <li role="presentation"><a href="#/teacher/assignment">Assignments</a></li>
+      <li role="presentation"><a href="#/teacher/uploads">Uploads</a></li>
+    </ul>
+
+
+    <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-7">
+        <div uib-carousel active="0" interval="7000" no-wrap="false">
+          <div uib-slide  ng-repeat="slide in theEvents  | filter:{isActive:true}" index="$index">
+             <!-- | filter:{isActive:true} -->
+            <img ng-src="{{slide.url}}" class="slider">
+            <div class="carousel-caption">
+              <h4>{{slide.name}}</h4>
+              <p>
+                {{slide.description}}<br>
+                Venue: {{ slide.venue}} <br>
+                Time: {{ slide.startEvent | date:'MMM d, y h:mm:ss a'}} - {{slide.endEvent | date:'MMM d, y h:mm:ss a'}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="margintop" class="col-md-4">
+        <div class="panel panel-primary" style="min-height: 350px;">
+
+          <!-- todolist -->
+          <div class="panel-heading">
+            <span>Todo list</span>
+          </div>
+
+          <div class="panel-body" >
+            <div class="col-md-10">
+              <input type="text" class="form-control" placeholder="Your Task" name="task.desc" ng-model="task.desc">
+
+            </div>
+            <button type="submit" class="btn btn btn-primary" ng-click="addTodos(task)">Add</button>
+
+
+
+
+            <div class="container-fluid">
+              <ul>
+                <li ng-repeat="todo in theTodos">{{todo.desc}}</li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of todolist -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="margintop" class="row">
+      <!-- <div class="try"> -->
+      <div  class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">To do list</div>
+          <div class="panel-body" >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit distinctio enim dignissimos beatae dicta quia, incidunt sit amet ipsam! Illum maiores illo nisi qui recusandae necessitatibus, quisquam. Sed, odio, cum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit distinctio enim dignissimos beatae dicta quia, incidunt sit amet ipsam! Illum
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!--end of div class="row"  -->
+      <div class="col-md-7 try" >
+        <div  class="panel panel-primary">
+          <div class="panel-heading">To do list</div>
+          <div class="panel-body" >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit distinctio enim dignissimos beatae dicta quia, incidunt sit amet ipsam! Illum maiores illo nisi qui recusandae necessitatibus, quisquam. Sed, odio, cum!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit distinctio enim dignissimos beatae dicta quia, incidunt sit amet ipsam! Illum maiores illo nisi qui recusandae necessitatibus, quisquam. Sed, odio, cum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit distinctio enim dignissimos beatae dicta quia, incidunt sit amet ipsam! Illum maiores illo nisi qui recusandae necessitatibus, quisquam. Sed, odio, cum!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

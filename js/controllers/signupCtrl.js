@@ -66,24 +66,23 @@
         }
       };
 
-      var signInWithPopup = function(provider) {
-        $scope.load = true;
-
-
-        authObj.$signInWithPopup(provider)
-        .then(function(result) {
-
-
-          $location.path('/profile_info/' + result.user.uid);
-
-        })
-        .catch(function(e) {
-          $scope.load = false;
-          alert("Authentication failed: ", e.message);
-        });
-        // end authObj
-      }
-
+      // var signInWithPopup = function(provider) {
+      //   $scope.load = true;
+      //
+      //
+      //   authObj.$signInWithPopup(provider)
+      //   .then(function(result) {
+      //
+      //
+      //     $location.path('/profile_info/' + result.user.uid);
+      //
+      //   })
+      //   .catch(function(e) {
+      //     $scope.load = false;
+      //     alert("Authentication failed: ", e.message);
+      //   });
+      //   // end authObj
+      // }
 
 
     }]);

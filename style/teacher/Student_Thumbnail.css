@@ -1,0 +1,111 @@
+div.panel-body
+{
+	width: 105px;
+	font-size: 48;
+	margin:0;
+	background-color: #0d77b6;
+	height: 667;
+	position:fixed;
+
+}
+
+div.panel-body3
+{
+
+}
+
+div.panel2
+{
+	width: 1200;
+	float:right;
+ 	margin: 10 25 10 10;
+	height:600;
+	padding: 30;
+}
+
+body
+{
+	background-color: #73CFFC;
+}
+
+span.classname
+{
+	float:right;
+	font-size: 30;
+	margin: 0;
+}
+
+nav
+{
+	font-size:20;
+
+}
+
+div.ul li
+{
+	margin-bottom: 50;
+}
+
+div.class
+{
+	float:right;
+	font-size: 30;
+	color: white;
+	margin-right: 480;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+		margin-bottom:5;
+}
+
+input.form-control
+{
+	width: 300;
+}
+
+label.title
+{
+	color: black;
+}
+
+div.bg-1
+{
+	float:right;
+	width: 1245;
+}
+
+div.bg-2, div.bg-3,footer.bg-4
+{
+	float:right;
+	width: 1245;
+}
+
+div.thumbnail
+{
+	float:right;
+	width: 200;
+	margin-left: 50;
+  margin-right: 100;
+	box-shadow: 10px 10px grey;
+}
+
+img.pp
+{
+	height: 70;
+	width: 70;
+	float:left;
+}
+
+span.name
+{
+	font-size:20;
+}
+
+a.thumb:hover
+{
+  color: black;
+  text-decoration: none;
+}

@@ -60,8 +60,10 @@ angular.module('lmsApp')
             Events.addEvent(data);
 
             $scope.load = false;
-            $scope.event = null;
             $scope.toggleAdd = true;
+            $scope.event = null;
+            $scope.eventFrm.$setPristine();
+            $scope.eventFrm.$setUntouched();
 
           })
         }

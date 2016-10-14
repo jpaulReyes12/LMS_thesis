@@ -36,7 +36,7 @@ angular.module('lmsApp')
 
     $scope.mc={};
     $scope.saveQuizMC = function() {
-      console.log($scope.mc);
+      
       Questions.addQuiz($scope.mc, Questions.getKey());
     }
 

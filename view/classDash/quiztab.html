@@ -5,7 +5,7 @@
   <div class="classx">
     <h5>CI701A-C</h5>
     <h5>/</h5>
-    <h5>10:30 AM<h5>
+    <h5>10:30 AM</h5>
   </div>
   <div class="panel pull-right col-sm-11" style="margin-top: 50px;   ">
     <ul class="nav nav-tabs">
@@ -19,37 +19,37 @@
       <div class="form-group">
         <label class="control-label col-sm-2">Quiz No:</label>
         <div class="col-sm-10">
-          <input type="number" min="0" class="form-control quizno" ng-Model="quiz.qnum" placeholder="Enter quiz number">
+          <input type="number" min="0" class="form-control quizno" ng-model="quiz.qnum" placeholder="Enter quiz number">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2">Title:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control quiztopic" ng-Model="quiz.qtitle"  placeholder="Enter title">
+          <input type="text" class="form-control quiztopic" ng-model="quiz.qtitle"  placeholder="Enter title">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2">Description:</label>
         <div class="col-sm-10">
-          <textarea rows="3" class="form-control quizdescription" ng-Model="quiz.qdesc"  placeholder="Enter description"></textarea>
+          <textarea rows="3" class="form-control quizdescription" ng-model="quiz.qdesc"  placeholder="Enter description"></textarea>
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2">Duration:</label>
         <div class="col-sm-10">
-          <input type="number" min="0" class="form-control quizduration" ng-Model="quiz.qduration" placeholder="Enter duration(mins)">
+          <input type="number" min="0" class="form-control quizduration" ng-model="quiz.qduration" placeholder="Enter duration(mins)">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2">No. of items:</label>
         <div class="col-sm-10">
-          <input type="number" min="0" class="form-control quizitem" ng-Model="quiz.qitem" placeholder="Enter number of items">
+          <input type="number" min="0" class="form-control quizitem" ng-model="quiz.qitem" placeholder="Enter number of items">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2">Test type:</label>
         <div class="col-sm-10">
-          <select class="form-control testtype" ng-Model="quiz.qtype">
+          <select class="form-control testtype" ng-model="quiz.qtype">
             <option disabled="true">Select test type</option>
             <option value="Multiple Choice">Multiple Choice</option>
             <option value="True or False">True or False</option>
@@ -112,15 +112,15 @@
                 <div class="form-group">
                 <label class="control-label col-sm-2">True Answer:</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control answer" ng-model="mc.q[$index].answer" placeholder="Enter a true answer">
+                    <input type="text" class="form-control answer" ng-model="mc.q[$index].choice[0]" placeholder="Enter a true answer">
                   </div>
                 </div>
               <div class="form-group">
               <label class="control-label col-sm-2">Dummy Answers:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control questchoice" ng-model="mc.q[$index].dummy1" placeholder="Enter a dummy answer">
-                  <input type="text" class="form-control questchoice" ng-model="mc.q[$index].dummy2" placeholder="Enter a dummy answer">
-                  <input type="text" class="form-control questchoice" ng-model="mc.q[$index].dummy3" placeholder="Enter a dummy answer">
+                  <input type="text" class="form-control questchoice" ng-model="mc.q[$index].choice[1]" placeholder="Enter a dummy answer">
+                  <input type="text" class="form-control questchoice" ng-model="mc.q[$index].choice[2]" placeholder="Enter a dummy answer">
+                  <input type="text" class="form-control questchoice" ng-model="mc.q[$index].choice[3]" placeholder="Enter a dummy answer">
                 </div>
               </div>
             </form>

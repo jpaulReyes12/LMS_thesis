@@ -399,7 +399,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/sections.html',
           css: { href: 'style/admin.css', preload: true},
-          controller: 'eventsCtrl',
+          controller: 'adminSectionCtrl',
           data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {

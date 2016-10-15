@@ -74,7 +74,6 @@ Maintain the following;
 
     - [ ] 2.7.2.  Per Total Assessment Score; and
 
-  - [ ] 2.8.  Score Statistics;
 
  
 
@@ -94,9 +93,7 @@ Maintain the following;
 
     - [ ] 3.2.4.  Comments;
 
-    - [ ] 3.2.5.  To do list;
-
-  - [ ] 3.3. Graphical score statistics;  and
+    - [ ] 3.2.5.  To do list;  and
 
   - [ ] 3.4.Achievements.
 
@@ -165,8 +162,7 @@ Monitor the following:
 
  
 
-3.   
-Generate the following;
+3.  Generate the following;
 
   - [ ] 3.1.Student Scores;
 
@@ -184,10 +180,9 @@ documents online;
 cannot upload video file formats; and
 
 3.    Types
-of assessments that the teacher can create are:
+of assessments that the teacher cannot create are:
 
 1.    Matching
 type;
 
-2.    True
-and false.
+2. Identification.

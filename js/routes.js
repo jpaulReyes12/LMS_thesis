@@ -374,6 +374,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/groups.html',
           css: 'style/admin.css',
+          controller: 'adminGroupCtrl',
           data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {

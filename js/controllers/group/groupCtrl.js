@@ -11,6 +11,7 @@ angular.module('lmsApp')
 
     info.created = Math.floor(Date.now() / 1000);
     info.owner = LoggedInUser.getUID();
+    info.isActive = true;
     Groups.addGroup(info, info.owner);
     info = {};
   }

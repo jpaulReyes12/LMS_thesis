@@ -67,13 +67,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="section in theSections">
+      <tr ng-repeat="section in theSections  | orderBy:sortType:sortReverse | filter: searchSection as filteredSections">
         <!-- <td><input type="checkbox"></td> -->
         <td>{{section.grade}}</td>
         <td>{{section.section}}</td>
         <td>{{section.name}}</td>
         <td>{{section.isActive}}</td>
-        <td><button type="button" class="btn btn-danger">Deactivate</button></td>
+        <td>
+          <button type="button" class="btn btn-danger" ng-click="deactvate(section.$id)" ng-show="section.isActive == true">Deactivate</button>
+          <button type="button" class="btn btn-success" ng-click="activate(section.$id)" ng-show="section.isActive == false">Activate</button>
+        </td>
       </tr>
     </tbody>
   </table>

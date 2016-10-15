@@ -49,7 +49,7 @@
                   $location.path('/student_page');
                   break;
                 case "teacher":
-                  $location.path('/profile');
+                  $location.path('/class_dashboard/post');
                   break;
                 case "admin":
                   $location.path('/admin');

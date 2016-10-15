@@ -18,11 +18,11 @@
       }
 
       $scope.deactvate = function(id) {
-        Users.deactivate(id);
+        Section.deactivate(id);
       }
 
       $scope.activate = function(id) {
-        Users.activate(id);
+        Section.activate(id);
       }
 
     }]);

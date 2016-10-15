@@ -59,7 +59,7 @@
                 if (e.code === "auth/email-already-in-use") {
                     alert(e.message);
                 }else {
-                    console.log("Auth failed: " + e);
+                  alert(e.message);  
                 }
             })
 

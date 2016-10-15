@@ -1,6 +1,7 @@
 angular.module('lmsApp')
-  .controller('createQuizCtrl', ['$scope', 'Questions', function($scope, Questions){
+  .controller('createQuizCtrl', ['$scope', 'Questions', '$routeParams', 'Schedule', function($scope, Questions, $routeParams, Schedule){
 
+    $scope.classID = $routeParams.id;
 
     var ref = firebase.database().ref("/quiz");
     $scope.getNumber = function() {
@@ -14,6 +15,10 @@ angular.module('lmsApp')
     var quizItemsSet;
     $scope.setQuiz = function(settings) {
 
+
+      var sched = Schedule.getSched();
+      var schedID =sched[$routeParams.id].$id;
+
       quizItemsSet = settings.qitem;
       if (settings.qtype === 'Multiple Choice') {
         $scope.openAccordsMC = true;
@@ -22,22 +27,28 @@ angular.module('lmsApp')
         $scope.openAccordsTOF = true;
         $scope.openSettings = false;
       }
+
       var quizKey = ref.push({
         q_num: settings.qnum,
         q_title: settings.qtitle,
         q_desc: settings.qdesc,
         q_dura: settings.qduration,
         q_item: settings.qitem,
-        q_type: settings.qtype
+        q_type: settings.qtype,
+        q_subjectID : schedID
       }).key;
 
       Questions.setKey(quizKey);
 
     }
 
+    function schedID() {
+
+    }
+
     $scope.mc={};
     $scope.saveQuizMC = function() {
-      
+
       Questions.addQuiz($scope.mc, Questions.getKey());
       alert("Successfully Created!");
       location.reload();

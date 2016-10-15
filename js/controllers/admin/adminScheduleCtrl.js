@@ -29,12 +29,11 @@
       // };
 
       $scope.deactivate = function(id) {
-        console.log(id);
         Schedule.deactivate(id);
       }
 
       $scope.activate = function(id) {
-        console.log(id);
+    
         Schedule.activate(id);
       }
 

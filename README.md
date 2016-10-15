@@ -50,7 +50,7 @@ Maintain the following;
 
   - [ ] 1.6. Assessment schedules; 
 
-  - [ ] 1.7. Assessment scores;
+  - [x] 1.7. Assessment scores;
 
  
 
@@ -64,7 +64,7 @@ Maintain the following;
 
   - [x] 2.4.  Uploading and downloading files;
 
-  - [ ] 2.5.  Computation of scores;
+  - [x] 2.5.  Computation of scores;
 
   - [x] 2.6.  Creation of assessments;
 
@@ -83,7 +83,7 @@ Maintain the following;
 
   - [ ] 3.1. Student  Record;
 
-  - [ ] 3.2. Notifications;
+  - [x] 3.2. Notifications;
 
     - [ ] 3.2.1.  Announcements;
 
@@ -146,29 +146,26 @@ Monitor the following:
 
   - [ ] 2.2.Assessment  schedules; 
 
-  - [ ] 2.3.Notifications;
+  - [x] 2.3.Notifications;
 
-    - [ ] 2.3.1.  Announcements;
+    - [x] 2.3.1.  Announcements;
 
     - [ ] 2.3.2.  Due Dates;
 
-    - [ ] 2.3.3.  Assessment;
+    - [x] 2.3.3.  Assessment;
 
-    - [ ] 2.3.4.  Comments;
+    - [x] 2.3.4.  Comments;
 
-    - [ ] 2.3.5.  To do list;  and
+    - [x] 2.3.5.  To do list;  and
 
-  - [ ] 2.4.Achievements.
 
  
 
 3.  Generate the following;
 
-  - [ ] 3.1.Student Scores;
+  - [x] 3.1.Student Scores; and
 
-  - [ ] 3.2.Achievements;   and
-
-  - [ ] 3.3.Assessment;
+  - [x] 3.3.Assessment;
 
 However,
 the system is incapable of the following:                                              

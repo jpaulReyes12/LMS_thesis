@@ -1,5 +1,5 @@
 angular.module('lmsApp')
-.controller('take_quizCtrl', ['$scope', 'Questions', '$routeParams', function ($scope, Questions, $routeParams) {
+.controller('take_quizCtrl', ['$scope', 'Questions', 'Answers','$routeParams', function ($scope, Questions, Answers, $routeParams) {
 
   $scope.questions = Questions.getQuestions($routeParams.id);
   var questions = $scope.questions;
@@ -27,7 +27,25 @@ angular.module('lmsApp')
       });
     }
 
-    console.log(answerList);
+  
+    answerList.subject = questions.q_subjectID;
+    answerList.quiz = questions.$id;
+    Answers.addDone(answerList);
+
+    var counter = 0;
+    for (var i = 0; i < answerList.length; i++) {
+
+
+      if (answerList[i].correct === true) {
+        counter++
+      }
+    }
+
+    var answers = {
+      "student": firebase.auth().currentUser.uid,
+      "score": counter
+    };
+    Questions.addAnswered(answers,questions.$id);
 
 
   }

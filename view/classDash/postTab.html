@@ -5,16 +5,16 @@
     </div>
     <div class="panel-body">
       <div>Quizzes<hr>
-        <div ng-repeat="quiz in Quiz">
+        <div ng-repeat="quiz in Quiz" ng-show="quiz.q_subjectID == schedID.$id">
           <ul>
-            <li><a href="#/start_quiz/:id" >{{quiz.q_title}}</a></li><hr>
+            <li><a href="#/start_quiz/{{quiz.$id}}" >{{quiz.q_title}}</a></li><hr>
           </ul>
         </div>
       </div>
     </div>
-
   </div>
-  <div class="postwrapper container col-md-7" ng-repeat="ancmnt in Post | orderBy:'-timecreated'">
+
+  <div class="postwrapper container col-md-7" ng-repeat="ancmnt in Post.$$state.value | orderBy:'-timecreated'">
     <h3>{{ancmnt.title}}</h3>
     <hr>
     <p>

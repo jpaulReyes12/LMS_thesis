@@ -5,6 +5,7 @@ angular.module('lmsApp')
   $scope.theAnnounce = Announcement.getAncmnt();
   $scope.theEvents = Events.getEvents();
 
+
   $scope.addForum = function(forum){
     console.log(forum);
 

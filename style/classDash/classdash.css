@@ -240,13 +240,42 @@ thead{
 	background-color: #fff;
 	word-break: break-all;
 }
+.postwrapper>p
+{
+	text-indent: 50px;
+	word-break: break-all;
+}
+.notif
+{
+	float: right;
+	margin-top: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-right: 50px;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.12);
+}
+.notif>.panel-body
+{
+	overflow-y:auto;
+	height: 300px;
+	padding-left: 20px;
+}
+
+.notif>.panel-heading
+{
+	background-color: #64B5F6;
+}
+
 
 .postwrapper
 {
 	padding: 15px;
-	float:right;
-	background-color: #f8f8f8;
+	float:left;
+	margin-top: 10px;
+	margin-left: 150px;
+	background-color: #fff;
 	color: black;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.12);
 }
 
 /*ANCMNT TAB*/

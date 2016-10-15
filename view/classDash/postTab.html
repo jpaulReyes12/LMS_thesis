@@ -1,11 +1,25 @@
 <div>
-  <div class="postwrapper container">
-    <!-- <div class="postarea" ng-repeat="ancmnt in Post">
-      <div class="container">
-        <h3>{{ancmnt.title}}</h3>
-        <p>{{ancmnt.cont}}</p>
+  <div class="panel panel-default notif col-md-3">
+    <div class="panel-heading">
+      <h3 class="panel-title">Notifications</h3>
+    </div>
+    <div class="panel-body">
+      <div>Quizzes<hr>
+        <div ng-repeat="quiz in Quiz">
+          <ul>
+            <li><a href="#/start_quiz/:id" >{{quiz.q_title}}</a></li><hr>
+          </ul>
+        </div>
       </div>
-    </div> -->
+    </div>
+
+  </div>
+  <div class="postwrapper container col-md-7" ng-repeat="ancmnt in Post | orderBy:'-timecreated'">
+    <h3>{{ancmnt.title}}</h3>
+    <hr>
+    <p>
+      {{ancmnt.cont}}
+    </p>
   </div>
 <div ng-include src="'components/partials/classnavbar.html'">  </div>
 </div>

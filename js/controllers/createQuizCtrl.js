@@ -1,6 +1,7 @@
 angular.module('lmsApp')
   .controller('createQuizCtrl', ['$scope', 'Questions', function($scope, Questions){
 
+
     var ref = firebase.database().ref("/quiz");
     $scope.getNumber = function() {
       return new Array(quizItemsSet);
@@ -38,11 +39,15 @@ angular.module('lmsApp')
     $scope.saveQuizMC = function() {
       console.log($scope.mc);
       Questions.addQuiz($scope.mc, Questions.getKey());
+      alert("Successfully Created!");
+      location.reload();
     }
 
     $scope.tof={};
     $scope.saveQuizTOF = function() {
       Questions.addQuiz($scope.tof, Questions.getKey());
+      alert("Successfully Created!");
+      location.reload();
     }
 
 

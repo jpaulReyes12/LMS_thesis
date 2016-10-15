@@ -455,6 +455,7 @@
         .when('/teacher/classes', {
           title: 'Classes Page',
           templateUrl: 'view/teacher/classes.html',
+          controller: 'ClassCtrl',
            css: [{href: 'style/teacher/classes.css', preload: true}, {href:'style/profile.css', preload: true}],
           data:{requireAuth: 'none'}
         })
@@ -483,6 +484,7 @@
         .when('/teacher/assignment', {
           title: 'Assignment Page',
           templateUrl: 'view/teacher/assignments.html',
+          controller: 'DisplayAssCtrl',
            css: [
              {href:'style/teacher/assignments.css', preload: true}, {href:'style/profile.css', preload:true}
            ],

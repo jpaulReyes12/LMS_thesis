@@ -236,38 +236,46 @@ thead{
 .postarea
 {
 	border: 1px solid #C0C0C0;
-	height: 100vh;
-	width: 800px;
 	float:right;
-	margin-right:425px;
 	background-color: #fff;
+	word-break: break-all;
+}
+.postwrapper>p
+{
+	text-indent: 50px;
+	word-break: break-all;
+}
+.notif
+{
+	float: right;
+	margin-top: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-right: 50px;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.12);
+}
+.notif>.panel-body
+{
+	overflow-y:auto;
+	height: 300px;
+	padding-left: 20px;
 }
 
-.notifarea
+.notif>.panel-heading
 {
-	border: 1px solid #C0C0C0;
-	height: 250px;
-	width: 400px;
-	float:right;
-	margin-top: -700px;
-	background-color: #fff;
+	background-color: #64B5F6;
 }
 
-.notifarea2
-{
-	border: 1px solid #C0C0C0;
-	height: 250px;
-	width: 400px;
-	float:right;
-	margin-top: -425px;
-	background-color: #fff;
-}
 
 .postwrapper
 {
 	padding: 15px;
-	float:right;
-	background-color: #f8f8f8;
+	float:left;
+	margin-top: 10px;
+	margin-left: 150px;
+	background-color: #fff;
+	color: black;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.12);
 }
 
 /*ANCMNT TAB*/

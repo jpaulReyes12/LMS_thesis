@@ -5,6 +5,11 @@ angular.module('lmsApp')
   var ref = firebase.database().ref('/quiz/');
   var key = "";
 
+  function getQuiz()
+  {
+      return $firebaseArray(ref);
+  }
+
   function setKey(q_key) {
     key = q_key;
     console.log(key);
@@ -37,7 +42,8 @@ angular.module('lmsApp')
     getQuizzes: getQuizzes,
     getQuestions: getQuestions,
     setKey: setKey,
-    getKey: getKey
+    getKey: getKey,
+    getQuiz: getQuiz
   }
 
 }])

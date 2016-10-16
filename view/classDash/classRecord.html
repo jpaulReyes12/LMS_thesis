@@ -5,19 +5,20 @@
   <div class="classx">
     <h5>CI701A-C</h5>
     <h5>/</h5>
-    <h5>10:30 AM<h5>
+    <h5>10:30 AM</h5>
   </div>
 
   <div class="pull-right col-md-11" >
 
       <!-- thumbnail -->
       <div class="btn-group change-view" data-toggle="buttons">
-        <!-- <a class="btn btn-active list" disabled href="#/class_dashboard/class_recordList" title="List View" >
-          <input type="radio" name="options" > <span class="glyphicon glyphicon-th-list list1"></span>
-        </a> -->
-        <a class="btn list" href="#/class_dashboard/{{classID}}/class_recordThumb" title="Thumbnail view">
+        <!-- <a class="btn list" href="#/class_dashboard/{{classID}}/class_recordThumb" title="Thumbnail view">
           <input type="radio" name="options" > <span class="glyphicon glyphicon-th-large list2"></span>
-        </a>
+        </a> -->
+
+
+        <input type="text" ng-model="selectStudents"  uib-typeahead="email.email for email in users | filter:{email:$viewValue, isActive: true} | limitTo:8" class="form-control">
+        <button type="button" class="btn btn-success" ng-click="add(selectStudents)" >Add student</button>
       </div>
 
       <!-- TABLE -->
@@ -26,151 +27,14 @@
           <tr>
             <th>Firstname</th>
             <th>Lastname</th>
-            <th>Quiz1</th>
-            <th>Quiz2</th>
-            <th>Quiz3</th>
+            <th>Quiz</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Antonio</td>
-            <td>Amolo Jr.</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>Rhea Jean</td>
-            <td>Anacaya</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>Maria Nicole Franchette</td>
-            <td>Camoro</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>John Paul</td>
-            <td>Reyes</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>40/50</td>
-            <td>50/75</td>
-            <td>90/100</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>45/50</td>
-            <td>65/75</td>
-            <td>50/100</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>45/50</td>
-            <td>65/75</td>
-            <td>50/100</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>45/50</td>
-            <td>65/75</td>
-            <td>50/100</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>45/50</td>
-            <td>65/75</td>
-            <td>50/100</td>
-          </tr>
-          <tr>
-            <td>Antonio</td>
-            <td>Amolo Jr.</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>Rhea Jean</td>
-            <td>Anacaya</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>Maria Nicole Franchette</td>
-            <td>Camoro</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>John Paul</td>
-            <td>Reyes</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>30/50</td>
-            <td>60/75</td>
-            <td>80/100</td>
-          </tr>
-          <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>40/50</td>
-            <td>50/75</td>
-            <td>90/100</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>45/50</td>
-            <td>65/75</td>
-            <td>50/100</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>45/50</td>
-            <td>65/75</td>
-            <td>50/100</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>45/50</td>
-            <td>65/75</td>
-            <td>50/100</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>45/50</td>
-            <td>65/75</td>
-            <td>50/100</td>
+          <tr ng-repeat="student in students">
+            <td>{{student.fname}}</td>
+            <td>{{student.lname}}</td>
+            <td>Quiz</td>
           </tr>
         </tbody>
       </table>

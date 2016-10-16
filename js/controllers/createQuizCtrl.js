@@ -2,6 +2,11 @@ angular.module('lmsApp')
   .controller('createQuizCtrl', ['$scope', 'Questions', '$routeParams', 'Schedule', function($scope, Questions, $routeParams, Schedule){
 
     $scope.classID = $routeParams.id;
+    var sched = Schedule.getSched();
+    $scope.length = sched.length + 1
+    var datetime = new Date();
+    $scope.dateNow = datetime;
+
 
     var ref = firebase.database().ref("/quiz");
     $scope.getNumber = function() {
@@ -16,7 +21,6 @@ angular.module('lmsApp')
     $scope.setQuiz = function(settings) {
 
 
-      var sched = Schedule.getSched();
       var schedID =sched[$routeParams.id].$id;
 
       quizItemsSet = settings.qitem;
@@ -29,9 +33,10 @@ angular.module('lmsApp')
       }
 
       var quizKey = ref.push({
-        q_num: settings.qnum,
+        q_num: length,
         q_title: settings.qtitle,
         q_desc: settings.qdesc,
+        q_deadline: Math.floor(Date.now(settings.qDeadline)/1000),
         q_dura: settings.qduration,
         q_item: settings.qitem,
         q_type: settings.qtype,

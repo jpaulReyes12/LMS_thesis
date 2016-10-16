@@ -97,6 +97,7 @@
         .when('/class_dashboard/:id/class_recordList', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord.html',
+          controller : "classRecordCtrl",
           css: [ 'style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
           data: {
             requireAuth: 'none'
@@ -107,21 +108,21 @@
                  }]
               }
         })
-
-        .when('/class_dashboard/:id/class_recordThumb', {
-          title: 'Manage your class',
-          templateUrl: 'view/classDash/classRecord2.html',
-          css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
-          data : {
-            requireAuth: ['teacher', 'student']
-          },
-          resolve: {
-                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
-
-                 }]
-              }
-        })
+        //
+        // .when('/class_dashboard/:id/class_recordThumb', {
+        //   title: 'Manage your class',
+        //   templateUrl: 'view/classDash/classRecord2.html',
+        //   css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+        //   data : {
+        //     requireAuth: ['teacher', 'student']
+        //   },
+        //   resolve: {
+        //          lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+        //             return $ocLazyLoad.load({files: ['lib/classie.js', 'lib/modernizr.custom.js' ]});
+        //
+        //          }]
+        //       }
+        // })
 
         .when('/class_dashboard/:id/resources', {
           title: 'Manage your class',

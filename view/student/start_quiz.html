@@ -9,6 +9,7 @@
   <h3><b>Duration Time: </b>{{qdetails.q_dura}} minutes</h3>
   <h3><b>Dead Line: </b>7:00 pm</h3>
   <br><br>
-  <a href="#/take_quiz/{{qdetails.$id}}" class="btn btn-success btn-lg" ng-disabled="isAnswered">START</a>
+  <input type="button" ng-click="start(qdetails.$id)"  class="btn btn-success btn-lg" ng-disabled="isAnswered" value="Start">
   <span ng-show="isAnswered">You are done with this quiz</span>
 </div>
+  

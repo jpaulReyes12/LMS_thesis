@@ -27,8 +27,8 @@
               <h4>{{slide.name}}</h4>
               <p>
                 {{slide.description}}<br>
-                Venue: {{ slide.venue}} <br>
-                Time: {{ slide.startEvent | date:'MMM d, y h:mm:ss a'}} - {{slide.endEvent | date:'MMM d, y h:mm:ss a'}}
+                {{ slide.venue}} <br>
+                {{ slide.startEvent | date:'MMM d, y h:mm:ss a'}} - {{slide.endEvent | date:'MMM d, y h:mm:ss a'}}
               </p>
             </div>
           </div>

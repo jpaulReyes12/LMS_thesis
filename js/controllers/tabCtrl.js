@@ -13,6 +13,5 @@ angular.module('lmsApp')
 
   $scope.theQizzes = Questions.getQuizzes();
 
-  console.log(Questions.getQuizzes());
 
 }]);

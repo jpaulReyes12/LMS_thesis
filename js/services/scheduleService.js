@@ -11,6 +11,13 @@ angular.module('lmsApp')
     return scheduleList;
   }
 
+  function addTeacherSched(id, data) {
+    var ref = firebase.database().ref("users/" + id + '/schedule');
+    var tSchedList = $firebaseArray(ref);
+    data.Teacher = null;
+    tSchedList.$add(data);
+  }
+
   function addSched(data) {
     scheduleList.$add(data);
   }
@@ -32,6 +39,7 @@ angular.module('lmsApp')
   return {
     getSched: getSched,
     addSched: addSched,
+    addTeacherSched: addTeacherSched,
     deactivate: deactivate,
     activate: activate
   }

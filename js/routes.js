@@ -94,7 +94,7 @@
           }
         })
 
-        .when('/class_dashboard/class_recordList', {
+        .when('/class_dashboard/:id/class_recordList', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord.html',
           css: [ 'style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
@@ -108,7 +108,7 @@
               }
         })
 
-        .when('/class_dashboard/class_recordThumb', {
+        .when('/class_dashboard/:id/class_recordThumb', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classRecord2.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
@@ -123,7 +123,7 @@
               }
         })
 
-        .when('/class_dashboard/resources', {
+        .when('/class_dashboard/:id/resources', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/classResources.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
@@ -137,12 +137,14 @@
           }
         })
 
-        .when('/class_dashboard/post', {
+        .when('/class_dashboard/:id/post', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/postTab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
-          // 'style/classDash/classThumb.css'
           controller: 'AnnouncementCtrl',
+          data: {
+            requireAuth: ['teacher', 'student']
+          },
           resolve: {
                  lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
@@ -150,7 +152,7 @@
           }
         })
 
-        .when('/class_dashboard/createannouncement', {
+        .when('/class_dashboard/:id/createannouncement', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/announcementtab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
@@ -165,7 +167,7 @@
               }
         })
 
-        .when('/class_dashboard/createassignment', {
+        .when('/class_dashboard/:id/createassignment', {
           title: 'View your resources',
           templateUrl: 'view/classDash/assignmenttab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
@@ -180,7 +182,7 @@
               }
         })
 
-        .when('/class_dashboard/createquiz', {
+        .when('/class_dashboard/:id/createquiz', {
           title: 'Manage your class',
           templateUrl: 'view/classDash/quiztab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
@@ -286,7 +288,6 @@
         .when('/start_quiz/:id', {
           title: 'start quiz',
           templateUrl: 'view/student/start_quiz.html',
-          requireAuth: false,
           css: [
             {href: 'style/profile.css', preload: true},
             {href: 'style/student_quiz.css', preload: true}
@@ -374,6 +375,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/groups.html',
           css: 'style/admin.css',
+          controller: 'adminGroupCtrl',
           data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
@@ -399,7 +401,7 @@
           title: 'Admin Page',
           templateUrl: 'view/admin/sections.html',
           css: { href: 'style/admin.css', preload: true},
-          controller: 'eventsCtrl',
+          controller: 'adminSectionCtrl',
           data: {requireAuth: 'admin'},
           resolve: {
             "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
@@ -455,6 +457,7 @@
         .when('/teacher/classes', {
           title: 'Classes Page',
           templateUrl: 'view/teacher/classes.html',
+          controller: 'ClassCtrl',
            css: [{href: 'style/teacher/classes.css', preload: true}, {href:'style/profile.css', preload: true}],
           data:{requireAuth: 'none'}
         })
@@ -483,6 +486,7 @@
         .when('/teacher/assignment', {
           title: 'Assignment Page',
           templateUrl: 'view/teacher/assignments.html',
+          controller: 'DisplayAssCtrl',
            css: [
              {href:'style/teacher/assignments.css', preload: true}, {href:'style/profile.css', preload:true}
            ],

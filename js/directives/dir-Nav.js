@@ -21,7 +21,7 @@ angular.module('lmsApp')
       if (userTypeData == "student") {
         setUtype_Path("#/student_page");
       }else if (userTypeData == "teacher") {
-        setUtype_Path("#/class_dashboard/createquiz");
+        setUtype_Path("#/class_dashboard/post");
       }
     })()
 

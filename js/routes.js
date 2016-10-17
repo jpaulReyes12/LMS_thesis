@@ -202,7 +202,7 @@
         })
 
         .when('/class_dashboard/:id/createassignment', {
-          title: 'View your resources',
+          title: 'Create assignment',
           templateUrl: 'view/classDash/assignmenttab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
           data:{

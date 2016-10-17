@@ -17,7 +17,7 @@
         </a> -->
 
 
-        <input type="text" ng-model="selectStudents"  uib-typeahead="email.email for email in users | filter:{email:$viewValue, isActive: true} | limitTo:8" class="form-control">
+        <input type="text" ng-model="selectStudents" placeholder="Email"  uib-typeahead="email.email for email in users | filter:{email:$viewValue, utype:'student' ,isActive: true} | limitTo:8" class="form-control">
         <button type="button" class="btn btn-success" ng-click="add(selectStudents)" >Add student</button>
       </div>
 
@@ -27,14 +27,14 @@
           <tr>
             <th>Firstname</th>
             <th>Lastname</th>
-            <th>Quiz</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="student in students">
+          <tr ng-repeat="student in students().students">
             <td>{{student.fname}}</td>
             <td>{{student.lname}}</td>
-            <td>Quiz</td>
+            <td><button type="button" class="btn btn-danger" ng-click="removeStudent()">Remove</button></td>
           </tr>
         </tbody>
       </table>

@@ -10,8 +10,9 @@ angular.module('lmsApp')
     scheduleList.$add(sched);
   }
 
-  function addStudent(student, data) {
-    var newref= ref.child('students');
+  function addStudent(id, data) {
+    var schedID = scheduleList[id].$id;
+    var newref = ref.child(schedID).child('students');
     var student = $firebaseArray(newref);
 
     student.$add(data);

@@ -12,8 +12,8 @@
 <!-- try this  one -->
   <div class="card2 card-1">
     <div id="ohla" class=" border overflow-scroll">
-      <div class="col-md-12  border"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="col-md-12  border">
+        content
       </div>
     </div>
   </div>
@@ -22,91 +22,10 @@
 
     <div class="item-menu overflow-scroll">
 
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
-          <span class="label label-danger pull-right" id="duedate">Date</span>
-        </div>
-      </div>
-
-      <div class="col-md-12  borders">
-        <div class="">
-          <h4>Title</h4>
-          <label>class</label>
+      <div class="col-md-12  borders" ng-repeat="ass in DspAss">
+        <div >
+          <h4>{{ass.title}}</h4>
+          <label>{{ass.cont}}</label>
           <span class="label label-danger pull-right" id="duedate">Date</span>
         </div>
       </div>

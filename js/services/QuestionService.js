@@ -1,9 +1,15 @@
 angular.module('lmsApp')
 
-.factory('Questions',['$firebaseArray', "$firebaseObject", function($firebaseArray, $firebaseObject){
+.factory('Questions',['$firebaseArray', "$firebaseObject", 'Schedule', function($firebaseArray, $firebaseObject, Schedule){
 
-  var ref = firebase.database().ref('/quiz/');
+
+  var ref = firebase.database().ref('/quiz');
   var key = "";
+
+  function getQuiz()
+  {
+    return $firebaseArray(ref);
+  }
 
   function setKey(q_key) {
     key = q_key;
@@ -31,13 +37,20 @@ angular.module('lmsApp')
     return $firebaseArray(ref);
   }
 
+  function addAnswered(data,parentKey) {
+    var ref = firebase.database().ref('/quiz/' + parentKey + '/answered');
+    ref.update(data);
+
+  }
 
   return{
+    addAnswered: addAnswered,
     addQuiz: addQuiz,
     getQuizzes: getQuizzes,
     getQuestions: getQuestions,
     setKey: setKey,
-    getKey: getKey
+    getKey: getKey,
+    getQuiz: getQuiz
   }
 
 }])

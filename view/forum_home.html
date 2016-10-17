@@ -30,7 +30,9 @@
           <h3 class="panel-title" style="color:white">Events</h3>
         </div>
         <div class="panel-body" style="height:200px;">
-
+          <ul>
+            <li ng-repeat="events in theEvents | limitTo:5"><h5><a href="#/">{{events.name}}</a></h5></li>
+          </ul>
         </div>
       </div>
     </div>

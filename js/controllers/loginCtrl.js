@@ -49,14 +49,14 @@
                   $location.path('/student_page');
                   break;
                 case "teacher":
-                  $location.path('/profile');
+                  $location.path('/teacher/home');
                   break;
                 case "admin":
                   $location.path('/admin');
                   break;
                 default:
                   $location.path('/profile_info/' + user.uid   );
-                  // FIXME: where to redirect if no info
+
               }
 
             })

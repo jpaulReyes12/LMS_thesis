@@ -50,7 +50,7 @@ Maintain the following;
 
   - [ ] 1.6. Assessment schedules; 
 
-  - [ ] 1.7. Assessment scores;
+  - [x] 1.7. Assessment scores;
 
  
 
@@ -64,7 +64,7 @@ Maintain the following;
 
   - [x] 2.4.  Uploading and downloading files;
 
-  - [ ] 2.5.  Computation of scores;
+  - [x] 2.5.  Computation of scores;
 
   - [x] 2.6.  Creation of assessments;
 
@@ -74,7 +74,6 @@ Maintain the following;
 
     - [ ] 2.7.2.  Per Total Assessment Score; and
 
-  - [ ] 2.8.  Score Statistics;
 
  
 
@@ -84,7 +83,7 @@ Maintain the following;
 
   - [ ] 3.1. Student  Record;
 
-  - [ ] 3.2. Notifications;
+  - [x] 3.2. Notifications;
 
     - [ ] 3.2.1.  Announcements;
 
@@ -94,9 +93,7 @@ Maintain the following;
 
     - [ ] 3.2.4.  Comments;
 
-    - [ ] 3.2.5.  To do list;
-
-  - [ ] 3.3. Graphical score statistics;  and
+    - [ ] 3.2.5.  To do list;  and
 
   - [ ] 3.4.Achievements.
 
@@ -149,30 +146,26 @@ Monitor the following:
 
   - [ ] 2.2.Assessment  schedules; 
 
-  - [ ] 2.3.Notifications;
+  - [x] 2.3.Notifications;
 
-    - [ ] 2.3.1.  Announcements;
+    - [x] 2.3.1.  Announcements;
 
     - [ ] 2.3.2.  Due Dates;
 
-    - [ ] 2.3.3.  Assessment;
+    - [x] 2.3.3.  Assessment;
 
-    - [ ] 2.3.4.  Comments;
+    - [x] 2.3.4.  Comments;
 
-    - [ ] 2.3.5.  To do list;  and
+    - [x] 2.3.5.  To do list;  and
 
-  - [ ] 2.4.Achievements.
 
  
 
-3.   
-Generate the following;
+3.  Generate the following;
 
-  - [ ] 3.1.Student Scores;
+  - [x] 3.1.Student Scores; and
 
-  - [ ] 3.2.Achievements;   and
-
-  - [ ] 3.3.Assessment;
+  - [x] 3.3.Assessment;
 
 However,
 the system is incapable of the following:                                              
@@ -184,10 +177,9 @@ documents online;
 cannot upload video file formats; and
 
 3.    Types
-of assessments that the teacher can create are:
+of assessments that the teacher cannot create are:
 
 1.    Matching
 type;
 
-2.    True
-and false.
+2. Identification.

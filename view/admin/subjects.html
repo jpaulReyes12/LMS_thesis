@@ -24,7 +24,7 @@
           <!-- Subject name -->
           <div class="col-md-3  col-md-offset-2"
             ng-class="{ 'has-error' : subjectForm.sName.$invalid && subjectForm.sName.$touched }">
-            <label>Subject name`:</label>
+            <label>Subject name:</label>
             <input type="text" placeholder="Subject name" class="form-control" name="sName" ng-model="sub.name" required>
             <p ng-show="subjectForm.sName.$error.required && subjectForm.sName.$touched" class="help-block">Subject name is required.</p>
           </div>
@@ -67,7 +67,7 @@
   <table class="table table-striped table-hover table-responsive">
     <thead>
       <tr>
-        <th><input type="checkbox" ng-model="selectedAll"  ng-click="checkAll()"></th>
+        <!-- <th><input type="checkbox" ng-model="selectedAll"  ng-click="checkAll()"></th> -->
         <th>
           <a ng-click="sortType = 'name'; sortReverse = !sortReverse">
             Subject
@@ -101,7 +101,7 @@
     </thead>
     <tbody>
       <tr  ng-repeat="subject in theSubjects | orderBy:sortType:sortReverse | filter: searchSubject as filteredSubjects">
-        <td><input type="checkbox" ng-model="subject.Selected"></td>
+        <!-- <td><input type="checkbox" ng-model="subject.Selected"></td> -->
         <td>{{subject.name}}</td>
         <td>{{subject.levels}}</td>
         <td>{{subject.description}}</td>

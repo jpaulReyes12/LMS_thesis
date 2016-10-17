@@ -65,9 +65,12 @@ angular.module('lmsApp')
     if ( $location.path() === "/" && LoggedInUser.getUsertype() !== "noUser"
       || $location.path() === "/home" && LoggedInUser.getUsertype() !== "noUser") {
 
-        if (prev) {
+        if (prev.$$route.originalPath !== 'undefined') {
           $location.path(prev.$$route.originalPath);
 
+        }
+        else {
+          event.preventDefault();
         }
     }
 
@@ -80,8 +83,10 @@ angular.module('lmsApp')
         case "student":
           checkIfAllowed(utype);
           break;
+        case "admin":
+          checkIfAllowed(utype);
+          break;
         default:
-          console.log("default");
           break;
 
       }

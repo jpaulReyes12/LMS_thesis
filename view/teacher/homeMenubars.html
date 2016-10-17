@@ -56,7 +56,10 @@
 
             <div class="container-fluid">
               <ul>
-                <li ng-repeat="todo in theTodos">{{todo.desc}}</li>
+                <li ng-repeat="todo in theTodos">
+                  {{todo.desc}}
+                  <a class="btn-link btn" ng-click="deleteTodo(todo.$id)">&times;</a>
+                </li>
               </ul>
             </div>
           </div>

@@ -1,7 +1,7 @@
 
 angular.module('lmsApp')
 
-.factory('Todo', [ '$firebaseArray', function ($firebaseArray) {
+.factory('Todo', [ '$firebaseArray', '$firebaseObject',function ($firebaseArray, $firebaseObject) {
 
   var uid;
   var ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/todos');
@@ -10,6 +10,12 @@ angular.module('lmsApp')
     var ref = firebase.database().ref('users/' + IDuser + '/todos');
     var todoLists = $firebaseArray(ref);
     return todoLists;
+  }
+
+  function removeTodo(id) {
+    var newRef = ref.child(id);
+    var todoLists = $firebaseObject(newRef);
+    todoLists.$remove();
   }
 
   function addTodo(data) {
@@ -24,6 +30,7 @@ angular.module('lmsApp')
 
   return {
     getTodos: getTodos,
+    removeTodo: removeTodo,
     addTodo: addTodo,
     setUID: setUID
   }

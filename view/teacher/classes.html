@@ -12,7 +12,7 @@
     <!-- <div class="row"> -->
 <div class="color container-fluid">
   <div class="card card-1">
-    <div class="sidebyside" ng-repeat="cls in DspClass | filter:id.uid">
+    <div class="sidebyside" ng-repeat="cls in DspClass | filter:{Teacher:id.uid}">
 
         <div class="class-box pull-left col-md-3 col-sm 6 col-xs-12">
         <a class="thumb" href="#/class_dashboard/{{$index}}/post"><span class="glyphicon glyphicon-book"></span>

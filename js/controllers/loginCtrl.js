@@ -56,7 +56,7 @@
                   break;
                 default:
                   $location.path('/profile_info/' + user.uid   );
-                  // FIXME: where to redirect if no info
+
               }
 
             })

@@ -59,30 +59,13 @@
                 if (e.code === "auth/email-already-in-use") {
                     alert(e.message);
                 }else {
-                  alert(e.message);  
+                  alert(e.message);
                 }
             })
 
         }
       };
 
-      // var signInWithPopup = function(provider) {
-      //   $scope.load = true;
-      //
-      //
-      //   authObj.$signInWithPopup(provider)
-      //   .then(function(result) {
-      //
-      //
-      //     $location.path('/profile_info/' + result.user.uid);
-      //
-      //   })
-      //   .catch(function(e) {
-      //     $scope.load = false;
-      //     alert("Authentication failed: ", e.message);
-      //   });
-      //   // end authObj
-      // }
 
 
     }]);

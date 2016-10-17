@@ -6,11 +6,15 @@ angular.module('lmsApp')
 
   $scope.theTodos = Todo.getTodos(firebase.auth().currentUser.uid);
   // $scope.task = {desc: "add task"};
-  
+
   $scope.addTodos = function(task) {
     Todo.addTodo(task);
-
+    $scope.task = {desc: null};
   };
+
+  $scope.deleteTodo = function(id) {
+    Todo.removeTodo(id);
+  }
 
 
 }]);

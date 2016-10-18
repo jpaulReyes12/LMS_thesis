@@ -39,9 +39,10 @@
       &nbsp;&nbsp;
       <div class="form-group col-sm-1 push-down" >
         <input type="file" accept="application/pdf, application/msword, application/zip, application/mspowerpoint, application/powerpoint, image/png, application/excel, image/jpeg, image/gif" name="input-file-preview" dir-file-input="fileGetter"/>
-        <button type="button" class="btn btn-success ">
+        <button type="button" class="btn btn-success " ng-click="upload()">
           <span class="glyphicon glyphicon-plus"></span> Upload
         </button>
+        <!-- <span>{{percent}} %</span> -->
       </div>
 
     </div>
@@ -50,23 +51,24 @@
     <table class="table table-condensed table-striped">
       <thead>
         <tr>
-          <th><span class="glyphicon glyphicon-unchecked"></span>Icon</th>
+          <!-- <th><span class="glyphicon glyphicon-unchecked"></span>Icon</th> -->
           <th>File Name</th>
           <th>File Size</th>
-          <th>Date Uploaded</th>
+          <!-- <th>Date Uploaded</th> -->
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span class="glyphicon glyphicon-folder-open"></span></td>
-          <td>Sample.html</td>
-          <td>5mb</td>
-          <td>5/8/2016</td>
-          <td><button data-toggle="tooltip" title="Download" type="button" class="btn btn-success"><i class="fa fa-download"></i></button>
+        <tr ng-repeat="file in getDetails">
+          <!-- <td><span class="glyphicon glyphicon-folder-open"></span></td> -->
+          <td>{{file.name}}</td>
+          <td>{{file.size / 1000}} kb</td>
+          <!-- <td>5/8/2016</td> -->
+          <td>
+            <a data-toggle="tooltip" title="Download" type="button" href="{{file.url}}" target="_blank" class="btn btn-success"><i class="fa fa-download" ></i></a>
           <!-- <button data-toggle="tooltip" title="Rename" type="button" class="btn btn-info"><i class="fa fa-pencil"></i></button> -->
-          <button data-toggle="tooltip" title="Delete" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
-
+          <!-- <button data-toggle="tooltip" title="Delete" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
+          </td>
         </tr>
 
       </tbody>

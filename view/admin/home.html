@@ -59,13 +59,13 @@
           <span ng-show="sortType == 'dateCreated' && sortReverse" class="fa fa-caret-up"></span>
           </a>
         </th>
-        <th>
+        <!-- <th>
           <a ng-click="sortType = 'dateSignedIn'; sortReverse = !sortReverse">
             Date signed in
           <span ng-show="sortType == 'dateSignedIn' && !sortReverse" class="fa fa-caret-down"></span>
           <span ng-show="sortType == 'dateSignedIn3' && sortReverse" class="fa fa-caret-up"></span>
           </a>
-        </th>
+        </th> -->
         <th>
           <a ng-click="sortType = 'isActive'; sortReverse = !sortReverse">
             isActive
@@ -85,11 +85,11 @@
         <td>{{ user.lastname}}</td>
         <td>{{ user.email}}</td>
         <td>{{ user.dateCreated}}</td>
-        <td>{{ user.dateSignedIn}}</td>
+        <!-- <td>{{ user.dateSignedIn}}</td> -->
         <td>{{ user.isActive}}</td>
         <td>
-          <button type="button" class="btn btn-danger" ng-click="deactvate(user.$id)" ng-show="user.isActive == true">Deactivate</button>
-          <button type="button" class="btn btn-success" ng-click="activate(user.$id)" ng-show="user.isActive == false">Activate</button>
+          <button type="button" class="btn btn-danger" ng-click="deactvate(user.$id)" ng-show="user.isActive == true && user.utype !== 'admin'">Deactivate</button>
+          <button type="button" class="btn btn-success" ng-click="activate(user.$id)" ng-show="user.isActive == false && user.utype !== 'admin'">Activate</button>
         </td>
       </tr>
     </tbody>

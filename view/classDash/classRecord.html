@@ -34,7 +34,7 @@
           <tr ng-repeat="student in students().students">
             <td>{{student.fname}}</td>
             <td>{{student.lname}}</td>
-            <td><button type="button" class="btn btn-danger" ng-click="removeStudent()">Remove</button></td>
+            <td><button type="button" class="btn btn-danger" ng-click="removeStudent(student.s_id)">Remove</button></td>
           </tr>
         </tbody>
       </table>

@@ -504,6 +504,7 @@
         .when('/teacher/uploads', {
           title: 'Uploads Page',
           templateUrl: 'view/teacher/uploads.html',
+          controller: 'teacherUploadsCtrl',
           css: [{href: 'style/teacher/uploads.css ', preload: true},{href:'style/profile.css', preload: true}],
           data:{requireAuth: 'teacher'},
           resolve: {

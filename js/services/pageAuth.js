@@ -1,7 +1,7 @@
 
 angular.module('lmsApp')
 
-.factory('LoggedInUser', [function() {
+.factory('LoggedInUser', ['$location', function($location) {
 
   var userLoggedin;
   var id = "";
@@ -19,6 +19,7 @@ angular.module('lmsApp')
     }
     else {
       setUserLoggedin("noUser");
+      $location.path('/');
     }
   });
 
@@ -52,7 +53,7 @@ angular.module('lmsApp')
       event.preventDefault();
       alert("You must be logged in to access page!");
 
-      if (prev)
+      if (prev.$$route)
       {
         $location.path(prev.$$route.originalPath);
       }

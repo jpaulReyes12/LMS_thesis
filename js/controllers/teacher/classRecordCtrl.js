@@ -17,6 +17,8 @@ angular.module('lmsApp')
 
           }
       });
+
+      $scope.selectStudents = "";
     }
 
     function getid(id, info) {
@@ -25,7 +27,7 @@ angular.module('lmsApp')
       var parent_class = parent[$routeParams.id];
       var classList = $firebaseArray(ref.child(id).child('classes'));
 
-      
+
       classList.$add({
         subject: parent_class.$id,
         subject_name: parent_class.Subject,
@@ -45,4 +47,10 @@ angular.module('lmsApp')
       var classes =  Class.getClass();
       return classes[$routeParams.id];
     };
+
+    $scope.removeStudent = function(id){
+      
+      Class.removeStudent(id, $routeParams.id);
+    }
+
 }])

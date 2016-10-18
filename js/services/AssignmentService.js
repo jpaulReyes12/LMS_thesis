@@ -15,7 +15,7 @@ angular.module('lmsApp')
 
     assList.$add(cont).then(function(refChild) {
       cont.linkToSched = schedID;
-      cont.teacher = firebase.currentUser().uid;
+      cont.teacher = firebase.auth().currentUser.uid;
       assignmentList.$add(cont);
     });
 

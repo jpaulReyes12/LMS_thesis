@@ -1,6 +1,6 @@
 angular.module('lmsApp')
 
-.factory('Class',['$firebaseArray', 'LoggedInUser', function($firebaseArray, LoggedInUser){
+.factory('Class',['$firebaseArray', 'LoggedInUser', '$routeParams', '$firebaseObject',function($firebaseArray, LoggedInUser, $routeParams, $firebaseObject){
 
   var ref = firebase.database().ref('/schedule');
   var scheduleList = $firebaseArray(ref);
@@ -18,6 +18,26 @@ angular.module('lmsApp')
     student.$add(data);
   }
 
+  function removeStudent(stud_id, sched_num) {
+
+    scheduleList.$loaded(function(x) {
+      var schedid = x[sched_num].$id;
+      var studlist = $firebaseObject(ref.child(schedid).child('students').orderByChild("s_id").equalTo(stud_id));
+      studlist.$remove().then(function() {
+        var usersRef = firebase.database().ref('/users').child(stud_id).child('classes');
+        var classesList = $firebaseObject(usersRef.orderByChild("subject").equalTo(schedid));
+
+        classesList.$remove();
+
+      });
+
+
+
+
+    })
+
+  }
+
   function getAllStudents() {
     var newref= ref.child('students');
     var student = $firebaseArray(newref);
@@ -33,6 +53,7 @@ angular.module('lmsApp')
     displayClass: displayClass,
     getClass: getClass,
     addStudent: addStudent,
-    getAllStudents: getAllStudents
+    getAllStudents: getAllStudents,
+    removeStudent: removeStudent
     }
 }])

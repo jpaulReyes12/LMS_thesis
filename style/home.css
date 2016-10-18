@@ -3,7 +3,7 @@
 {
   background: #1976D2;
   width: auto;
-  height: 280px;
+  height: 1;
 }
 h1
 {
@@ -42,8 +42,8 @@ h1
 }
 img
 {
-  width: 150px;
-  height: 150px;
+  width: 70px;
+  height: 70px;
   margin-bottom: -20px;
   margin-top: 5px;
 }

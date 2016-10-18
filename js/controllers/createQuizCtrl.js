@@ -37,7 +37,7 @@ angular.module('lmsApp')
         q_title: settings.qtitle,
         q_desc: settings.qdesc,
         q_deadline: Math.floor(Date.now(settings.qDeadline)/1000),
-        q_dura: settings.qduration,
+        // q_dura: settings.qduration,
         q_item: settings.qitem,
         q_type: settings.qtype,
         q_subjectID : schedID

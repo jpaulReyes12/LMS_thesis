@@ -33,7 +33,7 @@
       }
 
       $scope.activate = function(id) {
-    
+
         Schedule.activate(id);
       }
 
@@ -56,7 +56,7 @@
         // data.timeEnd = data.timeEnd.getTime();
         data.isActive = true;
         data.SY = String(yearNow) + " - " + String(yearNext) ;
-        //
+        
         Schedule.addSched(data);
         Schedule.addTeacherSched(data.Teacher, data);
 

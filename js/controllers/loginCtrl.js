@@ -25,9 +25,9 @@
 
         $scope.authObj.$signInWithEmailAndPassword(info.email, info.password)
         .then(function(result) {
-            getUtype(result.user.uid);
+            getUtype(result.uid);
         }).catch(function(error) {
-          console.log(error);
+          alert(error.message);
         });
 
       }

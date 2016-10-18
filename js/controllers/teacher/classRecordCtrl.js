@@ -4,11 +4,16 @@ angular.module('lmsApp')
     $scope.classID = $routeParams.id;
 
     var ref = firebase.database().ref('/users');
-    var users = $firebaseArray(ref).$loaded().then(function(c) {
-      $scope.users = c;
-    }).catch(function(err) {
-      return err;
-    });
+
+    (function() {
+      $firebaseArray(ref).$loaded().then(function(c) {
+        $scope.users = c;
+      }).catch(function(err) {
+        return err;
+      });
+
+    })()
+
 
     $scope.add = function(val) {
       ref.on('child_added', function(snap) {
@@ -49,7 +54,7 @@ angular.module('lmsApp')
     };
 
     $scope.removeStudent = function(id){
-      
+
       Class.removeStudent(id, $routeParams.id);
     }
 

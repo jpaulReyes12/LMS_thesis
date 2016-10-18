@@ -10,16 +10,19 @@ angular.module('lmsApp')
       File.setStorage("resources/", file.name);
     };
 
-    var ref = firebase.database().ref('/schedule');
-    var scheduleList = $firebaseArray(ref);
-    return scheduleList.$loaded().then(function(result) {
+    (function() {
 
-      var schedID = result[$routeParams.id].$id;
+      var ref1 = firebase.database().ref('/schedule');
+      var scheduleList1 = $firebaseArray(ref1);
+      return scheduleList1.$loaded().then(function(result) {
 
-      var newref = ref.child(schedID).child('resources');
-      var resource = $firebaseArray(newref);
-      $scope.getDetails = resource;
-    });
+        var schedID = result[$routeParams.id].$id;
+
+        var newref = ref1.child(schedID).child('resources');
+        var resource = $firebaseArray(newref);
+        $scope.getDetails = resource;
+      });
+    })()
 
 
     $scope.upload = function() {
@@ -53,6 +56,9 @@ angular.module('lmsApp')
               var resource = $firebaseArray(newref);
 
               resource.$add(data);
+              alert("Upload done!");
+              $scope.percent = "";
+              // $window.location.reload();
             })
 
 

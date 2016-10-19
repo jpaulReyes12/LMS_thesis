@@ -45,15 +45,7 @@ position: relative;
 width: 800px;
 margin-left:25px;
 }
-.card2 {
-background: #fff;
-border-radius: 2px;
-display: inline-block;
-height:445px;
-margin: 1rem;
-position: relative;
-width: 800px;
-}
+.card2 {background: #fff;border-radius: 2px;display: inline-block;/* height:445px; */margin: 1rem;position: relative;width: 800px;}
 
  .card-1 {
 

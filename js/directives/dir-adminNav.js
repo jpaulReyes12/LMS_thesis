@@ -1,11 +1,11 @@
 angular.module('lmsApp')
 
-.directive('dirAdminNav', ['$location' , function($location) {
+.directive('dirAdminNav', ['$location', '$firebaseAuth' , function($location, $firebaseAuth) {
 
 
   var linker = function(scope) {
     scope.logOutUser = function() {
-      firebase.auth().signOut();
+      $firebaseAuth().$signOut();
       $location.path('/');
     }
 

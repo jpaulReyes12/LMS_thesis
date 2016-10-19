@@ -12,17 +12,13 @@
     <!-- <div class="row"> -->
 <div class="color container-fluid">
   <div class="card card-1">
-    <div class="sidebyside" ng-repeat="cls in DspClass">
+    <div class="sidebyside" ng-repeat="cls in DspClass | filter:{Teacher:id.uid}">
 
         <div class="class-box pull-left col-md-3 col-sm 6 col-xs-12">
-        <a class="thumb" href="#"><span class="glyphicon glyphicon-book"></span>
-        <span class="name"> <h3>{{cls.Subject}}</h3> </br>  <h4>{{cls.Section}}</h4> </span></a>
+        <a class="thumb" href="#/class_dashboard/{{$index}}/post"><span class="glyphicon glyphicon-book"></span>
+        <span class="name"> <h3>{{cls.Subject}}</h3> <br />  <h4>{{cls.Section}}</h4> </span></a>
       </div>
 
     </div>
   </div>
 </div>
-<!-- jQuery first, then Bootstrap JS. -->
-<script type="text/javascript">
-  $("[name='classesSwitch']").bootstrapSwitch();
-</script>

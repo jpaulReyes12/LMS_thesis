@@ -14,22 +14,31 @@ angular.module('lmsApp')
     $scope.sortReverse = true;
 
     //checkbox function
-    $scope.checkAll = function () {
-      if ($scope.selectedAll) {
-          $scope.selectedAll = true;
-      } else {
-          $scope.selectedAll = false;
-      }
-      angular.forEach($scope.theSubjects, function (event) {
-          event.Selected = $scope.selectedAll;
-      });
-
+    // $scope.checkAll = function () {
+    //   if ($scope.selectedAll) {
+    //       $scope.selectedAll = true;
+    //   } else {
+    //       $scope.selectedAll = false;
+    //   }
+    //   angular.forEach($scope.theSubjects, function (event) {
+    //       event.Selected = $scope.selectedAll;
+    //   });
+    //
+    // };
+    var defaultForm = {
+      name: '',
+      levels: '',
+      description: ''
     };
 
     $scope.insertSubject = function(data) {
       data.isActive = true;
       Subjects.addSubject(data);
-      $scope.toggleAdd = !toggleAdd;
+
+      $scope.toggleAdd = !$scope.toggleAdd;
+      $scope.sub = angular.copy(defaultForm);
+      $scope.subjectForm.$setPristine();
+      $scope.subjectForm.$setUntouched();
     }
 
 

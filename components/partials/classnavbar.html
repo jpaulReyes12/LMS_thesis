@@ -1,21 +1,21 @@
 <div class="icon-bar">
-  <a class="active" href=""onclick="openNav()"><i class="fa fa-navicon"></i></a>
-  <a href="#/profile"><i class="fa fa-home"></i></a>
-  <a href="#/class_dashboard/post"><i class="fa fa-clipboard"></i></a>
-  <a href="#/class_dashboard/class_recordList"><i class="fa fa-user"></i></a>
-  <a href="#/class_dashboard/createannouncement"><i class="fa fa-wrench"></i></a>
-  <a href="#/class_dashboard/resources"><i class="fa fa-briefcase"></i></a>
-  <a href=""><i class="fa fa-bar-chart"></i></a>
+  <a class="active" onclick="openNav()"><i class="fa fa-navicon"></i></a>
+  <a href="#/teacher/home"><i class="fa fa-home"></i></a>
+  <a href="#/class_dashboard/{{classID}}/post"><i class="fa fa-clipboard"></i></a>
+  <a href="#/class_dashboard/{{classID}}/class_recordList"><i class="fa fa-user"></i></a>
+  <a href="#/class_dashboard/{{classID}}/createannouncement"><i class="fa fa-wrench"></i></a>
+  <a href="#/class_dashboard/{{classID}}/resources"><i class="fa fa-briefcase"></i></a>
+  <!-- <a href=""><i class="fa fa-bar-chart"></i></a> -->
 </div>
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></br></br></br>
-  <a href="#/profile" style="margin-bottom:40px;">Home</a>
-  <a href="#/class_dashboard/post" style="margin-bottom:40px;">Post</a>
-  <a href="#/class_dashboard/class_recordList" style="margin-bottom:40px;">Student</a>
-  <a href="#/class_dashboard/createannouncement" style="margin-bottom:40px;">Create</a>
-  <a href="#/class_dashboard/resources" style="margin-bottom:38px;">Resources</a>
-  <a href="">Statistics</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br /><br /><br />
+  <a href="#/teacher/home" style="margin-bottom:40px;">Home</a>
+  <a href="#/class_dashboard/{{classID}}/post" style="margin-bottom:40px;">Post</a>
+  <a href="#/class_dashboard/{{classID}}/class_recordList" style="margin-bottom:40px;">Student</a>
+  <a href="#/class_dashboard/{{classID}}/createannouncement" style="margin-bottom:40px;">Create</a>
+  <a href="#/class_dashboard/{{classID}}/resources" style="margin-bottom:38px;">Resources</a>
+  <!-- <a href="">Statistics</a> -->
 </div>
 
 <script>

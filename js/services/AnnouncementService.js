@@ -2,16 +2,29 @@ angular.module('lmsApp')
 
 .factory('Announcement',['$firebaseArray', "$firebaseObject", function($firebaseArray){
 
-  var ref = firebase.database().ref('/announcement');
-  var ancmntList = $firebaseArray(ref);
+  var ref = firebase.database().ref('/schedule/');
+  var schedList = $firebaseArray(ref);
 
-  function addAncmnt(cont){
-    ancmntList.$add(cont);
+  function addAncmnt(cont, index){
+    var schedID = schedList[index].$id;
+    var newRef = ref.child(schedID + '/Announcement');
+    var anncmentList = $firebaseArray(newRef);
+
+    anncmentList.$add(cont);
+
   }
 
-  function getAncmnt()
+  function getAncmnt(index)
   {
-    return ancmntList;
+    var schedID;
+    var list;
+    return schedList.$loaded().then(function(result) {
+      schedID = result[index].$id;
+      var newRef = ref.child(schedID + '/Announcement');
+      var anncmentList = $firebaseArray(newRef);
+      return anncmentList;
+    });
+
   }
 
   return{

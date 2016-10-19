@@ -1,8 +1,14 @@
 angular.module('lmsApp')
-  .controller('AssignmentCtrl', ['$scope', 'Assignment', function($scope, Assignment){
+  .controller('AssignmentCtrl', ['$scope', 'Assignment', '$routeParams', '$location',function($scope, Assignment, $routeParams, $location){
 
-  $scope.saveAss = function(a){
+  var id = $routeParams.id
+
+  $scope.saveAss = function(a, id){
+
     a.timecreated = Math.floor(Date.now()/1000);
     Assignment.addAss(a);
+    $location.path('/teacher/assignment');
   }
+
+  $scope.classID = $routeParams.id;
 }])

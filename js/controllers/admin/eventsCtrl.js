@@ -48,7 +48,6 @@ angular.module('lmsApp')
 
       File.upload().on('state_changed',
         function progress(snapshot) {
-          console.log(snapshot)
           $scope.percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         },
         function error(error) {
@@ -58,10 +57,12 @@ angular.module('lmsApp')
           File.getURL().then(function(snapshot) {
             data.url = snapshot;
             Events.addEvent(data);
-
+            
             $scope.load = false;
-            $scope.event = null;
             $scope.toggleAdd = true;
+            $scope.event = null;
+            $scope.eventFrm.$setPristine();
+            $scope.eventFrm.$setUntouched();
 
           })
         }

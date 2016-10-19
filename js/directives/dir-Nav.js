@@ -1,12 +1,19 @@
 angular.module('lmsApp')
 
-.directive('dirNav', ['$location', 'LoggedInUser' , function($location, LoggedInUser) {
+.directive('dirNav', ['$location', 'LoggedInUser', '$firebaseAuth' , function($location, LoggedInUser, $firebaseAuth) {
 
 
   var linker = function(scope) {
     scope.logOutUser = function() {
+      $firebaseAuth().$signOut();
       $location.path('/');
-      firebase.auth().signOut();
+
+      firebase.auth().onAuthStateChanged(function(user) {
+       if (!user) {
+         $location.path('/');
+        }
+      });
+
     }
 
     scope.location = function(href) {
@@ -21,7 +28,7 @@ angular.module('lmsApp')
       if (userTypeData == "student") {
         setUtype_Path("#/student_page");
       }else if (userTypeData == "teacher") {
-        setUtype_Path("#/class_dashboard/createquiz");
+        setUtype_Path("#/teacher/home");
       }
     })()
 
@@ -34,11 +41,11 @@ angular.module('lmsApp')
       return utypePath;
     }
 
-    // FIXME: dynamic user from database
+
     scope.name = firebase.auth().currentUser.displayName;
 
-    scope.NotifNum = 3;
-    scope.MessageNum = 2;
+    // scope.NotifNum = 3;
+    // scope.MessageNum = 2;
   }
 
 

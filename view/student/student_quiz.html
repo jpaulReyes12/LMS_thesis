@@ -9,36 +9,42 @@
   <h6>Quiz 2.4</h6>
 
 </div>
-
-    <div class="container  wrap" ng-repeat="quest in questions.q">
+    <div class="container  wrap" ng-repeat="quest in questions.q" ng-show="questions.q_type == 'Multiple Choice' ">
       <div class="quiz_content container col-md-12">
-        <h3>1. {{quest}}</h3>
+        <h3>{{$index + 1}}. {{quest.quest}}</h3>
          <br>
-          <h4 class="choice1 col-md-4 col-xs-6"><input type="radio" name="choice" value="choice1"> Cleopatra</h4>
-          <h4 class="choice2 col-md-4 col-xs-6 col-md-offset-4"><input type="radio" name="choice" value="choice2"> Helen</h4>
-          <h4 class="choice1 col-md-4 col-xs-6"><input type="radio" name="choice" value="choice3"> Aphrodite</h4>
-          <h4 class="choice2 col-md-4 col-xs-6 col-md-offset-4"><input type="radio" name="choice" value="choice4"> Queen Elizabeth</h4>
+
+          <h4 class="choice1 col-md-4 col-xs-6" ng-repeat="choice in quest.choice | orderBy">
+            <input type="radio" name="choice{{$parent.$index}}" value="{{choice}}" ng-model="answer[$parent.$index]"> {{choice}}
+          </h4>
       </div>
     </div>
 
 
+    <div class="container  wrap" ng-repeat="quest in questions.q" ng-show="questions.q_type == 'True or False' ">
+      <div class="quiz_content container col-md-12">
+        <h3>{{$index + 1}}. {{quest.quest}}</h3>
+         <br>
+          <h4 class="choice1 col-md-4 col-xs-6"><input type="radio" name="choiceTF{{$index}}" value="true" ng-model="answer[$index]"> True</h4>
+          <h4 class="choice2 col-md-4 col-xs-6 col-md-offset-4"><input type="radio" name="choiceTF{{$index}}" value="false" ng-model="answer[$index]"> False</h4>
+      </div>
+    </div>
+
     <!-- PAGINATION -->
-    <hr class="col-md-10 " style="float:none;">
+    <!-- <hr class="col-md-10 " style="float:none;">
     <div class=" buttons col-md-2 col-md-offset-5 col-xs-6 col-xs-offset-2">
       <input type="submit" name="btnprevious" value="PREVIOUS" class="btn btn-default">
       <input type="submit" name="btnnext" value="NEXT" class="btn btn-default col-md-offset-2">
-    </div>
+    </div> -->
     <div class="container page text-center ">
-      <div>
+      <!-- <div>
         <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-lg" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
-      </div>
+      </div> -->
       <hr style="margin-top:-5px;">
 
       <div class="pull-right" style="margin-bottom:5px;">
-        <input type="submit" name="btnsubmit" value="SUBMIT QUIZ" class="btn btn-primary">
-        <input type="submit" name="btncancel" value="CANCEL" class="btn btn-primary">
+        <input type="submit" name="btnsubmit" value="SUBMIT QUIZ" class="btn btn-primary" ng-click="checkMC()" ng-show="questions.q_type == 'Multiple Choice' ">
+        <input type="submit" name="btnsubmit" value="SUBMIT QUIZ" class="btn btn-primary" ng-click="checkTF()" ng-show="questions.q_type == 'True or False' ">
+        <input type="reset" name="btncancel" value="CANCEL" class="btn btn-primary">
       </div>
     </div>
-
-  </body>
-</html>

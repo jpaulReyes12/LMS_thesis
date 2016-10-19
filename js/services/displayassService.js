@@ -15,7 +15,7 @@ angular.module('lmsApp')
   }
 
   return{
-  displayAss: displayAss,
-  getDspAss: getDspAss
+    displayAss: displayAss,
+    getDspAss: getDspAss
   }
 }])

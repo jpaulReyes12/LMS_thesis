@@ -1,4 +1,4 @@
-
+<section ng-include src="'components/modals/forgotPass.html'"></section>
 
 <div class="container-fluid">
   <div class="row">
@@ -37,9 +37,9 @@
             <h4>
               Log in with <a ng-click="LoginFacebook()"> Facebook</a> or <a ng-click="LoginGoogle()">Google</a>
             </h4>
-            <!-- <h4>
-              <a ng-click="forgotPassword()"> Forgot Password</a>
-            </h4> -->
+            <h4>
+              <a data-toggle="modal" data-target="#forgotPass">Forgot Password</a>
+            </h4>
         </div>
       </form>
     </div>

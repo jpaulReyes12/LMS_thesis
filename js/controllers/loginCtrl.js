@@ -1,7 +1,7 @@
 
   angular.module('lmsApp')
 
-    .controller('loginCtrl', ['$scope', '$firebaseAuth', '$firebaseArray','$location', function($scope, $firebaseAuth, $firebaseArray, $location){
+    .controller('loginCtrl', ['$scope', '$firebaseAuth', '$firebaseArray','$location', 'Users',function($scope, $firebaseAuth, $firebaseArray, $location, Users){
 
 
       $scope.authObj = $firebaseAuth();
@@ -28,6 +28,35 @@
             getUtype(result.uid);
         }).catch(function(error) {
           alert(error.message);
+        });
+
+      }
+
+      $scope.forgot = function(email) {
+        var u = Users.getUsers();
+        var isSent = false;
+
+        u.$loaded().then(function(result) {
+
+          for (var i = 0; i < result.length; i++) {
+            if (result[i].email === email) {
+              isSent = true;
+
+              var auth = firebase.auth();
+              auth.sendPasswordResetEmail(email).then(function() {
+                alert("Password reset e-mail was sent to your inbox!")
+              }, function(error) {
+                alert(error.message);
+              });
+            }
+          }
+
+          return isSent;
+
+        }).then(function(result) {
+          if (result === false) {
+            alert("This email is not registered");
+          }
         });
 
       }

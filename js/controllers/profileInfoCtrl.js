@@ -37,6 +37,13 @@
 
           var user = firebase.auth().currentUser;
 
+          //FIXME
+          user.sendEmailVerification().then(function() {
+            alert("Please check your inbox to verify your e-mail");
+          });
+
+
+          // FIXME: signin email then update profile
           user.updateProfile({
             displayName: data.firstname + ' ' + data.lastname
           })

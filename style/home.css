@@ -21,10 +21,9 @@ h1
 }
 #row2
 {
-
-  background: #E3F2FD;
-  width: auto;
-  height: 380px;
+background: #E3F2FD;
+width: auto;
+height: 400px;
 }
 
 #row2 > .container{

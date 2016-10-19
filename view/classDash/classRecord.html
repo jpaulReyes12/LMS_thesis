@@ -2,11 +2,15 @@
   <!-- <div class="class">
 	  	SAMPLE- CI602A-C- 10:30AM
   </div> -->
-  <div class="classx">
+  <!-- <div class="classx">
     <h5>CI701A-C</h5>
     <h5>/</h5>
     <h5>10:30 AM</h5>
-  </div>
+  </div> -->
+
+  <!-- <pre>
+    {{users | json}}
+  </pre> -->
 
   <div class="pull-right col-md-11" >
 
@@ -15,26 +19,25 @@
         <!-- <a class="btn list" href="#/class_dashboard/{{classID}}/class_recordThumb" title="Thumbnail view">
           <input type="radio" name="options" > <span class="glyphicon glyphicon-th-large list2"></span>
         </a> -->
-
-
-        <input type="text" ng-model="selectStudents"  uib-typeahead="email.email for email in users | filter:{email:$viewValue, isActive: true} | limitTo:8" class="form-control">
+        <input type="text" ng-model="selectStudents" placeholder="Email"  uib-typeahead="email.email for email in users | filter:{email:$viewValue, utype:'student' ,isActive: true} | limitTo:8" class="form-control">
+         <!-- <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i> typeahead-loading="loadingLocations"-->
         <button type="button" class="btn btn-success" ng-click="add(selectStudents)" >Add student</button>
       </div>
-
+      
       <!-- TABLE -->
       <table class="table table-bordered table-striped table-responsive">
         <thead>
           <tr>
             <th>Firstname</th>
             <th>Lastname</th>
-            <th>Quiz</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="student in students">
+          <tr ng-repeat="student in students().students">
             <td>{{student.fname}}</td>
             <td>{{student.lname}}</td>
-            <td>Quiz</td>
+            <td><button type="button" class="btn btn-danger" ng-click="removeStudent(student.s_id)">Remove</button></td>
           </tr>
         </tbody>
       </table>

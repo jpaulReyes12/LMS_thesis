@@ -1,15 +1,16 @@
 <section ng-include src="'components/partials/navbar.html'"></section>
 <br><br>
 <div class="container text-center">
-  <h1><b>HISTORY</b></h1>
-  <h2>{{qdetails.q_title}}</h2>&nbsp&nbsp<h2>/</h2> <h2>Quiz no.: {{qdetails.q_num}}</h2>
+  <!-- <h1><b>HISTORY</b></h1> -->
+  <h2>{{qdetails.q_title}}</h2>
+  <!-- &nbsp&nbsp<h2>/</h2>
+  <h2>Quiz no.: {{quizNum}}</h2> -->
   <hr>
   <h3 id="desc">{{qdetails.q_desc}}</h3>
   <br><br>
-  <h3><b>Duration Time: </b>{{qdetails.q_dura}} minutes</h3>
-  <h3><b>Dead Line: </b>7:00 pm</h3>
+  <!-- <h3><b>Duration Time: </b>{{qdetails.q_dura}} minutes</h3> -->
+  <h3><b>Deadline: </b>7:00 pm</h3>
   <br><br>
   <input type="button" ng-click="start(qdetails.$id)"  class="btn btn-success btn-lg" ng-disabled="isAnswered" value="Start">
   <span ng-show="isAnswered">You are done with this quiz</span>
 </div>
-  

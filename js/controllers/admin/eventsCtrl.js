@@ -57,7 +57,7 @@ angular.module('lmsApp')
           File.getURL().then(function(snapshot) {
             data.url = snapshot;
             Events.addEvent(data);
-
+            
             $scope.load = false;
             $scope.toggleAdd = true;
             $scope.event = null;

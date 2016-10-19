@@ -2,7 +2,8 @@ angular.module('lmsApp')
 
 .factory('DisplayAss',['$firebaseArray', "$firebaseObject", function($firebaseArray){
 
-  var ref = firebase.database().ref('/assignment');
+
+  var ref = firebase.database().ref('assignment');
   var assList = $firebaseArray(ref);
 
   function displayAss(ass){
@@ -11,11 +12,13 @@ angular.module('lmsApp')
 
   function getDspAss()
   {
-    return assList;
+    var teacher = firebase.auth().currentUser.uid;
+    var query = ref.orderByChild("teacher").startAt(teacher).endAt(teacher);
+    return $firebaseArray(query);
   }
 
   return{
-  displayAss: displayAss,
-  getDspAss: getDspAss
+    displayAss: displayAss,
+    getDspAss: getDspAss
   }
 }])

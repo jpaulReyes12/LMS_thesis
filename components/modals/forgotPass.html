@@ -1,0 +1,27 @@
+<!-- change password modal -->
+<div id="forgotPass" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Reset Password</h4>
+      </div>
+      <div class="modal-body">
+
+        <!-- form in modal -->
+        <form role="form" name="forgot_pass">
+
+          <div class="form-group">
+            <label class="col-md-12">Email</label>
+            <input type="text" class="form-control input-lower" ng-model="email" placeholder="Email address" >
+          </div>
+
+          <button type="button" class="btn btn-primary " ng-click="forgot(email)">Submit</button>
+        </form>
+      </div>
+
+
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

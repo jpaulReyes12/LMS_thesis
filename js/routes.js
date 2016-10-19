@@ -142,6 +142,7 @@
           title: 'Manage your class',
           templateUrl: 'view/classDash/classResources.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
+          controller: 'ResourceCtrl',
           data:{
             requireAuth: ['teacher', 'student']
           },
@@ -202,7 +203,7 @@
         })
 
         .when('/class_dashboard/:id/createassignment', {
-          title: 'View your resources',
+          title: 'Create assignment',
           templateUrl: 'view/classDash/assignmenttab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
           data:{
@@ -411,9 +412,9 @@
           }
         })
 
-        .when('/admin/schedule', {
+        .when('/admin/class_management', {
           title: 'Admin Page',
-          templateUrl: 'view/admin/schedule.html',
+          templateUrl: 'view/admin/class_management.html',
           css: 'style/admin.css',
           controller: 'adminScheduleCtrl',
           data: {requireAuth: 'admin'},
@@ -504,6 +505,7 @@
         .when('/teacher/uploads', {
           title: 'Uploads Page',
           templateUrl: 'view/teacher/uploads.html',
+          controller: 'teacherUploadsCtrl',
           css: [{href: 'style/teacher/uploads.css ', preload: true},{href:'style/profile.css', preload: true}],
           data:{requireAuth: 'teacher'},
           resolve: {

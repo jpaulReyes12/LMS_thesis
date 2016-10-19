@@ -15,6 +15,7 @@
         data.isActive = true;
         Section.addSection(data);
         $scope.toggleAdd = !$scope.toggleAdd;
+        $scope.sec = null;
       }
 
       $scope.deactvate = function(id) {

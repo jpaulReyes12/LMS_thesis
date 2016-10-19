@@ -26,7 +26,6 @@
         userInfo.lastname = data.lastname;
         userInfo.description = data.Description;
         userInfo.email = firebaseUser.email;
-        userInfo.dateCreated = dateToday;
         userInfo.isActive = true;
 
         userInfo.$save()

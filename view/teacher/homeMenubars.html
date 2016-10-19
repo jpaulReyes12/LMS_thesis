@@ -21,7 +21,6 @@
       <div class="col-md-7">
         <div uib-carousel active="0" interval="7000" no-wrap="false">
           <div uib-slide  ng-repeat="slide in theEvents  | filter:{isActive:true}" index="$index">
-             <!-- | filter:{isActive:true} -->
             <img ng-src="{{slide.url}}" class="slider">
             <div class="carousel-caption">
               <h4>{{slide.name}}</h4>
@@ -71,14 +70,24 @@
 
     <div id="margintop" class="row">
 
-      <!-- <div  class="col-md-4">
+      <div  class="col-md-7">
         <div class="panel panel-primary">
-          <div class="panel-heading">To do list</div>
+          <div class="panel-heading">Posted Announcements</div>
+
           <div class="panel-body" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit distinctio enim dignissimos beatae dicta quia, incidunt sit amet ipsam! Illum maiores illo nisi qui recusandae necessitatibus, quisquam. Sed, odio, cum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit distinctio enim dignissimos beatae dicta quia, incidunt sit amet ipsam! Illum
+            <ul>
+              <li ng-repeat="announce in theAnnouncements" >
+                <b>{{announce.Section}} {{announce.Subject}}</b>
+                <ul>
+                  <li ng-repeat="ann in announce.Announcement"><a class="btn btn-link">{{ann.title}}</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>end of div class="row" -->
+      </div>
+
+      <!-- end of div class="row" -->
 
       <!-- <div class="col-md-7 try" >
         <div  class="panel panel-primary">

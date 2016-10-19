@@ -62,11 +62,11 @@ angular.module('lmsApp')
 
   var checkUser = function (event, next, prev, err) {
 
+    var user = firebase.auth().currentUser;
+    if ( $location.path() === "/" && user !== null
+      || $location.path() === "/home" && user !== null) {
 
-    if ( $location.path() === "/" && LoggedInUser.getUsertype() !== "noUser"
-      || $location.path() === "/home" && LoggedInUser.getUsertype() !== "noUser") {
-
-        if (prev.$$route.originalPath !== 'undefined') {
+        if (prev.$$route !== 'undefined') {
           $location.path(prev.$$route.originalPath);
 
         }

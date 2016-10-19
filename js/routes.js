@@ -412,9 +412,9 @@
           }
         })
 
-        .when('/admin/schedule', {
+        .when('/admin/class_management', {
           title: 'Admin Page',
-          templateUrl: 'view/admin/schedule.html',
+          templateUrl: 'view/admin/class_management.html',
           css: 'style/admin.css',
           controller: 'adminScheduleCtrl',
           data: {requireAuth: 'admin'},
@@ -505,7 +505,7 @@
         .when('/teacher/uploads', {
           title: 'Uploads Page',
           templateUrl: 'view/teacher/uploads.html',
-          // controller: 'teacherUploadsCtrl',
+          controller: 'teacherUploadsCtrl',
           css: [{href: 'style/teacher/uploads.css ', preload: true},{href:'style/profile.css', preload: true}],
           data:{requireAuth: 'teacher'},
           resolve: {

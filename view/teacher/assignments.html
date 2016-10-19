@@ -12,22 +12,35 @@
 <!-- try this  one -->
   <div class="card2 card-1">
     <div id="ohla" class=" border overflow-scroll">
-      <!-- <div class="col-md-12  border">
-        content
-      </div> -->
+      <div class="col-md-12  border">
+        {{assCont | json}}
+
+        <div class="row text-center text-capitalize">
+          <h3>{{assCont.title}}</h3>
+        </div>
+        <div class="row">
+          {{assCont.cont}}
+        </div>
+
+
+
+      </div>
     </div>
   </div>
+
 
   <div class="card card-1">
 
     <div class="item-menu overflow-scroll">
 
       <div class="col-md-12  borders" ng-repeat="ass in DspAss">
-        <div >
-          <h4>{{ass.title}}</h4>
-          <label>{{ass.con}}</label>
-          <!-- <span class="label label-danger pull-right" id="duedate">Date</span> -->
-        </div>
+        <a ng-click="content(ass)">
+          <div >
+            <h4>{{ass.title}}</h4>
+            <label>{{ass.con}}</label>
+            <span class="label label-danger pull-right">Date</span>
+          </div>
+        </a>
       </div>
     </div>
   <!-- end of card 1 -->

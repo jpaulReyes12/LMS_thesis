@@ -53,20 +53,6 @@
           </a>
         </th>
         <th>
-          <a ng-click="sortType = 'dateCreated'; sortReverse = !sortReverse">
-            Date Created
-          <span ng-show="sortType == 'dateCreated' && !sortReverse" class="fa fa-caret-down"></span>
-          <span ng-show="sortType == 'dateCreated' && sortReverse" class="fa fa-caret-up"></span>
-          </a>
-        </th>
-        <!-- <th>
-          <a ng-click="sortType = 'dateSignedIn'; sortReverse = !sortReverse">
-            Date signed in
-          <span ng-show="sortType == 'dateSignedIn' && !sortReverse" class="fa fa-caret-down"></span>
-          <span ng-show="sortType == 'dateSignedIn3' && sortReverse" class="fa fa-caret-up"></span>
-          </a>
-        </th> -->
-        <th>
           <a ng-click="sortType = 'isActive'; sortReverse = !sortReverse">
             isActive
           <span ng-show="sortType == 'isActive' && !sortReverse" class="fa fa-caret-down"></span>
@@ -78,14 +64,11 @@
     </thead>
     <tbody>
       <tr ng-repeat="user in theUsers | orderBy:sortType:sortReverse | filter: searchUsers as filteredUsers">
-        <!-- <td><input type="checkbox" ng-model="user.Selected"></td> -->
         <!-- <td>{{ user.uid}}</td> -->
         <td>{{ user.utype}}</td>
         <td>{{ user.firstname}}</td>
         <td>{{ user.lastname}}</td>
         <td>{{ user.email}}</td>
-        <td>{{ user.dateCreated}}</td>
-        <!-- <td>{{ user.dateSignedIn}}</td> -->
         <td>{{ user.isActive}}</td>
         <td>
           <button type="button" class="btn btn-danger" ng-click="deactvate(user.$id)" ng-show="user.isActive == true && user.utype !== 'admin'">Deactivate</button>

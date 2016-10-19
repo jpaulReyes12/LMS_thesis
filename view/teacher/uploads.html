@@ -29,12 +29,13 @@
 
     <div class="try">
 
-  <table class="table table-striped table-bordered ">
+  <table class="table table-striped table-bordered table-responsive">
     <thead >
       <tr>
         <th>Uploads</th>
         <th>File Uploaded</th>
         <th>File Size</th>
+        <th>Found in</th>
         <th>Actions</th>
 
 
@@ -42,10 +43,11 @@
 
     </thead>
     <tbody>
-      <tr>
+      <tr ng-repeat="file in class.resources">
         <td>John.pdf</td>
         <td>09/09/1999</td>
         <td>999kb</td>
+        <td><span>class1</span>, <span>class2</span></td>
         <td>
 
           <p align="center">
@@ -61,6 +63,9 @@
     </tbody>
   </table>
 
+<pre>
+  {{class.resources | json}}
+</pre>
 </div>
 <!-- end of class try col-md-5 -->
 </div>

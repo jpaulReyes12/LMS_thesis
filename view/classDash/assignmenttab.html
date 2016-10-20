@@ -20,7 +20,10 @@
           <input ng-model="ass.title" type="text" class="form-control asstitle" placeholder="Enter title here">
         </div>
         <div class="form-group">
-          <textarea ng-model="ass.cont" rows="15" class="form-control" placeholder="Enter content here"></textarea>
+          <input type="datetime-local" class="form-control cre8deadline">
+        </div>
+        <div class="form-group">
+          <textarea ng-model="ann.cont" rows="8" class="form-control cre8txtarea " placeholder="Enter content here"></textarea>
         </div>
         <button ng-click="saveAss(ass)" type="submit" class="btn btn-success">Submit</button>
       </form>
@@ -37,7 +40,7 @@
 
 </div>
 
-<script>
+<!-- <script>
 $(document).ready(function(){
   $("#get-data-form").submit(function(e){
     var content = tinymce.get("mytextarea").getContent();
@@ -46,4 +49,4 @@ $(document).ready(function(){
   });
 });
 
-</script>
+</script> -->

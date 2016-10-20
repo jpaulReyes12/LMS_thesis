@@ -36,7 +36,7 @@
 
           var user = firebase.auth().currentUser;
 
-          //FIXME
+          //FIXME: login user if email then verify
           user.sendEmailVerification().then(function() {
             alert("Please check your inbox to verify your e-mail");
           });

@@ -45,7 +45,7 @@ angular.module('lmsApp')
     scope.name = firebase.auth().currentUser.displayName;
 
     // scope.NotifNum = 3;
-    // scope.MessageNum = 2;
+    
   }
 
 

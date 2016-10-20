@@ -8,9 +8,18 @@
     <h5>10:30 AM</h5>
   </div> -->
 
-  <!-- <pre>
-    {{users | json}}
-  </pre> -->
+  <!-- TODO: include to all class dash-->
+  <div class="pull-right" style="
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(248, 205, 62);
+    ">
+    <div class="container text-center">
+      <h2>content</h2>
+
+    </div>
+  </div>
 
   <div class="pull-right col-md-11" >
 
@@ -19,15 +28,16 @@
         <!-- <a class="btn list" href="#/class_dashboard/{{classID}}/class_recordThumb" title="Thumbnail view">
           <input type="radio" name="options" > <span class="glyphicon glyphicon-th-large list2"></span>
         </a> -->
-        <input type="text" ng-model="selectStudents" placeholder="Email"  uib-typeahead="email.email for email in users | filter:{email:$viewValue, utype:'student' ,isActive: true} | limitTo:8" class="form-control">
-         <!-- <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i> typeahead-loading="loadingLocations"-->
+        <input type="text" ng-model="selectStudents" placeholder="Email" typeahead-loading="loadingStudents" uib-typeahead="email.email for email in users | filter:{email:$viewValue, utype:'student' ,isActive: true} | limitTo:8" class="form-control">
+         <i ng-show="loadingStudents" class="glyphicon glyphicon-refresh"></i>
         <button type="button" class="btn btn-success" ng-click="add(selectStudents)" >Add student</button>
       </div>
-      
+
       <!-- TABLE -->
       <table class="table table-bordered table-striped table-responsive">
         <thead>
           <tr>
+            <th>Image</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Action</th>
@@ -35,6 +45,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="student in students().students">
+            <td>image here</td>
             <td>{{student.fname}}</td>
             <td>{{student.lname}}</td>
             <td><button type="button" class="btn btn-danger" ng-click="removeStudent(student.s_id)">Remove</button></td>

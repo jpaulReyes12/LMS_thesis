@@ -1,4 +1,5 @@
 <div>
+  <section ng-include src="'components/modals/addstudent.html'"></section>
   <!-- <div class="class">
 	  	SAMPLE- CI602A-C- 10:30AM
   </div> -->
@@ -7,6 +8,7 @@
     <h5>/</h5>
     <h5>10:30 AM</h5>
   </div> -->
+
 
   <!-- TODO: include to all class dash-->
   <div class="pull-right" style="
@@ -25,12 +27,8 @@
 
       <!-- thumbnail -->
       <div class="btn-group change-view" data-toggle="buttons">
-        <!-- <a class="btn list" href="#/class_dashboard/{{classID}}/class_recordThumb" title="Thumbnail view">
-          <input type="radio" name="options" > <span class="glyphicon glyphicon-th-large list2"></span>
-        </a> -->
-        <input type="text" ng-model="selectStudents" placeholder="Email" typeahead-loading="loadingStudents" uib-typeahead="email.email for email in users | filter:{email:$viewValue, utype:'student' ,isActive: true} | limitTo:8" class="form-control">
-         <i ng-show="loadingStudents" class="glyphicon glyphicon-refresh"></i>
-        <button type="button" class="btn btn-success" ng-click="add(selectStudents)" >Add student</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addstud" >Add student</button>
+
       </div>
 
       <!-- TABLE -->
@@ -44,11 +42,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="student in students().students">
-            <td>image here</td>
-            <td>{{student.fname}}</td>
-            <td>{{student.lname}}</td>
-            <td><button type="button" class="btn btn-danger" ng-click="removeStudent(student.s_id)">Remove</button></td>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <!-- <button type="button" class="btn btn-danger" ng-click="removeStudent(student.s_id)">Remove</button> -->
+            </td>
           </tr>
         </tbody>
       </table>

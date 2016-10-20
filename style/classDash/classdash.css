@@ -281,5 +281,18 @@ thead{
 /*ANCMNT TAB*/
 .ancmnttitle,.asstitle
 {
+	width: 30%;
+	margin-left: 20%;
+}
+
+.cre8txtarea
+{
 	width: 50%;
+	margin-left: 20%;
+}
+
+.cre8deadline
+{
+	width: 30%;
+	margin-left: 20%;
 }

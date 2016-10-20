@@ -3,9 +3,7 @@ angular.module('lmsApp')
 
   $scope.DspClass = Class.getClass();
   $scope.id = firebase.auth().currentUser;
-  
 
-  $scope.postClass = function(b){
-    DisplayAss.displayClass(b);
-  }
+
+  
 }])

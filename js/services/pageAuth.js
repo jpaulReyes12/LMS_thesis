@@ -1,7 +1,7 @@
 
 angular.module('lmsApp')
 
-.factory('LoggedInUser', [function() {
+.factory('LoggedInUser', ['$location', function($location) {
 
   var userLoggedin;
   var id = "";
@@ -19,6 +19,7 @@ angular.module('lmsApp')
     }
     else {
       setUserLoggedin("noUser");
+      $location.path('/');
     }
   });
 
@@ -52,7 +53,7 @@ angular.module('lmsApp')
       event.preventDefault();
       alert("You must be logged in to access page!");
 
-      if (prev)
+      if (prev.$$route)
       {
         $location.path(prev.$$route.originalPath);
       }
@@ -61,13 +62,16 @@ angular.module('lmsApp')
 
   var checkUser = function (event, next, prev, err) {
 
+    var user = firebase.auth().currentUser;
+    if ( $location.path() === "/" && user !== null
+      || $location.path() === "/home" && user !== null) {
 
-    if ( $location.path() === "/" && LoggedInUser.getUsertype() !== "noUser"
-      || $location.path() === "/home" && LoggedInUser.getUsertype() !== "noUser") {
-
-        if (prev) {
+        if (prev.$$route !== 'undefined') {
           $location.path(prev.$$route.originalPath);
 
+        }
+        else {
+          event.preventDefault();
         }
     }
 
@@ -80,8 +84,10 @@ angular.module('lmsApp')
         case "student":
           checkIfAllowed(utype);
           break;
+        case "admin":
+          checkIfAllowed(utype);
+          break;
         default:
-          console.log("default");
           break;
 
       }

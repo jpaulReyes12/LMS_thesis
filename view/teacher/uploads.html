@@ -22,26 +22,6 @@
     <!-- margin -->
     <div class="margins">
 
-    <div class="row">
-<!-- main content -->
-      <div class="card card-1">
-        <input type="text" class="form-control">
-          <div class="fileupload fileupload-new " data-provides="fileupload">
-            <div>
-                <p align="center">
-              <span class="fileupload-new">Select file</span>
-              <span class="fileupload-exists">Change</span>
-              <input type="file" />
-              </p>
-            </div>
-            <span class="fileupload-preview"></span>
-
-          </div>
-
-        </div>
-
-      </div>
-<!-- end of main content  -->
 
   <!-- 1sr table -->
   <div class="card2 card-1">
@@ -49,12 +29,13 @@
 
     <div class="try">
 
-  <table class="table table-striped table-bordered ">
+  <table class="table table-striped table-bordered table-responsive">
     <thead >
       <tr>
         <th>Uploads</th>
         <th>File Uploaded</th>
         <th>File Size</th>
+        <th>Found in</th>
         <th>Actions</th>
 
 
@@ -62,26 +43,13 @@
 
     </thead>
     <tbody>
-      <tr>
-
-          <td>John.pdf</td>
-          <td>09/09/1999</td>
-          <td>999kb</td>
-          <td>
-
-          <p align="center">
-            <button type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download"></button>
-            <button type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></button>
-            <button type="button" class="btn btn-info glyphicon glyphicon-pencil" data-toggle="tooltip" title="Update"></button>
-          </p>
-        </td>
-      </tr>
-
-      <tr>
+      <tr ng-repeat="file in class.resources">
         <td>John.pdf</td>
         <td>09/09/1999</td>
         <td>999kb</td>
+        <td><span>class1</span>, <span>class2</span></td>
         <td>
+
           <p align="center">
             <button type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download"></button>
             <button type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></button>
@@ -90,61 +58,14 @@
         </td>
       </tr>
 
-      <tr>
-        <td>John.pdf</td>
-        <td>09/09/1999</td>
-        <td>999kb</td>
-        <td>
-          <p align="center">
-            <button type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download"></button>
-            <button type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></button>
-            <button type="button" class="btn btn-info glyphicon glyphicon-pencil" data-toggle="tooltip" title="Update"></button>
-          </p>
-        </td>
-      </tr>
 
-      <tr>
-        <td>John.pdf</td>
-        <td>09/09/1999</td>
-        <td>999kb</td>
-        <td>
-          <p align="center">
-            <button type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download"></button>
-            <button type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></button>
-            <button type="button" class="btn btn-info glyphicon glyphicon-pencil" data-toggle="tooltip" title="Update"></button>
-          </p>
-        </td>
-      </tr>
-
-      <tr>
-        <td>John.pdf</td>
-        <td>09/09/1999</td>
-        <td>999kb</td>
-        <td>
-          <p align="center">
-            <button type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download"></button>
-            <button type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></button>
-            <button type="button" class="btn btn-info glyphicon glyphicon-pencil" data-toggle="tooltip" title="Update"></button>
-          </p>
-        </td>
-      </tr>
-
-      <tr>
-        <td>John.pdf</td>
-        <td>09/09/1999</td>
-        <td>999kb</td>
-        <td>
-          <p align="center">
-            <button type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download"></button>
-            <button type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></button>
-            <button type="button" class="btn btn-info glyphicon glyphicon-pencil" data-toggle="tooltip" title="Update"></button>
-          </p>
-        </td>
-      </tr>
 
     </tbody>
   </table>
 
+<pre>
+  {{class.resources | json}}
+</pre>
 </div>
 <!-- end of class try col-md-5 -->
 </div>
@@ -154,39 +75,3 @@
 <!-- end of class color -->
 
  <!-- end of marmins -->
-    <!-- jQuery first, then Bootstrap JS. -->
-    <script src="..lib\js\classie.js"></script>
-      <script>
-        var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-          showLeft = document.getElementById( 'showLeft' ),
-          body = document.body;
-
-        showLeft.onclick = function() {
-          classie.toggle( this, 'active' );
-          classie.toggle( menuLeft, 'cbp-spmenu-open' );
-          disableOther( 'showLeft' );
-        };
-
-        function disableOther( button ) {
-          if( button !== 'showLeft' ) {
-            classie.toggle( showLeft, 'disabled' );
-          }
-          }
-
-          var menuLeft2 = document.getElementById( 'cbp-spmenu-s2' ),
-            create = document.getElementById( 'create' ),
-            body = document.body;
-
-            create.onclick = function() {
-            classie.toggle( this, 'active' );
-            classie.toggle( menuLeft2, 'cbp-spmenu-open' );
-            disableOther( 'create' );
-          };
-
-          function disableOther( button ) {
-            if( button !== 'create' ) {
-              classie.toggle( create, 'disabled' );
-            }
-            }
-
-      </script>

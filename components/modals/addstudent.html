@@ -1,6 +1,6 @@
 <!-- change password modal -->
 <div id="addstud" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -9,17 +9,23 @@
       <div class="modal-body">
 
         <!-- form in modal -->
+        <div class="input-group">
+          <span class="input-group-addon"></span>
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
         <form role="form">
 
           <div class="form-group">
               <table class="table table-bordered table-striped table-responsive">
                 <thead>
                   <tr>
+                    <th>Select</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                   </tr>
                   <tbody>
                     <tr  ng-repeat="user in users">
+                      <td><input type="checkbox" ng-model="event.Selected"></td>
                       <td>{{user.firstname}}</td>
                       <td>{{user.lastname}}</td>
                     </tr>
@@ -28,10 +34,13 @@
               </table>
           </div>
 
-          <button type="button" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-success" >Submit</button>
         </form>
       </div>
 
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
 
 
     </div><!-- /.modal-content -->

@@ -1,5 +1,6 @@
 <!-- navbar -->
 <section ng-include src="'components/modals/changePass.html'"></section>
+<section ng-include src="'components/modals/announce_modal.html'"></section>
 <section dir-nav></section>
  <br>
 
@@ -51,8 +52,6 @@
             <button type="submit" class="btn btn btn-primary" ng-click="addTodos(task)">Add</button>
 
 
-
-
             <div class="container-fluid">
               <ul>
                 <li ng-repeat="todo in theTodos">
@@ -69,24 +68,23 @@
     </div>
 
     <div id="margintop" class="row">
-
+        <!-- Announcement -->
       <div  class="col-md-7">
         <div class="panel panel-primary">
           <div class="panel-heading">Posted Announcements</div>
-
           <div class="panel-body" >
             <ul>
               <li ng-repeat="announce in theAnnouncements" >
                 <b>{{announce.Section}} {{announce.Subject}}</b>
                 <ul>
-                  <li ng-repeat="ann in announce.Announcement"><a class="btn btn-link">{{ann.title}}</a></li>
+                  <li ng-repeat="ann in announce.Announcement"><a class="btn btn-link" data-toggle="modal" data-target="#announcementModal" ng-click="getAnnouncement(ann)">{{ann.title}}</a></li>
                 </ul>
               </li>
             </ul>
           </div>
         </div>
       </div>
-
+        <!-- end of announcement -->
       <!-- end of div class="row" -->
 
       <!-- <div class="col-md-7 try" >

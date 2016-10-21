@@ -9,33 +9,29 @@
       <div class="modal-body">
 
         <!-- form in modal -->
-        <form role="form" name="frmChangePass">
+        <form name="frmChangePass">
 
-          <div class="form-group">
-            <label class="col-md-12"> Validation 1</label>
-            <input type="text" class="form-control input-upper  "  value="Question 1">
-            <input type="text" class="form-control input-lower  " placeholder="Answer" >
+          <!-- //new pass -->
+          <div class="form-group" ng-class="{ 'has-error' : frmChangePass.new.$invalid && frmChangePass.new.$touched}">
+            <label class="col-md-12" >New password</label>
+            <input type="text" name="new" class="form-control input-upper " minlength="8" placeholder="New password" ng-model="pw" required>
+            <p class="help-block" ng-show="frmChangePass.new.$error.minlength && frmChangePass.new.$touched">Password must be at least 8 characters</p>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-12"> Validation 2</label>
-            <input type="text" class="form-control input-upper " value="Question 2">
-            <input type="text" class="form-control input-lower " placeholder="Answer">
+          <!-- //confirm pass -->
+          <div class="form-group" ng-class="{ 'has-error' : frmChangePass.conPW.$invalid && frmChangePass.conPW.$touched}">
+            <label class="col-md-12">Confirm password</label>
+            <input type="text" class="form-control input-upper " name="conPW" ng-model="cons" placeholder="confirm password" ng-pattern="pw" required>
+            <p ng-show="frmChangePass.conPW.$error.required && reg_form.conPW.$dirty" class="help-block">Confirmation of password is required.</p>
+            <p ng-show="frmChangePass.conPW.$error.pattern && frmChangePass.conPW.$dirty" class="help-block">Passwords do not match!</p>
           </div>
 
-          <hr>
-          <div class="form-group">
-            <label class="col-md-12">New password</label>
-            <input type="text" class="form-control input-upper " placeholder="New password">
-            <input type="text" class="form-control input-lower " placeholder="Confirm New Password">
-          </div>
-          <button type="button" class="btn btn-primary ">Save changes</button>
+          <button type="button" class="btn btn-primary" ng-click="newPass(pw)">Save changes</button>
+
+
         </form>
       </div>
 
-      <div class="modal-footer">
-        <a href="">More Options</a>
-      </div>
 
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

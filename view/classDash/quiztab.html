@@ -17,15 +17,9 @@
     <h1>Create Quiz</h1>
     <form id="qset" class="form-horizontal quizform" name="createQuizFrm" ng-show="openSettings">
       <div class="form-group">
-        <label class="control-label col-sm-2">Quiz No:</label>
-        <div class="col-sm-10">
-          <input type="number" min="0" class="form-control quizno" ng-model="quiz.qnum" placeholder="Enter quiz number">
-        </div>
-      </div>
-      <div class="form-group">
         <label class="control-label col-sm-2">Title:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control quiztopic" ng-model="quiz.qtitle"  placeholder="Enter title">
+          <input required type="text" class="form-control quiztopic" ng-model="quiz.qtitle"  placeholder="Enter title">
         </div>
       </div>
       <div class="form-group">
@@ -34,31 +28,39 @@
           <textarea rows="3" class="form-control quizdescription" ng-model="quiz.qdesc"  placeholder="Enter description"></textarea>
         </div>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label class="control-label col-sm-2">Duration:</label>
         <div class="col-sm-10">
-          <input type="number" min="0" class="form-control quizduration" ng-model="quiz.qduration" placeholder="Enter duration(mins)">
+          <input required type="number" min="0" class="form-control quizduration" ng-model="quiz.qduration" placeholder="Enter duration(mins)">
+        </div>
+      </div> -->
+      <div class="form-group">
+        <label class="control-label col-sm-2">Deadline:</label>
+        <div class="col-sm-10">
+          <input required type="datetime-local" name="deadline" class="form-control quizduration" ng-model="quiz.qDeadline" min="{{ dateNow | date: 'yyyy-MM-ddTHH:mm:ss'}}">
+          <p ng-show="createQuizFrm.deadline.$invalid && createQuizFrm.deadline.$dirty"
+          class="help-block">Oops! Event start is invalid.</p>
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2">No. of items:</label>
         <div class="col-sm-10">
-          <input type="number" min="0" class="form-control quizitem" ng-model="quiz.qitem" placeholder="Enter number of items">
+          <input required type="number" min="0" class="form-control quizitem" ng-model="quiz.qitem" placeholder="Enter number of items">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2">Test type:</label>
         <div class="col-sm-10">
-          <select class="form-control testtype" ng-model="quiz.qtype">
+          <select class="form-control testtype" ng-model="quiz.qtype" required>
             <option disabled="true">Select test type</option>
             <option value="Multiple Choice">Multiple Choice</option>
             <option value="True or False">True or False</option>
           </select>
         </div>
       </div>
-      <a  data-toggle="modal" data-target="#myModal" class="advset">Advanced settings</a></br>
+      <!-- <a  data-toggle="modal" data-target="#myModal" class="advset">Advanced settings</a><br/> -->
       <button id="cre8" type="submit" class="btn btn-success submitquiz" ng-disable="createQuizFrm.$invalid" ng-click="setQuiz(quiz)">Create Quiz</button>
-    </form></br>
+    </form><br/>
 
     <!-- modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -102,32 +104,32 @@
           </uib-accordion-heading>
           <uib-accordion-body>
 
-            <form class="form-horizontal questform">
+            <form class="form-horizontal questform" name="MC">
               <div class="form-group">
               <label class="control-label col-sm-2">Question:</label>
               <div class="col-sm-10">
-                <textarea class="form-control quest" ng-model="mc.q[$index].quest" placeholder="Enter question"></textarea>
+                <textarea required class="form-control quest" ng-model="mc.q[$index].quest" placeholder="Enter question"></textarea>
               </div>
               </div>
                 <div class="form-group">
                 <label class="control-label col-sm-2">True Answer:</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control answer" ng-model="mc.q[$index].choice[0]" placeholder="Enter a true answer">
+                    <input required type="text" class="form-control answer" ng-model="mc.q[$index].choice[0]" placeholder="Enter a true answer">
                   </div>
                 </div>
               <div class="form-group">
               <label class="control-label col-sm-2">Dummy Answers:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control questchoice" ng-model="mc.q[$index].choice[1]" placeholder="Enter a dummy answer">
-                  <input type="text" class="form-control questchoice" ng-model="mc.q[$index].choice[2]" placeholder="Enter a dummy answer">
-                  <input type="text" class="form-control questchoice" ng-model="mc.q[$index].choice[3]" placeholder="Enter a dummy answer">
+                  <input required type="text" class="form-control questchoice" ng-model="mc.q[$index].choice[1]" placeholder="Enter a dummy answer">
+                  <input required type="text" class="form-control questchoice" ng-model="mc.q[$index].choice[2]" placeholder="Enter a dummy answer">
+                  <input required type="text" class="form-control questchoice" ng-model="mc.q[$index].choice[3]" placeholder="Enter a dummy answer">
                 </div>
               </div>
             </form>
           </uib-accordion-body>
         </div>
 
-        <button type="submit" class="btn btn-success submitquest" ng-click="saveQuizMC(mc)">Submit</button>
+        <button type="submit" class="btn btn-success submitquest" ng-disabled="MC.$invalid" ng-click="saveQuizMC(mc)">Submit</button>
       </uib-accordion>
       <!-- </div> -->
 
@@ -140,19 +142,19 @@
             </uib-accordion-heading>
             <uib-accordion-body>
 
-              <form class="form-horizontal questform">
+              <form class="form-horizontal questform" name="TOF">
                 <div class="form-group">
                 <label class="control-label col-sm-2">Question:</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control quest" ng-model="tof.q[$index].quest" placeholder="Enter question"></textarea>
+                  <textarea required class="form-control quest" ng-model="tof.q[$index].quest" placeholder="Enter question"></textarea>
                 </div>
                 </div>
                 <div class="col-md-offset-3">
                   <div class="form-group col-md-3">
-                      <input type="radio" name="name" value="true" ng-model="tof.q[$index].answer"> TRUE
+                      <input required type="radio" name="name" value="true" ng-model="tof.q[$index].answer"> TRUE
                   </div>
                   <div class="form-group col-md-3">
-                      <input type="radio" name="name" value="false" ng-model="tof.q[$index].answer"> FALSE
+                      <input required type="radio" name="name" value="false" ng-model="tof.q[$index].answer"> FALSE
                   </div>
                 </div>
               </form>
@@ -160,7 +162,7 @@
             </uib-accordion-body>
           </div>
 
-          <button type="submit" class="btn btn-success submitquest" ng-click="saveQuizTOF(q)">Submit</button>
+          <button type="submit" class="btn btn-success submitquest" ng-disabled="TOF.$invalid" ng-click="saveQuizTOF(q)">Submit</button>
         </uib-accordion>
 
   </div>

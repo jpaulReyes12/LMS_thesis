@@ -59,10 +59,34 @@
     <thead>
       <tr>
         <!-- <th><input type="checkbox"></th> -->
-        <th>Grade</th>
-        <th>Section</th>
-        <th>Name</th>
-        <th>isActive</th>
+        <th>
+          <a ng-click="sortType = 'grade'; sortReverse = !sortReverse">
+            Grade
+          <span ng-show="sortType == 'grade' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'grade' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </th>
+        <th>
+          <a ng-click="sortType = 'section'; sortReverse = !sortReverse">
+            Section
+          <span ng-show="sortType == 'section' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'section' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </th>
+        <th>
+          <a ng-click="sortType = 'name'; sortReverse = !sortReverse">
+            Name
+          <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </th>
+        <th>
+          <a ng-click="sortType = 'isActive'; sortReverse = !sortReverse">
+            isActive
+          <span ng-show="sortType == 'isActive' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'isActive' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </th>
         <th>action</th>
       </tr>
     </thead>

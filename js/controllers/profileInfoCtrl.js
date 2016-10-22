@@ -26,14 +26,25 @@
         userInfo.lastname = data.lastname;
         userInfo.description = data.Description;
         userInfo.email = firebaseUser.email;
-        userInfo.dateCreated = dateToday;
-        userInfo.dateSignedIn = dateToday;
         userInfo.isActive = true;
 
         userInfo.$save()
         .then(function(response) {
           ref.update({
             uid: response.key
+          })
+
+          var user = firebase.auth().currentUser;
+
+          //FIXME
+          user.sendEmailVerification().then(function() {
+            alert("Please check your inbox to verify your e-mail");
+          });
+
+
+          // FIXME: signin email then update profile
+          user.updateProfile({
+            displayName: data.firstname + ' ' + data.lastname
           })
 
           if (firebaseUser) {

@@ -13,9 +13,25 @@ angular.module('lmsApp')
     return details;
   }
 
+  function deactivate(id) {
+    ref.child(id).update({
+      isActive: false
+    });
+
+  }
+
+  function activate(id) {
+    ref.child(id).update({
+      isActive: true
+    });
+
+  }
+
   return{
     addForum: addForum,
-    getForum: getForum
+    getForum: getForum,
+    deactivate: deactivate,
+    activate: activate
   };
 
 

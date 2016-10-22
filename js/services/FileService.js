@@ -10,12 +10,12 @@ angular.module('lmsApp')
 
   function getFile(aFile) {
     file = aFile;
-    console.log(file);
+
   }
 
   function setStorage(path, filename) {
     storageRef = firebase.storage().ref(path + filename);
-    console.log(path);
+
   }
 
 
@@ -33,7 +33,12 @@ angular.module('lmsApp')
     return storageRef.getDownloadURL();
   }
 
+  function getFileDetails(){
+    return file;
+  }
+
   return{
+    getFileDetails: getFileDetails,
     getFile: getFile,
     setStorage: setStorage,
     upload: upload,

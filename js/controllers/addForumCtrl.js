@@ -4,9 +4,17 @@ angular.module('lmsApp')
   $scope.theForum = Forum.getForum();
   $scope.theAnnounce = Announcement.getAncmnt();
   $scope.theEvents = Events.getEvents();
+  $scope.toggleAdd = true;
+
+  $scope.tags = "";
 
 
   $scope.addForum = function(forum){
+
+    // firebase.auth().currentUser.displayname;
+
+    forum.creator = "hitler";
+    forum.creatorID = firebase.auth().currentUser.uid;
 
 
     forum.timePosted = Math.floor(Date.now() / 1000);

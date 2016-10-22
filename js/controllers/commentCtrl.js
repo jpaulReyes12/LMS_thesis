@@ -3,7 +3,7 @@ angular.module('lmsApp')
 
   $scope.theComment = Comment.getComment();
 
-  Comment.setId($routeParams.forum_id);
+  
 
 
   $scope.addComment = function(comment) {

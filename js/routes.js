@@ -186,15 +186,15 @@
           title: 'Manage your class',
           templateUrl: 'view/classDash/quiztab.html',
           css: ['style/classDash/component.css', 'style/classDash/default.css', 'style/classDash/classdash.css'],
-          controller: 'createQuizCtrl',
-          data: {
-            requireAuth: 'teacher'
-          },
-          resolve: {
-                 lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
-                 }]
-              }
+          controller: 'createQuizCtrl'
+          // data: {
+          //   requireAuth: 'teacher'
+          // },
+          // resolve: {
+          //        lazy: ['$ocLazyLoad', function ($ocLazyLoad) {
+          //           return $ocLazyLoad.load({files: ['lib/modernizr.custom.js', 'lib/classie.js']});
+          //        }]
+          //     }
         })
 
         .when('/group', {
@@ -363,12 +363,12 @@
           templateUrl: 'view/admin/schedule.html',
           css: 'style/admin.css',
           controller: 'adminScheduleCtrl',
-          data: {requireAuth: 'admin'},
-          resolve: {
-            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-              return $firebaseAuth().$requireSignIn();
-            }]
-          }
+          data: {requireAuth: 'admin'}
+          // resolve: {
+          //   "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+          //     return $firebaseAuth().$requireSignIn();
+          //   }]
+          // }
         })
 
         .when('/admin/groups', {

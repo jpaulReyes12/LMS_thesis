@@ -26,7 +26,6 @@
         userInfo.lastname = data.lastname;
         userInfo.description = data.Description;
         userInfo.email = firebaseUser.email;
-        userInfo.dateCreated = dateToday;
         userInfo.isActive = true;
 
         userInfo.$save()
@@ -37,7 +36,7 @@
 
           var user = firebase.auth().currentUser;
 
-          //FIXME
+          //FIXME: login user if email then verify
           user.sendEmailVerification().then(function() {
             alert("Please check your inbox to verify your e-mail");
           });

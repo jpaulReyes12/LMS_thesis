@@ -5,19 +5,22 @@ angular.module('lmsApp')
 
     $scope.users = Users.getUsers();
 
-    //
-    //
-    // var ref = firebase.database().ref('/users');
-    //
-    // (function() {
-    //   console.log("loading");
-    //   $firebaseArray(ref).$loaded().then(function(c) {
-    //     $scope.users = c;
-    //   }).catch(function(err) {
-    //     return err;
-    //   });
-    //
-    // })()
+    //checkbox
+    $scope.selection = [];
+
+    $scope.toggleSelection = function toggleSelection(id) {
+      var idx = $scope.selection.indexOf(id);
+
+      // is currently selected
+      if (idx > -1) {
+        $scope.selection.splice(idx, 1);
+      }
+
+      // is newly selected
+      else {
+        $scope.selection.push(id);
+      }
+    };
 
     // $scope.add = function(val) {
     //   ref.on('child_added', function(snap) {

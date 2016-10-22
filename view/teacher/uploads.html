@@ -1,5 +1,5 @@
 <!-- navbar -->
-<section ng-include src="'components/modals/changePass.html'"></section>
+
 <section dir-nav></section>
 <br>
 
@@ -29,12 +29,13 @@
 
     <div class="try">
 
-  <table class="table table-striped table-bordered ">
+  <table class="table table-striped table-bordered table-responsive">
     <thead >
       <tr>
-        <th>Uploads</th>
-        <th>File Uploaded</th>
+        <th>name</th>
+        <th>Date Uploaded</th>
         <th>File Size</th>
+        <th>Found in</th>
         <th>Actions</th>
 
 
@@ -42,16 +43,18 @@
 
     </thead>
     <tbody>
-      <tr>
-        <td>John.pdf</td>
+      <tr ng-repeat="file in uploads">
+        <!-- FIXME: uploads information -->
+        <td >{{file.name}}</td>
         <td>09/09/1999</td>
-        <td>999kb</td>
+        <td>{{file.size}}</td>
+        <td><span>class1</span>, <span>class2</span></td>
         <td>
 
           <p align="center">
-            <button type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download"></button>
-            <button type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></button>
-            <button type="button" class="btn btn-info glyphicon glyphicon-pencil" data-toggle="tooltip" title="Update"></button>
+            <a type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download" href="{{file.url}}" target="_blank"></a>
+            <a type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></a>
+            <a type="button" class="btn btn-info glyphicon glyphicon-pencil" data-toggle="tooltip" title="Update"></a>
           </p>
         </td>
       </tr>

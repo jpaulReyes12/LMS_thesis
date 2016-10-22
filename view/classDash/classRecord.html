@@ -9,29 +9,44 @@
     <h5>10:30 AM</h5>
   </div> -->
 
+
+  <!-- TODO: include to all class dash-->
+  <div class="pull-right" style="
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(248, 205, 62);
+    ">
+    <div class="container text-center">
+      <h2>content</h2>
+
+    </div> 
+  </div>
+
   <div class="pull-right col-md-11" >
 
       <!-- thumbnail -->
       <div class="btn-group change-view" data-toggle="buttons">
-
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addstud" >Add student</button>
-      </div>
 
+      </div>
       <!-- TABLE -->
       <table class="table table-bordered table-striped table-responsive">
         <thead>
           <tr>
+            <th>Image</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="user in users">
-            <td>{{user}}</td>
-            <td>{{user}}</td>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>
-              <!-- <button type="button" class="btn btn-danger" ng-click="removeStudent(student.s_id)">Remove</button> -->
+              <button type="button" class="btn btn-danger" ng-click="removeStudent(student.s_id)">Remove</button>
             </td>
           </tr>
         </tbody>

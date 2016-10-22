@@ -9,12 +9,10 @@
       <div class="modal-body">
 
         <!-- form in modal -->
-        <div class="input-group">
-          <span class="input-group-addon"></span>
-          <input type="text" class="form-control" placeholder="Search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" ng-model="searchStud">
         </div>
         <form role="form">
-
           <div class="form-group">
               <table class="table table-bordered table-striped table-responsive">
                 <thead>
@@ -22,19 +20,23 @@
                     <th>Select</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
+                    <th>E-mail</th>
                   </tr>
                   <tbody>
-                    <tr  ng-repeat="user in users">
-                      <td><input type="checkbox" ng-model="event.Selected"></td>
+                    <tr  ng-repeat="user in users | filter:{utype:'student', isActive:true, $:searchStud}">
+                      <td>
+                        <input type="checkbox" value="{{user.$id}}" ng-checked="selection.indexOf(user) > -1" ng-click="toggleSelection(user.$id)">
+                      </td>
                       <td>{{user.firstname}}</td>
                       <td>{{user.lastname}}</td>
+                      <td>{{user.email}}</td>
                     </tr>
                   </tbody>
                 </thead>
               </table>
           </div>
 
-          <button type="button" class="btn btn-success" >Submit</button>
+          <button type="button" class="btn btn-success"ng-click="addStudents()" >Submit</button>
         </form>
       </div>
 

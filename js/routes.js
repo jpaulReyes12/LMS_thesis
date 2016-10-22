@@ -417,12 +417,12 @@
           templateUrl: 'view/admin/class_management.html',
           css: 'style/admin.css',
           controller: 'adminScheduleCtrl',
-          data: {requireAuth: 'admin'},
-          resolve: {
-            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-              return $firebaseAuth().$requireSignIn();
-            }]
-          }
+          data: {requireAuth: 'admin'}
+          // resolve: {
+          //   "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+          //     return $firebaseAuth().$requireSignIn();
+          //   }]
+          // }
         })
 
         .when('/admin/groups', {

@@ -9,8 +9,11 @@ angular.module('lmsApp')
       var ref = firebase.database().ref('schedule');
       var query = ref.orderByChild("Teacher").startAt(currentTeacher).endAt(currentTeacher);
 
-      return $firebaseArray(query);
-    }
+     $firebaseArray(query).$loaded()
+     .then(function(result) {
+       $scope.files = result;
 
+     }) ;
+    }
 
 }])

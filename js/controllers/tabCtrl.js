@@ -9,8 +9,11 @@ angular.module('lmsApp')
     name: 'Tabs'
   };
 
-  $scope.theEvents = Events.getEvents();
+  var currentStudent =  firebase.auth().currentUser.iud;
+  var ref = firebase.database().ref('users');
+  var query = ref.orderByChild("classes/subject_name").startAt(currentStudent).endAt(currentStudent)
 
+  $scope.theEvents = Events.getEvents();
   $scope.theQizzes = Questions.getQuizzes();
 
 

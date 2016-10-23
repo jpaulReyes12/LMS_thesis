@@ -1,5 +1,5 @@
 .ng-scope{
-  background: #FAFAFA;
+  /* background: #FAFAFA; */
 }
 /**{
   border: 1px solid red
@@ -33,6 +33,7 @@ hr{
 .forum_wrapper p{
   font-size: 16px;
   line-height: 30px;
+  word-break: break-all;
 }
 
 .comments p{

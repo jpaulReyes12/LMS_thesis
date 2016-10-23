@@ -20,6 +20,7 @@
               <table class="table table-bordered table-striped table-responsive">
                 <thead>
                   <tr>
+                    <th></th>
                     <th>Select</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
@@ -27,6 +28,7 @@
                   </tr>
                   <tbody>
                     <tr  ng-repeat="user in users | filter:{utype:'student', isActive:true, $:searchStud}">
+                      <td>{{$index + 1}}</td>
                       <td>
                         <input type="checkbox" value="{{user.$id}}" ng-checked="selection.indexOf(user) > -1" ng-click="toggleSelection(user.$id)">
                       </td>

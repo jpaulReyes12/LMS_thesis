@@ -1,8 +1,6 @@
 <!-- navbar -->
 
-<section ng-include src="'components/modals/deleteAss_modal.html'">></section>
-<br>
-
+<section ng-include src="'components/modals/deleteAss_modal.html'"></section>
 <section dir-nav></section>
  <br>
 
@@ -44,7 +42,7 @@
 
     </thead>
     <tbody>
-      <tr ng-repeat="file in uploads">
+      <tr ng-repeat="file in files">
         <!-- FIXME: uploads information -->
         <td >{{file.name}}</td>
         <td>09/09/1999</td>

@@ -14,6 +14,7 @@ angular.module('lmsApp')
     };
 
     getSubjectInfo(subject_list);
+
   });
 
   var class_list = [];
@@ -21,12 +22,13 @@ angular.module('lmsApp')
     for (var i = 0; i < list.length; i++) {
       var schedRef = firebase.database().ref('schedule').child(list[i]);
       $firebaseObject(schedRef).$loaded().then(function(schedResult) {
-        console.log(schedResult);
         class_list.push(schedResult)
       })
     }
+
+    $scope.theSchedule = class_list;
   }
-  $scope.theSchedule = class_list;
+
 
 
   $scope.theEvents = Events.getEvents();

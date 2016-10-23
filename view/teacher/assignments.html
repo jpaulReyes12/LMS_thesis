@@ -32,11 +32,11 @@
 
     <div class="item-menu overflow-scroll">
 
-      <div class="col-md-12  borders" ng-repeat="ass in DspAss">
+      <div class="col-md-12  borders" ng-repeat="ass in DspAss | orderBy:'-timecreated'">
         <a ng-click="content(ass)">
           <div >
             <h4>{{ass.title}}</h4>
-            <label>{{ass.con}}</label>
+            <label>{{ass.timecreated}}</label>
             <span class="label label-danger pull-right">Date</span>
           </div>
         </a>

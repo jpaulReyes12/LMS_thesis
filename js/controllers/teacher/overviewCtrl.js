@@ -5,9 +5,10 @@ angular.module('lmsApp')
   $scope.theEvents = Events.getEvents();
 
   $scope.theTodos = Todo.getTodos(firebase.auth().currentUser.uid);
-
+//the modal and edit modal
   $scope.getAnnouncement=function(ann) {
     $scope.selectedPost = ann;
+      $scope.edited= ann.cont;
   };
 
   $scope.addTodos = function(task) {
@@ -17,7 +18,17 @@ angular.module('lmsApp')
 
   $scope.deleteTodo = function(id) {
     Todo.removeTodo(id);
-  }
+  };
+
+
+
+//   var obj = $firebaseObject(ref);
+// obj.foo = "bar";
+// obj.$save().then(function(ref) {
+//   ref.key === obj.$id; // true
+// }, function(error) {
+//   console.log("Error:", error);
+// });
 
 
 

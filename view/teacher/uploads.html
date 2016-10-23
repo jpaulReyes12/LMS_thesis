@@ -1,9 +1,10 @@
 <!-- navbar -->
 
-<section dir-nav></section>
+<section ng-include src="'components/modals/deleteAss_modal.html'">></section>
 <br>
 
-
+<section dir-nav></section>
+ <br>
 
       <!-- menu bars  -->
   <ul class="nav nav-tabs">
@@ -53,9 +54,9 @@
 
           <p align="center">
             <a type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download" href="{{file.url}}" target="_blank"></a>
-            <a type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></a>
-            <a type="button" class="btn btn-info glyphicon glyphicon-pencil" data-toggle="tooltip" title="Update"></a>
-          </p>
+
+            <a type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="modal" title="Delete" data-target="#deleteAssmodal"></a>
+            </p>
         </td>
       </tr>
 

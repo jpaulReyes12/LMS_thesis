@@ -1,28 +1,15 @@
-<div class="modal fade" id="announcementModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="deleteAssmodal" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" >&times;</button>
-        <h4 class="modal-title"> {{selectedPost.title}}</h4>
+        <h4 class="modal-title"> </h4>
       </div>
       <div class="modal-body">
 
         <!-- FORM -->
         <form name="createGrpFrm">
-          <div ng-hide="edit===true">
-            {{selectedPost.cont}}
-          </div>
 
-          <div ng-show="edit===true">
-            <textarea class="form-control" cols="200" rows="8" ng-model="edited">{{selectedPost.cont}}</textarea>
-          </div>
-          <br>
-          <div ng-show="edit===true">
-
-              <button type="button" class="btn btn-info" >Save</button>
-              <button type="button" class="btn btn-danger" ng-click="edit=false">Cancel</button>
-
-          </div>
         </form>
 
       </div>

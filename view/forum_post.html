@@ -6,8 +6,8 @@
   <div class="row col-xs-12 col-md-10 post-content" ng-model="forum.details">
     <h1>{{forum.titles}}</h1>
     <hr >
-    <h5><span class="glyphicon glyphicon-pencil"></span>Created by <a href="#/profile">Annie Leondhart</a></h5>
-    <h5><span class="glyphicon glyphicon-time"></span>&nbspJune 5 2016&nbsp&nbsp&nbsp&nbsp10:00 AM</h5>
+    <h5><span class="glyphicon glyphicon-pencil"></span>Created by <a href="#/profile/{{forum.creatorID}}">{{forum.creator}}</a></h5>
+    <h5><span class="glyphicon glyphicon-time"></span>{{forum.timePosted * 1000 | date:'MMM d, y h:mm a'}}</h5>
     <hr >
     <p>
       {{forum.contents}}
@@ -30,15 +30,12 @@
     </div>
   </div>
 
-  <!-- <pre>
-    {{theComment | json}}
-  </pre> -->
 
 
-  <div class="comments container-fluid " ng-repeat="comment in theComment" ng-model="comment.commentList">
+  <div class="comments container-fluid " ng-repeat="comment in forum.comment" ng-model="comment.commentList">
     <div class="row col-xs-12 col-lg-8 comment-content">
       <img src="assets\defaults\avatar.png" alt="" class="col-xs-2 col-sm-1"/>
-      <h5><b><a href="#/profile">Annie Leondhart</a></b></h5>
+      <h5><b><a href="#/profile/{{comment.postedById}}">{{comment.postedBy}}</a></b></h5>
       <p  class="col-xs-12 col-lg-12">
         {{comment.contents}}
       </p>

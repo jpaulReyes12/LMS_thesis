@@ -16,6 +16,17 @@ angular.module('lmsApp')
 
     }
 
+    scope.newPass = function(pass) {
+
+      var user = firebase.auth().currentUser;
+
+      user.updatePassword(pass).then(function() {
+        console.log(pass)
+      }, function(error) {
+        console.log(error);
+      });
+    }
+
     scope.location = function(href) {
       return href.substr(1) === $location.url();
     };
@@ -45,7 +56,7 @@ angular.module('lmsApp')
     scope.name = firebase.auth().currentUser.displayName;
 
     // scope.NotifNum = 3;
-    // scope.MessageNum = 2;
+
   }
 
 

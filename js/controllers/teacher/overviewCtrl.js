@@ -5,6 +5,11 @@ angular.module('lmsApp')
   $scope.theEvents = Events.getEvents();
 
   $scope.theTodos = Todo.getTodos(firebase.auth().currentUser.uid);
+//the modal and edit modal
+  $scope.getAnnouncement=function(ann) {
+    $scope.selectedPost = ann;
+      $scope.edited= ann.cont;
+  };
 
   $scope.addTodos = function(task) {
     Todo.addTodo(task);
@@ -13,7 +18,17 @@ angular.module('lmsApp')
 
   $scope.deleteTodo = function(id) {
     Todo.removeTodo(id);
-  }
+  };
+
+
+
+//   var obj = $firebaseObject(ref);
+// obj.foo = "bar";
+// obj.$save().then(function(ref) {
+//   ref.key === obj.$id; // true
+// }, function(error) {
+//   console.log("Error:", error);
+// });
 
 
 
@@ -21,7 +36,7 @@ angular.module('lmsApp')
     var currentTeacher = firebase.auth().currentUser.uid;
     var ref = firebase.database().ref('schedule');
     var query = ref.orderByChild("Teacher").startAt(currentTeacher).endAt(currentTeacher);
-    
+
     return $firebaseArray(query);
   }
 

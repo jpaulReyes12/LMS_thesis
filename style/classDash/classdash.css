@@ -279,7 +279,43 @@ thead{
 }
 
 /*ANCMNT TAB*/
-.ancmnttitle,.asstitle
+.ancmnttitle
+{
+	width: 30%;
+	margin-left: 20%;
+}
+
+.asstitle
+{
+	width: 28%;
+	margin-left: 20%;
+	margin-right: 20px;
+}
+
+.cre8txtarea
 {
 	width: 50%;
+	margin-left: 20%;
+}
+
+.cre8deadline
+{
+	width: 20%;
+}
+
+.cre8asstitleErr
+{
+	color: red;
+	margin-left: 20%;
+}
+
+.cre8assdeadlineErr
+{
+	color: red;
+	margin-left: 17.5%;
+}
+
+.cre8submit
+{
+	margin-left: 64%;
 }

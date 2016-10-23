@@ -3,17 +3,15 @@ angular.module('lmsApp')
 
     $scope.classID = $routeParams.id;
 
-    $scope.class = getResources();
+    $scope.uploads = getResources();
     function getResources(){
       var currentTeacher = firebase.auth().currentUser.uid;
-      var ref = firebase.database().ref('schedule');
-      var query = ref.orderByChild("Teacher").startAt(currentTeacher).endAt(currentTeacher);
+      var ref = firebase.database().ref('users/' + currentTeacher + "/classFiles");
 
-     $firebaseArray(query).$loaded()
+     $firebaseArray(ref).$loaded()
      .then(function(result) {
        $scope.files = result;
-
-     }) ;
+     });
     }
 
 }])

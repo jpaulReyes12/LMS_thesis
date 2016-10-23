@@ -68,7 +68,7 @@ angular.module('lmsApp')
       var classes =  Class.getClass();
       return classes[$routeParams.id];
     };
-    
+
     $scope.removeStudent = function(id){
 
       Class.removeStudent(id, $routeParams.id);

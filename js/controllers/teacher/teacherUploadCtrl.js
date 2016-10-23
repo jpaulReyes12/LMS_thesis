@@ -8,9 +8,10 @@ angular.module('lmsApp')
       var currentTeacher = firebase.auth().currentUser.uid;
       var ref = firebase.database().ref('users/' + currentTeacher + "/classFiles");
 
-
-      return $firebaseArray(ref);
+     $firebaseArray(ref).$loaded()
+     .then(function(result) {
+       $scope.files = result;
+     });
     }
-
 
 }])

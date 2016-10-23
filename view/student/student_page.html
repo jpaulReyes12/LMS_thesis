@@ -22,16 +22,19 @@
               </div>
             </div>
         </script>
-
-  <uib-accordion>
+<!-- <pre>
+  {{theSchedule | json}}
+</pre> -->
+  <uib-accordion ng-repeat="sched in theSchedule">
     <div uib-accordion-group class="panel-default" >
       <uib-accordion-heading>
-        <h4>CRYPTOZOOLOGY</h4><section class="status" ng-show="!status"></section>
+        <h4>{{sched.Subject}}</h4>
+        <!-- <section class="status" ng-show="!status"></section> -->
         <h6><span class="glyphicon glyphicon-user" style="color:#d7b058;"></span> Teacher: Doofinsmirtz &nbsp&nbsp&nbsp<span class="glyphicon glyphicon-calendar" style="color:#d7b058;"></span> M W F 9:00 AM</h6>
       </uib-accordion-heading>
       <uib-accordion-body>
         <ul>
-          <li ng-repeat="test in theQizzes">
+          <li ng-repeat="test in theQizzes | filter:sched.$id">
             <a href="#/start_quiz/{{test.$id}}">{{test.q_title}}</a>
           </li>
         </ul>

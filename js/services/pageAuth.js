@@ -48,14 +48,16 @@ angular.module('lmsApp')
 
   var canAccess = function(event, next, prev, error)
   {
-    if (error === "AUTH_REQUIRED")
-    {
+    if (error === "AUTH_REQUIRED"){
       event.preventDefault();
       alert("You must be logged in to access page!");
-
-      if (prev.$$route)
+      var user = firebase.auth().currentUser;
+      if (prev.$$route && user)
       {
         $location.path(prev.$$route.originalPath);
+      }
+      else{
+        $location.path('/');
       }
     }
   }

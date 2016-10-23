@@ -1,17 +1,35 @@
 angular.module('lmsApp')
-.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', function ($scope, Questions, Events) {
-  $scope.tabs = [
-    { title:'Dynamic Title 1', content:'Dynamic content 1' },
-    { title:'Dynamic Title 2', content:'Dynamic content 2' }
-  ];
+.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', '$firebaseArray', '$firebaseObject',function ($scope, Questions, Events, $firebaseArray, $firebaseObject) {
 
   $scope.model = {
     name: 'Tabs'
   };
 
-  var currentStudent =  firebase.auth().currentUser.iud;
-  var ref = firebase.database().ref('users');
-  var query = ref.orderByChild("classes/subject_name").startAt(currentStudent).endAt(currentStudent)
+  var subject_list = [];
+  var currentStudent =  firebase.auth().currentUser.uid;
+  var ref = firebase.database().ref('users').child(currentStudent).child('classes');
+  $firebaseArray(ref).$loaded().then(function(result) {
+    for (var i = 0; i < result.length; i++) {
+      subject_list.push(result[i].subject);
+    };
+
+    getSubjectInfo(subject_list);
+
+  });
+
+  var class_list = [];
+  function getSubjectInfo(list) {
+    for (var i = 0; i < list.length; i++) {
+      var schedRef = firebase.database().ref('schedule').child(list[i]);
+      $firebaseObject(schedRef).$loaded().then(function(schedResult) {
+        class_list.push(schedResult)
+      })
+    }
+
+    $scope.theSchedule = class_list;
+  }
+
+
 
   $scope.theEvents = Events.getEvents();
   $scope.theQizzes = Questions.getQuizzes();

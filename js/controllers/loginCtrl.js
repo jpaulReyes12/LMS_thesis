@@ -12,12 +12,16 @@
       $scope.LoginFacebook = function() {
         $scope.authObj.$signInWithPopup("facebook").then(function(result) {
           getUtype(result.user.uid);
+        }).catch(function(error) {
+          alert(error.message);
         });
       }
 
       $scope.LoginGoogle = function() {
         $scope.authObj.$signInWithPopup("google").then(function(result) {
           getUtype(result.user.uid);
+        }).catch(function(error) {
+          alert(error.message);
         });
       }
 

@@ -30,8 +30,8 @@ angular.module('lmsApp')
 
       File.upload().on('state_changed',
         function progress(snapshot) {
-
-          $scope.percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          var percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          $scope.percent = percent;
         },
         function error(error) {
           alert(error);
@@ -46,6 +46,7 @@ angular.module('lmsApp')
             data.size = details.size;
             data.type = details.type;
 
+            //insert into /schedule/resources
             var ref = firebase.database().ref('/schedule');
             var scheduleList = $firebaseArray(ref);
             scheduleList.$loaded().then(function(result) {
@@ -58,7 +59,11 @@ angular.module('lmsApp')
               resource.$add(data);
               alert("Upload done!");
               $scope.percent = "";
-              // $window.location.reload();
+
+              //call function to save data to user/<teacher-id>/classFiles
+              // TODO: prevent duplicate uploads
+              data.sched_id = schedID;
+              saveToTeacher(data);
             })
 
 
@@ -67,5 +72,11 @@ angular.module('lmsApp')
       )
     }
 
+    function saveToTeacher(data) {
+      var user = firebase.auth().currentUser.uid;
+      var ref = firebase.database().ref('users/' + user + '/classFiles');
+      var userList = $firebaseArray(ref);
+      userList.$add(data);
+    }
 
 }]);

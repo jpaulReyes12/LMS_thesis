@@ -1,5 +1,5 @@
 <!-- navbar -->
-<section ng-include src="'components/modals/changePass.html'"></section>
+
 <section dir-nav></section>
   <br>
 <ul class="nav nav-tabs">
@@ -13,13 +13,12 @@
   <div class="card2 card-1">
     <div id="ohla" class=" border overflow-scroll">
       <div class="col-md-12  border">
-        {{assCont | json}}
 
-        <div class="row text-center text-capitalize">
+        <div class="row text-center">
           <h3>{{assCont.title}}</h3>
-        </div>
-        <div class="row">
-          {{assCont.cont}}
+          <div class="row">
+            {{assCont.cont}}
+          </div>
         </div>
 
 
@@ -33,11 +32,11 @@
 
     <div class="item-menu overflow-scroll">
 
-      <div class="col-md-12  borders" ng-repeat="ass in DspAss">
+      <div class="col-md-12  borders" ng-repeat="ass in DspAss | orderBy:'-timecreated'">
         <a ng-click="content(ass)">
           <div >
             <h4>{{ass.title}}</h4>
-            <label>{{ass.con}}</label>
+            <label>{{ass.timecreated}}</label>
             <span class="label label-danger pull-right">Date</span>
           </div>
         </a>

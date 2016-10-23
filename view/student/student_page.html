@@ -22,59 +22,36 @@
               </div>
             </div>
         </script>
-
+<!-- <pre>
+  {{theSchedule | json}}
+</pre> -->
   <uib-accordion ng-repeat="sched in theSchedule">
     <div uib-accordion-group class="panel-default" >
       <uib-accordion-heading>
-        <h4>{{{sched.Subject}}</h4><section class="status" ng-show="!status"></section>
-        <h6><span class="glyphicon glyphicon-user" style="color:#d7b058;"></span> Teacher: Doofinsmirtz &nbsp&nbsp&nbsp<span class="glyphicon glyphicon-calendar" style="color:#d7b058;"></span> M W F 9:00 AM</h6>
+        <h4>{{sched.Subject}}</h4>
+        <!-- <section class="status" ng-show="!status"></section> -->
+        <h6><span class="glyphicon glyphicon-user" style="color:#d7b058;"></span> Teacher: Doofinsmirtz &nbsp&nbsp&nbsp</h6>
       </uib-accordion-heading>
       <uib-accordion-body>
         <ul>
-          <li ng-repeat="test in theQizzes">
-            <!-- <a href="#/start_quiz/{{test.$id}}">{{test.q_title}}</a> -->
+          <li ng-repeat="test in theQizzes | filter:sched.$id">
+            <a href="#/start_quiz/{{test.$id}}">{{test.q_title}} </a>
+            &#09; Date due: {{test.q_deadline * 1000 | date:'MMM d, y h:mm:ss a'}}
           </li>
         </ul>
       </uib-accordion-body>
     </div>
   </uib-accordion>
 
-  <!-- <uib-accordion>
-    <div uib-accordion-group class="panel-default">
-      <uib-accordion-heading>
-        <h4>ANATOMY</h4>
-        <h6><span class="glyphicon glyphicon-user" style="color:#d7b058;"></span> Teacher: Kevin Sorbo &nbsp&nbsp&nbsp<span class="glyphicon glyphicon-calendar" style="color:#d7b058;"></span> M W F 9:00 AM</h6>
-      </uib-accordion-heading>
-    </div>
-  </uib-accordion> -->
-
-  <!-- <uib-accordion>
-    <div uib-accordion-group class="panel-default">
-      <uib-accordion-heading>
-        <h4>PHILOSOPHY</h4>
-        <h6><span class="glyphicon glyphicon-user" style="color:#d7b058;"></span> Teacher: Ian Somerhalder &nbsp&nbsp&nbsp<span class="glyphicon glyphicon-calendar" style="color:#d7b058;"></span> M W F 9:00 AM</h6>
-      </uib-accordion-heading>
-    </div>
-  </uib-accordion> -->
-
-  <!-- <uib-accordion>
-    <div uib-accordion-group class="panel-default">
-      <uib-accordion-heading>
-        <h4>PSYCHOLOGY</h4>
-        <h6><span class="glyphicon glyphicon-user" style="color:#d7b058;"></span> Teacher: Dylan O'Brien &nbsp&nbsp&nbsp<span class="glyphicon glyphicon-calendar" style="color:#d7b058;"></span> M W F 9:00 AM</h6>
-      </uib-accordion-heading>
-    </div>
-  </uib-accordion> -->
-
 </div>
     </uib-tab>
 
-    <!-- <uib-tab index="1">
+    <uib-tab index="1">
       <uib-tab-heading>
         <i class="fa fa-trophy"></i> Achievements
       </uib-tab-heading>
       <section ng-include src="'view/student/achievements.html'"></section>
-    </uib-tab> -->
+    </uib-tab>
 
     <uib-tab index="4">
       <uib-tab-heading>

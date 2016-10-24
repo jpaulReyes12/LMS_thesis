@@ -1,10 +1,8 @@
 angular.module('lmsApp')
 .controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', '$firebaseArray', '$firebaseObject',function ($scope, Questions, Events, $firebaseArray, $firebaseObject) {
-
   $scope.model = {
     name: 'Tabs'
   };
-
   var subject_list = [];
   var currentStudent =  firebase.auth().currentUser.uid;
   var ref = firebase.database().ref('users').child(currentStudent).child('classes');
@@ -29,10 +27,9 @@ angular.module('lmsApp')
     $scope.theSchedule = class_list;
   }
 
-
-
   $scope.theEvents = Events.getEvents();
   $scope.theQizzes = Questions.getQuizzes();
+  $scope.theSubjects = Subjects.getSubjects();
 
 
 }]);

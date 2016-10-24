@@ -1,13 +1,11 @@
 
   angular.module('lmsApp')
 
-    .controller('studentProfile', ['$scope', '$firebaseArray', '$firebaseAuth', '$location', function($scope, $firebaseArray, $firebaseAuth, $location){
+    .controller('studentProfile', ['$scope', '$firebaseObject', '$firebaseAuth', '$location', '$routeParams', function($scope, $firebaseObject, $firebaseAuth, $location, $routeParams){
 
       $scope.load = false;
-
-      var authObj = $firebaseAuth();
-
-      var ref = firebase.database().ref("/users");
-      var userInfo = $firebaseArray(ref);
-
+      var id = $routeParams.id;
+      var ref = firebase.database().ref("/users").orderByKey().startAt(id).endAt(id);
+      var userInfo = $firebaseObject(ref);
+      console.log(userInfo);
     }]);

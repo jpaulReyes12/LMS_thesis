@@ -1,5 +1,5 @@
 angular.module('lmsApp')
-.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', '$firebaseArray', '$firebaseObject',function ($scope, Questions, Events, $firebaseArray, $firebaseObject) {
+.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', 'Subjects','$firebaseArray', '$firebaseObject',function ($scope, Questions, Events, Subjects,$firebaseArray, $firebaseObject) {
   $scope.model = {
     name: 'Tabs'
   };

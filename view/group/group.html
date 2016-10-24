@@ -28,7 +28,7 @@
   <div class="container">
 
     <div class="col-md-3 col-xs-12 group-item" ng-repeat="group in theUsersGroups">
-      <button class="btn btn-danger btn-sm pull-right">Leave</button>
+      <button class="btn btn-danger btn-sm pull-right" ng-if="group.owner === ">Leave</button>
       <a href="#/group/page/{{group.id}}"><h4>{{group.name}}</h4></a>
       <small>{{group.desc | limitTo: 100}} ...</small>
     </div>

@@ -4,19 +4,6 @@ angular.module('lmsApp')
     name: 'Tabs'
   };
 
- //  $scope.classID = $routeParams.id;
- //
- //  $scope.uploads = getResources();
- //  function getResources(){
- //  // var currentStudent = firebase.auth().currentStudent.uid;
- //  var ref = firebase.database().ref('schedule/');
- //
- //  $firebaseArray(ref).$loaded()
- //  .then(function(result) {
- //    $scope.files = result;
- //  });
- // }
-
 
   var subject_list = [];
   var currentStudent =  firebase.auth().currentUser.uid;

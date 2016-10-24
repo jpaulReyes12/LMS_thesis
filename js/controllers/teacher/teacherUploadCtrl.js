@@ -3,6 +3,12 @@ angular.module('lmsApp')
 
     $scope.classID = $routeParams.id;
 
+    //for uploads delete
+    // $scope.getUploads=function(upl) {
+    //   $scope.selectedupl = upl;
+    //     //$scope.edited= upl.cont;
+    // };
+
     $scope.uploads = getResources();
     function getResources(){
       var currentTeacher = firebase.auth().currentUser.uid;

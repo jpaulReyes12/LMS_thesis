@@ -15,13 +15,14 @@
       <div class="col-md-12  border">
 
         <div class="row text-center">
-          <h3>{{assCont.title}}</h3>
+          <h1>{{assCont.title}}</h3>
+          <h6 ng-if="assCont.timecreated === null">Date created: {{assCont.timecreated * 1000 | date: 'MMM d, y h:mm a'}}</h6>
           <div class="row">
-            {{assCont.cont}}
+            <h4>{{assCont.cont}}</h4>
           </div>
+
         </div>
-
-
+        <a type="button" class="btn btn-danger glyphicon glyphicon-trash pull-right" ng-click="deleteAss()"></a>
 
       </div>
     </div>
@@ -32,12 +33,14 @@
 
     <div class="item-menu overflow-scroll">
 
-      <div class="col-md-12  borders" ng-repeat="ass in DspAss | orderBy:'-timecreated'">
-        <a ng-click="content(ass)">
+      <div class="col-md-12  borders" ng-repeat="ass in DspAss">
+        <a ng-click="content(ass, $index)">
           <div >
+            <!-- <pre>
+              {{ass|json}}
+            </pre> -->
             <h4>{{ass.title}}</h4>
-            <label>{{ass.timecreated}}</label>
-            <span class="label label-danger pull-right">Date</span>
+                <span class="label label-danger pull-right">Deadline: {{ass.deadline * 1000 | date: 'MMM d, y h:mm a'}} </span>
           </div>
         </a>
       </div>

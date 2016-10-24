@@ -1,8 +1,23 @@
 angular.module('lmsApp')
-.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', '$firebaseArray', '$firebaseObject',function ($scope, Questions, Events, $firebaseArray, $firebaseObject) {
+.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', '$firebaseArray', '$firebaseObject','$routeParams',function ($scope, Questions, Events, $firebaseArray, $firebaseObject, $routeParams) {
   $scope.model = {
     name: 'Tabs'
   };
+
+ //  $scope.classID = $routeParams.id;
+ //
+ //  $scope.uploads = getResources();
+ //  function getResources(){
+ //  // var currentStudent = firebase.auth().currentStudent.uid;
+ //  var ref = firebase.database().ref('schedule/');
+ //
+ //  $firebaseArray(ref).$loaded()
+ //  .then(function(result) {
+ //    $scope.files = result;
+ //  });
+ // }
+
+
   var subject_list = [];
   var currentStudent =  firebase.auth().currentUser.uid;
   var ref = firebase.database().ref('users').child(currentStudent).child('classes');
@@ -29,7 +44,13 @@ angular.module('lmsApp')
 
   $scope.theEvents = Events.getEvents();
   $scope.theQizzes = Questions.getQuizzes();
-  $scope.theSubjects = Subjects.getSubjects();
+  // $scope.theResoures = Files.getFiles(sched.resources);
+  // $scope.fies = Files.getFile();
+
+  // $scope.theFiles = Files.displayFiles();
+
+
+
 
 
 }]);

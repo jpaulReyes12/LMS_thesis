@@ -94,3 +94,7 @@ ul
 {
   text-decoration: none;
 }
+td>.icon
+{
+  margin-left: 25px;
+}

@@ -1,11 +1,8 @@
 <div>
-  <!-- <div class="class">
-  SAMPLE- CI602A-C- 10:30AM
-  </div> -->
   <div class="classx">
-    <h5>CI701A-C</h5>
+    <!-- <h5>CI701A-C</h5>
     <h5>/</h5>
-    <h5>10:30 AM</h5>
+    <h5>10:30 AM</h5> -->
   </div>
 
   <div class="panel pull-right col-sm-11" style="margin-top: 50px;   ">
@@ -15,17 +12,20 @@
       <li><a href="#/class_dashboard/{{classID}}/createquiz" style="color:#555;">Quiz</a></li>
     </ul>
       <h1>Create Assignment</h1><br>
-      <form>
+      <form name="create_ass">
         <div class="form-group">
-          <input ng-model="ass.title" type="text" class="form-control asstitle" placeholder="Enter title here">
+          <label class="col-md-offset-6">Deadline:</label>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+          <input ng-model="ass.title" type="text" name="title" class="form-control col-md-2 asstitle" placeholder="Enter title here" required>
+          <input type="datetime-local" name="deadline" min="{{ dateNow | date: 'yyyy-MM-ddTHH:mm'}}" ng-model="ass.deadline" class="form-control cre8deadline">
+          <span ng-show="create_ass.title.$invalid && create_ass.title.$touched" class="cre8asstitleErr">This field is required.</span>
+          <span ng-show="create_ass.deadline.$error.min" class="cre8assdeadlineErr">Deadline is invalid.</span>
         </div>
         <div class="form-group">
-          <input type="datetime-local" class="form-control cre8deadline">
+          <textarea ng-model="ass.cont" name="content" rows="8" class="form-control cre8txtarea " placeholder="Enter content here" required></textarea>
         </div>
-        <div class="form-group">
-          <textarea ng-model="ann.cont" rows="8" class="form-control cre8txtarea " placeholder="Enter content here"></textarea>
-        </div>
-        <button ng-click="saveAss(ass)" type="submit" class="btn btn-success">Submit</button>
+        <button ng-click="saveAss(ass)" ng-disabled="create_ass.$invalid" type="submit" class="btn btn-success cre8submit">Submit</button>
       </form>
       <!-- <form id="get-data-form" method="post">
         <textarea class="tinymce" id="mytextarea">Input text here!</textarea>

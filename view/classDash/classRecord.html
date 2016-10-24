@@ -30,21 +30,22 @@
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addstud" >Add student</button>
 
       </div>
-
       <!-- TABLE -->
       <table class="table table-bordered table-striped table-responsive">
         <thead>
           <tr>
-            <th>Image</th>
             <th>Firstname</th>
             <th>Lastname</th>
+            <th>Email</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
+          <tr ng-repeat="student in students().students">
+            <td>{{student.fname}}</td>
+            <td>{{student.lname}}</td>
+            <td>{{student.email}}</td>
+
             <td>
               <button type="button" class="btn btn-danger" ng-click="removeStudent(student.s_id)">Remove</button>
             </td>

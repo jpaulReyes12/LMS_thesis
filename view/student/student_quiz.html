@@ -2,33 +2,36 @@
 
 <br><br><br>
 <div class="container heading">
-  <h6>Question 1 of 10</h6>
+  <h6>Question {{questions.num}} of 10</h6>
   <h6>/</h6>
   <h6>HISTORY</h6>
   <h6>/</h6>
   <h6>Quiz 2.4</h6>
 
 </div>
-    <div class="container  wrap" ng-repeat="quest in questions.q" ng-show="questions.q_type == 'Multiple Choice' ">
+  <form name="answerQuizFrm">
+
+    <div class="container  wrap" ng-repeat="quest in questions.q" ng-if="questions.q_type == 'Multiple Choice' ">
       <div class="quiz_content container col-md-12">
         <h3>{{$index + 1}}. {{quest.quest}}</h3>
-         <br>
+        <br>
 
-          <h4 class="choice1 col-md-4 col-xs-6" ng-repeat="choice in quest.choice | orderBy">
-            <input type="radio" name="choice{{$parent.$index}}" value="{{choice}}" ng-model="answer[$parent.$index]"> {{choice}}
-          </h4>
+        <h4 class="choice1 col-md-4 col-xs-6" ng-repeat="choice in quest.choice | orderBy">
+          <input type="radio" name="choice{{$parent.$index}}" value="{{choice}}" ng-model="answer[$parent.$index]" ng-required="!answer[$parent.$index]"> {{choice}}
+        </h4>
       </div>
     </div>
 
 
-    <div class="container  wrap" ng-repeat="quest in questions.q" ng-show="questions.q_type == 'True or False' ">
+    <div class="container  wrap" ng-repeat="quest in questions.q" ng-if="questions.q_type == 'True or False' ">
       <div class="quiz_content container col-md-12">
         <h3>{{$index + 1}}. {{quest.quest}}</h3>
-         <br>
-          <h4 class="choice1 col-md-4 col-xs-6"><input type="radio" name="choiceTF{{$index}}" value="true" ng-model="answer[$index]"> True</h4>
-          <h4 class="choice2 col-md-4 col-xs-6 col-md-offset-4"><input type="radio" name="choiceTF{{$index}}" value="false" ng-model="answer[$index]"> False</h4>
+        <br>
+        <h4 class="choice1 col-md-4 col-xs-6"><input type="radio" name="choiceTF{{$index}}" value="true" ng-model="answer[$index]" ng-required="!answer[$index]"> True</h4>
+        <h4 class="choice2 col-md-4 col-xs-6 col-md-offset-4"><input type="radio" name="choiceTF{{$index}}" value="false" ng-model="answer[$index]" ng-required="!answer[$index]"> False</h4>
       </div>
     </div>
+  </form>
 
     <!-- PAGINATION -->
     <!-- <hr class="col-md-10 " style="float:none;">
@@ -43,8 +46,8 @@
       <hr style="margin-top:-5px;">
 
       <div class="pull-right" style="margin-bottom:5px;">
-        <input type="submit" name="btnsubmit" value="SUBMIT QUIZ" class="btn btn-primary" ng-click="checkMC()" ng-show="questions.q_type == 'Multiple Choice' ">
-        <input type="submit" name="btnsubmit" value="SUBMIT QUIZ" class="btn btn-primary" ng-click="checkTF()" ng-show="questions.q_type == 'True or False' ">
+        <input type="submit" name="btnsubmit" value="SUBMIT QUIZ" class="btn btn-primary" ng-click="checkMC()" ng-show="questions.q_type == 'Multiple Choice' " ng-disabled="answerQuizFrm.$invalid">
+        <input type="submit" name="btnsubmit" value="SUBMIT QUIZ" class="btn btn-primary" ng-click="checkTF()" ng-show="questions.q_type == 'True or False' " ng-disabled="answerQuizFrm.$invalid">
         <input type="reset" name="btncancel" value="CANCEL" class="btn btn-primary">
       </div>
     </div>

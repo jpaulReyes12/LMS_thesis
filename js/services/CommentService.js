@@ -5,7 +5,15 @@ angular.module('lmsApp')
   var ref =  firebase.database().ref('forum/' +id+ '/comment');
   var commentList = $firebaseArray(ref);
 
-  function addComment(newcomment) {
+  function addComment(forum_id, newcomment) {
+
+    var newref =  firebase.database().ref('forum/' + forum_id + '/comment');
+    var commentList = $firebaseArray(newref);
+    // commentList.$loaded().then(function(result) {
+    //   result.$add(newcomment);
+    //
+    // });
+
     commentList.$add(newcomment);
 
   }

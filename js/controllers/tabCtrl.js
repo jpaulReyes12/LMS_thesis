@@ -1,21 +1,8 @@
 angular.module('lmsApp')
-.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', '$firebaseArray', '$firebaseObject','$routeParams',function ($scope, Questions, Events, $firebaseArray, $firebaseObject, $routeParams) {
+.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', 'Subjects','$firebaseArray', '$firebaseObject',function ($scope, Questions, Events, Subjects,$firebaseArray, $firebaseObject) {
   $scope.model = {
     name: 'Tabs'
   };
-
- //  $scope.classID = $routeParams.id;
- //
- //  $scope.uploads = getResources();
- //  function getResources(){
- //  // var currentStudent = firebase.auth().currentStudent.uid;
- //  var ref = firebase.database().ref('schedule/');
- //
- //  $firebaseArray(ref).$loaded()
- //  .then(function(result) {
- //    $scope.files = result;
- //  });
- // }
 
 
   var subject_list = [];

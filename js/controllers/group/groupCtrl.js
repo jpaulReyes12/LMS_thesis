@@ -15,7 +15,7 @@ angular.module('lmsApp')
     Groups.addGroup(info, info.owner);
     info = {};
   }
-
+  $scope.user = firebase.auth().currentUser.uid;
   $scope.theUsersGroups = Groups.getOwnGroups(LoggedInUser.getUID());
 
 

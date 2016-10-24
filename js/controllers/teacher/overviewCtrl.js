@@ -8,7 +8,7 @@ angular.module('lmsApp')
 //the modal and edit modal
   $scope.getAnnouncement=function(ann) {
     $scope.selectedPost = ann;
-      $scope.edited= ann.cont;
+    
   };
 
   $scope.addTodos = function(task) {

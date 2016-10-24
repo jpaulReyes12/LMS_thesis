@@ -1,8 +1,7 @@
 angular.module('lmsApp')
-.controller( 'addForumCtrl', ['$scope', 'Forum', 'Announcement', 'Events', function($scope, Forum, Announcement, Events) {
+.controller( 'addForumCtrl', ['$scope', 'Forum', 'Announcement', 'Events', '$location',function($scope, Forum, Announcement, Events, $location) {
 
   $scope.theForum = Forum.getForum();
-  $scope.theAnnounce = Announcement.getAncmnt();
   $scope.theEvents = Events.getEvents();
   $scope.toggleAdd = true;
 
@@ -11,9 +10,9 @@ angular.module('lmsApp')
 
   $scope.addForum = function(forum){
 
-    // firebase.auth().currentUser.displayname;
 
-    forum.creator = "hitler";
+
+    forum.creator = firebase.auth().currentUser.displayName;
     forum.creatorID = firebase.auth().currentUser.uid;
 
 
@@ -22,7 +21,7 @@ angular.module('lmsApp')
 
 
     $scope.forum = {titles:'', contents:''};
-
+    $location.path('/forum_home');
     // $scope.form_group.$setPristine;
 
   }

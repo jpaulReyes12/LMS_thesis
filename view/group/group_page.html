@@ -1,4 +1,4 @@
-
+<section ng-include src="'components/modals/addstudgroup.html'"></section>
 <section dir-nav></section>
 
   <div class="jumbotron group-jumbo">
@@ -41,7 +41,22 @@
         <div class="panel-body">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search">
-            <button type="button" class="btn"> + </button>
+            <!-- TABLE -->
+            <table class="table table-bordered table-striped table-responsive">
+              <ul>
+                <li></li>
+              </ul>
+              <tbody>
+                <tr ng-repeat="student in students().students">
+                  <td><a>{{student.fname}}</a></td>
+                  <td><a>{{student.lname}}</a></td>
+                  <td>
+                    <button type="button" class="btn btn-danger" ng-click="removeStudent(student.s_id)">Remove</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button type="button" class="btn"  data-toggle="modal" data-target="#addstud"> + </button>
 
           </div>
         </div>

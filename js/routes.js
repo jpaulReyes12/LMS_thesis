@@ -60,7 +60,7 @@
           }
         })
 
-        .when('/profile', {
+        .when('/profile/:id', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
           css: 'style/profile.css',

@@ -8,9 +8,9 @@
   <hr>
   <h3 id="desc">{{qdetails.q_desc}}</h3>
   <br><br>
-  <!-- <h3><b>Duration Time: </b>{{qdetails.q_dura}} minutes</h3> -->
   <h3><b>Deadline: </b>7:00 pm</h3>
   <br><br>
-  <input type="button" ng-click="start(qdetails.$id)"  class="btn btn-success btn-lg" ng-disabled="isAnswered" value="Start">
+  <input type="button" ng-click="start(qdetails.$id)"  class="btn btn-success btn-lg" value="Start">
+   <!-- ng-disabled="isAnswered" -->
   <span ng-show="isAnswered">You are done with this quiz</span>
 </div>

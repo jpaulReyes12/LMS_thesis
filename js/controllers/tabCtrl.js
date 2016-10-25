@@ -36,6 +36,17 @@ angular.module('lmsApp')
 
   // $scope.theFiles = Files.displayFiles();
 
+  //SUBMISSIONS
+  (function() {
+    var user_ID = firebase.auth().currentUser.uid
+    var scoreRef =  firebase.database().ref('users').child(user_ID).child("answers");
+    $firebaseArray(scoreRef).$loaded().then(function(result) {
+      $scope.scores = result;
+    });
+  })();
+
+
+
 
 
 

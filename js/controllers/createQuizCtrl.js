@@ -3,7 +3,6 @@ angular.module('lmsApp')
 
     $scope.classID = $routeParams.id;
     var sched = Schedule.getSched();
-    $scope.length = sched.length + 1
     var datetime = new Date();
     $scope.dateNow = datetime;
 
@@ -33,7 +32,7 @@ angular.module('lmsApp')
       }
 
       var quizKey = ref.push({
-        q_num: length,
+        // q_num: length,
         q_title: settings.qtitle,
         q_desc: settings.qdesc,
         q_deadline: Math.floor(Date.now(settings.qDeadline)/1000),

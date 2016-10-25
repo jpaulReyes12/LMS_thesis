@@ -39,7 +39,7 @@ angular.module('lmsApp')
 
   function addAnswered(data,parentKey) {
     var ref = firebase.database().ref('/quiz/' + parentKey + '/answered');
-    ref.update(data);
+    ref.push(data);
 
   }
 

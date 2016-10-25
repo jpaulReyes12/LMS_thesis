@@ -71,24 +71,24 @@
 
 
   <div class="container col-md-4 col-sm-8 pull-right">
-  <br>
-  <br>
-  <div  uib-carousel active="0" interval="7000" no-wrap="false">
-    <div  uib-slide  ng-repeat="slide in theEvents  | filter:{isActive:true}" index="$index">
-       <!-- | filter:{isActive:true} -->
-      <img  id ="slide" ng-src="{{slide.url}}" class="slider">
-      <div class="carousel-caption">
-        <h4>{{slide.name}}</h4>
-        <p>
-          {{slide.description}}<br>
-          Venue: {{ slide.venue}} <br>
-          Time: {{ slide.startEvent | date:'MMM d, y h:mm:ss a'}} - {{slide.endEvent | date:'MMM d, y h:mm:ss a'}}
-        </p>
+    <br>
+    <br>
+    <div  uib-carousel active="0" interval="7000" no-wrap="false">
+      <div  uib-slide  ng-repeat="slide in theEvents  | filter:{isActive:true}" index="$index">
+         <!-- | filter:{isActive:true} -->
+        <img  id ="slide" ng-src="{{slide.url}}" class="slider">
+        <div class="carousel-caption">
+          <h4>{{slide.name}}</h4>
+          <p>
+            {{slide.description}}<br>
+            Venue: {{ slide.venue}} <br>
+            Time: {{ slide.startEvent | date:'MMM d, y h:mm:ss a'}} - {{slide.endEvent | date:'MMM d, y h:mm:ss a'}}
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<!-- </div> -->
 <!-- </div> -->
 
 <script type="text/javascript">

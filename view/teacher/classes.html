@@ -34,7 +34,7 @@
 
     </div>
 
-    <div class="text-center" ng-show="searched.length === 0 ">
+    <div class="text-center" ng-show="searched.length === 0 && searchText.$touched">
        <h3>your searched keyword <b>"{{searchClass}}"</b> is not found in the database.</h3>
     </div>
   </div>

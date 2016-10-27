@@ -53,7 +53,7 @@
           <p align="center">
             <a type="button" class="btn btn-success glyphicon glyphicon-download-alt" data-toggle="tooltip" title="Download" href="{{file.url}}" target="_blank"></a>
 
-            <a type="button" class="btn btn-danger glyphicon glyphicon-trash" data-toggle="modal" title="Delete" data-target="#deleteAssmodal" ng-click="getUploads(upl)"></a>
+            <a type="button" class="btn btn-danger glyphicon glyphicon-trash pull-right" ng-click="deleteFile(file.$id)"></a>
           </p>
         </td>
       </tr>

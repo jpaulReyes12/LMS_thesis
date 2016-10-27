@@ -19,7 +19,7 @@
       <tr ng-repeat="file in sched.resources">
         <td>{{file.name}}</td>
         <!-- <td>June 5 2009</td> -->
-        <td>{{file.size}}</td>
+        <td>{{file.size / 1000}} mb</td>
         <td>
           <a type="button" class="glyphicon glyphicon-download-alt icon" role="button" style="color:rgb(76, 143, 231);" data-toggle="tooltip" title="download" href="{{file.url}}" target="_blank"></a>
         </td>

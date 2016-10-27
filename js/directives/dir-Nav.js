@@ -4,6 +4,8 @@ angular.module('lmsApp')
 
 
   var linker = function(scope) {
+    var id = firebase.auth().currentUser.uid;
+
     scope.logOutUser = function() {
       $firebaseAuth().$signOut();
       $location.path('/');
@@ -54,7 +56,7 @@ angular.module('lmsApp')
 
 
     scope.name = firebase.auth().currentUser.displayName;
-    scope.id = firebase.auth().currentUser.uid;
+    scope.id = id;
 
     // scope.NotifNum = 3;
 

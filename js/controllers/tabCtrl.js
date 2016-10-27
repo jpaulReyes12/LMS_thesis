@@ -4,7 +4,7 @@ angular.module('lmsApp')
     name: 'Tabs'
   };
 
-
+  //Classes tab
   var subject_list = [];
   var currentStudent =  firebase.auth().currentUser.uid;
   var ref = firebase.database().ref('users').child(currentStudent).child('classes');
@@ -27,6 +27,18 @@ angular.module('lmsApp')
     }
 
     $scope.theSchedule = class_list;
+  }
+
+
+  $scope.getTeacherName = function(id) {
+    var teacherRef = firebase.database().ref("users").child(id);
+    var teacherInfo = $firebaseObject(teacherRef);
+    teacherInfo.$loaded().then(function(result) {
+      return result.firstname + " " + result.lastname;
+    })
+
+    return teacher;
+
   }
 
   $scope.theEvents = Events.getEvents();

@@ -12,9 +12,6 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" ng-model="searchStud">
         </div>
-        <pre>
-          {{selection}}
-        </pre>
         <form role="form">
           <div class="form-group">
               <table class="table table-bordered table-striped table-responsive">
@@ -26,7 +23,7 @@
                     <th>E-mail</th>
                   </tr>
                   <tbody>
-                    <tr  ng-repeat="user in users | filter:{utype:'student', isActive:true, $:searchStud}">
+                    <tr  ng-repeat="user in users | filter:{utype:'!admin' ,isActive:true, $:searchStud}">
                       <td>
                         <input type="checkbox" value="{{user.$id}}" ng-checked="selection.indexOf(user) > -1" ng-click="toggleSelection(user.$id)">
                       </td>

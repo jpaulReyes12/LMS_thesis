@@ -1,10 +1,10 @@
 angular.module('lmsApp')
-.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', '$firebaseArray', '$firebaseObject',function ($scope, Questions, Events, $firebaseArray, $firebaseObject) {
-
+.controller('TabsDemoCtrl', ['$scope', 'Questions', 'Events', 'Subjects','$firebaseArray', '$firebaseObject',function ($scope, Questions, Events, Subjects,$firebaseArray, $firebaseObject) {
   $scope.model = {
     name: 'Tabs'
   };
 
+  //Classes tab
   var subject_list = [];
   var currentStudent =  firebase.auth().currentUser.uid;
   var ref = firebase.database().ref('users').child(currentStudent).child('classes');
@@ -30,9 +30,37 @@ angular.module('lmsApp')
   }
 
 
+  $scope.getTeacherName = function(id) {
+    var teacherRef = firebase.database().ref("users").child(id);
+    var teacherInfo = $firebaseObject(teacherRef);
+    teacherInfo.$loaded().then(function(result) {
+      return result.firstname + " " + result.lastname;
+    })
+
+    return teacher;
+
+  }
 
   $scope.theEvents = Events.getEvents();
   $scope.theQizzes = Questions.getQuizzes();
+  // $scope.theResoures = Files.getFiles(sched.resources);
+  // $scope.fies = Files.getFile();
+
+  // $scope.theFiles = Files.displayFiles();
+
+  //SUBMISSIONS
+  (function() {
+    var user_ID = firebase.auth().currentUser.uid
+    var scoreRef =  firebase.database().ref('users').child(user_ID).child("answers");
+    $firebaseArray(scoreRef).$loaded().then(function(result) {
+      $scope.scores = result;
+    });
+  })();
+
+
+
+
+
 
 
 }]);

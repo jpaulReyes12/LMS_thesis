@@ -44,7 +44,12 @@ hr{
   display: inline;
   margin-right: 20px;
 }
-.form-wrapper>span{
+.form-wrapper>h1{
+  /*float: right;*/
+  padding-top: -40px;
+  /*display: inline-flex;*/
+}
+.form-wrapper>h2{
   float: right;
   margin-top: -40px;
 }

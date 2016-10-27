@@ -1,23 +1,29 @@
 
+
   <section class="col-md-6 col-xs-6 pull-right inner-addon right-addon">
     <i class="glyphicon glyphicon-search " role="button"></i>
-    <input type="text" name="search" value="" class="form-control" placeholder="search files">
+    <input type="text" name="search" value="" class="form-control" placeholder="search files" ng-model="searchFiles">
   </section>
   <h3>Uploaded Files</h3>
   <br>
-  <table class="table table-striped">
-    <th>File Name</th>
-    <th>Date</th>
-    <th>Size</th>
-    <th>Action</th>
+  <div class="" ng-repeat="sched in theSchedule | filter: searchFiles">
+    <h1 >{{sched.Subject}}</h1>
+    <hr>
+    <table class="table table-striped" >
+      <th>File Name</th>
+      <!-- <th>Date</th> -->
+      <th>Size</th>
+      <th>Download</th>
 
-    <tr ng-repeat="file in files">
-      <td>bootstrap tutorial</td>
-      <td>June 5 2009</td>
-      <td>456 KB</td>
-      <td><span class="glyphicon glyphicon-trash" role="button"  style="color: rgb(255, 8, 15);" data-toggle="tooltip" title="delete"></span>
-          &nbsp&nbsp&nbsp&nbsp<span class="glyphicon glyphicon-download-alt" role="button" style="color:rgb(76, 143, 231);" data-toggle="tooltip" title="download"></span>
-      </td>
-    </tr>
 
-  </table>
+      <tr ng-repeat="file in sched.resources">
+        <td>{{file.name}}</td>
+        <!-- <td>June 5 2009</td> -->
+        <td>{{file.size / 1000}} mb</td>
+        <td>
+          <a type="button" class="glyphicon glyphicon-download-alt icon" role="button" style="color:rgb(76, 143, 231);" data-toggle="tooltip" title="download" href="{{file.url}}" target="_blank"></a>
+        </td>
+      </tr>
+
+    </table>
+  </div>

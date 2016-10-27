@@ -5,5 +5,6 @@
     'angularCSS',
     'oc.lazyLoad',
     'firebase',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'jsTag'
   ]);

@@ -4,27 +4,20 @@
 
 <!-- student info -->
 <header class="container-fluid jumbotron profile-banner">
-  <img src="assets\default-user-avatar.png" alt="profPic" class="col-md-2 col-sm-2 col-xs-6" />
+  <!-- <img src="assets\default-user-avatar.png" alt="profPic" class="col-md-2 col-sm-2 col-xs-6" /> -->
   <div class="container col-md-4 col-sm-8 col-xs-6">
-    <h2 class="h2">Firstname Lastname</h2>
-    <h3 class="h3">grade</h3>
-    <h3 class="h3">section</h3>
+    <h2 class="h2">{{userInfo.firstname}} {{userInfo.lastname}}</h2>
+    <!-- <h3 class="h3">grade</h3> -->
+    <!-- <h3 class="h3">section</h3> -->
   </div>
   <div class="container col-md-6 col-sm-8 col-xs-12 well text-center">
-    <div class="col-md-6 col-sm-6 col-xs-12" >
-      <h2 >Latest Achievement</h2>
-      <h3>stuff</h3>
-    </div>
-    <div class="col-md-6 col-sm-6 col-xs-12 vertical-divider-right">
-      <h2 >Achievement Points</h2>
-      <h3>200 xp</h3>
-    </div>
+    {{userInfo.description}}
   </div>
 
 </header>
 
 <section class="container">
-  <div class="col-md-6 col-lg-6">
+  <div class="col-md-6 col-lg-6" ng-if="userInfo.utype === 'student'">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title ">Achievements</h3>
@@ -39,14 +32,25 @@
   </div>
 
 
-  <div class="col-md-6 ">
+  <div class="col-md-6 " ng-if="userInfo.utype === 'teacher'">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Score timeline</h3>
+        <h3 class="panel-title">Subjects</h3>
       </div>
+
       <div class="panel-body">
-        Panel content
+        <ul>
+          <li ng-repeat="cls in DspClass | filter:{Teacher:id}">
+            <a class="thumb" href="#/class_dashboard/{{$index}}/post">
+              <!-- <span class="glyphicon glyphicon-book"></span> -->
+              <span class="name">{{cls.Subject}}-{{cls.Section}}</span>
+            </a>
+          </li>
+        </ul>
+
       </div>
+
+
     </div>
   </div>
 

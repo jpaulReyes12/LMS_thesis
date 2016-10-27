@@ -3,34 +3,22 @@
     <th>Subject Name</th>
     <th>Submission Name</th>
     <th>Date Submitted</th>
-    <th>Retakes</th>
+    <th>Score</th>
 
-    <tr>
-      <td>Cryptozoology</td>
-      <td>Quiz no.</td>
-      <td>February 40 2067</td>
-      <td>3</td>
-    </tr>
-
-    <tr>
-      <td>Cryptozoology</td>
-      <td>Quiz no.</td>
-      <td>February 40 2067</td>
-      <td>3</td>
-    </tr>
-
-    <tr>
-      <td>Cryptozoology</td>
-      <td>Quiz no.</td>
-      <td>February 40 2067</td>
-      <td>3</td>
-    </tr>
-
-    <tr>
-      <td>Cryptozoology</td>
-      <td>Quiz no.</td>
-      <td>February 40 2067</td>
-      <td>3</td>
+    <tr ng-repeat="score in scores">
+      <!-- <td>
+        <pre>
+          {{score | json}}
+        </pre>
+      </td> -->
+      <td>{{score.subject}}</td>
+      <td>{{score.quiz}}</td>
+      <td>{{score.submitted * 1000| date:'MMM d, y h:mm:ss a'}}</td>
+      <td
+        ng-class="{success: {{score.score}} >= {{score.total}} * 0.6,
+        danger: {{score.score}} < {{score.total}} * 0.6 }">
+        {{score.score}}/{{score.total}}
+      </td>
     </tr>
   </table>
 <!-- </div> -->

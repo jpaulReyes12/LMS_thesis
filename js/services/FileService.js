@@ -44,6 +44,7 @@ angular.module('lmsApp')
     upload: upload,
     progress: progress,
     getURL:getURL
+    // displayFiles: displayFiles
   }
 
 }]);

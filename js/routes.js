@@ -60,7 +60,7 @@
           }
         })
 
-        .when('/profile', {
+        .when('/profile/:id', {
           title: 'Profile',
           templateUrl: 'view/studentProfile.html',
           css: 'style/profile.css',
@@ -358,7 +358,7 @@
 
         })
 
-        .when('/forum_post/:forum_id', {
+        .when('/forum_post/:id', {
           title: 'Forum',
           templateUrl: 'view/forum_post.html',
           controller: 'addCommentCtrl',
@@ -417,12 +417,12 @@
           templateUrl: 'view/admin/class_management.html',
           css: 'style/admin.css',
           controller: 'adminScheduleCtrl',
-          data: {requireAuth: 'admin'},
-          resolve: {
-            "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
-              return $firebaseAuth().$requireSignIn();
-            }]
-          }
+          data: {requireAuth: 'admin'}
+          // resolve: {
+          //   "currentAuth": [ '$firebaseAuth', function($firebaseAuth) {
+          //     return $firebaseAuth().$requireSignIn();
+          //   }]
+          // }
         })
 
         .when('/admin/groups', {

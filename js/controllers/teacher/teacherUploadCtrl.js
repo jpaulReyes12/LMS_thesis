@@ -13,8 +13,13 @@ angular.module('lmsApp')
     function getResources(){
       var currentTeacher = firebase.auth().currentUser.uid;
       var ref = firebase.database().ref('users/' + currentTeacher + "/classFiles");
-      return $firebaseArray(ref);
+
+     $firebaseArray(ref).$loaded()
+     .then(function(result) {
+       $scope.files = result;
+     });
     }
+
 
     $scope.deleteFile = function(id) {
       console.log(id);

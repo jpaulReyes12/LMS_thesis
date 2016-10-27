@@ -1,5 +1,5 @@
 angular.module('lmsApp')
-.controller('groupPageCtrl', ['$scope', 'Users','Groups', '$routeParams', function($scope, Users, Groups, $routeParams, Class) {
+.controller('groupPageCtrl', ['$scope', 'Users','Groups', '$routeParams', '$firebaseObject', '$firebaseArray',function($scope, Users, Groups, $routeParams, $firebaseObject, $firebaseArray) {
 
   $scope.grpInfo = Groups.getOneGroup($routeParams.id);
 
@@ -54,35 +54,27 @@ angular.module('lmsApp')
 
   function getid(id, info) {
 
-    var parent = Class.getClass();
-    var parent_class = parent[$routeParams.id];
-    var classList = $firebaseArray(firebase.database().ref('users').child(id).child('classes'));
 
+    var groupList = $firebaseArray(firebase.database().ref('users').child(id).child('groups'));
+    var insertGroupData = $scope.grpInfo;
+    console.log(insertGroupData);
 
-    classList.$add({
-      subject: parent_class.$id,
-      subject_name: parent_class.Subject,
-    });
-
-
-    Class.addStudent($scope.classID, {
-      fname: info.fname,
-      lname: info.lname,
-      email: info .email,
-      s_id: info.uid
-    });
+    // groupList.$add({
+    //   subject: parent_class.$id,
+    //   subject_name: parent_class.Subject,
+    // });
+    //
+    //
+    // Class.addStudent($scope.classID, {
+    //   fname: info.fname,
+    //   lname: info.lname,
+    //   email: info .email,
+    //   s_id: info.uid
+    // });
 
   }
 
-  $scope.students = function functionName() {
-    var classes =  Class.getClass();
-    return classes[$routeParams.id];
-  };
 
-  $scope.removeStudent = function(id){
-
-    Class.removeStudent(id, $routeParams.id);
-  }
 
 
 

@@ -11,5 +11,8 @@ angular.module('lmsApp')
     $location.path('/teacher/assignment');
   };
 
+  var datetime = new Date();
+  $scope.dateNow = datetime;
+
   $scope.classID = $routeParams.id;
 }]);

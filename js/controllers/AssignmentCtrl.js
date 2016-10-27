@@ -4,8 +4,9 @@ angular.module('lmsApp')
   var id = $routeParams.id;
 
   $scope.saveAss = function(a, id){
-
+    a.deadline = Math.floor(a.deadline/1000);
     a.timecreated = Math.floor(Date.now()/1000);
+    console.log(a.deadline);
     Assignment.addAss(a);
     $location.path('/teacher/assignment');
   };

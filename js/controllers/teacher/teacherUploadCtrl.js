@@ -1,5 +1,5 @@
 angular.module('lmsApp')
-  .controller('teacherUploadsCtrl', ['$scope', '$location', 'File', '$firebaseArray', '$routeParams',function($scope, $location, File, $firebaseArray, $routeParams){
+  .controller('teacherUploadsCtrl', ['$scope', '$location', 'File', '$firebaseArray', '$firebaseObject', '$routeParams',function($scope, $location, File, $firebaseArray, $firebaseObject, $routeParams){
 
     $scope.classID = $routeParams.id;
 
@@ -13,10 +13,16 @@ angular.module('lmsApp')
     function getResources(){
       var currentTeacher = firebase.auth().currentUser.uid;
       var ref = firebase.database().ref('users/' + currentTeacher + "/classFiles");
-
-
       return $firebaseArray(ref);
     }
 
+    $scope.deleteFile = function(id) {
+      console.log(id);
+      var currentTeacher = firebase.auth().currentUser.uid;
+      var ref = firebase.database().ref('users/' + currentTeacher + "/classFiles");
+      var object = $firebaseObject(ref.child(id));
+      object.$remove();
+    };
 
-}])
+
+}]);
